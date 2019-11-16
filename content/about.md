@@ -3,7 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a software engineer, currently developing and maintaining code at <a href="https://www.mercury.ai">Mercury.ai</a>. I love programming and scuba diving, and I'm sure I would also love space flight. I have a formal degree in logic and now spend quite some time learning the fundamentals of nuclear technology and the skills for helping to build a safe, carbon-free future.
+I'm a software engineer, currently developing and maintaining code at <a href="https://www.mercury.ai">Mercury.ai</a>. I love programming and scuba diving, and I'm sure I would also love flying to space. I have a formal degree in logic and now spend my early mornings learning the fundamentals of nuclear technology and the skills for helping to keep complex systems safe.
 
 &nbsp;
 <div class="row">

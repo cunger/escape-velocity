@@ -2,10 +2,10 @@
 
 hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 
-cd ../cunger.github.io
-rm -r *
-cp -r ../escape-velocity/public/* ./
+rm -r ../cunger.github.io/*
+cp -r public/* ../cunger.github.io/
 
+cd ../cunger.github.io
 git add .
 
 msg="rebuilding site $(date)"
