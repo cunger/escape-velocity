@@ -4,16 +4,16 @@ summary: "Kinetic and potential energy, enthalpy, mass-energy equivalence."
 date: 2019-11-16T11:38:21+01:00
 weight: 2
 math: true
-toc: false
+toc: true
 ---
 
 Energy is defined as the capacity to do work or produce heat.
 
 Energy cannot be created or destroyed. It can only be converted from one form to another or transferred from one system to another.
 
-_Work_ is applying force on something causing it to move, thus transferring energy by mechanical movement, _heat_ is transferring energy by thermal interactions.
+**Work** is applying force on something causing it to move, thus transferring energy by mechanical movement, **heat** is transferring energy by thermal interactions.
 
-## Forms of energy
+# Forms of energy
 
 Besides mass, there are two main forms of energy: kinetic and potential energy. The sum of both is described as mechanical energy.
 
@@ -23,7 +23,7 @@ With {{< katex "m" >}} the object's mass and {{< katex "v" >}} its velocity.
 
 Work is applying a force {{< katex "F" >}} for a distance {{< katex "d" >}}: {{< katex "W=Fd" >}}.
 
-**Potential energy** is the energy of an object due to its position in a potential field. More specifically, the _gravitational energy_ is the energy of an object due to its position in a gravitational field. (Also see the entry on [gravitation](https://write.as/christina-unger/gravitation).) On a planet, this is:
+**Potential energy** is the energy of an object due to its position in a potential field. More specifically, the _gravitational energy_ is the energy of an object due to its position in a gravitational field. (Also see the entry on [gravitation](/docs/forces/#gravitational-force).) On a planet, this is:
 {{< katex display="E_\text{pot}=mgh" >}}
 Where {{< katex "g" >}} is the gravitational acceleration (about {{< katex "9.81 m/s^2" >}} close to the Earth's surface), {{< katex "m" >}} is the object's mass and {{< katex "h" >}} is its height relative to some vertical reference point.
 
@@ -36,14 +36,14 @@ A change in temperature {{< katex "T" >}} leads to a change in internal energy (
 
 **Chemical energy** is the energy stored in bonds between atoms within molecules. It is released when those bonds are broken up, e.g. through combustion. **Nuclear energy** is the energy stored in nuclei.
 
-## Enthalpy
+# Enthalpy
 
 Enthalpy {{< katex "H" >}} is a system's internal energy plus the amount of work required to make room for it within its surroundings:
 {{< katex display="H=U+pV" >}}
 At constant pressure, change in enthalpy is basically the heat gained or lost by the system.
 {{< katex display="\Delta H= \Delta U + p\Delta V" >}}
 
-## Mass-energy equivalence
+# Mass-energy equivalence
 
 Mass and energy are equivalent, as described by Einstein's formula {{< katex "E=mc^2" >}}, where {{< katex "E" >}} is the rest energy of an object and {{< katex "m" >}} is its mass. Since {{< katex "c" >}} is a large number, this means that there is a tremendous amount of energy in mass. So in a way, mass can be seen as concentrated energy.
 
@@ -63,7 +63,7 @@ Mass and energy can be converted into one another.
 
 This is the energy equivalent to 1 atomic mass unit.
 
-## Mass defect and binding energy
+# Mass defect and binding energy
 
 The _mass defect_ is the difference between the sum of the masses of all nucleons and the observed mass of the nucleus. It corresponds to the _binding energy_ in the nucleus. That is, some of the mass of the nucleons was released as binding energy when the nucleus was formed.
 

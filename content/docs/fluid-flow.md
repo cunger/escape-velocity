@@ -4,10 +4,12 @@ summary: "Flow rate. Drag force."
 date: 2019-11-16T12:19:28+01:00
 weight: 10
 math: true
-toc: false
+toc: true
 ---
 
 Fluids comprise both liquids (generally incompressible, i.e. volume does not change in response to a pressure change) and gases (compressible).
+
+# Steady flow
 
 **Flow rate**: {{< katex "\Phi_V = \cfrac{\Phi_m}{\rho}" >}}.
 
@@ -18,8 +20,6 @@ The flow rate has an impact on whether the flow is laminar (usually at low veloc
 
 * _Laminar flow_ is ordered, characterized by smooth layers of fluid. Viscous forces dominate.
 * _Turbulant flow_ is disordered. Inertial forces dominate.
-
-## Steady flow
 
 **Continuity** states that for an incompressible fluid flowing in a pipe, the flow rate is the same everywhere in the pipe:
 {{< katex display="\rho_1 A_1 v_1 = \rho_2 A_2 v_2" >}}

@@ -4,7 +4,7 @@ summary: "What atoms are composed of, their energy, charge, mass, and stability.
 date: 2019-11-04
 weight: 5
 math: true
-toc: false
+toc: true
 ---
 
 Atoms consist of a nucleus of protons (p+) and neutrons (n), called _nucleons_, together with surrounding electrons (e-).  

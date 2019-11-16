@@ -1,6 +1,6 @@
 ---
 title: "Electromagnetic radiation"
-summary: "..."
+summary: "Waves."
 date: 2019-11-05
 weight: 4
 math: true

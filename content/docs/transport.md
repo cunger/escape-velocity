@@ -1,10 +1,10 @@
 ---
 title: "Transport"
-summary: "Mass and heat transport. Concentration diffusion and temperature conduction."
-date: 2019-11-16T12:37:22+01:00
+summary: "Mass and heat transport."
+date: 2019-11-16
 weight: 11
 math: true
-toc: false
+toc: true
 ---
 
 Heat transfer can be due to:
@@ -34,7 +34,7 @@ When starting to analyze a situation, get clear about what kind of situation thi
 * steady vs unsteady
 * short time (penetration) vs long time (permeation)
 
-## Heat conduction (Fourier's law)
+# Heat conduction (Fourier's law)
 
 In the one-dimensional case of conduction in the {{< katex "x" >}} dimension, the rate of conduction is:
 {{< katex display="\phi_q = -k A \frac{dT}{dx}" >}}
@@ -47,7 +47,7 @@ If the temperature gradient is linear, it can be simplified to:
 
 The _heat flux_ is {{< katex "\cfrac{\phi_q}{A}" >}}.
 
-## Mass conduction (a.k.a. concentration diffusion or Fick's first law)
+# Mass conduction (a.k.a. concentration diffusion or Fick's first law)
 
 Diffusion is mass transport across a concentration gradient. The driving force is a concentration difference. In the one-dimensional case of diffusion in the {{< katex "x" >}} dimension, the rate of diffusion is:
 
@@ -76,7 +76,7 @@ The concentration profile {{< katex "c(x)" >}} varies for different geometries.
 If the concentration profile is linear, we can simplify Fick's law:
 {{< katex display="\phi_m = -D A \frac{\Delta c}{\Delta x}" >}}
 
-## Heat convection (Newton's law of cooling)
+# Heat convection (Newton's law of cooling)
 
 Convective heat transport:
 {{< katex display="\phi_q = U A \Delta T" >}}
@@ -94,7 +94,7 @@ Note that the the heat transfer coefficient {{< katex "h" >}} [{{< katex "W/m^2K
 
 Also, cf. *Nusselt number*.
 
-## Mass convection
+# Mass convection
 
 Convective mass transport:
 
@@ -102,7 +102,7 @@ Convective mass transport:
 
 * {{< katex "k" >}} [{{< katex "m/s" >}}] is the mass transfer coefficient ({{< katex "\frac{1}{k}" >}} can be seen as the resistance to mass transfer)
 
-# Temperature conduction and concentration diffusion
+# Analytical solution for mass and heat conduction
 
 **Temperature conduction:** {{< katex "\cfrac{dT}{dt}=k(T_e-T)" >}}
 

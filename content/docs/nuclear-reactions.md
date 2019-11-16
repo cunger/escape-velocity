@@ -4,12 +4,12 @@ summary: "Q-value, alpha, beta, and gamma decay, decay rate and probability, rad
 date: 2019-11-15
 weight: 6
 math: true
-toc: false
+toc: true
 ---
 
-_Nuclear reactions_ are reactions where nuclear particles interact; comprising decay processes as well as collision reactions like fission and fusion.
+Nuclear reactions are reactions where nuclear particles interact; comprising decay processes as well as collision reactions like fission and fusion.
 
-Notation: {{< katex "a + A \to B + b" >}} or {{< katex "A(a,b)B" >}}
+**Notation:** {{< katex "a + A \to B + b" >}} or {{< katex "A(a,b)B" >}}
 
 Where:
 
@@ -24,7 +24,7 @@ Nuclear reactions conserve:
 * charge
 * momentum
 
-## Q-value
+# Q-value
 
 The _Q-value_ of a nuclear reaction is the amount of mass that is turned into energy per decay, i.e. the difference between the sum of the masses of the initial reactants and the sum of the masses of the final products.
 

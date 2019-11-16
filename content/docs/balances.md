@@ -4,7 +4,7 @@ summary: "Equations for mass and energy balances."
 date: 2019-11-16
 weight: 9
 math: true
-toc: false
+toc: true
 ---
 
 Balancing equations are a way of bookkeeping for the main quantities involved in a process: mass, energy, and momentum. It comprises everything through which a quantity enters the system or leaves it, is produced or absorbed, and which resistances there are to the transport of the quantity. (Also see [heat and mass transport](https://write.as/christina-unger/heat-and-mass-flow).)
@@ -20,9 +20,10 @@ Where:
 * {{< katex "\Phi_{x,out}" >}} is the rate of {{< katex "x" >}} leaving the system.
 * {{< katex "\text{production}(x)" >}} includes production and consumption or loss of {{< katex "x" >}}, and thus can be positive or negative.
 
-## Mass balance
+# Mass balance
 
-**Total mass balance:**
+### Total mass balance:
+
 {{< katex display="\frac{dm}{dt}=\Phi_{m,in} - \Phi_{m,out} + \text{production}(m)" >}}
 
 With {{< katex "\Phi_m" >}} having the standard unit kg/s.
@@ -33,9 +34,9 @@ Since mass is volume times concentration ({{< katex "m=Vc" >}}) and volume times
 
 _For more on volume flow in fluids, see [fluid flow](https://write.as/christina-unger/fluid-flow)._
 
-## Energy balance
+# Energy balance
 
-**Total energy balance:**
+### Total energy balance:
 
 {{< katex display="\frac{de}{dt}=\Phi_{m,in}ec_\text{in} - \Phi_{m,out}ec_\text{out} + \Phi_q + \Phi_W" >}}
 
@@ -57,17 +58,17 @@ With:
 
 The total energy balance can be split into mechanical and thermal energy.
 
-### Mechanical energy
+## Mechanical energy
 
 {{< katex display="\frac{de}{dt}=\Phi_{m,in}(gh+\frac{1}{2}v^2+\frac{p}{\rho})_\text{in} - \Phi_{m,out}(gh+\frac{1}{2}v^2+\frac{p}{\rho})_\text{out} + \Phi_W" >}}
-(- energy lost from friction)
+(minus energy lost from friction)
 
 Neglecting friction, in a steady-state system with equal in- and outflow, where no work is performed, this can be simplified to _Bernoulli's equation_:
 {{< katex display="(gh+\frac{1}{2}v^2+\frac{p}{\rho})_\text{out}=(gh+\frac{1}{2}v^2+\frac{p}{\rho})_\text{in}" >}}
 
-### Thermal energy
+## Thermal energy
 
 {{< katex display="\frac{de}{dt}=\Phi_{m,in} c_{p,\text{in}} T_\text{in} - \Phi_{m,out} c_{p,\text{out}} T_\text{out} + \Phi_q" >}}
-(+ energy gained from friction)
+(plus energy gained from friction)
 
-_For a primer on the different forms of energy, cf. the entry on [energy](https://write.as/christina-unger/energy)._
+_For a primer on the different forms of energy, cf. the entry on [energy](/docs/energy/)._

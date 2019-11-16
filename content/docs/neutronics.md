@@ -4,8 +4,10 @@ summary: "Neutrons, energy distribution, neutron interactions, iron valley."
 date: 2019-11-16
 weight: 7
 math: true
-toc: false
+toc: true
 ---
+
+# Neutron classification
 
 Free neutrons can be classified according to their kinetic energy.
 
@@ -19,7 +21,7 @@ _Fast reactors_ user fast neutrons for fission, not using any neutron moderator.
 
 The energy of a neutron has a big impact on its cross-sections. An important property of a reactor core thus is its neutron energy distribution.
 
-## Neutron interactions
+# Neutron interactions
 
 Since neutrons have no charge, they pass easily through electron clouds and directly interact with nuclei. Those interactions can be thought of as two steps: first the #neutron is absorbed by the nucleus, forming a compound nucleus, which then decays.
 

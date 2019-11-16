@@ -4,7 +4,7 @@ summary: "Analytical solutions to first-order linear ODEs."
 date: 2019-11-16
 weight: 22
 math: true
-toc: false
+toc: true
 ---
 
 Differential equations contain functions as well as their derivatives. The order of the equation corresponds to the order of the highest derivative.
@@ -12,7 +12,7 @@ Differential equations contain functions as well as their derivatives. The order
 * An _ordinary differential equation_ (ODE) contains functions of only one independent variable.
 * A _partial differential equation_ (PDE) contains functions of more than one independent variables.
 
-## First-order linear ODEs
+# First-order linear ODEs
 
 **Standard form:** {{< katex "y'+p(t)\,y=q(t)" >}}
 
@@ -20,7 +20,7 @@ Where {{< katex "t" >}} is the independent variable (in models this is often tim
 
 The equation is _homogeneous_ if {{< katex "q(t)=0" >}}, and _inhomogeneous_ otherwise.
 
-### Homogeneous first-order linear ODEs
+## Homogeneous first-order linear ODEs
 
 Can always be solved by separation of variables:
 
@@ -35,7 +35,7 @@ $y=\pm e^{-P(t) + C}$
 $y=\pm e^{-P(t)}e^{C}" >}}
 $y=c\,e^{-P(t)}" >}}
 
-### Inhomogeneous first-order linear ODEs
+## Inhomogeneous first-order linear ODEs
 
 Can be solved by variation of parameters.
 
@@ -58,7 +58,7 @@ This is equivalent to finding the **integrating factor**. The idea is to find a 
 
 After calculating the integrating factor {{< katex "u" >}}, multiply both sides of the equation by {{< katex "u" >}}, and rewrite the left-hand side as {{< katex "(uy)'" >}}. Then integrate.
 
-### Linear combinations
+## Linear combinations
 
 A linear combination of functions {{< katex "f_1,f_2,..." >}} are functions of the form {{< katex "c_1f_1 + c_2f_2 + ..." >}} with {{< katex "c_1,c_2,..." >}} any numbers.
 
@@ -76,7 +76,7 @@ Also the general inhomogeneous solution {{< katex "y=y_p+y_h" >}}, where
 * {{< katex "y_p" >}} is a particular inhomogenous solution and
 * {{< katex "y_h" >}} is the general homogeneous solution.
 
-### Special cases
+## Special cases
 
 If we have an **inhomogeneous linear ODE where {{< katex "q(t)" >}} is constant**: If there is a constant solution, then {{< katex "y'=0" >}} and the equation simplifies to {{< katex "p(t)y=q" >}}, thus one particular solution is {{< katex "y=\frac{q}{p(t)}" >}}. Using the superposition principle, all solutions take the form:
 

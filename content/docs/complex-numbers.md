@@ -1,6 +1,6 @@
 ---
 title: "Complex numbers"
-summary: "..."
+summary: "Cartesian and polar coordinates, arithmetic operations, Euler's formula."
 date: 2019-11-16T12:02:48+01:00
 weight: 20
 math: true
@@ -38,7 +38,7 @@ Figure from the [Feynman lectures on algebra](http://www.feynmanlectures.caltech
 
 ![Unification of algebra and geometry](/images/docs/complex-number.png)
 
-## Arithmetic operations
+# Arithmetic operations
 
 While addition is straight-forward in Cartesian form, most operations are much more intuitive in polar form, as they constitute transformations in the Cartesian plane.
 
@@ -78,7 +78,7 @@ Multiplying a complex number by its conjugate, we get a real number (the square 
 
 {{< katex display="z\,\overline{z} = x^2+y^2 = |z|^2" >}}
 
-## Euler's formula
+# Euler's formula
 
 What is the exponential function {{< katex "e^{x+yi}" >}}? Using the exponential law yields {{< katex "e^{x+yi} = e^{x}e^{yi}" >}}, so the question boils down to: What is {{< katex "e^{yi}" >}}? Euler defined this with what is now known as _Euler's formula_:
 {{< katex display="e^{iy} = \text{cos}(y)+i\,\text{sin}(y)" >}}
@@ -93,7 +93,7 @@ For any complex numbers {{< katex "z,w" >}}, we get:
 {{< katex "e^{z+w}=e^ze^w" >}}
 {{< katex "(e^z)^n=e^{n\,z}" >}} (in particular {{< katex "(e^z)^{-1}=e^{-z}" >}})
 
-## Solving real problems in the complex domain
+# Solving real problems in the complex domain
 
 Every algebraic equation can be solved in the complex domain.
 

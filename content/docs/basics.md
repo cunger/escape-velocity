@@ -4,15 +4,15 @@ summary: "Units, constants, cheatsheets."
 date: 2019-11-16T12:00:51+01:00
 weight: 1
 math: true
-toc: false
+toc: true
 ---
 
-## Cheatsheets
+# Cheatsheets
 
 [Math quick references @ EEWeb](https://www.eeweb.com/tools/math-help)
 (Algebra, Trigonometry, Derivatives, Integrals)
 
-## Prefixes
+# Prefixes
 
 ```
 k  (kilo)  = 1.0e3  = 1000
@@ -29,7 +29,7 @@ n  (nano)  = 1.0e-9 = 0.000000001
 p  (pico)  = 1.0e-12
 ```
 
-## Units
+# Units
 
 **Newton** (N) = $kg\cdot\cfrac{m}{s^2}$
 
@@ -60,7 +60,7 @@ The activity of decay is usually given in **Curies**.
 1 Ci = 3.7e10 disintegrations (decayed nuclei) per second
 ```
 
-## Constants
+# Constants
 
 ```
 e = 2.718281828459045
