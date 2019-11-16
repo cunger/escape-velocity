@@ -1,8 +1,0 @@
-<!-- Hugo KaTeX shortcode (https://latkin.org/blog/2016/08/07/better-tex-math-typesetting-in-hugo/) -->
-<span>
-    {{ if .IsNamedParams }} <!-- display mode, wrap eqn with $$ $$ -->
-        $${{ .Get "display" }}$$
-    {{ else }}              <!-- inline mode, wrap eqn with \(  \) -->
-        \({{ .Get 0 }}\)
-    {{ end }}
-</span>
