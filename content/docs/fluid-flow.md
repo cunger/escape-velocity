@@ -23,7 +23,7 @@ The flow rate has an impact on whether the flow is laminar (usually at low veloc
 
 **Continuity** states that for an incompressible fluid flowing in a pipe, the flow rate is the same everywhere in the pipe:
 {{< katex display="\rho_1 A_1 v_1 = \rho_2 A_2 v_2" >}}
-With {{< katex "\rho" >}} the density, $A$ the cross-sectional area, and {{< katex "v" >}} the velocity.
+With {{< katex "\rho" >}} the density, {{< katex "A" >}} the cross-sectional area, and {{< katex "v" >}} the velocity.
 
 # Drag force
 

@@ -31,13 +31,13 @@ p  (pico)  = 1.0e-12
 
 # Units
 
-**Newton** (N) = $kg\cdot\cfrac{m}{s^2}$
+**Newton** (N) = {{< katex "kg\cdot\cfrac{m}{s^2}" >}}
 
-**Joule** (J) = $kg\cdot\cfrac{m^2}{s^2}$ = $N\cdot m$. 1 Joule is the energy transferred when a force of 1 Newton is applied to an object, moving it a distance of 1 meter.
+**Joule** (J) = {{< katex "kg\cdot\cfrac{m^2}{s^2} = N\cdot m" >}}. 1 Joule is the energy transferred when a force of 1 Newton is applied to an object, moving it a distance of 1 meter.
 
-Power is given in **Watts** (W) = $\cfrac{J}{s}$.
+Power is given in **Watts** (W) = {{< katex "\cfrac{J}{s}" >}}.
 
-Pressure is given in **Pascal** (Pa) = $\cfrac{J}{m^3}$ (with $1\,\text{Pa}=10^{-5}\,\text{bar}$). Atmospheric pressure is 101325 Pa.
+Pressure is given in **Pascal** (Pa) = {{< katex "\cfrac{J}{m^3}" >}} (with {{< katex "1\,\text{Pa}=10^{-5}\,\text{bar}" >}}). Atmospheric pressure is 101325 Pa.
 
 The **atomic mass unit** is defined such that the atomic weight of a neutral carbon-12 atom in its ground state is exactly 12 amu.
 ```
@@ -51,9 +51,9 @@ The **electronvolt** is the energy gained or lost by an electron when accelerate
 ```
 1 eV  = 1.602176634e-19 J
 ```
-Electronvolt can also be used as a unit of mass, which is usually given in $\cfrac{\text{eV}}{c^2}$ (with $c$ the speed of light in vacuum).
+Electronvolt can also be used as a unit of mass, which is usually given in {{< katex "\cfrac{\text{eV}}{c^2}" >}} (with {{< katex "c" >}} the speed of light in vacuum).
 
-The conversion factor between amu and MeV is $931.49 \cfrac{\text{MeV}}{\text{amu}\cdot c^2}$.
+The conversion factor between amu and MeV is {{< katex "931.49 \cfrac{\text{MeV}}{\text{amu}\cdot c^2}" >}}.
 
 The activity of decay is usually given in **Curies**.
 ```
@@ -64,4 +64,5 @@ The activity of decay is usually given in **Curies**.
 
 ```
 e = 2.718281828459045
+c = 299_792_458 m/s
 ```

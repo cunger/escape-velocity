@@ -82,7 +82,7 @@ Convective heat transport:
 {{< katex display="\phi_q = U A \Delta T" >}}
 
 * {{< katex "A" >}} is the cross-sectional area through which heat flows
-* {{< katex "U" >}} is the overall heat transfer coefficient ($\frac{1}{U}" >}} can be seen as the resistance to heat transfer). For multiple layers, the heat transfer coefficient can be calculated as:
+* {{< katex "U" >}} is the overall heat transfer coefficient ({{< katex "\frac{1}{U}" >}} can be seen as the resistance to heat transfer). For multiple layers, the heat transfer coefficient can be calculated as:
 
 {{< katex display="\frac{1}{U} = \frac{1}{h_1} + \frac{1}{h_2} + ..." >}}
 
@@ -106,7 +106,7 @@ Convective mass transport:
 
 **Temperature conduction:** {{< katex "\cfrac{dT}{dt}=k(T_e-T)" >}}
 
-Where {{< katex "T" >}} the temperature of some substance, {{< katex "T_e" >}} the external temperature, and {{< katex "k" >}} the conductivity of whatever separates them ($k=0" >}} would be a perfect insulator). If {{< katex "T_e<T" >}}, the equation means that the rate of cooling of the substance is proportional to the temperature difference.
+Where {{< katex "T" >}} the temperature of some substance, {{< katex "T_e" >}} the external temperature, and {{< katex "k" >}} the conductivity of whatever separates them ({{< katex "k=0" >}} would be a perfect insulator). If {{< katex "T_e<T" >}}, the equation means that the rate of cooling of the substance is proportional to the temperature difference.
 
 **Concentration diffusion:** {{< katex "\cfrac{dC}{dt}=k(C_e-C)" >}}
 

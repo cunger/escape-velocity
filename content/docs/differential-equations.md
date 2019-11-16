@@ -30,10 +30,13 @@ Can always be solved by separation of variables:
 
 Steps: Integrating both sides gives {{< katex "\int\cfrac{1}{y}dy=-\int p(t)dt" >}}, which is {{< katex "ln|y|=-P(t) + C" >}} with {{< katex "P(t)=\int p(t)dt" >}}. Then solve for {{< katex "y" >}}:
 
-$|y|=e^{-P(t) + C}$
-$y=\pm e^{-P(t) + C}$
-$y=\pm e^{-P(t)}e^{C}" >}}
-$y=c\,e^{-P(t)}" >}}
+{{< katex "|y|=e^{-P(t) + C}" >}}
+
+{{< katex "y=\pm e^{-P(t) + C}" >}}
+
+{{< katex "y=\pm e^{-P(t)}e^{C}" >}}
+
+{{< katex "y=c\,e^{-P(t)}" >}}
 
 ## Inhomogeneous first-order linear ODEs
 
@@ -54,7 +57,7 @@ Note that {{< katex "y_h'+py_h=0" >}}, because {{< katex "y_h" >}} is a solution
 
 This is equivalent to finding the **integrating factor**. The idea is to find a factor {{< katex "u" >}} such that when multiplying both sides by it ({{< katex "uy'+puy=qu" >}}), the left-hand side corresponds to {{< katex "(uy)'" >}} after applying the product rule. This is the case when {{< katex "u'=pu" >}}, which is a homogeneous ODE that can be solved by separation of variables and gives as integrating factor:
 
-{{< katex display="u=e^{\int p(t)dt}$" >}}
+{{< katex display="u=e^{\int p(t)dt}" >}}
 
 After calculating the integrating factor {{< katex "u" >}}, multiply both sides of the equation by {{< katex "u" >}}, and rewrite the left-hand side as {{< katex "(uy)'" >}}. Then integrate.
 

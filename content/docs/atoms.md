@@ -19,7 +19,7 @@ Elements are determined by their number of protons.
 
 * {{< katex "X" >}} the element symbol
 * {{< katex "Z" >}} the atomic number (the number of protons)
-* {{< katex "A = Z + N" >}} the mass number (with $N$ the number of neutrons)
+* {{< katex "A = Z + N" >}} the mass number (with {{< katex "N" >}} the number of neutrons)
 * {{< katex "C" >}} the overall charge of the atom
 
 For example, {{< katex "{}^4_2He^{+}" >}} is a Helium atom with 2 protons, 2 neutrons, and 1 electron.
@@ -52,6 +52,6 @@ Atoms do not remain in an excited state indefinitely, they will return to their 
 
 Elements with {{< katex "Z<20" >}} tend to be stable if {{< katex "\frac{N}{Z}=1" >}}, i.e. if they have the same number of protons and neutrons in the nucleus. In contrast, e.g. {{< katex "{}^{14}_{\ 6}C" >}} (carbon-14) is unstable.
 
-For elements with high $Z$, the stable ratio is about {{< katex "\frac{N}{Z}=1.5" >}}, i.e. if they have more neutrons than protons. The reason is that the strong force that holds together protons in the nucleus (overcoming their electrostatic repulsion) acts only at very short distances. In larger nuclei, the distances get too big and finally repulsion begins to win over. More neutrons can help keeping a balance, but only up to a certain point; elements with {{< katex "Z>83" >}} are pretty much all unstable.
+For elements with high {{< katex "Z" >}}, the stable ratio is about {{< katex "\frac{N}{Z}=1.5" >}}, i.e. if they have more neutrons than protons. The reason is that the strong force that holds together protons in the nucleus (overcoming their electrostatic repulsion) acts only at very short distances. In larger nuclei, the distances get too big and finally repulsion begins to win over. More neutrons can help keeping a balance, but only up to a certain point; elements with {{< katex "Z>83" >}} are pretty much all unstable.
 
 Especially stable are nuclei with a _magic number_ of {{< katex "Z" >}} or {{< katex "N = 2, 8, 20, 28, 50, 82, 126" >}}, as the average binding energy per nucleon is higher than expected (probably because they correspond to closed shells in the nucleus). Also, atoms with a magic number of neutrons are reluctant to absorb neutrons and thus make good materials where neutron absorption must be avoided.
