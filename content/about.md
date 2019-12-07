@@ -3,7 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a software engineer, currently developing and maintaining code at <a href="https://www.mercury.ai">Mercury.ai</a>. I love programming and scuba diving, and I'm sure I would also love flying to space. I have a formal degree in logic and now spend my early mornings learning the fundamentals of nuclear technology and the skills for helping to keep complex systems safe.
+I'm a programmer, currently developing and maintaining code at <a href="https://www.mercury.ai">Mercury.ai</a>. I have a formal degree in logic and now spend my early mornings learning the fundamentals of nuclear technology and system safety. Besides those, I love scuba diving, and I'm sure I would also love flying to space.
 
 &nbsp;
 <div class="row">
@@ -17,15 +17,13 @@ I'm a software engineer, currently developing and maintaining code at <a href="h
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
-  &nbsp;&nbsp; 🛠️ FP, OOP, Linux
+  &nbsp;&nbsp; ️🛠 Fortran, Functional Programming, Git, Linux
   </div>
 </div>
 &nbsp;
 
 ## Learning
 
-* [Architecture and Systems Engineering: Models and Methods to Manage Complex Systems](https://learn-xpro.mit.edu/systems-engineering)
-  (MITxPro | ongoing)
 * Advanced Transport Phenomena
   (DelftX | ongoing)
 * The Basics of Transport Phenomena
@@ -34,13 +32,14 @@ I'm a software engineer, currently developing and maintaining code at <a href="h
   (GENTLE & DelftX | [certificate](https://courses.edx.org/certificates/8dec05e14fd846cdadffe75adeb91c07))
 * Space mission design and operations
   (EPFLx | [certificate](https://courses.edx.org/certificates/ba8373e783f54519bebdf080200197b7))
+* [Architecture and Systems Engineering: Models and Methods to Manage Complex Systems](https://learn-xpro.mit.edu/systems-engineering)
+  (MITxPro | ongoing)
 
 ## Book shelf
 
-* Leveson: [Engineering a safer world. Systems thinking applied to safety.](https://mitpress.mit.edu/books/engineering-safer-world)
-* Gould, Tobochnik, Christian: [Introduction to Computer Simulation Methods.](http://physics.clarku.edu/sip/)
-* Baier, Katoen: [Principles of model checking.](https://mitpress.mit.edu/books/principles-model-checking)
-* Chapman: [Fortran for Scientists and Engineers.](https://www.mheducation.com/highered/product/fortran-scientists-engineers-chapman/M9780073385891.html)
+* Cucic: [Modern Fortran: Building efficient parallel applications.](https://www.manning.com/books/modern-fortran)
+* Leveson: [Engineering a Safer World. Systems Thinking Applied to Safety.](https://mitpress.mit.edu/books/engineering-safer-world)
+* Baier, Katoen: [Principles of Model Checking.](https://mitpress.mit.edu/books/principles-model-checking)
 
 ## Contact
 

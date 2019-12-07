@@ -6,12 +6,13 @@ rm -r ../cunger.github.io/*
 cp -r public/* ../cunger.github.io/
 
 cd ../cunger.github.io
+
 git add .
 
 msg="rebuilding site $(date)"
 if [ -n "$*" ]; then
 	msg="$*"
 fi
-git commit -m "$msg"
 
+git commit -m "$msg"
 git push origin master
