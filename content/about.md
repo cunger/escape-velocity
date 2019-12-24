@@ -5,12 +5,10 @@ date: 2019-11-04
 
 I'm a programmer, currently developing and maintaining code at <a href="https://www.mercury.ai">Mercury.ai</a>. I have a formal degree in logic and now spend my early mornings learning the fundamentals of nuclear technology and system safety. Besides those, I love scuba diving, and I'm sure I would also love flying to space.
 
-&nbsp;
+<!-- &nbsp; -->
 <div class="row">
   <div class="col-md-8" markdown="1">
-  ![Jebediah Kerman](/images/jebediah_kerman.png)
-  </div>
-  <div class="col-md-4" markdown="1">
+
   &nbsp;&nbsp; 💾 [GitHub.com/cunger](https://github.com/cunger/)
 
   &nbsp;&nbsp; 📝 christina@unger.dev
@@ -37,12 +35,14 @@ I'm a programmer, currently developing and maintaining code at <a href="https://
 
 ## Book shelf
 
-* Cucic: [Modern Fortran: Building efficient parallel applications.](https://www.manning.com/books/modern-fortran)
-* Leveson: [Engineering a Safer World. Systems Thinking Applied to Safety.](https://mitpress.mit.edu/books/engineering-safer-world)
+* Curcic: [Modern Fortran: Building efficient parallel applications.](https://www.manning.com/books/modern-fortran)
+* Leveson: [Safeware: System safety and computers.](http://sunnyday.mit.edu/book.html)
 * Baier, Katoen: [Principles of Model Checking.](https://mitpress.mit.edu/books/principles-model-checking)
 
 ## Contact
 
 If you find errata, have suggestions for learning resources, or just want to share experiences, please feel free to reach out. I'd be happy to chat or meet for a coffee.
+
+Apropos coffee...
 
 [![Buy me a coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/white_img.png)](https://www.buymeacoffee.com/xoUAIBhZE)
