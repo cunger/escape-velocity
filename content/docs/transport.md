@@ -7,13 +7,19 @@ math: true
 toc: true
 ---
 
-Heat transfer can be due to:
+Transport phenomena include three closely related topics:
 
-* convection (transport of heat by a flowing fluid)
-* conduction (transfer of heat by collision of particles in fluids)
+* fluid dynamics (the transport of momentum)
+* heat transfer (the transport of energy)
+* mass transfer (the transport of mass)
+
+Transfer can be due to:
+
+* convection (transport by a flowing fluid, where the flow can be due to an external force, for example, or an internal difference in temperature or density)
+* conduction (transfer by collision of particles in fluids)
 * radiation (transfer of heat by means of wave motion in space)
 
-## Flux and flow
+# Flux and flow
 
 **Flux** {{< katex "q" >}} is the rate of transfer per unit area normal to the direction of the transfer.
 
@@ -45,11 +51,11 @@ In the one-dimensional case of conduction in the {{< katex "x" >}} dimension, th
 If the temperature gradient is linear, it can be simplified to:
 {{< katex display="\phi_q = -k A \frac{\Delta T}{\Delta x}" >}}
 
-The _heat flux_ is {{< katex "\cfrac{\phi_q}{A}" >}}.
+The **heat flux** is {{< katex "\cfrac{\phi_q}{A}" >}}.
 
-# Mass conduction (a.k.a. concentration diffusion or Fick's first law)
+# Mass conduction (Fick's first law)
 
-Diffusion is mass transport across a concentration gradient. The driving force is a concentration difference. In the one-dimensional case of diffusion in the {{< katex "x" >}} dimension, the rate of diffusion is:
+Concentration diffusion is mass transport across a concentration gradient. The driving force is a concentration difference. In the one-dimensional case of diffusion in the {{< katex "x" >}} dimension, the rate of diffusion is:
 
 {{< katex display="\phi_m = -D A \frac{dc}{dx}" >}}
 
@@ -81,7 +87,8 @@ If the concentration profile is linear, we can simplify Fick's law:
 Convective heat transport:
 {{< katex display="\phi_q = U A \Delta T" >}}
 
-* {{< katex "A" >}} is the cross-sectional area through which heat flows
+* {{< katex "A" >}} is the cross-sectional area through which heat flows.
+* {{< katex "\Delta T" >}} is the difference in temperature between the volume and the environment.
 * {{< katex "U" >}} is the overall heat transfer coefficient ({{< katex "\frac{1}{U}" >}} can be seen as the resistance to heat transfer). For multiple layers, the heat transfer coefficient can be calculated as:
 
 {{< katex display="\frac{1}{U} = \frac{1}{h_1} + \frac{1}{h_2} + ..." >}}

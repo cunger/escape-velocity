@@ -1,6 +1,6 @@
 ---
 title: "Balances"
-summary: "Equations for mass and energy balances."
+summary: "Equations for mass and energy balances. Macro and micro balances."
 date: 2019-11-16
 weight: 9
 math: true
@@ -19,6 +19,12 @@ Where:
 * {{< katex "\Phi_{x,in}" >}} is the rate of {{< katex "x" >}} entering the system.
 * {{< katex "\Phi_{x,out}" >}} is the rate of {{< katex "x" >}} leaving the system.
 * {{< katex "\text{production}(x)" >}} includes production and consumption or loss of {{< katex "x" >}}, and thus can be positive or negative.
+
+Balances can be set up on different levels:
+
+* **Macro balances** describe the change of quantities over the whole system. They are set up on an integral balance.
+* **Micro balances** describe the change of quantities over a very small volume. They are set up on a differential basis. ({{< katex "\Phi_{x,in} - \Phi_{x,out}" >}} becomes {{< katex "\Phi_x|_{t} - \Phi_x|_{t+dt}" >}} which is the same as {{< katex "d\Phi_x" >}}.)
+This provides information about temperature, concentration, velocity profiles within the system.
 
 # Mass balance
 
@@ -44,7 +50,7 @@ Where:
 
 * {{< katex "\Phi_W" >}} is the work done on the system.
 * {{< katex "\Phi_q" >}} is the heat flow into the system.
-* {{< katex "\Phi_{m,in" >}} is the mass inflow and {{< katex "\Phi_{m,out}" >}} is the mass outflow.
+* {{< katex "\Phi_{m,in}" >}} is the mass inflow and {{< katex "\Phi_{m,out}" >}} is the mass outflow.
 * {{< katex "ec" >}} is the energy concentration:
 
 {{< katex display="ec=u+gh+\frac{1}{2}v^2+\frac{p}{\rho}" >}}
@@ -69,6 +75,6 @@ Neglecting friction, in a steady-state system with equal in- and outflow, where 
 ## Thermal energy
 
 {{< katex display="\frac{de}{dt}=\Phi_{m,in} c_{p,\text{in}} T_\text{in} - \Phi_{m,out} c_{p,\text{out}} T_\text{out} + \Phi_q" >}}
-(plus energy gained from friction)
+Plus energy gained from friction.
 
 _For a primer on the different forms of energy, cf. the entry on [energy](/docs/energy/)._
