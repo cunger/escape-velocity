@@ -2,7 +2,7 @@
 title: "Differential equations"
 summary: "Analytical solutions to first-order linear ODEs."
 date: 2019-11-16
-weight: 22
+weight: 3
 math: true
 toc: true
 ---

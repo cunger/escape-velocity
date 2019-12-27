@@ -2,7 +2,7 @@
 title: "Complex numbers"
 summary: "Cartesian and polar coordinates, arithmetic operations, Euler's formula."
 date: 2019-11-16T12:02:48+01:00
-weight: 20
+weight: 2
 math: true
 toc: false
 ---

@@ -2,7 +2,7 @@
 title: "Forces"
 summary: "Gravitational force."
 date: 2019-11-16
-weight: 3
+weight: 5
 math: true
 toc: true
 ---

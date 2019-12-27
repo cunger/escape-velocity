@@ -1,8 +1,8 @@
 ---
 title: "Electromagnetic radiation"
-summary: "Waves."
+summary: "Making waves."
 date: 2019-11-05
-weight: 4
+weight: 6
 math: true
 toc: false
 ---

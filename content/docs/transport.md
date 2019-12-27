@@ -2,7 +2,7 @@
 title: "Transport"
 summary: "Mass and heat transport."
 date: 2019-11-16
-weight: 11
+weight: 12
 math: true
 toc: true
 ---
@@ -15,8 +15,8 @@ Transport phenomena include three closely related topics:
 
 Transfer can be due to:
 
-* convection (transport by a flowing fluid, where the flow can be due to an external force, for example, or an internal difference in temperature or density)
-* conduction (transfer by collision of particles in fluids)
+* convection (transport by a flowing fluid, where the flow can be due to an external force or an internal difference in temperature or density)
+* conduction (transfer of heat by collision of particles in fluids)
 * radiation (transfer of heat by means of wave motion in space)
 
 # Flux and flow
@@ -82,6 +82,26 @@ The concentration profile {{< katex "c(x)" >}} varies for different geometries.
 If the concentration profile is linear, we can simplify Fick's law:
 {{< katex display="\phi_m = -D A \frac{\Delta c}{\Delta x}" >}}
 
+# Analytical solution for heat and mass conduction
+
+**Temperature conduction:** {{< katex "\cfrac{dT}{dt}=k(T_e-T)" >}}
+
+Where {{< katex "T" >}} the temperature of some substance, {{< katex "T_e" >}} the external temperature, and {{< katex "k" >}} the conductivity of whatever separates them ({{< katex "k=0" >}} would be a perfect insulator). If {{< katex "T_e<T" >}}, the equation means that the rate of cooling of the substance is proportional to the temperature difference.
+
+**Concentration diffusion:** {{< katex "\cfrac{dC}{dt}=k(C_e-C)" >}}
+
+Where {{< katex "C" >}} the concentration in the solution under question, and {{< katex "C_e" >}} the concentration in the surrounding solution.
+
+**Standard form:** {{< katex "\cfrac{dT}{dt}+kT=kT_e" >}} and {{< katex "\cfrac{dC}{dt}+kC=kC_e" >}}
+
+Or, with {{< katex "y" >}} for {{< katex "T" >}} and {{< katex "C" >}}, and {{< katex "x" >}} for {{< katex "T_e" >}} and {{< katex "C_e" >}}:
+
+{{< katex display="\cfrac{dy}{dt}+ky=kx" >}}
+
+**General solution:** {{< katex "y=x+(x(0)-x)e^{-kt}" >}}
+
+Here, {{< katex "x" >}} is the _steady state solution_ that {{< katex "y" >}} will approach for {{< katex "t\to\infty" >}}, and {{< katex "(x(0)-x)e^{-kt}" >}} is the _transient solution_, which will approach 0 for {{< katex "t\to\infty" >}}.
+
 # Heat convection (Newton's law of cooling)
 
 Convective heat transport:
@@ -103,28 +123,8 @@ Also, cf. *Nusselt number*.
 
 # Mass convection
 
-Convective mass transport:
+Convective mass transport happens, for example, if a liquid flows over a solid surface that is dissolving in the liquid. The transport of material is specified by:
 
 {{< katex display="\phi_m = k A \Delta c" >}}
 
 * {{< katex "k" >}} [{{< katex "m/s" >}}] is the mass transfer coefficient ({{< katex "\frac{1}{k}" >}} can be seen as the resistance to mass transfer)
-
-# Analytical solution for mass and heat conduction
-
-**Temperature conduction:** {{< katex "\cfrac{dT}{dt}=k(T_e-T)" >}}
-
-Where {{< katex "T" >}} the temperature of some substance, {{< katex "T_e" >}} the external temperature, and {{< katex "k" >}} the conductivity of whatever separates them ({{< katex "k=0" >}} would be a perfect insulator). If {{< katex "T_e<T" >}}, the equation means that the rate of cooling of the substance is proportional to the temperature difference.
-
-**Concentration diffusion:** {{< katex "\cfrac{dC}{dt}=k(C_e-C)" >}}
-
-Where {{< katex "C" >}} the concentration in the solution under question, and {{< katex "C_e" >}} the concentration in the surrounding solution.
-
-**Standard form:** {{< katex "\cfrac{dT}{dt}+kT=kT_e" >}} and {{< katex "\cfrac{dC}{dt}+kC=kC_e" >}}
-
-Or, with {{< katex "y" >}} for {{< katex "T" >}} and {{< katex "C" >}}, and {{< katex "x" >}} for {{< katex "T_e" >}} and {{< katex "C_e" >}}:
-
-{{< katex display="\cfrac{dy}{dt}+ky=kx" >}}
-
-**General solution:** {{< katex "y=x+(x(0)-x)e^{-kt}" >}}
-
-Here, {{< katex "x" >}} is the _steady state solution_ that {{< katex "y" >}} will approach for {{< katex "t\to\infty" >}}, and {{< katex "(x(0)-x)e^{-kt}" >}} is the _transient solution_, which will approach 0 for {{< katex "t\to\infty" >}}.

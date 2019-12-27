@@ -2,7 +2,7 @@
 title: "Nuclear reactions"
 summary: "Q-value, alpha, beta, and gamma decay, decay rate and probability, radioactive dating."
 date: 2019-11-15
-weight: 6
+weight: 8
 math: true
 toc: true
 ---

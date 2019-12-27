@@ -2,7 +2,7 @@
 title: "Energy"
 summary: "Kinetic and potential energy, enthalpy, mass-energy equivalence."
 date: 2019-11-16T11:38:21+01:00
-weight: 2
+weight: 4
 math: true
 toc: true
 ---

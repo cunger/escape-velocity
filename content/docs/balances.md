@@ -2,12 +2,12 @@
 title: "Balances"
 summary: "Equations for mass and energy balances. Macro and micro balances."
 date: 2019-11-16
-weight: 9
+weight: 11
 math: true
 toc: true
 ---
 
-Balancing equations are a way of bookkeeping for the main quantities involved in a process: mass, energy, and momentum. It comprises everything through which a quantity enters the system or leaves it, is produced or absorbed, and which resistances there are to the transport of the quantity. (Also see [heat and mass transport](https://write.as/christina-unger/heat-and-mass-flow).)
+Balancing equations are a way of bookkeeping for the main quantities involved in a process: mass, energy, and momentum. They comprise everything that [transports](/docs/transport/) the quantity: processes through which the quantity enters the system and leaves it, through which the quantity is produced or absorbed, and which resistances there are to the transport of the quantity.
 
 General balance of {{< katex "x" >}}:
 
@@ -23,7 +23,7 @@ Where:
 Balances can be set up on different levels:
 
 * **Macro balances** describe the change of quantities over the whole system. They are set up on an integral balance.
-* **Micro balances** describe the change of quantities over a very small volume. They are set up on a differential basis. ({{< katex "\Phi_{x,in} - \Phi_{x,out}" >}} becomes {{< katex "\Phi_x|_{t} - \Phi_x|_{t+dt}" >}} which is the same as {{< katex "d\Phi_x" >}}.)
+* **Micro balances** describe the change of quantities over a very small volume. They are set up on a differential basis. ({{< katex "\Phi_{x,in} - \Phi_{x,out}" >}} becomes {{< katex "\Phi_x|_{t} - \Phi_x|_{t+dt}" >}} which is the same as {{< katex "-d\Phi_x" >}}, because {{< katex "\frac{df}{dx}=\text{lim}_{dx\to 0} \frac{f(x+dx) - f(x)}{dx}" >}}.)
 This provides information about temperature, concentration, velocity profiles within the system.
 
 # Mass balance
@@ -67,7 +67,7 @@ The total energy balance can be split into mechanical and thermal energy.
 ## Mechanical energy
 
 {{< katex display="\frac{de}{dt}=\Phi_{m,in}(gh+\frac{1}{2}v^2+\frac{p}{\rho})_\text{in} - \Phi_{m,out}(gh+\frac{1}{2}v^2+\frac{p}{\rho})_\text{out} + \Phi_W" >}}
-(minus energy lost from friction)
+Minus energy lost from friction.
 
 Neglecting friction, in a steady-state system with equal in- and outflow, where no work is performed, this can be simplified to _Bernoulli's equation_:
 {{< katex display="(gh+\frac{1}{2}v^2+\frac{p}{\rho})_\text{out}=(gh+\frac{1}{2}v^2+\frac{p}{\rho})_\text{in}" >}}
