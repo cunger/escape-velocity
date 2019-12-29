@@ -3,10 +3,9 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a programmer, currently developing and maintaining code at <a href="https://www.mercury.ai">Mercury.ai</a>.
-I spend my early mornings learning the fundamentals of nuclear technology, space flight, and system safety. Besides those, I deeply care about marine conservation, and I love scuba diving (also in cold water).
+I'm a programmer, currently developing and maintaining code at [Mercury.ai](https://www.mercury.ai).
+I care about marine conservation and carbon-free energy, and I'm fascinated by space flight and scuba diving.
 
-<!-- &nbsp; -->
 <div class="row">
   <div class="col-md-8" markdown="1">
 
@@ -16,18 +15,20 @@ I spend my early mornings learning the fundamentals of nuclear technology, space
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
-  &nbsp;&nbsp; ️🛠 Fortran, Functional Programming, Git, Linux
+  <!-- &nbsp;&nbsp; ️🛠 Fortran, Functional Programming, Git, Linux -->
   </div>
 </div>
 &nbsp;
 
-## Current book shelf
+# Learning journey
+
+### Current book shelf
 
 * Curcic: [Modern Fortran: Building efficient parallel applications.](https://www.manning.com/books/modern-fortran)
 * Leveson: [Safeware: System safety and computers.](http://sunnyday.mit.edu/book.html)
-* Baier, Katoen: [Principles of Model Checking.](https://mitpress.mit.edu/books/principles-model-checking)
+<!-- * Baier, Katoen: [Principles of Model Checking.](https://mitpress.mit.edu/books/principles-model-checking) -->
 
-## Learning
+### Courses
 
 * Advanced Transport Phenomena
   (DelftX | ongoing)
@@ -40,13 +41,18 @@ I spend my early mornings learning the fundamentals of nuclear technology, space
 * [Architecture and Systems Engineering: Models and Methods to Manage Complex Systems](https://learn-xpro.mit.edu/systems-engineering)
   (MITxPro | ongoing)
 
-### Formal degrees:
+### Formal degrees
 
 * Computational linguistics (PhD)
 * Logic and formal linguistics (M.A., passed with distinction)
 * Mathematics (B.A. level)
 
-## Contact
+### Volunteering
+
+* [Love the Oceans](https://lovetheoceans.org), Mozambique (2018)
+* [Cetacean Research & Rescue Unit](http://www.crru.org.uk/), Scotland (2016)
+
+# Contact
 
 If you find errata, have suggestions for learning resources, or just want to share experiences, please feel free to reach out. I'd be happy to chat or meet for a coffee.
 
@@ -54,11 +60,6 @@ Apropos coffee...
 
 [![Buy me a coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/white_img.png)](https://www.buymeacoffee.com/xoUAIBhZE)
 
-## Footprint
+# Footprint
 
 This page has a [carbon footprint of 0.08 g](https://www.websitecarbon.com/website/cunger-github-io-about/), and the notebook pages are comparable with [those of the Low Tech Magazine](https://solar.lowtechmagazine.com/2018/09/how-to-build-a-lowtech-website.html).
-
-## Volunteering
-
-* [Love the Oceans](https://lovetheoceans.org), Mozambique (2018)
-* [Cetacean Research & Rescue Unit](http://www.crru.org.uk/), Scotland (2016)
