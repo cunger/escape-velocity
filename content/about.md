@@ -3,7 +3,8 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a programmer, currently developing and maintaining code at <a href="https://www.mercury.ai">Mercury.ai</a>. I have a formal degree in logic and now spend my early mornings learning the fundamentals of nuclear technology and system safety. Besides those, I love scuba diving, and I'm sure I would also love flying to space.
+I'm a programmer, currently developing and maintaining code at <a href="https://www.mercury.ai">Mercury.ai</a>.
+I spend my early mornings learning the fundamentals of nuclear technology, space flight, and system safety. Besides those, I deeply care about marine conservation, and I love scuba diving (also in cold water).
 
 <!-- &nbsp; -->
 <div class="row">
@@ -20,6 +21,12 @@ I'm a programmer, currently developing and maintaining code at <a href="https://
 </div>
 &nbsp;
 
+## Current book shelf
+
+* Curcic: [Modern Fortran: Building efficient parallel applications.](https://www.manning.com/books/modern-fortran)
+* Leveson: [Safeware: System safety and computers.](http://sunnyday.mit.edu/book.html)
+* Baier, Katoen: [Principles of Model Checking.](https://mitpress.mit.edu/books/principles-model-checking)
+
 ## Learning
 
 * Advanced Transport Phenomena
@@ -33,11 +40,11 @@ I'm a programmer, currently developing and maintaining code at <a href="https://
 * [Architecture and Systems Engineering: Models and Methods to Manage Complex Systems](https://learn-xpro.mit.edu/systems-engineering)
   (MITxPro | ongoing)
 
-## Book shelf
+### Formal degrees:
 
-* Curcic: [Modern Fortran: Building efficient parallel applications.](https://www.manning.com/books/modern-fortran)
-* Leveson: [Safeware: System safety and computers.](http://sunnyday.mit.edu/book.html)
-* Baier, Katoen: [Principles of Model Checking.](https://mitpress.mit.edu/books/principles-model-checking)
+* Computational linguistics (PhD)
+* Logic and formal linguistics (M.A., passed with distinction)
+* Mathematics (B.A. level)
 
 ## Contact
 
@@ -49,4 +56,9 @@ Apropos coffee...
 
 ## Footprint
 
-This page has a [carbon footprint of 0.08 g](https://www.websitecarbon.com/website/cunger-github-io-about/), and the notebook pages are comparable with [those of the Low Tech Magazine](https://solar.lowtechmagazine.com/2018/09/how-to-build-a-lowtech-website.html). 
+This page has a [carbon footprint of 0.08 g](https://www.websitecarbon.com/website/cunger-github-io-about/), and the notebook pages are comparable with [those of the Low Tech Magazine](https://solar.lowtechmagazine.com/2018/09/how-to-build-a-lowtech-website.html).
+
+## Volunteering
+
+* [Love the Oceans](https://lovetheoceans.org), Mozambique (2018)
+* [Cetacean Research & Rescue Unit](http://www.crru.org.uk/), Scotland (2016)
