@@ -78,3 +78,13 @@ Neglecting friction, in a steady-state system with equal in- and outflow, where 
 Plus energy gained from friction.
 
 _For a primer on the different forms of energy, cf. the entry on [energy](/docs/energy/)._
+
+# Momentum balance
+
+Momentum is mass times velocity: {{< katex "\overrightarrow{p}=m\overrightarrow{v}" >}}. Note that while mass {{< katex "m" >}} is a scalar, momentum {{< katex "\overrightarrow{p}" >}} and velocity {{< katex "\overrightarrow{v}" >}} are vectors, i.e. have a direction.
+
+Momentum of a control volume is {{< katex "\frac{\overrightarrow{p}}{V} = \frac{m\overrightarrow{v}}{V}" >}}, and since {{< katex "\frac{m}{V}" >}} is density, the flow of momentum in or out of a control volume can be written as {{< katex "\Phi_V\rho\overrightarrow{v}" >}}. The momentum balance thus is:
+
+{{< katex display="V\frac{d\overrightarrow{p}}{dt}=\Phi_{V,in}(\rho\overrightarrow{v})_\text{in} - \Phi_{V,out}(\rho\overrightarrow{v})_\text{out} + \sum\overrightarrow{F}" >}}
+
+Where {{< katex "\sum\overrightarrow{F}" >}} is the sum of all forces acting on the control volume (for example resulting from exerted pressure), i.e. one can say that force is the production of momentum.

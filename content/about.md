@@ -3,8 +3,11 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a programmer, currently developing and maintaining code at [Mercury.ai](https://www.mercury.ai).
-I care about marine conservation and carbon-free energy, and I'm fascinated by space flight and scuba diving.
+
+I'm a software engineer, currently developing and maintaining code at [Mercury.ai](https://www.mercury.ai).
+I spend my early mornings learning the fundamentals of nuclear technology and acquiring the skills for helping to build a safe, clean, and sustainable future. These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
+
+---
 
 <div class="row">
   <div class="col-md-8" markdown="1">
@@ -15,10 +18,14 @@ I care about marine conservation and carbon-free energy, and I'm fascinated by s
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
-  <!-- &nbsp;&nbsp; ️🛠 Fortran, Functional Programming, Git, Linux -->
+  &nbsp;&nbsp; ️🛠 Fortran, Elixir, Ruby, JavaScript, Git, Linux
+
+  <!-- &nbsp;&nbsp; 🤹‍♀️  -->
   </div>
 </div>
 &nbsp;
+
+---
 
 # Learning journey
 
@@ -48,6 +55,8 @@ I care about marine conservation and carbon-free energy, and I'm fascinated by s
 * Mathematics (B.A. level)
 
 ### Volunteering
+
+I deeply care about marine conservation, and volunteering in this field has been among the most inspiring, energizing, and humbling experiences I had.
 
 * [Love the Oceans](https://lovetheoceans.org), Mozambique (2018)
 * [Cetacean Research & Rescue Unit](http://www.crru.org.uk/), Scotland (2016)
