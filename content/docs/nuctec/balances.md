@@ -87,4 +87,6 @@ Momentum of a control volume is {{< katex "\frac{\overrightarrow{p}}{V} = \frac{
 
 {{< katex display="V\frac{d\overrightarrow{p}}{dt}=\Phi_{V,in}(\rho\overrightarrow{v})_\text{in} - \Phi_{V,out}(\rho\overrightarrow{v})_\text{out} + \sum\overrightarrow{F}" >}}
 
-Where {{< katex "\sum\overrightarrow{F}" >}} is the sum of all forces acting on the control volume (for example resulting from exerted pressure), i.e. one can say that force is the production of momentum.
+Where {{< katex "\sum\overrightarrow{F}" >}} is the sum of all forces acting on the control volume (for example resulting from exerted pressure). One can say that force is the production of momentum, which can also be seen when formulating Newton's 2nd law in terms of momentum:
+
+{{< katex display="\overrightarrow{F}=m\overrightarrow{a}=m\frac{d\overrightarrow{v}}{dt}=\frac{dm\overrightarrow{v}}{dt}=\frac{d\overrightarrow{p}}{dt}" >}}
