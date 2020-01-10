@@ -2,7 +2,7 @@
 title: "Ruby"
 summary: "Objects. Closures. Etc."
 date: 2020-01-10
-weight: 4
+weight: 7
 math: false
 toc: true
 ---

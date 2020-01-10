@@ -2,13 +2,12 @@
 title: "Web Basics"
 summary: "TCP/IP. HTTP. REST."
 date: 2020-01-10
-weight: 2
+weight: 3
 math: false
 toc: true
 ---
 
 # TCP/IP
-
 
 Protocols define a language and a set of rules and procedures that enable devices and systems to communicate with each other.
 

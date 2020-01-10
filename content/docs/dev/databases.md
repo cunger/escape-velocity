@@ -2,7 +2,7 @@
 title: "Databases"
 summary: "SQL. PostgreSQL."
 date: 2020-01-10
-weight: 5
+weight: 4
 math: false
 toc: true
 ---
