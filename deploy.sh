@@ -1,5 +1,7 @@
 #!/bin/sh
 
+hugo gen chromastyles --style=vs static/css/highlight.css
+
 hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 
 rm -r ../cunger.github.io/*

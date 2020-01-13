@@ -15,7 +15,7 @@ OOP is all about **objects**, their state and behavior. **State** is captured by
 
 > A class is like a blueprint that describes the properties and behavior of a type of object. An instance of a class then is an actual object of that class.
 
-```
+```ruby
 # Named class
 
 class Something
@@ -59,7 +59,7 @@ Grouping things into different classes of objects provides a natural concept of 
 
 Inheritance is a way to inherit behavior from another class or module. All instance methods defined in a class or module from which a class `C` inherits will become instance methods of all instances of `C`. Thus the current object has access to all instance methods defined somewhere in the inheritance hierarchy. Inheritance thus allows for re-using methods and thereby avoiding duplicate code.
 
-```
+```ruby
 class Animal
   def move
     puts "I'm moving!"
@@ -72,7 +72,7 @@ end
 
 As a subclass, `Dolphin` inherits all methods defined in `Animal`, `move` can therefore be called on an instance of `Dolphin`, as in the following example.
 
-```
+```ruby
 Dolphin.new.move
 "I'm moving!"
 => nil
@@ -89,7 +89,7 @@ For example, we could have two classes `SwimmingObject` and `FlyingObject` for o
 The only option to inherit from both by means of class inheritance would be to define `FlyingObject` as subclass of `SwimmingObject` or vice versa. But this means that a class inheriting from one will always also inherit from the other, which gets us into trouble as soon as we want objects that can fly but not swim (e.g. chicken) as well as objects that can swim but not fly (e.g. penguins).
 
 Ruby has single inheritance, i.e. a class can have only one superclass. The superclass of `Class` is `Module`.
-```
+```ruby
 > Class.ancestors
 => [Class, Module, Object, Kernel, BasicObject]
 ```
@@ -98,7 +98,7 @@ Ruby has single inheritance, i.e. a class can have only one superclass. The supe
 
 Modules are collections of methods and constants, and a class can gain access to those by including the module. Most importantly, a class can include arbitrarily many modules. Thus, when defining swimming- and flying-related methods in modules instead of classes, as in the following code, the class `Duck` can inherit those methods by including both modules. Now we can also have a class `Chicken` that includes `Flying` but not `Swimming`, and a class `Penguin` that includes `Swimming` but not `Flying`.
 
-```
+```ruby
 module Swimming
 end
 
@@ -167,7 +167,7 @@ In doing so, `super` always jumps to the next higher element of the method-looku
 At the top level of a program, this is `main` (the built-in default object of type `Object`).
 
 At the top level of a class or module, this is the class or module object.
-```
+```ruby
 class C
   self
 
@@ -191,7 +191,7 @@ So they're methods for object conversion, transforming their argument using expl
 
 *Explicit conversion* converts an object to the target type. For example, `obj.to_s` will give you a string representation of `obj`, and `obj.to_i` will give you an integer representation. If those methods are defined for `obj`, that is. The `Nil` class implements all of them:
 
-```
+```ruby
 nil.to_s => ""
 nil.to_a => []
 nil.to_h => {}
@@ -203,14 +203,14 @@ nil.to_c => (0+0i)
 
 Ruby doesn't call explicit conversion methods unless you explicitly ask it to do so.
 
-```
+```ruby
 "THX" + 1138      => TypeError
 "THX" + 1138.to_s => "THX1138"
 ```
 
 *Implicit conversion* is defined for objects that can be considered as something target type-ish. So `to_int` would be implemented for integer-like objects, that is objects that act like integers and thus make sense everywhere an integer makes sense. It wouldn't be implemented for objects that are not integer-like. Analogously for `to_str`, `to_ary`, `to_hash` and a few others. Hence the behavior of `nil`:
 
-```
+```ruby
 nil.to_str  => NoMethodError
 nil.to_ary  => NoMethodError
 nil.to_hash => NoMethodError
@@ -219,14 +219,14 @@ nil.to_int  => NoMethodError
 
 Some core Ruby operators and methods call implicit conversion methods. One example is `String#+`, which calls `to_str` on its argument, and thus fails, for example, for integers:
 
-```
+```ruby
 "THX" + 1138
 => TypeError: no implicit conversion of Integer into String
 ```
 
 Similarly, `String#*` calls `to_int` on its argument and therefore is fine being provided a `Float` (fortunately or unfortunately not attempting to print the string `3.14` times):
 
-```
+```ruby
 "Yay!" * 3.14 => "Yay!Yay!Yay!"
 ```
 
@@ -234,7 +234,7 @@ Now it makes perfect sense why `Array(arg)` first tries `to_ary`: *Let's see whe
 
 What about hashes? `Hash(arg)` calls `to_hash`, and returns the empty hash for `[]` and `nil`. Period. No calling `to_h`.
 
-```
+```ruby
 Hash([[1, 2]])   => TypeError: can't convert Array into Hash
 [[1, 2]].to_hash => TypeError: can't convert Array into Hash
 [[1, 2]].to_h    => {1=>2}
@@ -244,7 +244,7 @@ Turns out this conversion method is younger than the rest, because the whole iss
 
 Finally, `Kernel` also defines numerical conversions, like `Float(arg)` and `Integer(arg)`, which convert numerical values directly into floats and integers, and for everything else fall back on `to_f` and `to_i`. Also, `Integer` is more refined than `to_i` when it comes to converting string representations of integers into numerical values. In particular, both are more picky than their `to_f` and `to_i` counterparts in expecting the given argument to be an object that can actually reasonably interpreted as `Float` or `Integer`.
 
-```
+```ruby
 nil.to_f   => 0.0
 Float(nil) => TypeError: can't convert nil into Float
 Float("1138") => 1138.0
@@ -255,7 +255,7 @@ This makes them pretty useful for [numeric validation](https://pdxwolfy.wordpres
 
 # Getters and setters
 
-```
+```ruby
 attr_reader :name
 
 # Equivalent to:
@@ -265,7 +265,7 @@ def name
 end
 ```
 
-```
+```ruby
 attr_writer :name
 
 # Equivalent to:
@@ -275,7 +275,7 @@ def name=(name)
 end
 ```
 
-```
+```ruby
 attr_accessor :name
 
 # Equivalent to:
@@ -289,7 +289,7 @@ attr_writer :name
 * are methods
 * allow for syntax to look like assignment
 
-```
+```ruby
 obj.name = 'Guybrush'
 
 # Syntactic sugar for:
@@ -297,7 +297,7 @@ obj.name = 'Guybrush'
 obj.name=('Guybrush')
 ```
 
-```
+```ruby
 def name=(name)
   @name = name
   'Fnord!'
@@ -309,7 +309,7 @@ obj.name=('Guybrush') # => 'Guybrush'
 
 * behave like assignment in that they always return the righ-hand side value, irrespective of the actual return value of the method
 
-```
+```ruby
 def name=(name)
   @name = name
   'Fnord!'
@@ -321,7 +321,7 @@ obj.name=('Guybrush') # => 'Guybrush'
 
 Private setters are an exception to the rule that private methods can never be called with an explicit receiver, even if that receiver is `self`. In fact, they require `self` in order to distinguish them from local variable assignments.
 
-```
+```ruby
 def some_method
   self.var = value
   localvar = value
@@ -334,7 +334,7 @@ What `puts` and `print` have in common: They both call `.to_s`, hand the result 
 - `puts` also adds a newline (which `print` doesn't)
 - `puts` treats arrays in a special way (which `print` doesn't)
 
-```
+```ruby
 print 1, [2, [3, 4], []], 5
 
 1[2, [3, 4], []]5
@@ -357,7 +357,7 @@ Still shorter and sweeter: `p`. Or as Schiller put it:
 
 `p` calls `.inspect`, adds a newline, hands the result to `stdout`, and returns the arguments it was called on.
 
-```
+```ruby
 p 1, [2, [3, 4], []], 5
 
 1
@@ -368,7 +368,7 @@ p 1, [2, [3, 4], []], 5
 
 So calling `p` instead of puts makes a difference mostly when it comes to arrays and `nil`.
 
-```
+```ruby
 nil.to_s    # => ""
 nil.inspect # => "nil"
 ```
@@ -379,7 +379,7 @@ In string interpolation, `to_s` is called. So as a rule of thumb: For getting a 
 
 For more printing power there's `format` and at least the following examples I hope to remember, so I don't have to look up the documentation every time:
 
-```
+```ruby
 format("%{x} wants %{y}", x: "Polly", y: "crack")
 => "Polly wants crack"
 
@@ -389,7 +389,6 @@ format("%.1f", 2)   # => "2.0"
 # And mixing them:
 format("%06.2f", 4.7) # => "004.70"
 ```
-
 
 # Equality
 
@@ -408,7 +407,7 @@ They all start as _object identity_: two objects are equal if they are the same 
 ## Object equality
 
 `equal?` is never overridden, but kept to determine _object identity_.
-```
+```ruby
 1.equal? 1.0 # => false
 ```
 
@@ -416,7 +415,7 @@ They all start as _object identity_: two objects are equal if they are the same 
 
 `==` is used to capture _value equality_, which allows for comparing the actual content of objects independent of their id.
 
-```
+```ruby
 1 == 1.0 # => true
 ```
 
@@ -428,26 +427,26 @@ They all start as _object identity_: two objects are equal if they are the same 
 
 - For `Range` it works like inclusion (in the sense of `include?`, not `cover?`).
 
-```
+```ruby
 (1..100) === 23 # => true
 ```
 
 - For `Regexp` it works like string matching (in the sense of `=~`).
 
-```
+```ruby
 /Fnord*/ === 'Fnord!' # => true
 ```
 
 - In addition, classes usually provide `===` as a class method that does the same as `is_a?`.
 
-```
+```ruby
 String  === 'Fnord!' # => true  
 Integer === 23       # => true  
 ```
 
 Now, important to know about `case` statements is that the receiver of `===` is the `when` clause, not the `case` clause. Then it's easy to see what happens behind the scenes to create such incredibly convenient case behaviour.
 
-```
+```ruby
 case input
 when String then 'String!'
 when /cool/ then 'Match!'
@@ -481,8 +480,6 @@ In order to make objects of a custom class comparable or sortable:
 
 The default implementation of `<=>` in `Object` returns `0` if the two objects are equal (`==`), and `nil` otherwise.
 
-
-
 # Variable scope
 
 ## Local
@@ -491,7 +488,7 @@ The default implementation of `<=>` in `Object` returns `0` if the two objects a
 
 Here's where local_variables is really handy, although its primary use case is certainly something much cooler:
 
-```
+```ruby
 outside = 23
 p local_variables     # => [:outside]
 def method
@@ -503,7 +500,7 @@ p local_variables     # => [:outside]
 
 Another result of starting from an empty slate when entering the method is variable shadowing: variables that have the same name but live in different scopes are different variables. So string outside a method and string inside a method are two separate variables.
 
-```
+```ruby
 string = 'Fnord'
 p binding.local_variable_get(:string)   # => "Fnord"
 def method
@@ -520,7 +517,7 @@ This comes with two important facts. (Examples are stolen and adapted from [Dark
 
 First, a block creates a new scope every time it is entered. Therefore, the following:
 
-```
+```ruby
 2.times do
   str ||= 'fresh'
   puts str
@@ -531,7 +528,7 @@ end
 
 Will output:
 
-```
+```ruby
 fresh
 reassigned
 fresh
@@ -540,7 +537,7 @@ reassigned
 
 And second, a block creates a new scope at the point where it is defined, not at the point of its invocation (similar to the initialization of variables), as can be demonstrated with a block argument to lambda — which is, like loop, not a keyword but a method in Kernel:
 
-```
+```ruby
 def foo
   x = :inside
   lambda { x }
@@ -551,7 +548,7 @@ p foo.call # => :inside
 
 **A local variable will be put into scope whenever it is assigned a value.** Which means: whenever the interpreter sees an assignment, even if this assignment is never executed. Whenever an assignment is parsed, space is allocated to the variable, so it starts existing. Classic example:
 
-```
+```ruby
 known = 1
 if false
   var = :false
@@ -579,7 +576,7 @@ There is only one copy of a class variable: All subclasses and also all instance
 
 Here is an overview of this:
 
-```
+```ruby
 class Test
   @ivar1 = 1 # class instance variable
   @@var1 = 1 # class variable
@@ -725,7 +722,7 @@ As [Paul Cantrell](https://innig.net/software/ruby/closures-in-ruby) puts it: A 
 
 The means that it contains references to the variable bindings, not copies of the values. So if the value associated with a variable changes later \(either being changed outside the closure or by the closure itself\), the context reflects that change.
 
-```
+```ruby
 > name = 'fred'
 > p = proc {}
 > p.binding.eval('name')
@@ -737,7 +734,7 @@ The means that it contains references to the variable bindings, not copies of th
 
 **Example: counters**
 
-```
+```ruby
 def make_counter
   n = 0
   return proc { n += 1 }
@@ -776,11 +773,11 @@ Like any object, they can be assigned to variables, put into arrays and hashes, 
 
 _Lambdas_ are also `Proc` objects, just of a slightly different flavor.
 
-```
-> p = proc {}
+```ruby
+p = proc {}
 => #<Proc:0x00000000ffdca0>
 
-> l = lambda {}
+l = lambda {}
 => #<Proc:0x00000000fd2230 (lambda)>
 ```
 
@@ -793,7 +790,7 @@ They can be created
 
 _Lambdas_ differ from other _procs_ in two major respects. First, **arity rules**: _lambdas_ behave like methods, while _procs_ and blocks are lenient \(see below\). Second, **control flow**, in particular behavior upon `return`: _Lambdas_ return only from the block that defines them, and hand control back to the calling context - independent of the context in which they were defined. That is, the following two cases both print output to the screen:
 
-```
+```ruby
 def test
   my_lambda = lambda { return }
   my_lambda.call
@@ -803,7 +800,7 @@ end
 test
 ```
 
-```
+```ruby
 l = lambda { return }
 
 def test(some_lambda)
@@ -816,7 +813,7 @@ test(l)
 
 Other _procs_ behave like being part of the enclosing method \(meaning: the method that is enclosing them when they are defined\) by returning not only from their block but also from that method.
 
-```
+```ruby
 def calling(p)
   p.call
 end
@@ -838,7 +835,7 @@ Note that `return` is tied to the context at the time of creation of the _proc_.
 
 If there is a need to return early from a _proc_, use `next`, which returns from the current block \(just like `return` in a _lambda_\).
 
-```
+```ruby
 def meditate
   puts 'Adjusting posture...'
   p = Proc.new do
@@ -873,14 +870,14 @@ More specifically, they are part of the method invocation syntax. They contain e
 
 Each Ruby method can optionally be provided a block, which is independent of the argument list. It can be made explicit in the argument signature, however, by means of `&` \(see [& and curry](/and-and-curry.md "the section on \`&amp;\`")\), e.g.
 
-```
+```ruby
 def method(*args, &block)
 end
 ```
 
 This is necessary if you want to further process the block, e.g. pass it to another method:
 
-```
+```ruby
 def method(*args, &block)
   another_method(&block)
 end
@@ -890,7 +887,7 @@ Methods cannot be provided more than one block, because they are not method argu
 
 `yield` is a keyword that tells Ruby to execute the block that was passed to the method. If there was no block \(which can be checked using `Kernel#block_given?`\), this results in a `LocalJumpError`.
 
-```
+```ruby
 def method_implicit
   yield if block_given?
 end
@@ -907,7 +904,7 @@ Blocks can be captured in _proc_ objects with either `proc { ... }` or `lambda {
 
 Methods are not objects, but you can get a `Method` object by means of `Object#method`:
 
-```
+```ruby
 m = 1.method(:+)
 m.call 2 # => 3
 
@@ -936,7 +933,7 @@ While methods raise an `ArgumentError` when they are not provided arguments as s
 
 Block arguments are local to the block.
 
-```
+```ruby
 def execute(p)
   str = 'string in method scope'
   puts str
@@ -947,7 +944,7 @@ str = 'string in scope when proc is created'
 p = proc { puts str }
 ```
 
-```
+```ruby
 > p.call
 string in scope when proc is created
 
@@ -956,7 +953,7 @@ string in method scope
 string in scope when proc is created
 ```
 
-```
+```ruby
 var = 1
 p = proc { puts "var = #{var}" } # NameError if var is no yet defined at this point
 
@@ -967,10 +964,9 @@ var = 2
 p.call # => var = 2
 ```
 
-
 **Example: Opening and closing resources**
 
-```
+```ruby
 def file_sandwich(file_name)
   file = open(file_name)
   yield(file)
@@ -983,7 +979,7 @@ _Executing around:_ If you need to do something (repeatedly) before and after so
 
 **Example: Logging**
 
-```
+```ruby
 class Whatever
   include Logging
 
@@ -1012,7 +1008,7 @@ Other examples are measuring execution time, etc.
 
 **Example: Block for initialization**
 
-```
+```ruby
 class Specification
   attr_accessor :name, :version, :description
   def initialize
@@ -1030,7 +1026,7 @@ end
 
 **Example: Storing operations in blocks to delay execution and to stay agnostic with respect to where a resource comes from**
 
-```
+```ruby
 class Book
   def initialize(author, title, &block)
     @author = author
@@ -1051,7 +1047,7 @@ book = Book.new('Author', 'Title') { FTP.get('address') }
 
 The `&` operator tells Ruby to use an object as a block. If expects that object to be a _proc_; if it is not, it first calls `to_proc` on it.
 
-```
+```ruby
 def execute(&block) # `&` takes the block that is part of the method invocation,
                     # turns it into a `Proc` object (by calling `to_proc`),
                     # and binds it to the variable `block`.
@@ -1073,7 +1069,7 @@ execute(&p)         # `&` hands `p` to the method as the block it can take,
 
   `Symbol#to_proc` basically works like this:
 
-  ```
+  ```ruby
     class Symbol
       def to_proc
         proc { |obj, args| obj.send(self, *args) }
@@ -1087,7 +1083,7 @@ It can also be defined by any class as a class or instance method.
 
 ## Currying
 
-```
+```ruby
 p = proc { |x, y| x + y }
 p.curry # => <Proc>
 
@@ -1099,7 +1095,7 @@ p.call(1).call(2) # => 3
 
 `Enumerable` provides a range of collection-related behavior. In order for a class \(usually a class implementing collections, such as `Array`, `Hash`, `Set`, and `Range`\) to include and use it, `Enumerable` needs to be able to traverse through the collection - more specifically, the class must implement `each`, a method that yields successive members of the collection. In the simplest case it calls a block with one argument and binds the current member to that argument. When done, it returns the collection.
 
-```
+```ruby
 ["r", "u", "b", "y"].each { |c| puts "Give me a #{c.upcase}!" }
 Give me a R!
 Give me a U!
@@ -1112,19 +1108,19 @@ Building on `each`, `Enumerable` implements several handy extensions of it, amon
 
 * `each_with_index` calls a block with two arguments: the current element and the index of that element. Like each, it returns the collection.
 
-```
+```ruby
 collection.each_with_index { |element, index| ... }
 => collection
 ```
 
 * `each_with_object` additionally expects an object, and calls a block with two arguments: the current element and that object \(which is passed to and returned from each iteration of the block\). It returns the initial object.
 
-```
+```ruby
 collection.each_with_object(initial_memo) { |element, memo| ... }
 => initial_memo
 ```
 
-```
+```ruby
 ["r", "u", "b", "y"].each_with_object("") { |c, str| str << c }
 => "ruby"
 ["r", "u", "b", "y"].each_with_object("") { |c, str| p (str + c) }
@@ -1137,14 +1133,14 @@ collection.each_with_object(initial_memo) { |element, memo| ... }
 
 In addition, classes that include `Enumerable` might define further variants of each that are specific for that class. For example, `Array` also defines `each_index`, in case you don't care about the elements but only their indices.
 
-```
+```ruby
 array.each_index { |index| ... }
 => array
 ```
 
 And `Hash` defines a few variants that are specific to hashes:
 
-```
+```ruby
 hash.each_key   { |key| ... }
 hash.each_value { |value| ... }
 hash.each_pair  { |key, value| ... }
@@ -1175,7 +1171,7 @@ How to iterate is controlled from the outside, by whoever uses the iterator. In 
 
 An `Enumerator` object can be built from most of the `Enumerable` methods by not providing a block:
 
-```
+```ruby
 array = [1, 2, 3]
 array.each # same as: array.enum_for(:each), or: Enumerator.new(array, :each)
 array.map  # same as: array.enum_for(:map),  or: Enumerator.new(array, :map)
@@ -1183,7 +1179,7 @@ array.map  # same as: array.enum_for(:map),  or: Enumerator.new(array, :map)
 
 When implementing an iteration method like those, it's good practice to include this option as follows:
 
-```
+```rubby
 return enum_for(__callee__) unless block_given?
 ```
 
@@ -1191,7 +1187,7 @@ An enumerator can also be constructed explicitly as instance of the `Enumerator`
 
 **Example: infinite sequence of natural numbers**
 
-```
+```ruby
 def natural_numbers
   Enumerator.new do |yielder|
     n = 0
@@ -1207,7 +1203,7 @@ puts natural_numbers.first(10)
 
 **Example: repeatedly execute a block**
 
-```
+```ruby
 def repeatedly(&block)
   Enumerator.new do |yielder|
     loop do
@@ -1222,7 +1218,7 @@ enum.first 10
 
 For finite enumerators:
 
-```
+```ruby
 loop do
   raise StopIteration if there_is_no_next_value
   yielder << next_value
@@ -1237,7 +1233,7 @@ When another exception is thrown before the current one is handled, it replaces 
 
 ## Structure
 
-```
+```ruby
 begin
   # ...
 rescue
@@ -1251,7 +1247,7 @@ end
 
 Every method is implicitly a `begin` block.
 
-```
+```ruby
 def fnord
   # ...
 rescue
@@ -1266,7 +1262,7 @@ end
 **Best practises:**
 * Use exceptions only for exceptional situations. Not every time you get an answer you don't like. And not for control flow. (Raising an exception is just another form of `goto` statement, and it's expensive performance-wise.) For example, invalid user input is not unexpected, since you can predict it will happen during normal operation.
 * If unsure what is the best fallback strategy, leave the decision to the caller. E.g.
-```
+```ruby
 def fnord
   # ...
   if all_went_well?

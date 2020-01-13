@@ -12,7 +12,7 @@ toc: true
 The two major syntactic categories in JavaScript are _expressions_ and _statements_. A program is a sequence of statements. Statements _do stuff_: they declare variables or functions, assign a value to a variable, define a conditional loop, evaluate an expression, and so on. Expressions produce a value.
 
 Functions can be defined by means of a function declaration statement:
-```
+```js
 function f() {
   // ...
 }
@@ -23,7 +23,7 @@ Or by means of an expression of the form `(function f() { ... })`. The latter ca
 
 ### _If-then-else_ statement
 
-```
+```js
 if {
   // ...
 } else {
@@ -34,7 +34,7 @@ Can also be written as an expression of the form `condition ? expression : expre
 
 ### _For_ loop
 
-```
+```js
 for (initialExpression; condition; incrementExpression) {
   // ...
 }
@@ -43,7 +43,7 @@ Note that all three parts are optional and can be taken care of in the block ins
 
 ### _While_ loop
 
-```
+```js
 // Evaluating the condition before executing the block:
 while (condition) {
   // ...
@@ -108,7 +108,7 @@ As functions, wrapper object constructors convert to the corresponding primitive
 * `Number(false) ==> 0`, `Number(true) ==> 1`
 * Given a string, it parses it as a number, e.g. `Number('3.14') ==> 3.14`. If that fails, it return `NaN`.
   Alternatively use `+x`, or `parseInt(x, 10)` and `parseFloat(x)`, which is especially useful if the input string also contains a unit:
-  ```
+  ```js
   parseInt('20pt', 10) // 20
   Number('20pt')      // NaN
   ```
@@ -138,7 +138,7 @@ With the exception that comparison and equality operators don't trigger numeric 
 If an operand is an object, it is first converted to a primitive (meaning to a Number or String), roughly following [this algorithm](https://gist.github.com/samoshkin/baf070ab19b73f4f39ec54149fb37c30#file-js-to-primitive-internal-js). Note that, as a result, arrays are converted to strings.
 
 Also note that `{` at the beginning of a line is always interpreted as a block statement, not as an object, thus for the operation it is ignored:
-```
+```js
 {}+[]+{}
 ==> +[]+{}
 ==> 0 + {}
@@ -218,7 +218,7 @@ _Folding:_
 In JavaScript, functions are first-class citizens.
 
 A function declaration creates a function as well as a variable with the function name, to which the function is assigned as value. That is, the following two are in principle equivalent (however, differing when it comes to [hoisting](scope.md)):
-```
+```js
 function fnord() {
   // ...
 }
@@ -251,7 +251,7 @@ When invoked, the arguments passed to the function are bound to the function par
 * `Array.from(arguments)` (ES6)
 
 ES6 introduces [rest parameter syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters):
-```
+```js
 function f(a, b, ...rest) {
   // ...
 }
@@ -260,7 +260,7 @@ Which allows for collecting arguments into an array (a real one, unlike `argumen
 It looks exactly the same as [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax), also introduced by ES6, which allows for expanding an array into its elements, as in `someFunction(...array)`.
 
 ES6 also introduces default values:
-```
+```js
 function f(start = 0, count = 10, end = start + count) {
   // ...
 }
@@ -277,7 +277,7 @@ function f(start, count, end) {
 Default values are used whenever the argument is `undefined` - both when it is left out and when it is explicitly set to `undefined`.
 
 Arguments are bound to parameters from left to right, independent of default values:
-```
+```js
 function f(a = 1, b) {
   return [a, b];
 }
@@ -308,7 +308,7 @@ Closures play a key role, for instance, in [private data](private-data.md) and p
 Partial function application is the process of applying a function to some of its parameters and return a function that expects the rest of the parameters.
 
 _Example:_
-```
+```js
 function fMap(fn, list) {
   return list.map(fn);
 }
@@ -328,7 +328,7 @@ incrementElements([1, 3, 5, 7]);
 Partial application like this relies on the facts that JavaScript supports closures (so the returned function can access `fn`, even when invoked in a different context) and that functions are first-class citizens, i.e. can be arguments and return values.
 
 A generic version for arbitrarily many arguments looks like this (very similar to what `bind` does):
-```
+```js
 function partial(fn) {
   var args = Array.prototype.slice.call(arguments, 1);
   var self = this;
@@ -360,7 +360,7 @@ Upon **function invocation** (e.g. `smile()`), the execution context, and thus `
 Upon **method invocation** (e.g. `person.smile()`), there is an explicit receiver; the execution context, and thus `this`, is the calling object.
 Just don't get confused with _explicit_ and _implicit_: When executing `person.smile()`, the execution context of `smile` is implicitly bound to `person`, as this is the explicit receiver of the function call.
 
-```
+```js
 var obj = {
   method: function () {
     function whereAmI() {
@@ -382,7 +382,7 @@ See also _context loss_ below.
 
 The execution context can also be changed explicitly by means of `call`, `apply`, and `bind`.
 `call` and `apply` explicitly bind a function's execution context to an object when invoking the function:
-```
+```js
 func.call(obj, arg1, arg2); // this === obj
 func.apply(obj, args);      // this === obj
 
@@ -393,7 +393,7 @@ obj.func.call();            // this === global
 `bind` permanently binds a function to a provided object. It creates and returns a new function that always uses the provided object as execution context. (Except for when the function is called as a constructor with `new`, then `this` will be the newly created object.)
 
 Here's roughly how `bind` works:
-```
+```js
 Function.prototype.bind = function (context) {
   var args = Array.prototype.slice.call(arguments, 1);
   var self = this;
@@ -423,7 +423,7 @@ Binding a function to an object (`greet.bind(object)`) returns a new function, f
 ## Context loss
 
 The execution context does not propagate to nested functions. That is:
-```
+```js
 var obj = {
   method: function () {
     function fun() {
@@ -436,7 +436,7 @@ var obj = {
 ```
 
 One option is to explicitly bind `this` to a variable and use that variable:
-```
+```js
 var obj = {
   method: function () {
     var self = this;
@@ -450,7 +450,7 @@ var obj = {
 };
 ```
 Another option is to either explicitly provide the context upon execution:
-```
+```js
 var obj = {
   method: function () {
     function fun() {
@@ -462,7 +462,7 @@ var obj = {
 };
 ```
 Or bind the method to the object:
-```
+```js
 var obj = {
   method: function () {
     function fun() {
@@ -475,7 +475,7 @@ var obj = {
 ```
 
 Note that context loss is a problem in all nested functions, e.g. also with `forEach`, `map`, `every`, `some`:
-```
+```js
 var obj = {
   stuff: [],
   method: function () {
@@ -486,7 +486,7 @@ var obj = {
 }
 ```
 These methods therefore take an optional context argument (e.g. `forEach(callback, [thisArg])`):
-```
+```js
  var obj = {
    stuff: [],
    method: function () {
@@ -507,7 +507,7 @@ Variables declared via `var` are function-scoped. That is, functions create a ne
 
 In ES6, variables declared via `let` and `const` are block-scoped, i.e. their scope is the innermost enclosing block. They are not subject to hoisting and are not added to the global object.
 
-```
+```js
 var x = 0;
 let y = 1;
 
@@ -516,13 +516,13 @@ this.y; // => undefined
 ```
 
 In ES5, a common pattern to mimic block scope (and thus limit the lifetime of a variable, either to make it private or to avoid global variables) is an _immediately invoked function expression_ (IIFE):
-```
+```js
 (function () {
   // ...
 }());
 ```
 IIFEs can, of course, be passed parameters and given a meaningful name, just like any other function expression:
-```
+```js
 var x = 23;
 
 (function meaningfulName(number) {
@@ -549,7 +549,7 @@ In this process, function declarations (including the function body) as well as 
 
 **Example** (from [Ben Cherry](http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html)):
 
-```
+```js
 var foo = 1;
 
 function bar() {
@@ -563,7 +563,7 @@ function bar() {
 bar();
 ```
 Is equivalent to:
-```
+```js
 function bar() {
   var foo;
 
@@ -588,7 +588,7 @@ Keep in mind that function expressions are not hoisted, i.e. `var f = function (
 IIFEs are a way to create temporary, private scope, and closures turn that _temporary_ into _as long as a reference to the function lives_.
 
 Here's an example from Douglas Crockford:
-```
+```js
 var digitName = function () {
   var names = ['zero', 'one', 'two', 'three', 'four',
                'five', 'six', 'seven', 'eight', 'nine'];
@@ -602,7 +602,7 @@ var digitName = function () {
 ## Private data in objects
 
 Private data in a function:
-```
+```js
 var func = function () { // open IIFE
   var private1 = ...;
   var private2 = ...;
@@ -614,7 +614,7 @@ var func = function () { // open IIFE
 ```
 
 Private data in a singleton object:
-```
+```js
 var obj = function () { // open IIFE
   // private data
   var counter = 0;
@@ -630,7 +630,7 @@ var obj = function () { // open IIFE
 ```
 
 Private data in an object via its constructor:
-```
+```js
 function Constr() {
   var that = this; // in order to available to private functions
 
@@ -652,7 +652,7 @@ function Constr() {
 
 ## The module pattern
 
-```
+```js
 var Module = (function() {
   var private1 = 'foo';
   var private2 = 0;
@@ -703,7 +703,7 @@ Object properties can capture _state_ as well as _behaviour_ (in object _methods
 Objects thus organize code by putting related data and functions together.
 
 Keep in mind that `{` at the beginning of a line is always interpreted as a block statement, not as an object. For example:
-```
+```js
 { foo: 'bar' }['foo']; // ==> ['foo']
 {} + {};               // ==> +{}
                        // ==> NaN
@@ -719,7 +719,7 @@ When running, JavaScript creates a global object, which serves as implicit execu
 
 In the browser, declared variables and functions are added as properties to the global object.
 They carry a _Don't Delete_ flag, so they cannot be deleted.
-```
+```js
 var name = 'Bobbo';
 function say() {}
 
@@ -733,7 +733,7 @@ delete window.say;  // false
 ```
 
 Undeclared variables are also added to the global object but can be deleted:
-```
+```js
 y = 1;
 
 window.y;           // => 1
@@ -742,7 +742,7 @@ delete window.y;    // true
 
 Node is a modular environment, therefore the execution context in the Node console is different.
 Declared variables are local variables within the module's scope.
-```
+```js
 var name = 'Bobbo';
 function say() {}
 
@@ -756,7 +756,7 @@ global.say;              // => undefined
 ```
 
 Undeclared variables are added to the global object:
-```
+```js
 y = 1;                   // added to global
 
 global.y;                // => 1
@@ -781,7 +781,7 @@ Every function in addition has a `prototype` property that points to an object t
 
 ## Example
 
-```
+```js
 function Dolphin(name) {
   this.name = name;
 }
@@ -791,7 +791,7 @@ const flipper = new Dolphin('flipper');
 
 ![Prototype hierarchy with Dolphin](/images/docs/proto1.png)
 
-```
+```js
 function Animal() {}
 
 Dolphin.prototype = Object.create(Animal.prototype);
@@ -808,7 +808,7 @@ Dolphin.prototype.constructor = Dolphin; // otherwise `flipper instanceof Animal
 # Object creation
 
 Since there are no classes, objects can be created directly. If you need only one object, the most straightforward way is by means of an object literal, for example:
-```
+```js
 var obj = {
   property: 'value',
   method: function () {
@@ -818,7 +818,7 @@ var obj = {
 ```
 
 If you want it to hold private data, you can use an IIFE. For example:
-```
+```js
 var counter = (function () {
   var i = 0;
 
@@ -843,7 +843,7 @@ If you need more than one object of the same kind, specify a way to create those
 
 A _factory function_ instantiates and returns a new object, thus allowing for the creation of objects based on a pre-defined template.
 
-```
+```js
 function makePoint(x, y) {
   // var private = 'private data here';
 
@@ -868,7 +868,7 @@ Disadvantages:
 
 A _constructor function_ is supposed to be invoked with the `new` operator, which instantiates a new object behind the scenes and provides it to the constructor function as `this`.
 
-```
+```js
 function Point(x, y) {
   // Scope safety
   if (!(this instanceof Point)) {
@@ -898,7 +898,7 @@ All properties set in the constructor function will be own properties of the cre
 
 If the created objects don't need a unique state at the beginning, the created object can be empty initially and delegate everything, for example:
 
-```
+```js
 function MyObject() {}
 
 myObject.prototype.p1 = ...
@@ -907,7 +907,7 @@ myObject.prototype.p2 = ...
 
 When reassigning the `prototype` to a new object, make sure to set the otherwise lost `constructor` property.
 For example:
-```
+```js
 Point.prototype = {
   x: 0,
   y: 0,
@@ -918,7 +918,7 @@ Point.prototype.constructor = Point;
 
 ## Object linking to other objects (OLOO) pattern
 
-```
+```js
 // Create prototype object
 var Point = {
   x: 0,
@@ -950,7 +950,7 @@ Note that `instanceof` does not work here, because it expects a _constructor_ as
 * The constructor function is executed with `this` set to the new object.
 * If the constructor function has no explicit return, the new object is returned.
 
-```
+```js
 function newOperator(Constructor, args) {
   var object = Object.create(Constructor.prototype);
   var result = Constructor.apply(object, args);
@@ -961,7 +961,7 @@ function newOperator(Constructor, args) {
 
 ### `Object.create`
 
-```
+```js
 function create(object) {
   function F() {};
   F.prototype = object;
@@ -972,10 +972,9 @@ function create(object) {
 
 # Common patterns
 
-
 ### Boolean checks
 
-```
+```js
 // Does an array contain an element?
 array.indexOf(element) !== -1; // ES5
 array.includes(element);       // ES6
@@ -991,7 +990,7 @@ function isNumeric(value) {
 
 ### Iterating over an object
 
-```
+```js
 Object.keys(object).forEach(function (key) {
   // ...
 });
@@ -1002,7 +1001,7 @@ var values = Object.keys(object).map(key => object[key]);
 
 ### Shallow copying and merging of objects
 
-```
+```js
 var object1 = ...
 var object2 = ...
 
@@ -1015,7 +1014,7 @@ to the target object and returns `target`.
 
 ### Sorting numbers
 
-```
+```js
 function sortAscending(array) {
   return array.slice().sort(function (x, y) { return x - y });
 }
@@ -1029,7 +1028,7 @@ function sortDescending(array) {
 
 Counting occurrences:
 
-```
+```js
 array.reduce(function (counts, element)) {
   counts[element] = (counts[element] || 0) + 1;
   return counts;
@@ -1038,7 +1037,7 @@ array.reduce(function (counts, element)) {
 
 Finding the minimum:
 
-```
+```js
 array.reduce(function (currentMin, currentElement) {
   if (currentElement < currentMin) {
     return currentElement;
@@ -1050,7 +1049,7 @@ array.reduce(function (currentMin, currentElement) {
 
 ### Current date and time
 
-```
+```js
 var today = new Date(); // 2018-02-26T08:29:07.229Z, type: object
 var today = Date();     // "Mon Feb 26 2018 09:29:35 GMT+0100 (CET)", type: string
 var now   = Date.now(); // 1519633775731, type: number
@@ -1060,7 +1059,7 @@ var year  = new Date().getFullYear();
 
 ### Random integer within range
 
-```
+```js
 // Returns a random integer between min and max (inclusive)
 function random(min, max) {
   return min + Math.floor(Math.abs(max - min + 1) * Math.random());
@@ -1069,7 +1068,7 @@ function random(min, max) {
 
 ### Enum-like objects
 
-```
+```js
 const Weekday = Object.freeze({ Monday: 1, Tuesday: 2, ... });
 ```
 
@@ -1080,12 +1079,12 @@ _Promises_ are objects that have a `then` method which takes two (optional) func
 * a handler that is called when it is rejected.
 The return value of `then` is another promise that is fulfilled when the called handler finishes, and fails when the called handler throws an error.
 
-```
+```js
 promise.then(onFulfilled, onRejected);
 ```
 
 Syntactic sugar for `then(null, onRejected)`:
-```
+```js
 promise.cath(onRejected);
 ```
 
@@ -1097,7 +1096,7 @@ The handler functions need to either return another promise, or return a value i
 
 Without promises:
 
-```
+```js
 navigator.geolocation.getCurrentPosition(
   function (position) {
     console.log('Latitude:  ' + position.coords.latitude);
@@ -1111,7 +1110,7 @@ navigator.geolocation.getCurrentPosition(
 
 With promises:
 
-```
+```js
 function promiseToGetCoordinates() {
   return new Promise(function (fulfill, reject) {
     navigator.geolocation.getCurrentPosition(
@@ -1138,7 +1137,7 @@ promiseToGetCoordinates()
 
 ## Creating promises
 
-```
+```js
 new Promise(function someCalculation(fulfill, reject) {
   result = // some calculatation
 
@@ -1154,7 +1153,7 @@ new Promise(function someCalculation(fulfill, reject) {
 
 Example:
 
-```
+```js
 var data = new FormData();
 data.append('key', 'value');
 
@@ -1175,7 +1174,7 @@ fetch('https://url/update', {
 
 ## Lists of promises
 
-```
+```js
 Promise.all([
   promising1,
   promising2,
@@ -1184,7 +1183,7 @@ Promise.all([
 .then(allFulfilled, firstRejected);
 ```
 
-```
+```js
 Promise.race([
   promising1,
   promising2,
