@@ -1077,6 +1077,7 @@ const Weekday = Object.freeze({ Monday: 1, Tuesday: 2, ... });
 _Promises_ are objects that have a `then` method which takes two (optional) function arguments:
 * a handler that is called when the promise is fulfilled, and
 * a handler that is called when it is rejected.
+
 The return value of `then` is another promise that is fulfilled when the called handler finishes, and fails when the called handler throws an error.
 
 ```js
@@ -1115,10 +1116,10 @@ function promiseToGetCoordinates() {
   return new Promise(function (fulfill, reject) {
     navigator.geolocation.getCurrentPosition(
       function (position) {
-	fulfill(position.coords);
+	      fulfill(position.coords);
       },
       function (error) {
-	reject(error);
+	      reject(error);
       }
     );
   });
@@ -1194,6 +1195,6 @@ Promise.race([
 
 # References
 
-* [Axel Rauschmayer: Speaking JavaScript](http://speakingjs.com/es5/index.html)
-* [Alexey Samoshkin: JavaScript type coercion explained](https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839)
-* [Nolan Lawson: We have a problem with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
+* [Axel Rauschmayer: Speaking JavaScript.](http://speakingjs.com/es5/index.html)
+* [Alexey Samoshkin: JavaScript type coercion explained.](https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839)
+* [Nolan Lawson: We have a problem with promises.](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
