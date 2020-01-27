@@ -5,7 +5,7 @@ date: 2019-11-04
 
 
 I'm a software engineer, currently developing and maintaining code at [Mercury.ai](https://www.mercury.ai).
-I spend my early mornings learning the fundamentals of nuclear technology and acquiring the skills for helping to build a [sustainable future](https://www.un.org/sustainabledevelopment/development-agenda/). These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
+I spend my early mornings learning the fundamentals of blockchain, nuclear technology, and acquiring the skills for helping to build a [sustainable future](https://www.un.org/sustainabledevelopment/development-agenda/). These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 ---
 
@@ -18,7 +18,7 @@ I spend my early mornings learning the fundamentals of nuclear technology and ac
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
-  <!-- &nbsp;&nbsp; ️🛠 Ruby, JavaScript, Linux -->
+  <!-- &nbsp;&nbsp; ️🛠 Julia, JavaScript, Linux -->
 
   <!-- &nbsp;&nbsp; 🤹‍♀️  -->
   </div>
@@ -31,12 +31,12 @@ I spend my early mornings learning the fundamentals of nuclear technology and ac
 
 ### Current book shelf
 
-* Curcic: [Modern Fortran: Building efficient parallel applications.](https://www.manning.com/books/modern-fortran)
 * Leveson: [Safeware: System safety and computers.](http://sunnyday.mit.edu/book.html)
-<!-- * Baier, Katoen: [Principles of Model Checking.](https://mitpress.mit.edu/books/principles-model-checking) -->
 
 ### Courses
 
+* Blockchain Technology
+  (BerkeleyX | ongoing)
 * Advanced Transport Phenomena
   (DelftX | ongoing)
 * The Basics of Transport Phenomena
