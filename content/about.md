@@ -18,7 +18,7 @@ I spend my early mornings learning the fundamentals of nuclear technology, explo
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
-  &nbsp;&nbsp; ️🛠 Julia, JavaScript, Functional Programming, Linux, Git
+  &nbsp;&nbsp; ️🛠 Julia, Fortran, Linux, Git
 
   <!-- &nbsp;&nbsp; 🤹‍♀️  -->
   </div>
