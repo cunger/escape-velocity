@@ -85,6 +85,6 @@ If we have an **inhomogeneous linear ODE where {{< katex "q(t)" >}} is constant*
 
 {{< katex display="y=\frac{q}{p(t)} + Ce^{p(t)t}" >}}
 
-Solutions to {{< katex "z^n=1" >}} with {{< katex "z" >}} any [complex number](/docs/complex-numbers/) are {{< katex "e^{i(\frac{2\pi k}{n})}" >}} for {{< katex "k=0,1,...n-1" >}}.
+Solutions to {{< katex "z^n=1" >}} with {{< katex "z" >}} any [complex number](/docs/nuctec/complex-numbers/) are {{< katex "e^{i(\frac{2\pi k}{n})}" >}} for {{< katex "k=0,1,...n-1" >}}.
 
 Solutions to {{< katex "x''+x=0" >}} are all linear combinations of sine and cosine: {{< katex "x=c_1\text{cos}(t)+c_2\text{sin}(t)" >}} with {{< katex "c_1,c_2" >}} any real number.
