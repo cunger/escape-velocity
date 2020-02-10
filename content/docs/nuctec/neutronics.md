@@ -48,5 +48,5 @@ _Example:_ Uranium fission
 The energy of the resulting neutrons is a probability distribution, with the most likely energy ~700 keV and the average energy ~2 MeV. The are, however, too high-energy to engage in further fission events. In a reactor, they thus need to be slowed down by a moderator like water, where neutrons successively lose energy through elastic scattering.
 
 **Fission vs fusion:**
-![Iron valley](/images/docs/iron-valley.png)
+![Iron valley](/images/docs/ironvalley.png)
 (Picture taken from MITx 22.011x course slides.)

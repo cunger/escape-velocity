@@ -23,7 +23,7 @@ With {{< katex "m" >}} the object's mass and {{< katex "v" >}} its velocity.
 
 Work is applying a force {{< katex "F" >}} for a distance {{< katex "d" >}}: {{< katex "W=Fd" >}}.
 
-**Potential energy** is the energy of an object due to its position in a potential field. More specifically, the _gravitational energy_ is the energy of an object due to its position in a gravitational field. (Also see the entry on [gravitation](/docs/forces/#gravitational-force).) On a planet, this is:
+**Potential energy** is the energy of an object due to its position in a potential field. More specifically, the _gravitational energy_ is the energy of an object due to its position in a gravitational field. (Also see the entry on [gravitation](/docs/nuctec/forces/#gravitational-force).) On a planet, this is:
 {{< katex display="E_\text{pot}=mgh" >}}
 Where {{< katex "g" >}} is the gravitational acceleration (about {{< katex "9.81 m/s^2" >}} close to the Earth's surface), {{< katex "m" >}} is the object's mass and {{< katex "h" >}} is its height relative to some vertical reference point.
 

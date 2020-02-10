@@ -7,7 +7,7 @@ math: true
 toc: true
 ---
 
-Balancing equations are a way of bookkeeping for the main quantities involved in a process: mass, energy, and momentum. They comprise everything that [transports](/docs/transport/) the quantity: processes through which the quantity enters the system and leaves it, through which the quantity is produced or absorbed, and which resistances there are to the transport of the quantity.
+Balancing equations are a way of bookkeeping for the main quantities involved in a process: mass, energy, and momentum. They comprise everything that [transports](/docs/nuctec/transport/) the quantity: processes through which the quantity enters the system and leaves it, through which the quantity is produced or absorbed, and which resistances there are to the transport of the quantity.
 
 General balance of {{< katex "x" >}}:
 
@@ -38,7 +38,7 @@ Since mass is volume times concentration ({{< katex "m=Vc" >}}) and volume times
 
 {{< katex display="V\frac{dc}{dt}=\Phi_{V,in}c_\text{in} - \Phi_{V,out}c_\text{out} + \text{production}(m)" >}}
 
-_For more on volume flow in fluids, see [fluid flow](https://write.as/christina-unger/fluid-flow)._
+_For more on volume flow in fluids, see [fluid flow](/docs/nuctec/fluid-flow)._
 
 # Energy balance
 
@@ -77,7 +77,7 @@ Neglecting friction, in a steady-state system with equal in- and outflow, where 
 {{< katex display="\frac{de}{dt}=\Phi_{m,in} c_{p,\text{in}} T_\text{in} - \Phi_{m,out} c_{p,\text{out}} T_\text{out} + \Phi_q" >}}
 Plus energy gained from friction.
 
-_For a primer on the different forms of energy, cf. the entry on [energy](/docs/energy/)._
+_For a primer on the different forms of energy, cf. the entry on [energy](/docs/nuctec/energy/)._
 
 # Momentum balance
 
