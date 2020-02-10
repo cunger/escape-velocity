@@ -67,10 +67,6 @@ I deeply care about marine conservation, and volunteering in this field has been
 
 If you find errata, have suggestions for learning resources, or just want to share experiences, please feel free to reach out. I'd be happy to chat or meet for a coffee.
 
-Apropos coffee...
-
-[![Buy me a coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/white_img.png)](https://www.buymeacoffee.com/xoUAIBhZE)
-
 # Footprint
 
 This page has a [carbon footprint of 0.08 g](https://www.websitecarbon.com/website/cunger-github-io-about/), and the notebook pages are comparable with [those of the Low Tech Magazine](https://solar.lowtechmagazine.com/2018/09/how-to-build-a-lowtech-website.html).
