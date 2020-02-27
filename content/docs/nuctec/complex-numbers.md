@@ -4,10 +4,10 @@ summary: "Cartesian and polar coordinates, arithmetic operations, Euler's formul
 date: 2019-11-16T12:02:48+01:00
 weight: 2
 math: true
-toc: false
+toc: true
 ---
 
-**Code:** [complex.exs](https://github.com/cunger/simulacron/blob/master/complex.exs)
+> [Complex numbers] are essential to quantum physics, electromagnetism, and many more fields. They are naturally suited to describe anything that turns, waves, ripples, combines or interferes, with itself or with others. [...] Whenever we're describing wavelike phenomena, whether it's sound, electricity or subatomic particles, we're also interested in how the wave evolves and changes. Complex operations are eminently suited for this, because they naturally take place on circles. Numbers that oppose can cancel out, numbers in the same direction will amplify each other, just like two waves do when they meet. (http://acko.net/blog/how-to-fold-a-julia-fractal/)
 
 A complex number {{< katex "z" >}} can be defined as
 
@@ -39,6 +39,8 @@ Figure from the [Feynman lectures on algebra](http://www.feynmanlectures.caltech
 ![Unification of algebra and geometry](/images/docs/complex-number.png)
 
 # Arithmetic operations
+
+**Code:** [complex.exs](https://github.com/cunger/simulacron/blob/master/complex.exs)
 
 While addition is straight-forward in Cartesian form, most operations are much more intuitive in polar form, as they constitute transformations in the Cartesian plane.
 
