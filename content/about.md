@@ -47,7 +47,7 @@ I'm a battle-proven software engineer as well as a [technical editor and proofre
 * Space Mission Design and Operations
   (EPFLx | [certificate](https://courses.edx.org/certificates/ba8373e783f54519bebdf080200197b7))
 * Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
-  (MITxPro | ongoing)
+  (MITxPro | [certificate](https://xpro.mit.edu/certificate/program/5060051c-301b-4e7c-96e7-46b2c323a09f/))
 
 ### Formal degrees
 
