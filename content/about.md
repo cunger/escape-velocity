@@ -4,7 +4,7 @@ date: 2019-11-04
 ---
 
 
-I'm a battle-proven software engineer as well as a [technical editor and proofreader](https://www.upwork.com/o/profiles/users/~011f9183b21c64c3bf/). I have a strong interest in nuclear technology and radiation protection, and spend my early mornings acquiring the skills for helping to build a [sustainable future](https://www.un.org/sustainabledevelopment/development-agenda/). These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
+I'm a battle-proven software engineer and an aspiring [technical writer](https://www.upwork.com/o/profiles/users/~011f9183b21c64c3bf/). I have a strong background in IT and research, and an equally strong interest in nuclear and clean energy, industrial technology, spaceflight, and cybersecurity. I love spending my early mornings acquiring the skills for helping to build a [sustainable future](https://www.un.org/sustainabledevelopment/development-agenda/). These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 ---
 
@@ -17,7 +17,7 @@ I'm a battle-proven software engineer as well as a [technical editor and proofre
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
-  <!-- &nbsp;&nbsp; ️🛠 Julia, Fortran, Linux, Git -->
+  <!-- &nbsp;&nbsp; ️🛠 Functional programming, Linux, Git -->
 
   <!-- &nbsp;&nbsp; 🤹‍♀️  -->
   </div>
