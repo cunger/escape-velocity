@@ -4,7 +4,7 @@ date: 2019-11-04
 ---
 
 
-I'm a battle-proven software engineer and an aspiring [technical writer](https://www.upwork.com/o/profiles/users/~011f9183b21c64c3bf/). I have a strong background in IT and research, and an equally strong interest in nuclear and clean energy, industrial technology, spaceflight, and cybersecurity. I love spending my early mornings acquiring the skills for helping to build a [sustainable future](https://www.un.org/sustainabledevelopment/development-agenda/). These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
+I'm a programmer and technical writer. I have a strong interest in nuclear and clean energy, spaceflight, and cybersecurity. I love spending my early mornings acquiring the skills for helping to build a [sustainable future](https://www.un.org/sustainabledevelopment/development-agenda/). These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 ---
 
@@ -13,7 +13,9 @@ I'm a battle-proven software engineer and an aspiring [technical writer](https:/
 
   &nbsp;&nbsp; 💾 [GitHub.com/cunger](https://github.com/cunger/)
 
-  &nbsp;&nbsp; 📝 christina@unger.dev
+  &nbsp;&nbsp; 📝 [Medium.com/@christina.unger](https://medium.com/@christina.unger)
+
+  &nbsp;&nbsp; 📬 christina@unger.dev
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
@@ -30,14 +32,13 @@ I'm a battle-proven software engineer and an aspiring [technical writer](https:/
 
 ### Current book shelf
 
-* Leveson: [Safeware: System safety and computers.](http://sunnyday.mit.edu/book.html)
+* Vaclav Smil: [Power density: A Key to Understanding Energy Sources and Uses.](https://mitpress.mit.edu/books/power-density)
+* Nancy Leveson: [Safeware: System safety and computers.](http://sunnyday.mit.edu/book.html)
 
 ### Courses
 
 * Blockchain Technology
   (BerkeleyX | [certificate](https://courses.edx.org/certificates/0e861a3aa10e44d6a5c98f82036acfb0))
-* Advanced Transport Phenomena
-  (DelftX | ongoing)
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
 * Understanding Nuclear Energy
