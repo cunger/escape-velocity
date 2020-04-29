@@ -4,7 +4,7 @@ date: 2019-11-04
 ---
 
 
-I'm a programmer and technical writer. I have a strong interest in nuclear and clean energy, spaceflight, and cybersecurity. I love spending my early mornings acquiring the skills for helping to build a [sustainable future](https://www.un.org/sustainabledevelopment/development-agenda/). These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
+I'm a programmer and technical writer, aspiring to help building a sustainable future. I have a strong interest in nuclear and clean energy, spaceflight, and cybersecurity. These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 ---
 
