@@ -37,18 +37,20 @@ I'm a programmer and technical writer. I have a strong interest in nuclear and c
 
 ### Courses
 
-* Blockchain Technology
-  (BerkeleyX | [certificate](https://courses.edx.org/certificates/0e861a3aa10e44d6a5c98f82036acfb0))
-* The Basics of Transport Phenomena
-  (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
 * Understanding Nuclear Energy
   (GENTLE & DelftX | [certificate](https://courses.edx.org/certificates/8dec05e14fd846cdadffe75adeb91c07))
+* The Basics of Transport Phenomena
+  (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
+* Nuclear Facilities: Regulations and Licensing
+  (MEPhIx | ongoing)
 * Climate Action: Solutions for a Changing Planet
-  (SDGAcademyX | [certificate](https://courses.edx.org/certificates/b78c0a1559314a75909cc6b03232e4f8))  
-* Space Mission Design and Operations
-  (EPFLx | [certificate](https://courses.edx.org/certificates/ba8373e783f54519bebdf080200197b7))
+  (SDGAcademyX | [certificate](https://courses.edx.org/certificates/b78c0a1559314a75909cc6b03232e4f8))
 * Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
   (MITxPro | [certificate](https://xpro.mit.edu/certificate/program/5060051c-301b-4e7c-96e7-46b2c323a09f/))
+* Space Mission Design and Operations
+  (EPFLx | [certificate](https://courses.edx.org/certificates/ba8373e783f54519bebdf080200197b7))
+* Blockchain Technology
+  (BerkeleyX | [certificate](https://courses.edx.org/certificates/0e861a3aa10e44d6a5c98f82036acfb0))
 
 ### Formal degrees
 
