@@ -42,7 +42,7 @@ I'm a programmer and technical writer, aspiring to help building a sustainable f
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
 * Nuclear Facilities: Regulations and Licensing
-  (MEPhIx | ongoing)
+  (MEPhIx | [certificate](https://courses.edx.org/certificates/287fad013e814d708be737b76bb1c53b))
 * Climate Action: Solutions for a Changing Planet
   (SDGAcademyX | [certificate](https://courses.edx.org/certificates/b78c0a1559314a75909cc6b03232e4f8))
 * Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
