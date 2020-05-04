@@ -3,14 +3,11 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
+I'm a software engineer and technical writer, aspiring to help building a sustainable future. I have a strong interest in nuclear technology, clean energy, spaceflight, and cybersecurity.
 
-I'm a programmer and technical writer, aspiring to help building a sustainable future. I have a strong interest in nuclear and clean energy, spaceflight, and cybersecurity. These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
+These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 ---
-
-<div class="row">
-  <div class="col-md-8" markdown="1">
-
   &nbsp;&nbsp; 💾 [GitHub.com/cunger](https://github.com/cunger/)
 
   &nbsp;&nbsp; 📝 [Medium.com/@christina.unger](https://medium.com/@christina.unger)
@@ -22,18 +19,14 @@ I'm a programmer and technical writer, aspiring to help building a sustainable f
   <!-- &nbsp;&nbsp; ️🛠 Functional programming, Linux, Git -->
 
   <!-- &nbsp;&nbsp; 🤹‍♀️  -->
-  </div>
-</div>
-&nbsp;
-
 ---
 
 # Learning journey
 
 ### Current book shelf
 
-* Vaclav Smil: [Power density: A Key to Understanding Energy Sources and Uses.](https://mitpress.mit.edu/books/power-density)
-* Nancy Leveson: [Safeware: System safety and computers.](http://sunnyday.mit.edu/book.html)
+* Vaclav Smil: [Power Density: A Key to Understanding Energy Sources and Uses.](https://mitpress.mit.edu/books/power-density)
+* Nancy Leveson: [Safeware: System Safety and Computers.](http://sunnyday.mit.edu/book.html)
 
 ### Courses
 
@@ -41,8 +34,12 @@ I'm a programmer and technical writer, aspiring to help building a sustainable f
   (GENTLE & DelftX | [certificate](https://courses.edx.org/certificates/8dec05e14fd846cdadffe75adeb91c07))
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
+* Nuclear Reactor Physics Basics
+  (MEPhIx | ongoing)
 * Nuclear Facilities: Regulations and Licensing
   (MEPhIx | [certificate](https://courses.edx.org/certificates/287fad013e814d708be737b76bb1c53b))
+* Nuclear Industry Awareness
+  (NSAN.co.uk | without exam)
 * Climate Action: Solutions for a Changing Planet
   (SDGAcademyX | [certificate](https://courses.edx.org/certificates/b78c0a1559314a75909cc6b03232e4f8))
 * Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
