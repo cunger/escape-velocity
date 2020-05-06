@@ -1,15 +1,27 @@
 ---
 title: "Forces"
-summary: "Gravitational force."
+summary: "The fundamental forces of physics."
 date: 2019-11-16
 weight: 5
 math: true
 toc: true
 ---
 
+# Electromagnetic force
+
+Electromagnetism is the interaction between objects due to their charge. This comprises attraction and repulsion between charged particles.
+
+# Weak and strong nuclear force
+
+The weak nuclear force is the interaction between subatomic particles with "color".
+
+The strong nuclear force is the interaction between subatomic particles with "flavor".
+
+![Strong vs electromagnetic force](/images/docs/strong-vs-coulomb.png)
+
 # Gravitational force
 
-Gravity is a relatively weak force (compared to others), but operates over long distances.
+Gravity is the interaction between objects due to their mass. It is a relatively weak force (compared to others), but operates over long distances.
 
 {{< katex display="F = \frac{GMm}{r^2}" >}}
 Where:

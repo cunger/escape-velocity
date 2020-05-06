@@ -7,23 +7,28 @@ math: true
 toc: true
 ---
 
-# Neutron classification
+Neutrons have roughly the same mass as a proton, but no charge.
+
+# Free neutrons
+
+Free neutrons are unstable, with a halflife of about 10.4 minutes. They undergo {{< katex "\beta^-" >}} decay, yielding a proton, an electron and an antineutrino:
+{{< katex display="{}^1_0n \to {}^1_1p + {}^{\ \ \,0}_{-1}e + \overline{v}" >}}
+
+## Classification
 
 Free neutrons can be classified according to their kinetic energy.
 
-* _Thermal neutrons_ (up to 1 eV) are in a thermal equilibrium with their surrounding, with the most probable energy at 20 degrees C being 0.025 eV (~ 2km/s). They often have a much larger #neutron absorption cross-section than fast neutrons.
+* _Thermal neutrons_ (up to 1 eV) are in a thermal equilibrium with their surrounding, with the most probable energy at 20 degrees C being 0.025 eV (~ 2km/s). They often have a much larger neutron absorption cross-section than fast neutrons.
 * _Resonance neutrons_ (1 eV - 100 keV) have energies where the neutron capture cross-sections peak, and the probability of capture exceeds the probability of fusion.
 * _Fast neutrons_ (1-10 MeV) are produced by nuclear fission. They have a Maxwell-Boltzmann distribution of energy with a mean energy of 2 MeV in the case of uranium-235 fission.
 
-_Thermal reactors_ use thermal neutrons to sustain the chain reaction; they thus slow down the produced fast neutrons using a neutron moderator, until their energy is in thermal equilibrium with the atoms in the system.
-
-_Fast reactors_ user fast neutrons for fission, not using any neutron moderator.
+Thermal reactors use thermal neutrons to sustain the fission chain reaction. They thus slow down the produced fast neutrons using a neutron moderator, until their energy is in thermal equilibrium with the atoms in the system. [Fast reactors](https://world-nuclear.org/information-library/current-and-future-generation/fast-neutron-reactors.aspx), on the other hand, use fast neutrons to sustain the fission chain reaction, not using any neutron moderator.
 
 The energy of a neutron has a big impact on its cross-sections. An important property of a reactor core thus is its neutron energy distribution.
 
 # Neutron interactions
 
-Since neutrons have no charge, they pass easily through electron clouds and directly interact with nuclei. Those interactions can be thought of as two steps: first the #neutron is absorbed by the nucleus, forming a compound nucleus, which then decays.
+Since neutrons have no charge, they pass easily through electron clouds and directly interact with nuclei. Those interactions can be thought of as two steps: first the neutron is absorbed by the nucleus, forming a compound nucleus, which then decays.
 
 There are two main kinds of interactions: scattering and absorption.
 
