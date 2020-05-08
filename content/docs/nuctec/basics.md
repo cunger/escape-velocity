@@ -60,6 +60,16 @@ The activity of decay is usually given in **Curies**.
 1 Ci = 3.7e10 disintegrations (decayed nuclei) per second
 ```
 
+Cross-sections are specified in **barn**.
+```
+1 barn = 10e-28 m^2
+```
+
+Distances on the sub-atomic level are usually given in **fermi**.
+```
+1 fm = 10e-15 m
+```
+
 # Constants
 
 ```
