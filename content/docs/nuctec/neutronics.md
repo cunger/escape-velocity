@@ -63,7 +63,7 @@ Cross-sections characterize the probability of a neutron interaction, quantified
 The **microscopic cross-section** {{< katex "\sigma" >}} specifies the probability of a particular neutron interaction with a target nucleus, depending on the energy of the neutron.
 
 The **macroscopic cross-section** {{< katex "\Sigma" >}} specifies this probability of a neutron interaction for the whole medium.
-It is considered per unit path length that the neutron travels. The average distance a neutron travels before interacting with a nucleus is its **mean free path**.
+It is considered per unit path length that the neutron travels. The average distance a neutron travels before interacting with a nucleus is its **mean free path** {{< katex "\frac{1}{\Sigma}" >}}.
 
 **Resonance region:**
 > When the sum of the kinetic energy of the neutron and the binding energy correspond to an energy level of the compound nucleus, the neutron cross section exhibits a spike in its probability of interaction which are called resonances.
