@@ -16,7 +16,7 @@ Free neutrons are unstable, with a halflife of about 10.4 minutes. They undergo 
 
 ## Classification
 
-Free neutrons can be classified according to their kinetic energy.
+Free neutrons can be classified according to their kinetic energy. They can be roughly divided into three energy ranges:
 
 * _Thermal neutrons_ (up to 1 eV) are in a thermal equilibrium with their surrounding, with the most probable energy at 20 degrees C being 0.025 eV (~ 2km/s). They often have a much larger neutron absorption cross-section than fast neutrons.
 * _Resonance neutrons_ (1 eV - 100 keV) have energies where the neutron capture cross-sections peak, and the probability of capture exceeds the probability of fusion.
@@ -60,7 +60,7 @@ The energy of the resulting neutrons is a probability distribution, with the mos
 
 Cross-sections characterize the probability of a neutron interaction, quantified in terms of characteristic target areas (where a larger area means a larger probability of interaction).
 
-The **microscopic cross-section** {{< katex "\sigma" >}} specifies the probability of a particular neutron interaction with a target nucleus, depending on the energy of the neutron.
+The **microscopic cross-section** {{< katex "\sigma" >}} specifies the probability of a particular neutron interaction with a target nucleus. It depends on the target nucleus, the type of reaction, the neutron energy, and the target energy.
 
 The **macroscopic cross-section** {{< katex "\Sigma" >}} specifies this probability of a neutron interaction for the whole medium.
 It is considered per unit path length that the neutron travels. The average distance a neutron travels before interacting with a nucleus is its **mean free path** {{< katex "\frac{1}{\Sigma}" >}}.

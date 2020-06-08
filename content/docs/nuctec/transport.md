@@ -79,9 +79,6 @@ The concentration profile {{< katex "c(x)" >}} varies for different geometries.
 * Sphere: {{< katex "c(x)=f(\frac{1}{x})" >}}
 * Cylinder: {{< katex "c(x)=f(\text{ln}\,x)" >}}
 
-If the concentration profile is linear, we can simplify Fick's law:
-{{< katex display="\phi_m = -D A \frac{\Delta c}{\Delta x}" >}}
-
 # Analytical solution for heat and mass conduction
 
 **Temperature conduction:** {{< katex "\cfrac{dT}{dt}=k(T_e-T)" >}}
