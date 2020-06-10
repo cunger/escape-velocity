@@ -35,7 +35,7 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
 * Nuclear Reactor Physics Basics
-  (MEPhIx | ongoing)
+  (MEPhIx | [certificate](https://courses.edx.org/certificates/35aaac84c1394a96b60c5109be26e7fa))
 * Nuclear Facilities: Regulations and Licensing
   (MEPhIx | [certificate](https://courses.edx.org/certificates/287fad013e814d708be737b76bb1c53b))
 * Nuclear Industry Awareness
