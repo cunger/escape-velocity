@@ -25,8 +25,8 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 ### Current book shelf
 
-* Vaclav Smil: [Power Density: A Key to Understanding Energy Sources and Uses.](https://mitpress.mit.edu/books/power-density)
-* Nancy Leveson: [Safeware: System Safety and Computers.](http://sunnyday.mit.edu/book.html)
+* David Holloway: [Stalin and the Bomb: The Soviet Union and Atomic Energy, 1939-1956.](https://yalebooks.yale.edu/book/9780300066647/stalin-and-bomb)
+* Steven van Deursen, Mark Seemann: [Dependency Injection: Principles, Practices, and Patterns.](https://www.manning.com/books/dependency-injection-principles-practices-patterns)
 
 ### Courses
 
