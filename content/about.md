@@ -3,7 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a software engineer and technical writer, aspiring to help building a sustainable future. I have a strong interest in nuclear technology, clean energy, and spaceflight.
+I'm a software engineer, with a background in research and experience in application development, expert systems and formal methods. I have a strong interest in nuclear technology and spaceflight.
 
 ---
   &nbsp;&nbsp; 💾 [GitHub.com/cunger](https://github.com/cunger/)
@@ -18,6 +18,10 @@ I'm a software engineer and technical writer, aspiring to help building a sustai
 
   <!-- &nbsp;&nbsp; 🤹‍♀️  -->
 ---
+
+# Projects
+
+Compiling... Please wait.
 
 # Education
 

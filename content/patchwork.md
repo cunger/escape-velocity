@@ -5,7 +5,7 @@ toc: true
 math: false
 ---
 
-I took the Nuclear Engineering curriculum of [MIT](http://catalog.mit.edu/degree-charts/nuclear-science-engineering-course-22/) and [Rensselaer](http://catalog.rpi.edu/preview_program.php?catoid=20&poid=4641) as a starting point to compile an ongoing learning journey towards nuclear proficiency. It's not a degree from a traditional university. It's a patchwork of courses from renowned universities and books, that have proven excellent for acquiring the fundamental knowledge and skills of the field. It's growing and evolving as I dive deeper into the topic.
+Starting from a standard Nuclear Engineering curriculum (such as [MIT](http://catalog.mit.edu/degree-charts/nuclear-science-engineering-course-22/), [Rensselaer](http://catalog.rpi.edu/preview_program.php?catoid=20&poid=4641), [Texas A&M](https://catalog.tamu.edu/undergraduate/engineering/nuclear/bs/#programrequirementstext), [U-M](https://ners.engin.umich.edu/academics/undergraduate/objectives/)), I aim to compile an ongoing learning journey towards nuclear proficiency. It's not a degree from a traditional university; it's a patchwork of courses and books, that have proven excellent for acquiring the fundamental knowledge and skills of the field. Most importantly, it's growing and evolving as I dive deeper into the topic.
 
 # Notes
 
@@ -15,10 +15,6 @@ I keep two notebooks:
 * [Software Development](/docs/dev/) contains all things computational, including programming languages and development basics.
 
 These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
-
-# Projects
-
-* [Project Euler](https://projecteuler.net/): solving mathematical and numerical computing problems ([Fortran code](https://github.com/cunger/simulacron/tree/master/euler))
 
 # Courses
 
