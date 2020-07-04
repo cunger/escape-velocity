@@ -7,6 +7,9 @@ math: true
 toc: true
 ---
 
+> We're all equal in the eyes of electricity.
+  -- Michael Short (MIT)
+
 A charge creates an electric field, and a current creates a magnetic field. Also, a changing electric field induces a magnetic field and vice versa.
 
 _Electromagnetic waves_ are a magnetic field {{< katex "B" >}} and an electric field {{< katex "E" >}} generating each other. They're self-sustaining and thus can travel without a medium.

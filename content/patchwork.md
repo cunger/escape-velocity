@@ -21,7 +21,7 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 ## Nuclear
 
 * Introduction to Nuclear Engineering and Ionizing Radiation  
-  (MIT OCW | upcoming)
+  (MIT OCW | [ongoing](https://ocw.mit.edu/courses/nuclear-engineering/22-01-introduction-to-nuclear-engineering-and-ionizing-radiation-fall-2016/lecture-videos/))
 * Understanding Nuclear Energy
   (GENTLE & DelftX | [certificate](https://courses.edx.org/certificates/8dec05e14fd846cdadffe75adeb91c07))
 * Nuclear Reactor Physics Basics
@@ -45,4 +45,6 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 # Books
 
-* Erwin Kreyszig: Advanced Engineering Mathematics.
+* Turner: Atoms, Radiation and Radiation Protection.
+* Yip: Nuclear Radiation Interactions.
+* Lamport: Specifying Systems.

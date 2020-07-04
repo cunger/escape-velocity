@@ -21,14 +21,28 @@ Nuclear reactions conserve:
 
 * mass (number of nucleons)
 * energy
-* charge
 * momentum
+* charge
 
 # Q-value
 
-The _Q-value_ of a nuclear reaction is the amount of mass that is turned into energy per decay, i.e. the difference between the sum of the masses of the initial reactants and the sum of the masses of the final products.
+The _Q-value_ of a nuclear reaction is a measure of energy transfer: the amount of mass that is turned into energy, i.e. the difference between the sum of the masses of the initial reactants and the sum of the masses of the final products.
 
-For example, for {{< katex="a + A \to B + b" >}}:
+That means, given conservation of mass and energy and the equivalence of mass and energy, for a reaction
+
+{{< katex display="a + A \to B + b" >}}
+
+we have:
+
+{{< katex display="m_a + m_A \to m_B + m_b + Q" >}}
+
+{{< katex display="E_{B,\text{kin}} + E_{b,\text{kin}} \to E_{A,\text{kin}} + E_{a,\text{kin}} + Q" >}}
+
+Where the kinetic energy of a nucleus at rest, i.e. {{< katex="E_{B,\text{kin}}" >}}, is very small compared to the other kinetic energies, and thus can be neglected.
+
+So a resulting energy surplus has to come from either the initial kinetic energy of the particle or from a conversion of mass to energy.
+
+[tbd]
 
 {{< katex display="Q=((m_a + m_A) - (m_b + m_B))\,c^2" >}}
 
@@ -61,7 +75,7 @@ A relatively heavy atom emits an alpha particle, in order to get to a more stabl
 
 ## Beta decay
 
-Beta decay comes in two flavors, with beta particles being electrons and positrons from the nucleus.
+Beta decay comes in two flavors, with beta particles being electrons and positrons from the nucleus. (Its origin is what makes an electron or positron a beta particle.)
 
 ## Beta minus ({{< katex "\beta^-" >}}) decay
 

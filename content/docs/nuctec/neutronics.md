@@ -9,6 +9,8 @@ toc: true
 
 Neutrons have roughly the same mass as a proton, but no charge.
 
+Neutrons have a larger range than charged particles, because they don't interact with the electrons in the atoms of matter, as they have no charge.
+
 # Free neutrons
 
 Free neutrons are unstable, with a halflife of about 10.4 minutes. They undergo {{< katex "\beta^-" >}} decay, yielding a proton, an electron and an antineutrino:
