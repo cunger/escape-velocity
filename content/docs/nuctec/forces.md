@@ -7,13 +7,13 @@ math: true
 toc: true
 ---
 
-# Electromagnetic force
+# Electromagnetic and weak force
 
 Electromagnetism is the interaction between objects due to their charge. This comprises attraction and repulsion between charged particles.
 
-# Weak and strong nuclear force
-
 The weak nuclear force is the interaction between subatomic particles with "color".
+
+# Strong nuclear force
 
 The strong nuclear force is the interaction between subatomic particles with "flavor".
 

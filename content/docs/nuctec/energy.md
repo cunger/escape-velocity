@@ -62,9 +62,3 @@ Mass and energy can be converted into one another.
 **Conversion factor:** 931.49 {{< katex "\text{MeV}\cdot\text{amu}^{-1}\cdot c^{-2}" >}}
 
 This is the energy equivalent to 1 atomic mass unit.
-
-# Mass defect and binding energy
-
-The _mass defect_ is the difference between the sum of the masses of all nucleons and the observed mass of the nucleus. It corresponds to the _binding energy_ in the nucleus. That is, some of the mass of the nucleons was released as binding energy when the nucleus was formed.
-
-Energy release in nuclear reactions happens on an MeV scale, while chemical reactions release energy on an eV scale.

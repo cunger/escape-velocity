@@ -61,13 +61,13 @@ So if the binding energy of the product nuclei is larger than that of the initia
 
 # Decay
 
-_Emitted particles are referred to by their Greek letters when they come from the nucleus._
+Emitted particles are referred to by their Greek letters when they come from the nucleus. So its origin from the nucleus is what what makes Helium an alpha particle, what makes an electron or positron a beta particle, and what makes photons gamma rays.
 
 ## Alpha decay
 
 {{< katex display="{}^A_Z X \to {}^{A-4}_{Z-2} Y^{(-2)} + {}^4_2He^{(+2)}" >}}
 
-A relatively heavy atom emits an alpha particle, in order to get to a more stable state. Alpha particles are Helium nuclei {{< katex "{}^4_2He^{2+}" >}}, i.e. Helium atoms stripped off their electrons. The positive charge of {{< katex "+2" >}}, in fact, doesn't last long, as alpha particles are very quick to grab two electrons; likewise {{< katex "Y" >}}has a negative charge of {{< katex "-2" >}} but very quickly loses the two excess electrons.
+A relatively heavy atom emits an alpha particle, in order to get to a more stable state. Alpha particles are Helium nuclei {{< katex "{}^4_2He^{2+}" >}}, i.e. Helium atoms stripped off their electrons. The positive charge of {{< katex "+2" >}}, in fact, doesn't last long, as alpha particles are very quick to grab two electrons; likewise {{< katex "Y" >}} has a negative charge of {{< katex "-2" >}} but very quickly loses the two excess electrons.
 
 **Example:**
 ![Alpha decay](/images/docs/decay_alpha.png)
@@ -75,7 +75,7 @@ A relatively heavy atom emits an alpha particle, in order to get to a more stabl
 
 ## Beta decay
 
-Beta decay comes in two flavors, with beta particles being electrons and positrons from the nucleus. (Its origin is what makes an electron or positron a beta particle.)
+Beta decay comes in two flavors, with beta particles being electrons and positrons from the nucleus.
 
 ## Beta minus ({{< katex "\beta^-" >}}) decay
 
