@@ -40,24 +40,31 @@ we have:
 
 Where the kinetic energy of a nucleus at rest, i.e. {{< katex="E_{B,\text{kin}}" >}}, is very small compared to the other kinetic energies, and thus can be neglected.
 
-So a resulting energy surplus has to come from either the initial kinetic energy of the particle or from a conversion of mass to energy.
+So a resulting energy surplus has to come from either the initial kinetic energy of the particle or from a conversion of mass to energy. And the Q-value is the difference in mass (or kinetic energy) between before and after the reaction:
 
-[tbd]
+{{< katex display="Q=((m_a + m_A) - (m_b + m_B))\,c^2\ \text{[amu]}" >}}
 
-{{< katex display="Q=((m_a + m_A) - (m_b + m_B))\,c^2" >}}
+Or, using the conversion factor 1 amu = 943.49 {{< katex "\frac{\text{MeV}}{c^2} " >}}:
 
-Or, when using the conversion factor (cf. [mass-energy equivalence](/docs/energy)):
-
-{{< katex display="Q=((m_a + m_A) - (m_b + m_B))\,931.49\,\text{MeV}" >}}
+{{< katex display="Q=((m_a + m_A) - (m_b + m_B))\time 931.49\ \text{[MeV]}" >}}
 
 {{< katex "m" >}} can be both the mass of the nuclei and the mass of the neutral atoms (be aware which one, because it does make a difference).
+
+The Q-value can also be computed on the basis of the binding energies:
+
+{{< katex display="Q=((BE_a + BE_A) - (BE_b + BE_B)) \text{[MeV]}" >}}
+
+(Note that the binding energy of a neutron is 0, as it is not bound anywhere.)
+
+If the binding energy of the product nuclei is larger than that of the initial nucleus, i.e. when the reaction produces a more stable configuration, energy is released.
 
 When {{< katex "Q" >}} is positive, there is a net increase in the energy of the particles; the reaction is **exothermic** (mass was converted into kinetic energy).
 
 When {{< katex "Q" >}} is negative, there is a net decrease in energy; the reaction is **endothermic** (kinetic energy was converted into mass).
 
-{{< katex "Q" >}} can also be defined in terms of binding energy {{< katex "BE" >}}, as: {{< katex "Q=(BE_B + BE_Bb) - (BE_A + BE_a)" >}}
-So if the binding energy of the product nuclei is larger than that of the initial nucleus, i.e. when the reaction produces a more stable configuration, energy is released.
+And since the reaction results have equal (though opposite) momentum, and since momentum is {{< katex "mv" >}}, we also have:
+
+{{< katex display="m_b E_{b,\text{kin}} = m_B E_{B,\text{kin}}" >}}
 
 # Decay
 

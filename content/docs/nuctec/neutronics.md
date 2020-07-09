@@ -1,6 +1,6 @@
 ---
 title: "Neutronics"
-summary: "Neutrons, energy distribution, neutron interactions, iron valley."
+summary: "Neutrons, energy distribution, neutron interactions."
 date: 2019-11-16
 weight: 9
 math: true
@@ -50,13 +50,9 @@ This can also happen spontaneously, but it's unlikely. (Californium has an excee
 
 _Example:_ Uranium fission
 
-{{< katex display="{}^1_0n + {}^{235}_{92}U \,\to\, {}^{236}_{92}U \,\to\, {}^{92}_{36}Kr + {}^{141}_{56}Ba + \sim2.5{}^1_0n" >}}
+{{< katex display="{}^1_0n + {}^{235}_{92}U \,\to\, {}^{236}_{92}U \,\to\, {}^{92}_{36}Kr + {}^{141}_{56}Ba + 2.44{}^1_0n" >}}
 
 The energy of the resulting neutrons is a probability distribution, with the most likely energy ~700 keV and the average energy ~2 MeV. The are, however, too high-energy to engage in further fission events. In a reactor, they thus need to be slowed down by a moderator like water, where neutrons successively lose energy through elastic scattering.
-
-**Fission vs fusion and the iron valley:**
-![Iron valley](/images/docs/ironvalley.png)
-(Picture taken from MITx 22.011x course slides.)
 
 # Cross-sections
 

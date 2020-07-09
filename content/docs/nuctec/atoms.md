@@ -62,14 +62,30 @@ Atoms do not remain in an excited state indefinitely, they will return to their 
 
 ## Mass defect and binding energy
 
-The _mass defect_ is the difference between the sum of the masses of all nucleons and the observed mass of the nucleus. It corresponds to the _binding energy_ in the nucleus. That is, some of the mass of the nucleons was released as binding energy when the nucleus was formed.
+The _mass defect_ is the difference between the sum of the masses of all nucleons (greater) and the observed mass of the nucleus (smaller). This difference corresponds to the _binding energy_ in the nucleus. That is, some of the mass of the nucleons was converted to binding energy when the nucleus was formed.
 
-**Binding energy** {{< katex "B(A,Z) = (Z\times m_\text{proton} + (A-Z)\times m_\text{neutron} - m_\text{atomic}(A,Z)) c^2" >}}
+**Binding energy:**
+
+{{< katex display="B(A,Z) = (Z\times m_\text{proton} + (A-Z)\times m_\text{neutron} - m_\text{atomic}(A,Z)) c^2 \text{[amu]}" >}}
+
+Using the conversion factor 1 amu = 943.49 {{< katex "\frac{\text{MeV}}{c^2} " >}}, this gives:
+
+{{< katex display="B(A,Z) = (Z\times m_\text{proton} + (A-Z)\times m_\text{neutron} - m_\text{atomic}(A,Z))\times 943.39 \text{[MeV]}" >}}
 
 Energy release in nuclear reactions happens on an MeV scale, while chemical reactions release energy on an eV scale.
 In order to raise the (kinetic) energy of a particle in the MeV range, we thus need particle accelerators (as chemical heating could raise the kinetic energy only in the eV range).
 
+![Binding energy per nucleon](https://i.pinimg.com/originals/8b/e9/35/8be935dc4f331a4252f988b17cf80d17.gif)
+
+From the right towards iron, fission reactions release binding energy.
+From the left towards iron, fusion reactions release binding energy.
+
 # Stability
+
+The stability of a nucleus depends, among others, on the number of nuclei and the ratio of protons vs neutrons.
+Also, the more binding energy a nucleus has, the more stable it is.
+
+Unstable elements decay (usually in a decay chain) in order to reach the most stable configuration.  
 
 Elements with {{< katex "Z<20" >}} tend to be stable if {{< katex "\frac{N}{Z}=1" >}}, i.e. if they have the same number of protons and neutrons in the nucleus. In contrast, e.g. {{< katex "{}^{14}_{\ 6}C" >}} (carbon-14) is unstable.
 
