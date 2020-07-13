@@ -41,18 +41,12 @@ Most protons p+ have a positive charge, and most electrons e- have a negative ch
 The _atomic weight_ of an atom is defined as the mass of the neutral atom relative to the mass of a neutral carbon-12 atom (the most common isotope of carbon). Since it is a ratio, it is unitless, specified in terms atomic unit masses `amu`.
 
 ```
-mass_proton   = 1.007276 amu
-mass_neutron  = 1.008665 amu
-mass_electron = 0.000549 amu
+mass_proton   = 1.0072766   amu = 938.256 MeV
+mass_neutron  = 1.0086654   amu = 939.550 MeV
+mass_electron = 0.000548597 amu = 0.511006 MeV
 ```
 
-```
-rest_mass(electron) = 9.1093837015e−31 kg
-rest_mass(proton)   = 1.67262e−27 kg
-rest_mass(neutron)  = 1.67493e−27 kg
-```
-
-The actual mass of an atom is a bit smaller than the sum of its particles. This mass defect is the atom's binding energy - the energy needed to separate the particles in the nucleus.
+The actual mass of an atom is a bit smaller than the sum of its particles. This mass defect ({{< katex "\Delta = m_\text{atomic} - A" >}}) is the atom's binding energy, see the section below.
 
 # Energy
 
@@ -62,7 +56,7 @@ Atoms do not remain in an excited state indefinitely, they will return to their 
 
 ## Mass defect and binding energy
 
-The _mass defect_ is the difference between the sum of the masses of all nucleons (greater) and the observed mass of the nucleus (smaller). This difference corresponds to the _binding energy_ in the nucleus. That is, some of the mass of the nucleons was converted to binding energy when the nucleus was formed.
+The _mass defect_ ({{< katex "\Delta = m_\text{atomic} - A" >}}) is the difference between the sum of the masses of all nucleons (greater) and the observed mass of the nucleus (smaller). This difference corresponds to the _binding energy_ in the nucleus. That is, some of the mass of the nucleons was converted to binding energy when the nucleus was formed, and is required in order to separate the nucleons again.
 
 **Binding energy:**
 
@@ -72,23 +66,30 @@ Using the conversion factor 1 amu = 943.49 {{< katex "\frac{\text{MeV}}{c^2} " >
 
 {{< katex display="B(A,Z) = (Z\times m_\text{proton} + (A-Z)\times m_\text{neutron} - m_\text{atomic}(A,Z))\times 943.39 \text{[MeV]}" >}}
 
+Note that binding energy and atomic mass are negatively related, i.e. the higher the binding energy of a nucleus, the lower its mass, and vice versa.
+
 Energy release in nuclear reactions happens on an MeV scale, while chemical reactions release energy on an eV scale.
 In order to raise the (kinetic) energy of a particle in the MeV range, we thus need particle accelerators (as chemical heating could raise the kinetic energy only in the eV range).
 
-![Binding energy per nucleon](https://i.pinimg.com/originals/8b/e9/35/8be935dc4f331a4252f988b17cf80d17.gif)
+![Binding energy per nucleon](/images/docs/bindingenergy.gif)
 
 From the right towards iron, fission reactions release binding energy.
 From the left towards iron, fusion reactions release binding energy.
 
 # Stability
 
-The stability of a nucleus depends, among others, on the number of nuclei and the ratio of protons vs neutrons.
+The stability of a nucleus depends, among others, on the number of nuclei and the ratio of protons vs neutrons, including even vs odd numbers of protons and neutrons.
 Also, the more binding energy a nucleus has, the more stable it is.
+(On average, a mass defect {{< katex "\Delta > 0" >}} means the nucleus is stable, while a mass defect {{< katex "\Delta < 0" >}} means the nucleus is unstable.)
 
 Unstable elements decay (usually in a decay chain) in order to reach the most stable configuration.  
 
-Elements with {{< katex "Z<20" >}} tend to be stable if {{< katex "\frac{N}{Z}=1" >}}, i.e. if they have the same number of protons and neutrons in the nucleus. In contrast, e.g. {{< katex "{}^{14}_{\ 6}C" >}} (carbon-14) is unstable.
+Elements with {{< katex "Z<20" >}} tend to be stable if {{< katex "\frac{N}{Z}=1" >}}, i.e. if they have the same number of protons and neutrons in the nucleus. With exceptions, e.g. {{< katex "{}^{14}_{\ 6}C" >}} (carbon-14) is unstable.
 
-For elements with high {{< katex "Z" >}}, the stable ratio is about {{< katex "\frac{N}{Z}=1.5" >}}, i.e. if they have more neutrons than protons. The reason is that the strong force that holds together protons in the nucleus (overcoming their electrostatic repulsion) acts only at very short distances. In larger nuclei, the distances get too big and finally repulsion begins to win over. More neutrons can help keeping a balance, but only up to a certain point; elements with {{< katex "Z>83" >}} are pretty much all unstable.
+For elements with high {{< katex "Z" >}}, the stable ratio is about {{< katex "\frac{N}{Z}=1.5" >}}, i.e. if they have more neutrons than protons. The reason is that the strong force that holds together protons in the nucleus (overcoming their electrostatic repulsion) acts only at very short distances. In larger nuclei, the distances get too big and finally repulsion begins to win over. More neutrons can help keeping a balance, but only up to a certain point. Elements with {{< katex "Z>83" >}} are pretty much all unstable.
 
-Especially stable are nuclei with a _magic number_ of {{< katex "Z" >}} or {{< katex "N = 2, 8, 20, 28, 50, 82, 126" >}}, as the average binding energy per nucleon is higher than expected (probably because they correspond to closed shells in the nucleus). Also, atoms with a magic number of neutrons are reluctant to absorb neutrons and thus make good materials where neutron absorption must be avoided.
+Isotopes with even numbers of protons and neutrons tend to be more stable. Especially stable are nuclei with a **magic number** of {{< katex "Z" >}} or {{< katex "N = 2, 8, 20, 28, 50, 82, 126" >}}, as the average binding energy per nucleon is higher than expected (maybe because they correspond to closed shells in the nucleus). Also, atoms with a magic number of neutrons are reluctant to absorb neutrons and thus make good materials where neutron absorption must be avoided.
+
+![Stability](/images/docs/stability.jpeg)
+
+(Image source: [Chemistry Libre Texts](https://chem.libretexts.org/Courses/University_of_Missouri/MU%3A__1330H_(Keller)/21%3A_Nuclear_Chemistry/21.2%3A_Patterns_of_Nuclear_Stability))
