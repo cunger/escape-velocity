@@ -28,25 +28,27 @@ Nuclear reactions conserve:
 
 The _Q-value_ of a nuclear reaction is a measure of energy transfer: the amount of mass that is turned into energy, i.e. the difference between the sum of the masses of the initial reactants and the sum of the masses of the final products.
 
-That means, given conservation of mass and energy and the equivalence of mass and energy, for a reaction
+Given conservation of mass and energy (and the equivalence of mass and energy), for a reaction
 
 {{< katex display="a + A \to B + b" >}}
 
-we have:
+the following must hold:
 
-{{< katex display="m_a + m_A \to m_B + m_b + Q" >}}
+{{< katex display="E_{a,\text{kin}} + m_a c^2 + E_{A,\text{kin}} + m_A c^2 = E_{B,\text{kin}} + m_B c^2 + E_{b,\text{kin}} m_b c^2" >}}
 
-{{< katex display="E_{B,\text{kin}} + E_{b,\text{kin}} \to E_{A,\text{kin}} + E_{a,\text{kin}} + Q" >}}
+Sometimes the kinetic energy of a nucleus at rest ({{< katex "E_{A,\text{kin}}" >}}) is very small compared to the other kinetic energies, and thus can be neglected. This is, however, not the case for fission with thermal neutrons.
 
-Where the kinetic energy of a nucleus at rest, i.e. {{< katex="E_{B,\text{kin}}" >}}, is very small compared to the other kinetic energies, and thus can be neglected.
+And since the reaction results have equal (though opposite) momentum, we also have:
 
-So a resulting energy surplus has to come from either the initial kinetic energy of the particle or from a conversion of mass to energy. And the Q-value is the difference in mass (or kinetic energy) between before and after the reaction:
+{{< katex display="m_b E_{b,\text{kin}} = m_B E_{B,\text{kin}}" >}}
+
+The Q-value is the difference in mass (or kinetic energy) between before and after the reaction:
 
 {{< katex display="Q=((m_a + m_A) - (m_b + m_B))\,c^2\ \text{[amu]}" >}}
 
 Or, using the conversion factor 1 amu = 943.49 {{< katex "\frac{\text{MeV}}{c^2} " >}}:
 
-{{< katex display="Q=((m_a + m_A) - (m_b + m_B))\time 931.49\ \text{[MeV]}" >}}
+{{< katex display="Q=((m_a + m_A) - (m_b + m_B))\times 931.49\ \text{[MeV]}" >}}
 
 {{< katex "m" >}} can be both the mass of the nuclei and the mass of the neutral atoms (be aware which one, because it does make a difference).
 
@@ -58,17 +60,13 @@ The Q-value can also be computed on the basis of the binding energies:
 
 If the binding energy of the product nuclei is larger than that of the initial nucleus, i.e. when the reaction produces a more stable configuration, energy is released.
 
-When {{< katex "Q" >}} is positive, there is a net increase in the energy of the particles; the reaction is **exothermic** (mass was converted into kinetic energy).
+When {{< katex "Q" >}} is positive, there is a net increase in the energy of the particles. The reaction is **exothermic**. The energy surplus comes from a conversion of mass to kinetic energy.
 
-When {{< katex "Q" >}} is negative, there is a net decrease in energy; the reaction is **endothermic** (kinetic energy was converted into mass).
-
-And since the reaction results have equal (though opposite) momentum, and since momentum is {{< katex "mv" >}}, we also have:
-
-{{< katex display="m_b E_{b,\text{kin}} = m_B E_{B,\text{kin}}" >}}
+When {{< katex "Q" >}} is negative, there is a net decrease in energy, i.e. energy has to be supplied for the reaction to take place. The reaction is **endothermic**. Energy is usually supplied in the form of kinetic energy of the incident particle, which is then partly converted into mass.
 
 # Decay
 
-Emitted particles are referred to by their Greek letters when they come from the nucleus. So its origin from the nucleus is what what makes Helium an alpha particle, what makes an electron or positron a beta particle, and what makes photons gamma rays.
+Emitted particles are referred to by their Greek letters when they come from the nucleus. So its origin from the nucleus is what what makes Helium an alpha particle, what makes an electron or positron a beta particle, and what makes photons (electromagnetic waves) gamma rays.
 
 ## Alpha decay
 

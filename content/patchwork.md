@@ -33,10 +33,6 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
-* Particle Physics: an Introduction
-  (Université de Genève | upcoming)
-* Thermodynamics
-  (RiceX | upcoming)  
 
 ## Engineering
 
@@ -45,6 +41,5 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 # Books
 
-* Turner: Atoms, Radiation and Radiation Protection.
 * Yip: Nuclear Radiation Interactions.
 * Lamport: Specifying Systems.

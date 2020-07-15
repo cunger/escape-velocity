@@ -56,7 +56,7 @@ Atoms do not remain in an excited state indefinitely, they will return to their 
 
 ## Mass defect and binding energy
 
-The _mass defect_ ({{< katex "\Delta = m_\text{atomic} - A" >}}) is the difference between the sum of the masses of all nucleons (greater) and the observed mass of the nucleus (smaller). This difference corresponds to the _binding energy_ in the nucleus. That is, some of the mass of the nucleons was converted to binding energy when the nucleus was formed, and is required in order to separate the nucleons again.
+The _mass defect_ ({{< katex "\Delta = m_\text{atomic} - A" >}}) is the difference between the sum of the masses of all nucleons (greater) and the observed mass of the nucleus (smaller). This difference corresponds to the _binding energy_ in the nucleus. That is, some of the mass of the nucleons was converted to binding energy when the nucleus was formed, corresponding to the work required in order to separate the nucleons again.
 
 **Binding energy:**
 
@@ -67,6 +67,8 @@ Using the conversion factor 1 amu = 943.49 {{< katex "\frac{\text{MeV}}{c^2} " >
 {{< katex display="B(A,Z) = (Z\times m_\text{proton} + (A-Z)\times m_\text{neutron} - m_\text{atomic}(A,Z))\times 943.39 \text{[MeV]}" >}}
 
 Note that binding energy and atomic mass are negatively related, i.e. the higher the binding energy of a nucleus, the lower its mass, and vice versa.
+
+(Also note that {{< katex "m_\text{atomic}(A,Z)" >}} includes the electrons, but the error in disregarding their isolated mass is very small.)
 
 Energy release in nuclear reactions happens on an MeV scale, while chemical reactions release energy on an eV scale.
 In order to raise the (kinetic) energy of a particle in the MeV range, we thus need particle accelerators (as chemical heating could raise the kinetic energy only in the eV range).
