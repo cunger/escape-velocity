@@ -64,9 +64,21 @@ When {{< katex "Q" >}} is positive, there is a net increase in the energy of the
 
 When {{< katex "Q" >}} is negative, there is a net decrease in energy, i.e. energy has to be supplied for the reaction to take place. The reaction is **endothermic**. Energy is usually supplied in the form of kinetic energy of the incident particle, which is then partly converted into mass.
 
-# Decay
+# Radioactive decay
 
-Emitted particles are referred to by their Greek letters when they come from the nucleus. So its origin from the nucleus is what what makes Helium an alpha particle, what makes an electron or positron a beta particle, and what makes photons (electromagnetic waves) gamma rays.
+Radioactive decay is a special form of nuclear reaction, where a nucleus decays without being hit by an incident particle:
+
+{{< katex display="A \to B + b" >}}
+
+Emitted particles b are referred to by their Greek letters when they come from the nucleus. So its origin from the nucleus is what what makes Helium an alpha particle, what makes an electron or positron a beta particle, and what makes photons gamma rays.
+
+From the conservation of momentum and mass/energy, we can determine the **kinetic energy** of b:
+
+{{< katex display="E_{b,\text{kin}} = Q \frac{m_B}{m_b + m_B}" >}}
+
+**Decay diagrams:**
+* The y-axis plots energy, i.e. arrows down mean energy is released. Energy here means energy relative to the ground state of the daughter nucleus (not absolute energy).
+* The x-axis is atomic number Z, i.e. an arrow to the left means decreasing the number of protons, an arrow to the right means increasing the number of protons, and a straight line down means the atomic number does not change.
 
 ## Alpha decay
 
@@ -76,7 +88,6 @@ A relatively heavy atom emits an alpha particle, in order to get to a more stabl
 
 **Example:**
 ![Alpha decay](/images/docs/decay_alpha.png)
-(The y-axis is released energy, the x-axis is atomic number Z. Arrow to the left means decreasing the number of protons.)
 
 ## Beta decay
 
@@ -84,35 +95,48 @@ Beta decay comes in two flavors, with beta particles being electrons and positro
 
 ## Beta minus ({{< katex "\beta^-" >}}) decay
 
-A neutron splits into a proton and an electron as well as an antineutrino.
-{{< katex display="{}^A_Z X \to {}^{\ \ \ \ A}_{Z+1} Y^{(+)} + {}^{\ \ \,0}_{-1}e + \overline{v}" >}}
+{{< katex display="{}^A_Z X \to {}^{\ \ \ \ A}_{Z+1} Y^{(+)} + {}^0_0e^{-1} + {}^0_0\overline{v}" >}}
 
-The resulting atom {{< katex "Y" >}}has a positive charge but is very quick in capturing an electron to become neutral again.
+A nucleus emits an electron and an antineutrino, thus converting a neutron into a proton. This is one way of an unstable nucleus with too many neutrons to become more stable.
+
+The resulting atom {{< katex "Y" >}} has a positive charge but is very quick in capturing an electron to become neutral again.
 
 **Example:**
 
 ![Beta minus decay](/images/docs/decay_betaminus_b12.png)
 ![Beta minus decay](/images/docs/decay_betaminus_c14.png)
 
-(Arrow to the right means increase of protons.)
-
 ## Beta plus ({{< katex "\beta^+" >}}) decay
 
-A proton is transformed into a neutron, and a positron and a neutrino are emitted.
-{{< katex display="{}^A_Z X \to {}^{\ \ \ \ A}_{Z-1} Y^{(-)} + {}^0_1e + v" >}}
+{{< katex display="{}^A_Z X \to {}^{\ \ \ \ A}_{Z-1} Y^{-1} + {}^0_0e^{+1} + {}^0_0v" >}}
+
+A nucleus emits a positron and a neutrino, thus converting a proton into a neutron. This is one way of an unstable nucleus with too many protons to become more stable.
 
 **Example** (EC = electron capture):
 ![Beta plus decay](/images/docs/decay_betaplus.png)
 
+## Electron capture
+
+{{< katex display="{}^A_Z X \to {}^{\ \ \ \ A}_{Z-1} Y" >}}
+
+A competing process to beta minus decay is _electron capture_ (EC), where the nucleus captures an inner shell electron, thus reducing the nuclear charge by 1. (The overall charge of the atom does not change, but it is now in an excited state because of the vacancy in one of its inner shells.)
+
+## Neutron emission
+
+{{< katex display="{}^A_Z X \to {}^{A-1}_{\ \ \ \ Z} Y + {}^1_0n" >}}
+
+This happens for exceptionally unstable nuclei.
+
 ## Gamma decay
 
-Reconfiguration of an atom to go from an excited state to a ground state. The nucleus is not changing, it just loses energy but emitting high energy gamma rays {{< katex "{}^0_0\gamma" >}}. These high wave-length electromagnetic waves are _photons_, particles with zero rest mass and charge, traveling at the speed of light.
+{{< katex display="{}^A_Z X^\ast \to {}^A_Z X + {}^0_0\gamma" >}}
+
+Reconfiguration of an atom to go from an excited state to a ground state. (Often follows beta decay, which rarely takes the nucleus to a ground state.) The nucleus is not changing, it just loses energy but emitting high energy gamma rays {{< katex "{}^0_0\gamma" >}}. These high wave-length electromagnetic waves are _photons_, particles with zero rest mass and charge, traveling at the speed of light.
 
 Usually, the de-excitement happens in an unmeasurable short time after the excited state was formed. When it is delayed, the longer-lived excited states are called _isomeric states_, and decays from these states are called _isomeric transitions_ (IT).
 
 **Example:**
 ![Gamma decay](/images/docs/decay_gamma.png)
-(Atom number does not change, thus line is straight down.)
 
 IT competes with with _internal conversion_ (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also hit an electron on the way out; the thus emitted electron is called Auger electron).
 
