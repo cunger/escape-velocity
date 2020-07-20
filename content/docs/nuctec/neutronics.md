@@ -46,7 +46,7 @@ In general, scattering refers to nuclear reactions in which the outgoing particl
 
 **Fission**: The neutron causes the nucleus to split into two fission products, emitting 2 to 4 neutrons and releasing energy.
 {{< katex display="X \to Y + Z + {}^1_0n" >}}
-This can also happen spontaneously, but it's unlikely. (Californium has an exceedingly high probability for spontaneous fission, ~3%, which is why it is sometimes used to jumpstart nuclear reactors).
+This can also happen spontaneously, but its probability is low. (Californium has an exceedingly high probability for spontaneous fission, ~3%, which is why it is sometimes used to jumpstart nuclear reactors).
 
 _Example:_ Uranium fission
 

@@ -26,7 +26,7 @@ Nuclear reactions conserve:
 
 # Q-value
 
-The _Q-value_ of a nuclear reaction is a measure of energy transfer: the amount of mass that is turned into energy, i.e. the difference between the sum of the masses of the initial reactants and the sum of the masses of the final products.
+The _Q-value_ of a nuclear reaction is a measure of energy transfer: the amount of mass that is turned into energy. Mathematically, it's the difference between the sum of the masses of the initial reactants and the sum of the masses of the final products.
 
 Given conservation of mass and energy (and the equivalence of mass and energy), for a reaction
 
@@ -93,7 +93,7 @@ A relatively heavy atom emits an alpha particle, in order to get to a more stabl
 
 Beta decay comes in two flavors, with beta particles being electrons and positrons from the nucleus.
 
-## Beta minus ({{< katex "\beta^-" >}}) decay
+### Beta minus ({{< katex "\beta^-" >}}) decay
 
 {{< katex display="{}^A_Z X \to {}^{\ \ \ \ A}_{Z+1} Y^{(+)} + {}^0_0e^{-1} + {}^0_0\overline{v}" >}}
 
@@ -106,7 +106,7 @@ The resulting atom {{< katex "Y" >}} has a positive charge but is very quick in 
 ![Beta minus decay](/images/docs/decay_betaminus_b12.png)
 ![Beta minus decay](/images/docs/decay_betaminus_c14.png)
 
-## Beta plus ({{< katex "\beta^+" >}}) decay
+### Beta plus ({{< katex "\beta^+" >}}) decay
 
 {{< katex display="{}^A_Z X \to {}^{\ \ \ \ A}_{Z-1} Y^{-1} + {}^0_0e^{+1} + {}^0_0v" >}}
 
@@ -138,11 +138,15 @@ Usually, the de-excitement happens in an unmeasurable short time after the excit
 **Example:**
 ![Gamma decay](/images/docs/decay_gamma.png)
 
-IT competes with with _internal conversion_ (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also hit an electron on the way out; the thus emitted electron is called Auger electron).
+IT competes with with _internal conversion_ (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also be thought of as hitting an electron on the way out; the thus emitted electron, usually from an outer shell, is called _Auger electron_).
 
-## Decay rate and decay probability
+## Spontaneous fission
 
-The decay rate of nuclei is specified as:
+Happens with very heavy (and unstable) elements, but usually with very low probability.
+
+# Decay rate and decay probability
+
+The decay rate of a nucleus is specified as:
 
 {{< katex display="\frac{dN}{dt}=-\lambda N" >}}
 
@@ -166,11 +170,35 @@ This matches the intuition that the probability of decaying until one half-life 
 
 The decay constant is related to the half-life {{< katex "T" >}} as follows (which we arrive at when setting {{< katex "N=\frac{1}{2}N(0)" >}}"):
 
-{{< katex display="\lambda = \cfrac{\text{ln}\,2}{T}" >}}and {{< katex "T = \cfrac{\text{ln}\,2}{\lambda}" >}}
+{{< katex display="\lambda = \cfrac{\text{ln}\,2}{T}" >}} and {{< katex "T = \cfrac{\text{ln}\,2}{\lambda}" >}}
 
 The average life expectancy (or _mean life_) of a nucleus is {{< katex "\frac{1}{\lambda}" >}}.
 
+Generally, the larger an element's decay constant {{< katex "\lambda" >}}, the faster its decay and the shorter its half-life.
+
 **Code:** [github.com/cunger/simulacron/nuclei](https://github.com/cunger/lab/tree/master/nuclei)
+
+## Serial radioactive decay
+
+In general, change = production - destruction. So for a linear decay chain:
+
+{{< katex display="N_1 \xrightarrow{\lambda_1} N_2 \xrightarrow{\lambda_2} N3" >}}
+
+We have the following set of differential equations:
+
+* {{< katex "\cfrac{dN_1}{dt}=0 - \lambda_1 N_1" >}}
+* {{< katex "\cfrac{dN_2}{dt}=\lambda_1 N_1 - \lambda_2 N_2" >}}
+* {{< katex "\cfrac{dN_3}{dt}=\lambda_2 N_2 - 0" >}}
+
+With the following solutions:
+
+* {{< katex "N_1=N_{1,0}e^{-\lambda_1 t}" >}}
+* {{< katex "N_2=\cfrac{\lambda_1 N_{1,0}}{\lambda_2 - \lambda_1} e^{-\lambda_1 t}" >}} (assuming that {{< katex "N_{2,0}=0" >}})
+* {{< katex "N_3= tbd" >}} (using conversation {{< katex "N_1 + N_2 + N_3 = N_{1,0}" >}})
+
+(Referred to as [Bateman equations](https://www.nuclear-power.net/nuclear-power/reactor-physics/atomic-nuclear-physics/radioactive-decay/radioactive-equilibrium/bateman-equations/).)
+
+And you can add terms for production and destruction via nuclear reactions, e.g. including the reaction rate = cross-section {{< katex "\sigma" >}} times neutron flux {{< katex "\Phi" >}} times {{< katex "N_i" >}}.
 
 ## Radioactive dating
 
