@@ -1,6 +1,6 @@
 ---
 title: "Nuclear reactions"
-summary: "Q-value, alpha, beta, and gamma decay, decay rate and probability, radioactive dating."
+summary: "Q-value, alpha, beta, and gamma decay, activity and decay rate."
 date: 2019-11-15
 weight: 8
 math: true
@@ -131,28 +131,33 @@ This happens for exceptionally unstable nuclei.
 
 {{< katex display="{}^A_Z X^\ast \to {}^A_Z X + {}^0_0\gamma" >}}
 
-Reconfiguration of an atom to go from an excited state to a ground state. (Often follows beta decay, which rarely takes the nucleus to a ground state.) The nucleus is not changing, it just loses energy but emitting high energy gamma rays {{< katex "{}^0_0\gamma" >}}. These high wave-length electromagnetic waves are _photons_, particles with zero rest mass and charge, traveling at the speed of light.
+Reconfiguration of an atom to go from an excited state to a ground state. (Often follows beta decay, which rarely takes the nucleus to a ground state.) The nucleus is not changing, it just loses energy but emitting high energy gamma rays {{< katex "{}^0_0\gamma" >}}. These high wave-length electromagnetic waves are photons, particles with zero rest mass and charge, traveling at the speed of light.
 
-Usually, the de-excitement happens in an unmeasurable short time after the excited state was formed. When it is delayed, the longer-lived excited states are called _isomeric states_, and decays from these states are called _isomeric transitions_ (IT).
+Usually, the de-excitement happens in an unmeasurable short time after the excited state was formed. When it is delayed, the longer-lived excited states are called **isomeric states**, and decays from these states are called **isomeric transitions** (IT).
 
 **Example:**
+
 ![Gamma decay](/images/docs/decay_gamma.png)
 
-IT competes with with _internal conversion_ (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also be thought of as hitting an electron on the way out; the thus emitted electron, usually from an outer shell, is called _Auger electron_).
+IT competes with with **internal conversion** (IC), which can be thought of the gamma ray hitting an electron on the way out of the nucleus, leading to the gamma ray to be absorbed and the electron to be emitted from the atom. Subsequently, an outer electron will fill the resulting hole, emitting an x-ray (which could also be thought of as hitting an electron on the way out; the thus emitted electron, usually from an outer shell, is called Auger electron).
 
 ## Spontaneous fission
 
+Emission of neutrons.
+
 Happens with very heavy (and unstable) elements, but usually with very low probability.
 
-# Decay rate and decay probability
+# Activity and decay rate
 
-The decay rate of a nucleus is specified as:
+The **activity** {{< katex "A" >}} [{{< katex "\frac{\text{decays}}{cm^3 s}" >}}] is defined as {{< katex "A=\lambda N" >}}, where {{< katex "N" >}} is the number of nuclei present per volume [{{< katex "\frac{\text{atoms}}{cm^3}" >}}], and {{< katex "\lambda" >}} is the decay constant for the element [{{< katex "s^{-1}" >}}].
+
+Not regarding volume, {{< katex "N" >}} is simply the number of nuclei present and {{< katex "A" >}} is in {{< katex "\frac{\text{decays}}{s}" >}}, which is named Bq (or Ci for more manageable numbers).
+
+The **decay rate** of a nucleus is specified as:
 
 {{< katex display="\frac{dN}{dt}=-\lambda N" >}}
 
-Where {{< katex "N" >}} is the number of nuclei present, and {{< katex "\lambda" >}} is the decay constant for the element. If nuclides are also produced at a constant rate {{< katex "R" >}}, the right-hand side changes to {{< katex "-\lambda N + R" >}}.
-
-The analytical solution to this differential equation is:
+If nuclides are also produced at a constant rate {{< katex "R" >}}, the right-hand side changes to {{< katex "-\lambda N + R" >}}. The analytical solution to the above differential equation is:
 
 {{< katex display="N(t)=N(0)\,e^{-\lambda t}" >}}
 
@@ -178,7 +183,13 @@ Generally, the larger an element's decay constant {{< katex "\lambda" >}}, the f
 
 **Code:** [github.com/cunger/simulacron/nuclei](https://github.com/cunger/lab/tree/master/nuclei)
 
-## Serial radioactive decay
+## Radioactive dating
+
+Solving the decay equation for {{< katex "t" >}} allows for radioactive dating, e.g. where {{< katex "N(t)" >}} is the current amount of carbon-14 present in the sample, {{< katex "N(0)" >}} is the amount of carbon-14 in living tissue, and the half life of carbon-14 is 5700 years.
+
+**Code:** [decay.exs](https://github.com/cunger/simulacron/blob/master/decay.exs)
+
+# Serial radioactive decay
 
 In general, change = production - destruction. So for a linear decay chain:
 
@@ -190,18 +201,6 @@ We have the following set of differential equations:
 * {{< katex "\cfrac{dN_2}{dt}=\lambda_1 N_1 - \lambda_2 N_2" >}}
 * {{< katex "\cfrac{dN_3}{dt}=\lambda_2 N_2 - 0" >}}
 
-With the following solutions:
+(The general form is referred to as [Bateman equations](https://www.nuclear-power.net/nuclear-power/reactor-physics/atomic-nuclear-physics/radioactive-decay/radioactive-equilibrium/bateman-equations/).)
 
-* {{< katex "N_1=N_{1,0}e^{-\lambda_1 t}" >}}
-* {{< katex "N_2=\cfrac{\lambda_1 N_{1,0}}{\lambda_2 - \lambda_1} e^{-\lambda_1 t}" >}} (assuming that {{< katex "N_{2,0}=0" >}})
-* {{< katex "N_3= tbd" >}} (using conversation {{< katex "N_1 + N_2 + N_3 = N_{1,0}" >}})
-
-(Referred to as [Bateman equations](https://www.nuclear-power.net/nuclear-power/reactor-physics/atomic-nuclear-physics/radioactive-decay/radioactive-equilibrium/bateman-equations/).)
-
-And you can add terms for production and destruction via nuclear reactions, e.g. including the reaction rate = cross-section {{< katex "\sigma" >}} times neutron flux {{< katex "\Phi" >}} times {{< katex "N_i" >}}.
-
-## Radioactive dating
-
-Solving the decay equation for {{< katex "t" >}} allows for radioactive dating, e.g. where {{< katex "N(t)" >}} is the current amount of carbon-14 present in the sample, {{< katex "N(0)" >}} is the amount of carbon-14 in living tissue, and the half life of carbon-14 is 5700 years.
-
-**Code:** [decay.exs](https://github.com/cunger/simulacron/blob/master/decay.exs)
+If there is also other nuclear reactions involved, they can be added as additional terms for production and destruction, e.g. by including the reaction rate {{< katex "\sigma \Phi N_i" >}}, where {{< katex "\sigma" >}} is the cross-section [{{< katex "cm^2" >}}] and {{< katex "\Phi" >}} is the neutron flux [{{< katex "\frac{\text{neutrons}}{cm^2 s}" >}}].
