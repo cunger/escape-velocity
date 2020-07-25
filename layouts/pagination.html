@@ -8,7 +8,7 @@
 
         <a href="" class="button round small outline">Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</a>
         </li>
-            {{ if .Paginator.HasNext }}</a>
+            {{ if .Paginator.HasNext }}
         <li class="next"><a href="{{ .Paginator.Next.URL }}">Next</a></li>
            {{ end }}
     </ul>

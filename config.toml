@@ -11,6 +11,23 @@ Paginate = 4
   github = "cunger"
   email = "christina@unger.dev"
 
+[[menu.main]]
+    name = "Mathematics"
+    weight = -100
+    url = "/docs/maths/"
+[[menu.main]]
+    name = "Nuclear Engineering"
+    weight = -100
+    url = "/docs/nuctec/"
+[[menu.main]]
+    name = "Software Development"
+    weight = -100
+    url = "/docs/dev/"
+[[menu.main]]
+    name = "About"
+    weight = -100
+    url = "/about"  
+
 # Code syntax highlighting
 
 # pygmentsCodeFences = true
