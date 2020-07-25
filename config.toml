@@ -6,7 +6,7 @@ title = "Escape Velocity"
 
 Paginate = 4
 [Params]
-  description = "Notes on nuclear technology and code."
+  description = "Notebooks from a programmer's journey into the subatomic world."
   author = "Christina Unger"
   github = "cunger"
   email = "christina@unger.dev"

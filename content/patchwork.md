@@ -1,28 +1,28 @@
 ---
-title: "Nuclear Engineering"
+title: "Patchwork Studies"
 date: 2020-07-03
 toc: true
 math: false
 ---
 
-Starting from Nuclear Engineering curriculi (such as the ones from [MIT](http://catalog.mit.edu/degree-charts/nuclear-science-engineering-course-22/), [Rensselaer](http://catalog.rpi.edu/preview_program.php?catoid=20&poid=4641), [Texas A&M](https://catalog.tamu.edu/undergraduate/engineering/nuclear/bs/#programrequirementstext), and [U-M](https://ners.engin.umich.edu/academics/undergraduate/objectives/)), I aim to compile an ongoing learning journey towards nuclear proficiency. It's not a degree from a traditional university, and it's not supposed to be one. Just a patchwork of courses and books that help me acquiring the fundamental knowledge and skills of the field. Most importantly, it's growing and evolving as I dive deeper into the topic.
+This is a slow but steady learning journey towards nuclear proficiency. I greatly benefit from high-quality books and courses, forming a patchwork of resources that help me acquiring the fundamental knowledge and skills of the field, and that is growing and evolving as I dive deeper into the topic.
 
-# Notes
+# Bookshelf
 
-I keep two notebooks:
+* 📖 S. Yip: Nuclear Radiation Interactions.
+* 📖 B. Cox, J. Foreshaw: The Quantum Universe.
+* 📚 I. Hutchinson: A Student's Guide to Numerical Methods.
+* 📚 L. Lamport: Specifying Systems.
+* C. Seife: Sun in a Bottle: The Strange History of Fusion and the Science of Wishful Thinking.
 
-* [Nuclear Technology](/docs/nuctec/) contains all things nuclear, including background in mathematics, physics, and chemistry.
-* [Software Development](/docs/dev/) contains all things computational, including programming languages and development basics.
-
-These pages are notes for my future self, as I'm sure it will need to look up stuff later.
-They're updated regularly.
+(📖 means "currently reading" and 📚 means "still on the stack".)
 
 # Courses
 
 ## Nuclear
 
 * Introduction to Nuclear Engineering and Ionizing Radiation  
-  ([MIT OCW](https://ocw.mit.edu/courses/nuclear-engineering/22-01-introduction-to-nuclear-engineering-and-ionizing-radiation-fall-2016/lecture-videos/) | ongoing)
+  ([MIT OpenCourseWare](https://ocw.mit.edu/courses/nuclear-engineering/22-01-introduction-to-nuclear-engineering-and-ionizing-radiation-fall-2016/lecture-videos/) | ongoing)
 * Understanding Nuclear Energy
   (GENTLE & DelftX | [certificate](https://courses.edx.org/certificates/8dec05e14fd846cdadffe75adeb91c07))
 * Nuclear Reactor Physics Basics
@@ -34,14 +34,20 @@ They're updated regularly.
 
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
+* Quantum Mechanics: A First Course
+  (MITx | starts Sept 2020)
 
 ## Engineering
 
 * Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
   (MITxPro | [certificate](https://xpro.mit.edu/certificate/program/5060051c-301b-4e7c-96e7-46b2c323a09f/))
 
-# Books
+## Software
 
-* S. Yip: Nuclear Radiation Interactions.
-* I. Hutchinson: A Student's Guide to Numerical Methods.
-* L. Lamport: Specifying Systems.
+* Blockchain Technology
+  (BerkeleyX | [certificate](https://courses.edx.org/certificates/0e861a3aa10e44d6a5c98f82036acfb0))
+
+## Others
+
+* Climate Action: Solutions for a Changing Planet
+  (SDGAcademyX | [certificate](https://courses.edx.org/certificates/b78c0a1559314a75909cc6b03232e4f8))

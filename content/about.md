@@ -19,19 +19,22 @@ I'm a software engineer with a background in research and with experience in app
   <!-- &nbsp;&nbsp; 🤹‍♀️  -->
 ---
 
+These pages are notes for my future self, as I'm sure it will need to look up stuff regularly. I therefore keep several notebooks:
+
+* [Mathematics](/docs/maths/)
+* [Software Development](/docs/dev/)
+* [Nuclear Engineering](/docs/nuctec/), including some of the necessary background in physics
+
 # Education
 
-### Patchwork studies
-
-* [Nuclear Engineering](/patchwork)
-
-### Formal degrees
-
+* Mathematical-Technical Software Engineering (B.Sc., applied to start Oct 2020)
+* [Patchwork studies](/patchwork)
+* [Launch School](https://launchschool.com)
 * Computational Linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)
 * Mathematics (B.A. level)
 
-### Volunteering
+# Volunteering
 
 I deeply care about marine conservation, and volunteering in this field has been among the most inspiring, energizing, and humbling experiences I had.
 
