@@ -3,7 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a software engineer with a background in research and with experience in application development, expert systems and formal methods. I have a strong interest in nuclear technology and spaceflight.
+I'm a software engineer with a background in research and with experience in application development, expert systems and formal methods, as well as in technical writing. I have a strong interest in nuclear technology and spaceflight.
 
 ---
   &nbsp;&nbsp; 💾 [GitHub.com/cunger](https://github.com/cunger/)
@@ -29,7 +29,6 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 * Mathematical-Technical Software Engineering (B.Sc., applied to start Oct 2020)
 * [Patchwork studies](/patchwork)
-* [Launch School](https://launchschool.com)
 * Computational Linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)
 * Mathematics (B.A. level)

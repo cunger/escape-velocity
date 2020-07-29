@@ -15,9 +15,9 @@ This is a slow but steady learning journey towards nuclear proficiency. I greatl
 * 📚 L. Lamport: Specifying Systems.
 * C. Seife: Sun in a Bottle: The Strange History of Fusion and the Science of Wishful Thinking.
 
-(📖 means "currently reading" and 📚 means "still on the stack".)
+(📖 means "currently reading" and 📚 means "on the stack".)
 
-# Courses
+# Selected courses
 
 ## Nuclear
 
@@ -37,17 +37,15 @@ This is a slow but steady learning journey towards nuclear proficiency. I greatl
 * Quantum Mechanics: A First Course
   (MITx | starts Sept 2020)
 
-## Engineering
-
-* Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
-  (MITxPro | [certificate](https://xpro.mit.edu/certificate/program/5060051c-301b-4e7c-96e7-46b2c323a09f/))
-
 ## Software
 
+* [Launch School](https://launchschool.com)
 * Blockchain Technology
   (BerkeleyX | [certificate](https://courses.edx.org/certificates/0e861a3aa10e44d6a5c98f82036acfb0))
 
 ## Others
 
+* Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
+  (MITxPro | [certificate](https://xpro.mit.edu/certificate/program/5060051c-301b-4e7c-96e7-46b2c323a09f/))
 * Climate Action: Solutions for a Changing Planet
   (SDGAcademyX | [certificate](https://courses.edx.org/certificates/b78c0a1559314a75909cc6b03232e4f8))
