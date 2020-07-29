@@ -19,32 +19,14 @@ This is a slow but steady learning journey towards nuclear proficiency. I greatl
 
 # Selected courses
 
-## Nuclear
-
 * Introduction to Nuclear Engineering and Ionizing Radiation  
   ([MIT OpenCourseWare](https://ocw.mit.edu/courses/nuclear-engineering/22-01-introduction-to-nuclear-engineering-and-ionizing-radiation-fall-2016/lecture-videos/) | ongoing)
 * Understanding Nuclear Energy
   (GENTLE & DelftX | [certificate](https://courses.edx.org/certificates/8dec05e14fd846cdadffe75adeb91c07))
-* Nuclear Reactor Physics Basics
-  (MEPhIx | [certificate](https://courses.edx.org/certificates/35aaac84c1394a96b60c5109be26e7fa))
-* Nuclear Facilities: Regulations and Licensing
-  (MEPhIx | [certificate](https://courses.edx.org/certificates/287fad013e814d708be737b76bb1c53b))
-
-## Physics
-
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
 * Quantum Mechanics: A First Course
   (MITx | starts Sept 2020)
-
-## Software
-
-* [Launch School](https://launchschool.com)
-* Blockchain Technology
-  (BerkeleyX | [certificate](https://courses.edx.org/certificates/0e861a3aa10e44d6a5c98f82036acfb0))
-
-## Others
-
 * Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
   (MITxPro | [certificate](https://xpro.mit.edu/certificate/program/5060051c-301b-4e7c-96e7-46b2c323a09f/))
 * Climate Action: Solutions for a Changing Planet
