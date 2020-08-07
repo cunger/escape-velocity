@@ -27,7 +27,7 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 # Education
 
-* Mathematical-Technical Software Engineering (B.Sc., applied to start Oct 2020)
+* Mathematical-Technical Software Engineering (B.Sc., starting Oct 2020)
 * [Patchwork studies](/patchwork)
 * Computational Linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)

@@ -40,6 +40,7 @@ Most protons p+ have a positive charge, and most electrons e- have a negative ch
 
 The _atomic weight_ of an atom is defined as the mass of the neutral atom relative to the mass of a neutral carbon-12 atom (the most common isotope of carbon). Since it is a ratio, it is unitless, specified in terms atomic unit masses `amu`.
 
+Rest masses of atomic particles:
 ```
 mass_proton   = 1.0072766   amu = 938.256 MeV
 mass_neutron  = 1.0086654   amu = 939.550 MeV
