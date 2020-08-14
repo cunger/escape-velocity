@@ -2,7 +2,7 @@
 title: "Neutronics"
 summary: "Neutrons, energy distribution, neutron interactions."
 date: 2019-11-16
-weight: 9
+weight: 4
 math: true
 toc: true
 ---

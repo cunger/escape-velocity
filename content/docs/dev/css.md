@@ -1,8 +1,8 @@
 ---
 title: "CSS"
-summary: "Selectors. "
+summary: "Box model, selectors, positioning."
 date: 2020-01-10
-weight: 12
+weight: 10
 math: false
 toc: true
 ---

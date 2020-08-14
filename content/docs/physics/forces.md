@@ -2,7 +2,7 @@
 title: "Forces"
 summary: "The fundamental forces of physics."
 date: 2019-11-16
-weight: 5
+weight: 3
 math: true
 toc: true
 ---

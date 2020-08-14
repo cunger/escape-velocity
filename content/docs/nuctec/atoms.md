@@ -2,7 +2,7 @@
 title: "Atoms"
 summary: "What atoms are composed of, their energy, charge, mass, and stability."
 date: 2019-11-04
-weight: 7
+weight: 1
 math: true
 toc: true
 ---

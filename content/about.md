@@ -19,11 +19,7 @@ I'm a software engineer with a background in research and with experience in app
   <!-- &nbsp;&nbsp; 🤹‍♀️  -->
 ---
 
-These pages are notes for my future self, as I'm sure it will need to look up stuff regularly. I therefore keep several notebooks:
-
-* [Mathematics](/docs/maths/)
-* [Software Development](/docs/dev/)
-* [Nuclear Engineering](/docs/nuctec/), including some of the necessary background in physics
+These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 # Education
 
@@ -31,7 +27,7 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 * [Patchwork studies](/patchwork)
 * Computational Linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)
-* Mathematics (B.A. level)
+* Mathematics (Grundstudium Nebenfach)
 
 # Volunteering
 

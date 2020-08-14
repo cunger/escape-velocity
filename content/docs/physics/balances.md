@@ -2,7 +2,7 @@
 title: "Balances"
 summary: "Equations for mass and energy balances. Macro and micro balances."
 date: 2019-11-16
-weight: 11
+weight: 5
 math: true
 toc: true
 ---

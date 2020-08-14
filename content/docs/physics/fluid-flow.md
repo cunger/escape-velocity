@@ -2,7 +2,7 @@
 title: "Fluid flow"
 summary: "Flow rate. Drag force."
 date: 2019-11-16T12:19:28+01:00
-weight: 10
+weight: 7
 math: true
 toc: true
 ---

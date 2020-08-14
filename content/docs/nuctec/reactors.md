@@ -2,7 +2,7 @@
 title: "Fission reactors"
 summary: "Draft."
 date: 2019-11-16
-weight: 11
+weight: 5
 math: true
 toc: true
 draft: false
