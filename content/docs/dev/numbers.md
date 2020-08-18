@@ -66,16 +66,16 @@ Negative numbers can be included in several ways:
 
 Real numbers are stored as floating-point representations (of which scientific notation is on example):
 
-{{< katex display="z = m \times b^k" >}}
+{{< katex display="z = s \times b^k" >}}
 
 Where:
-* {{< katex "b\in\N" >}} the base (where 10 is usually used by humans and 2 by computers)
-* {{< katex "m\in\mathbb{R}_+: 1\leq m \lt b" >}} the mantissa (signed; the normalization condition makes the representation unique)
+* {{< katex "b\in\N" >}} the base (usually 10 is used by humans and 2 by computers)
+* {{< katex "s\in\mathbb{R}_+: 1\leq s \lt b" >}} the significand (signed; the normalization condition makes the representation unique; for precision {{< katex "p" >}}, the significand has {{< katex "p" >}} digits)
 * {{< katex "k\in\Z" >}} the exponent (signed; expresses the order of magnitude)
 
-For example, {{< katex "1.9 \times 10^3 = 1900" >}} and {{< katex "-1.9 \times 10^{-3} = -0.0019" >}}.
+For example, for base 10 and precision 2: {{< katex "1.9 \times 10^3 = 1900" >}} and {{< katex "-1.9 \times 10^{-3} = -0.0019" >}}.
 
-## Advantages
+Floating-point representation has advantages over fixed-point representation:
 
 * It can represent numbers at very different magnitudes.
 * It provides the same relative accuracy at all magnitudes.
@@ -85,12 +85,19 @@ For example, {{< katex "1.9 \times 10^3 = 1900" >}} and {{< katex "-1.9 \times 1
 
 Floating-point representations are stored in 32 or 64 bits.
 
-|                  | Bits | Bits for {{< katex "m" >}} | Bits for {{< katex "k" >}} | Range (approximately) |
+|                  | Bits | Bits for {{< katex "s" >}} | Bits for {{< katex "k" >}} | Range (approximately) |
 | ---------------- | ---------- | -------------------- | ------------- | ----- |
 | Single precision | 32         | 24 (23 + 1 for sign) | 8             | {{< katex "1.2 \times 10^{-38} \ldots 3.4 \times 10^{38}" >}} |
 | Double precision | 64         | 53 (52 + 1 for sign) | 11            | {{< katex "2.2 \times 10^{-308} \ldots 1.8 \times 10^{308}" >}}
  |
 
-Since the base is 2, the mantissa is always of form 1.x, so the leading 1 does not need to be stored.
+If the base is 2, the significand is always of form 1.x, so the leading 1 does not need to be stored.
 
-## Rounding errors
+## Errors
+
+Most decimals have infinite representations in binary.
+
+In general, a number {{< katex "x" >}} has a terminating representation in base {{< katex "b" >}} if and only if there exists an integer {{< katex "n" >}} such that {{< katex "x\times b^n" >}} is an integer.
+For any rational {{< katex "x = \frac{p}{q}" >}}, {{< katex "x" >}} has a terminating representation in {{< katex "b" >}} if all prime factors of {{< katex "q" >}} are also prime factors of {{< katex "b" >}}. (If not, there is no suitable {{< katex "n" >}} to get rid of these factors.)
+
+Thus for base 10, any {{< katex "x = \frac{p}{q}" >}} where {{< katex "q" >}} has prime factors other than 2 or 5 will not have a terminating representation, and for base 2, any {{< katex "x = \frac{p}{q}" >}} where {{< katex "q" >}} has prime factors other than 2 will not have a terminating representation.
