@@ -12,7 +12,7 @@ Paginate = 4
   email = "christina@unger.dev"
 
 [[menu.main]]
-    name = "Mathematics"
+    name = "Math"
     weight = -100
     url = "/docs/maths/"
 [[menu.main]]
@@ -26,7 +26,7 @@ Paginate = 4
 [[menu.main]]
     name = "About"
     weight = -100
-    url = "/about"  
+    url = "/about"
 
 # Code syntax highlighting
 
