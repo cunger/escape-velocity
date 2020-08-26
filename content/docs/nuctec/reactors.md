@@ -1,6 +1,6 @@
 ---
 title: "Fission reactors"
-summary: "Draft."
+summary: "Fission reaction, neutron transport, and reactor types. (Draft)"
 date: 2019-11-16
 weight: 5
 math: true
@@ -60,6 +60,10 @@ And the losses are:
 
 Each of the gain and loss terms (except for leakage) has the general form:
 {{< katex display="\text{multiplier} \times \int_\text{stuff} \text{reaction rate}\ d\ \text{stuff}" >}}
+Where the reaction rate is a cross-section times flux.
+
+To make things easier, we neglect the angle of the neutrons and assume that the reactor is in a steady state and homogeneous (the latter doesn't hold in or near fuel and control rods, though). Also, the energy can be discretized in groups (for LWR, this can be a two-group approximation: thermal and non-thermal energy ranges), taking averages of the quantities depending on the energy (like cross-sections).
+This allows for transforming the complex **neutron transport equation** into a much simpler (and analytically solvable) **neutron diffusion equation**.
 
 ## Delayed neutrons
 
