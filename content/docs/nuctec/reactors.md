@@ -1,6 +1,6 @@
 ---
 title: "Fission reactors"
-summary: "Fission reaction, neutron transport, and reactor types. (Draft)"
+summary: "Fission reaction, neutron transport, criticality, and reactor types. (Draft)"
 date: 2019-11-16
 weight: 5
 math: true
@@ -68,6 +68,17 @@ This allows for transforming the complex **neutron transport equation** into a m
 ## Delayed neutrons
 
 Not all neutron production is instantaneous.
+
+# Criticality
+
+{{< katex display="k = \dfrac{\text{gains}}{\text{losses}}" >}}
+
+* If {{< katex "k=1" >}}, the reactor is **critical**, i.e. in steady state.
+* If {{< katex "k<1" >}}, the reactor is **subcritical**.
+* If {{< katex "k>1" >}}, the reactor is **supercritical**.
+
+If the temperature is raised, macroscopic cross-sections {{< katex "\Sigma = N \times \sigma" >}} tend to go down, as atoms spread out and thus the number density {{< katex "N" >}} go down.
+The relative change of a physical property associated with a given change in temperature is the **temperature coefficient**, and we definitely don't want a positive temperature coefficient for {{< katex "k" >}} in a reactor.
 
 # Reactor types
 
