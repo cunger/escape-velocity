@@ -1,16 +1,11 @@
 ---
-title: "Cheatsheets"
-summary: "Units, constants, cheatsheets."
+title: "Units and constants"
+summary: "Nothing more. Nothing less."
 date: 2019-11-16T12:00:51+01:00
 weight: 1
 math: true
 toc: true
 ---
-
-# Cheatsheets
-
-[Math quick references @ EEWeb](https://www.eeweb.com/tools/math-help)
-(Algebra, Trigonometry, Derivatives, Integrals)
 
 # Prefixes
 
@@ -55,11 +50,6 @@ Electronvolt can also be used as a unit of mass, which is usually given in {{< k
 
 The conversion factor between amu and MeV is {{< katex "931.49 \cfrac{\text{MeV}}{\text{amu}\cdot c^2}" >}}.
 
-The activity of decay is usually given in **Curies**.
-```
-1 Ci = 3.7e10 disintegrations (decayed nuclei) per second
-```
-
 Cross-sections are specified in **barn**.
 ```
 1 barn = 10e-28 m^2
@@ -68,6 +58,31 @@ Cross-sections are specified in **barn**.
 Distances on the sub-atomic level are usually given in **fermi**.
 ```
 1 fm = 10e-15 m
+```
+
+## Activity and radiation dose
+
+The activity of decay is usually given in **Curies**.
+```
+1 Ci = 3.7e10 disintegrations (decayed nuclei) per second
+```
+
+**Gray** specifies the energy absorption of some mass. Multiplying it by a quality factor gives a risk in **Sievert**.
+```
+1 Gy = 1 J/kg
+1 Sv = Q * Gy
+```
+The quality factor is the product of a factor for the type of tissue and one for the type of radiation.
+* `Q=1` for X rays and gamma and beta rays of all energies.
+* `Q=5...20` for neutrons, depending on their energy (highest for `0.1...2 MeV`).
+* `Q=20` for alpha particles (because they have a very short range and deposit a great amount of energy, so they're not that harmful when outside the body but very harmful when inside it).
+* `Q` is higher for tissue with more quickly dividing cells (because then the cells divide with the defect before cell repair mechanisms can fix it, more quickly spreading it), and therefore also at younger age.
+
+Corresponding non-SI units are **rad** (energy absorption, where `1 erg = 10^(-7) J`) and **rem** (Roentgen equivalent man, specifying increased cancer risk).
+```
+1 rad = erg/g
+1 Gy = 100 rad
+1 Sv = 100 rem
 ```
 
 # Constants
