@@ -5,7 +5,7 @@ toc: true
 math: false
 ---
 
-The list of resources below is growing and evolving as I proceed on a slow but steady learning journey towards nuclear proficiency and technical software engineering.
+The list of resources below is growing and evolving as I proceed on a slow but steady learning journey towards nuclear proficiency and technical software engineering. As Marie Curie said: _Now is the time to understand more._
 
 # Bookshelf
 
@@ -21,7 +21,7 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 # Selected courses
 
 * Introduction to Nuclear Engineering and Ionizing Radiation  
-  ([MIT OpenCourseWare](https://ocw.mit.edu/courses/nuclear-engineering/22-01-introduction-to-nuclear-engineering-and-ionizing-radiation-fall-2016/lecture-videos/) | ongoing)
+  ([MIT OpenCourseWare](https://ocw.mit.edu/courses/nuclear-engineering/22-01-introduction-to-nuclear-engineering-and-ionizing-radiation-fall-2016/lecture-videos/))
 * Understanding Nuclear Energy
   (GENTLE & DelftX | [certificate](https://courses.edx.org/certificates/8dec05e14fd846cdadffe75adeb91c07))
 * The Basics of Transport Phenomena
