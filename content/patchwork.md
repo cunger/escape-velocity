@@ -10,6 +10,7 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 # Bookshelf
 
 * 📖 C. Baier, J.-P. Katoen: Principles of Model Checking.
+* 📖 W. Ley, K. Wittmann, W. Hallmann (eds.): Handbuch der Raumfahrttechnik.
 * 📚 L. Lamport: Specifying Systems.
 * 📚 I. Hutchinson: A Student's Guide to Numerical Methods.
 * S. Yip: Nuclear Radiation Interactions.
