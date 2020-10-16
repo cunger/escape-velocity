@@ -9,10 +9,10 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 
 # Bookshelf
 
-* 📖 S. Yip: Nuclear Radiation Interactions.
-* 📖 J. Blandy, J. Orendorff: Programming Rust.
-* 📚 I. Hutchinson: A Student's Guide to Numerical Methods.
+* 📖 C. Baier, J.-P. Katoen: Principles of Model Checking.
 * 📚 L. Lamport: Specifying Systems.
+* 📚 I. Hutchinson: A Student's Guide to Numerical Methods.
+* S. Yip: Nuclear Radiation Interactions.
 * B. Cox, J. Foreshaw: The Quantum Universe.
 * C. Seife: Sun in a Bottle: The Strange History of Fusion and the Science of Wishful Thinking.
 

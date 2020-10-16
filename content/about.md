@@ -3,9 +3,12 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a software engineer with a background in research, experience in application development and expert systems, a love for mathematics, and a strong interest in nuclear technology and spaceflight.
+I'm a software engineer with a background in research and experience in application development, an aspiring mathematician, and a part-time technical writer.
+
+I have a strong interest in nuclear technology and spaceflight.
 
 ---
+
   &nbsp;&nbsp; 💾 [GitHub.com/cunger](https://github.com/cunger/)
 
   &nbsp;&nbsp; 📝 [Medium.com/@christina.unger](https://medium.com/@christina.unger)
@@ -14,16 +17,15 @@ I'm a software engineer with a background in research, experience in application
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
-  <!-- &nbsp;&nbsp; ️🛠 Rust, Fortran, Functional Programming, Linux, Git -->
+  &nbsp;&nbsp; ️🛠 Scientific Programming, LaTeX, Linux, Git
 
-  <!-- &nbsp;&nbsp; 🤹‍♀️  -->
 ---
 
 These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 # Education
 
-* [Mathematical-Technical Software Engineering](https://www.fernuni-hagen.de/mi/studium/bsc_matse/index.shtml) (B.Sc., enrolled since WS 20/21)
+* [Mathematical-Technical Software Engineering](https://www.fernuni-hagen.de/mi/studium/bsc_matse/index.shtml) (B.Sc., currently enrolled)
 * [Patchwork studies](/patchwork)
 * Computational Linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)
