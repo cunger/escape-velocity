@@ -9,26 +9,20 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 
 # Bookshelf
 
-* 📖 C. Baier, J.-P. Katoen: Principles of Model Checking.
-* 📖 W. Ley, K. Wittmann, W. Hallmann (eds.): Handbuch der Raumfahrttechnik.
-* 📚 L. Lamport: Specifying Systems.
+* 📖 G. Hager, G. Wellein: Introduction to High Performance Computing for Scientists and Engineers.
 * 📚 I. Hutchinson: A Student's Guide to Numerical Methods.
 * S. Yip: Nuclear Radiation Interactions.
-* B. Cox, J. Foreshaw: The Quantum Universe.
-* C. Seife: Sun in a Bottle: The Strange History of Fusion and the Science of Wishful Thinking.
 
 (📖 means "currently reading" and 📚 means "on the stack".)
 
 # Selected courses
 
+* The Basics of Transport Phenomena
+  (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
 * Introduction to Nuclear Engineering and Ionizing Radiation  
   ([MIT OpenCourseWare](https://ocw.mit.edu/courses/nuclear-engineering/22-01-introduction-to-nuclear-engineering-and-ionizing-radiation-fall-2016/lecture-videos/))
 * Understanding Nuclear Energy
   (GENTLE & DelftX | [certificate](https://courses.edx.org/certificates/8dec05e14fd846cdadffe75adeb91c07))
-* The Basics of Transport Phenomena
-  (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
-* Quantum Mechanics: A First Course
-  (MITx | starts Sept 2020)  
 * Architecture and Systems Engineering: Models and Methods to Manage Complex Systems
   (MITxPro | [certificate](https://xpro.mit.edu/certificate/program/5060051c-301b-4e7c-96e7-46b2c323a09f/))
 * Climate Action: Solutions for a Changing Planet
