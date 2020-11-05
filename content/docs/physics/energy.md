@@ -7,11 +7,10 @@ math: true
 toc: true
 ---
 
-Energy is defined as the capacity to do work or produce heat.
+Energy is defined as the capacity to do work or produce heat. So heat and mechanical work are two ways to exchange energy between a system and its surroundings.
+**Work** is applying force on something causing it to move, thus transferring energy by mechanical movement, **heat** is transferring energy by thermal interactions. They are fundamentally different: Heat is random motion of atoms that averages out to zero, while work is directed motion of atoms that does not average out to zero.
 
 Energy cannot be created or destroyed. It can only be converted from one form to another or transferred from one system to another.
-
-**Work** is applying force on something causing it to move, thus transferring energy by mechanical movement, **heat** is transferring energy by thermal interactions.
 
 # Forms of energy
 
