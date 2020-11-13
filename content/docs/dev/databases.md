@@ -55,7 +55,6 @@ The goal of _normalization_ is to design the schema in a way that it avoids or a
 
 # PostgreSQL
 
-
 ## Basic commands
 
 Lists all databases and exit:
@@ -68,9 +67,13 @@ Connect to database:
 $ psql hero-database username
 ```
 
-List all tables the database:
+Or via postgres terminal:
 ```
-hero-database=# \dt
+$ sudo -i -u postgres
+$ psql
+postgres=# \l
+postgres=# \c hero-database
+hero-database=#
 ```
 
 ### Command line
@@ -100,20 +103,20 @@ _Importing from SQL file:_
 
 Command line:
 ```
-psql -d demo < dump.sql
+$ psql -d demo < dump.sql
 ```
 
 `psql` console:
 ```
-\i /path/to/dump.sql
+# \i /path/to/dump.sql
 ```
 
 _Importing from CSV file:_
 
 `psql` console:
 ```
-\copy table          from 'table.csv' with CSV HEADER DELIMITER ',';
-\copy table (c1, c2) from 'table.csv' with CSV HEADER DELIMITER ',';
+# \copy table          from 'table.csv' with CSV HEADER DELIMITER ',';
+# \copy table (c1, c2) from 'table.csv' with CSV HEADER DELIMITER ',';
 ```
 `\copy` invokes the corresponding SQL command `COPY`:
 ```sql
@@ -131,15 +134,15 @@ _Exporting a database or a specific table into an SQL file:_
 
 Command line:
 ```
-pg_dump -d demo [-t table] [--inserts] -f dump.sql
+$ pg_dump -d demo [-t table] [--inserts] -f dump.sql
 ```
 
 ## Data types
 
 Data types are used by databases to decide how much memory to allocate to the values, how to perform operations and calculations on them, and how to sort them.
 
-[SQL datatypes](https://www.w3schools.com/sql/sql_datatypes.asp)
-[PostgreSQL datatypes](https://www.postgresql.org/docs/current/static/datatype.html)
+* [SQL datatypes](https://www.w3schools.com/sql/sql_datatypes.asp)
+* [PostgreSQL datatypes](https://www.postgresql.org/docs/current/static/datatype.html)
 
 ### Serial
 
