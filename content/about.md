@@ -17,7 +17,7 @@ I have a strong interest in nuclear technology and spaceflight.
 
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
-  &nbsp;&nbsp; ️🛠 Julia, Fortran, Git, Linux, LaTeX
+  &nbsp;&nbsp; ️🛠 Julia, JavaScript, Fortran, Git, Linux, LaTeX
 
 ---
 
