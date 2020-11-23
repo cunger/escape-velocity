@@ -26,6 +26,10 @@ So fields are collections of mathematical objects, for which addition and multip
 {{< katex "\mathbb{Q}" >}}, {{< katex "\mathbb{R}" >}} and {{< katex "\mathbb{C}" >}} with addition and multiplication are fields,
 while {{< katex "\mathbb{N}" >}} and {{< katex "\mathbb{Z}" >}} are not (because not all elements have an inverse with respect to multiplication, in {{< katex "\mathbb{N}" >}} not even with respect to addition).
 
+### Galois fields
+
+Example: {{< katex "F_2" >}}
+
 ## Groups
 
 Groups capture the notion of symmetry.
