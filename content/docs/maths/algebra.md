@@ -1,5 +1,5 @@
 ---
-title: "Linear algebra"
+title: "Algebraic structures"
 summary: "The gist of it. Draft."
 date: 2020-10-21
 weight: 1
