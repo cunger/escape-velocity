@@ -9,7 +9,7 @@ draft: false
 ---
 
 Eine Abbildung oder Funktion ist
-* **surjektiv**, wenn jedes Element des Definitionsbereichs im Bild von {{< katex "f" >}} liegt.
+* **surjektiv**, wenn jedes Element des Wertebereichs im Bild von {{< katex "f" >}} liegt.
 * **injektiv**, wenn jedes Element im Bild von {{< katex "f" >}} genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.
 
 Eine **reelle Folge** ist eine Abbildung {{< katex "f:\mathbb{N}\to\mathbb{R}" >}}. (Eine Folge hat also immer unendlich viele Elemente.)
