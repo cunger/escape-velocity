@@ -9,21 +9,13 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 
 # Bookshelf
 
-* 📖 G. Hager, G. Wellein: Introduction to High Performance Computing for Scientists and Engineers.
-* 📚 I. Hutchinson: A Student's Guide to Numerical Methods.
-* 📚 C. Baier, J.-P. Katoen: Principles of Model Checking.
-* S. Yip: Nuclear Radiation Interactions.
-
-(📖 means "currently reading" and 📚 means "on the stack".)
+* 📖 Currently reading math books.
+* 📚 All else is on hold.
 
 # Selected courses
 
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
-* Advanced Transport Phenomea
-  (DelftX | upcoming)
-* Thermodynamics and Phase Equilibria
-  (StanfordX | ongoing)
 * Introduction to Nuclear Engineering and Ionizing Radiation  
   ([MIT OpenCourseWare](https://ocw.mit.edu/courses/nuclear-engineering/22-01-introduction-to-nuclear-engineering-and-ionizing-radiation-fall-2016/lecture-videos/))
 * Understanding Nuclear Energy

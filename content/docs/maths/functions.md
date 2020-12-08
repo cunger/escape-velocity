@@ -25,6 +25,8 @@ Eine Folge heißt **Cauchyfolge**, wenn es zu jedem {{< katex "\varepsilon>0" >}
 
 Jede monotone, beschränkte Folge konvergiert. Und zwar gegen ihr Supremum, wenn sie monoton wachsend ist, und gegen ihr Infimum, wenn sie monoton fallend ist.
 
+# Monotonie
+
 # Stetigkeit
 
 # Differenzierbarkeit

@@ -60,4 +60,4 @@ eine Faktorisierung des Polynoms (wobei {{< katex "q(x)" >}} wieder ein Polynom 
 
 # Gleichungen
 
-# Anwendungen
+# Taylorpolynome
