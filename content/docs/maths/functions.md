@@ -30,3 +30,7 @@ Jede monotone, beschränkte Folge konvergiert. Und zwar gegen ihr Supremum, wenn
 # Stetigkeit
 
 # Differenzierbarkeit
+
+# Integrierbarkeit
+
+# Elementare Funktionen

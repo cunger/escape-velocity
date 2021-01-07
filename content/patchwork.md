@@ -9,8 +9,13 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 
 # Bookshelf
 
-* 📖 Currently reading math books.
-* 📚 All else is on hold.
+📖 Currently reading math books.
+
+📚 On the stack:
+
+* Hutchinson: A student's guide to numerical methods.
+* Lamport: Specifying systems.
+* Baier, Katoen: Principles of model checking.
 
 # Selected courses
 
@@ -26,3 +31,4 @@ The list of resources below is growing and evolving as I proceed on a slow but s
   (SDGAcademyX | [certificate](https://courses.edx.org/certificates/b78c0a1559314a75909cc6b03232e4f8))
 * Space Mission Design and Operations
   (EPFLx | [certificate](https://courses.edx.org/certificates/ba8373e783f54519bebdf080200197b7))
+* Blockchain Technology (BerkeleyX | [certificate](https://courses.edx.org/certificates/0e861a3aa10e44d6a5c98f82036acfb0))

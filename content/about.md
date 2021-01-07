@@ -25,11 +25,10 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 # Education
 
-* [Mathematical-Technical Software Engineering](https://www.fernuni-hagen.de/mi/studium/bsc_matse/index.shtml) (B.Sc., currently enrolled)
+* Mathematics (B.Sc., currently enrolled)
 * [Patchwork studies](/patchwork)
 * Computational Linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)
-* Mathematics (Grundstudium Nebenfach)
 
 # Volunteering
 
