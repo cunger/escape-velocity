@@ -3,7 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a software engineer with a background in research and experience in application development, an aspiring mathematician, and a part-time technical writer.
+I'm a software engineer (@[Mercury.ai](https://mercury.ai)) with a background in research and experience in application development, a part-time technical writer (@[Bluecept](https://bluecept.com)), and an aspiring mathematician (@[FernUni Hagen](https://www.fernuni-hagen.de/mi/studium/bsc_mathematik/index.shtml)).
 
 I have a strong interest in nuclear technology and spaceflight.
 
