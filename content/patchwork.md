@@ -9,13 +9,11 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 
 # Bookshelf
 
-📖 Currently reading math books.
+📖 Baier, Katoen: Principles of model checking.
 
-📚 On the stack:
+📚 Platzer: Logical Foundations of cyber-physical systems.
 
-* Hutchinson: A student's guide to numerical methods.
-* Lamport: Specifying systems.
-* Baier, Katoen: Principles of model checking.
+📚 Hutchinson: A student's guide to numerical methods.
 
 # Selected courses
 
