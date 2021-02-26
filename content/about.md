@@ -29,7 +29,8 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 * Mathematics (B.Sc., currently enrolled)
 * [Patchwork studies](/patchwork)
-* Computational Linguistics (PhD)
+* [Full-stack web development](https://launchschool.com/)
+* Computational linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)
 
 # Volunteering
