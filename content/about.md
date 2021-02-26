@@ -3,9 +3,9 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a software engineer (@[Mercury.ai](https://mercury.ai)) with a background in research and experience in application development, a part-time technical writer (@[Bluecept](https://bluecept.com)), and an aspiring mathematician (@[FernUni Hagen](https://www.fernuni-hagen.de/mi/studium/bsc_mathematik/index.shtml)).
+I'm a programmer and technical writer, as well as an aspiring mathematician.
 
-I have a strong interest in nuclear technology and spaceflight.
+These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 ---
 
@@ -15,13 +15,15 @@ I have a strong interest in nuclear technology and spaceflight.
 
   &nbsp;&nbsp; 📬 christina@unger.dev
 
-  &nbsp;&nbsp; 🌍 Bielefeld, Germany
+  &nbsp;&nbsp; 🏢 [Mercury.ai](https://mercury.ai) (Conversational AI) + [Bluecept](https://bluecept.com) (Industrial Security)
 
-  &nbsp;&nbsp; ️🛠 Julia, JavaScript, Java, Git, Linux
+  &nbsp;&nbsp; ️🛠 JavaScript, Java, Julia, Git, Linux
+
+  &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
 ---
 
-These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
+**Main interests:** nuclear technology, space flight, marine conservation
 
 # Education
 
@@ -32,10 +34,9 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 # Volunteering
 
-I deeply care about marine conservation, and volunteering in this field has been among the most inspiring, energizing, and humbling experiences I had.
+I deeply care about marine conservation, and volunteering in this field has been among the most inspiring, energizing, and humbling experiences I had. I spent short periods of time with [Love the Oceans](https://lovetheoceans.org) (Mozambique, 2018) and the [Cetacean Research & Rescue Unit](http://www.crru.org.uk/) (Scotland, 2016).
 
-* [Love the Oceans](https://lovetheoceans.org), Mozambique (2018)
-* [Cetacean Research & Rescue Unit](http://www.crru.org.uk/), Scotland (2016)
+I also consider myself part of [Generation Atomic](https://www.generationatomic.org/).
 
 # Contact
 
