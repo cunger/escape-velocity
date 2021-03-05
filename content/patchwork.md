@@ -5,15 +5,15 @@ toc: true
 math: false
 ---
 
-The list of resources below is growing and evolving as I proceed on a slow but steady learning journey towards nuclear proficiency and technical software engineering. As Marie Curie said: _Now is the time to understand more._
+The list of resources below is growing and evolving as I proceed on a slow but steady learning journey. As Marie Curie said: _Now is the time to understand more._
 
 # Bookshelf
+
+📖 Knapp, Langill: Industrial network security.
 
 📖 Baier, Katoen: Principles of model checking.
 
 📚 Platzer: Logical Foundations of cyber-physical systems.
-
-📚 Hutchinson: A student's guide to numerical methods.
 
 # Selected courses
 

@@ -9,13 +9,9 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 ---
 
-  &nbsp;&nbsp; 💾 [GitHub.com/cunger](https://github.com/cunger/)
-
-  &nbsp;&nbsp; 📝 [Medium.com/@christina.unger](https://medium.com/@christina.unger)
+  &nbsp;&nbsp; 💾 [GitHub](https://github.com/cunger/) + [LinkedIn](www.linkedin.com/in/christina-unger) + [Medium](https://medium.com/@christina.unger)
 
   &nbsp;&nbsp; 📬 christina@unger.dev
-
-  &nbsp;&nbsp; 🏢 [Mercury.ai](https://mercury.ai) (Conversational AI) + [Bluecept](https://bluecept.com) (Industrial Security)
 
   &nbsp;&nbsp; ️🛠 JavaScript, Java, Julia, Git, Linux
 
@@ -23,7 +19,7 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 ---
 
-**Main interests:** nuclear technology, space flight, marine conservation
+**Interests:** nuclear technology, space flight, diving
 
 # Education
 
