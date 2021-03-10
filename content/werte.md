@@ -1,5 +1,5 @@
+* Sinn
 * Freiheit
-* Professionalität
+* Lernen
 * Intuition
-* Ausgeglichenheit
-* Wissen
+* Professionalität
