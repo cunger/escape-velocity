@@ -11,12 +11,14 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 
 📖 Knapp, Langill: Industrial network security.
 
-📖 Baier, Katoen: Principles of model checking.
+📚 Baier, Katoen: Principles of model checking.
 
-📚 Platzer: Logical Foundations of cyber-physical systems.
+📖 von zur Gathen, Gerhard: Modern computer algebra.
 
 # Selected courses
 
+* The Radio Sky: Science and Observations
+  (EPFLx | ongoing)
 * The Basics of Transport Phenomena
   (DelftX | [certificate](https://courses.edx.org/certificates/037f03eb60a34a0cbf87bb7e409f313f))
 * Introduction to Nuclear Engineering and Ionizing Radiation  
