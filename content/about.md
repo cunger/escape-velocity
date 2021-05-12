@@ -10,7 +10,9 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 ---
 
   &nbsp;&nbsp; 💾 [GitHub](https://github.com/cunger/)
+
   &nbsp;&nbsp; 📎 [LinkedIn](www.linkedin.com/in/christina-unger)
+
   &nbsp;&nbsp; ✏️ [Medium](https://medium.com/@christina.unger)
 
   &nbsp;&nbsp; 📬 christina@unger.dev
