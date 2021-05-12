@@ -3,13 +3,15 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a programmer and technical writer, as well as an aspiring mathematician.
+I’m a software engineer, a technical writer, and an aspiring mathematician - with a strong interest in nuclear technology, space flight, radio astronomy, industrial security, and marine conservation.
 
 These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
 ---
 
-  &nbsp;&nbsp; 💾 [GitHub](https://github.com/cunger/) + [LinkedIn](www.linkedin.com/in/christina-unger) + [Medium](https://medium.com/@christina.unger)
+  &nbsp;&nbsp; 💾 [GitHub](https://github.com/cunger/)
+  &nbsp;&nbsp; 📎 [LinkedIn](www.linkedin.com/in/christina-unger)
+  &nbsp;&nbsp; ✏️ [Medium](https://medium.com/@christina.unger)
 
   &nbsp;&nbsp; 📬 christina@unger.dev
 
@@ -18,8 +20,6 @@ These pages are notes for my future self, as I'm sure it will need to look up st
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
 ---
-
-**Interests:** nuclear technology, space flight, diving
 
 # Education
 

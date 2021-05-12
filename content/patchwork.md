@@ -13,8 +13,6 @@ The list of resources below is growing and evolving as I proceed on a slow but s
 
 📚 Baier, Katoen: Principles of model checking.
 
-📖 von zur Gathen, Gerhard: Modern computer algebra.
-
 # Selected courses
 
 * The Radio Sky: Science and Observations
