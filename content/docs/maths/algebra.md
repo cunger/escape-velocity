@@ -2,7 +2,7 @@
 title: "Algebraic structures"
 summary: "The gist of it. Draft."
 date: 2020-10-21
-weight: 1
+weight: 2
 math: true
 toc: true
 draft: false
