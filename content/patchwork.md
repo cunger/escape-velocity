@@ -5,7 +5,10 @@ toc: true
 math: false
 ---
 
-The list of resources below is growing and evolving as I proceed on a slow but steady learning journey. As Marie Curie said: _Now is the time to understand more._
+The list of resources below is growing and evolving as I proceed on a learning journey that accelerates me to escape velocity.
+
+> Now is the time to understand more, so that we may fear less.
+(Marie Curie)
 
 # Bookshelf
 
