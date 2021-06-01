@@ -55,7 +55,7 @@ Häufungspunkte
 
 überdeckung
 
-Eine Menge {{< katex "M" >}} ist **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "a\in M" >}} ist, d.h. wenn jede {{< katex "\varepsilon" >}}-Umgebung von {{< katex "a" >}} ganz in {{< katex "M" >}} liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann **geschlossen** bzgl. der Norm. Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.
+Eine Menge {{< katex "M" >}} ist **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "a\in M" >}} ist, d.h. wenn es eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "a" >}} gibt, die ganz in {{< katex "M" >}} liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann **geschlossen** bzgl. der Norm (also wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt). Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.
 
 Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.
 
@@ -64,9 +64,7 @@ Faustregel:
 * Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen.
 * Mengen, die mit {{< katex "=,\leq,\geq" >}} zwischen stetigen Funktionen definiert sind, sind abgeschlossen.
 
-Eine Menge ist **kompakt** ...
-
-{{< katex "\mathbb{R}^n" >}} ist nicht kompakt.
+Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist **kompakt**, wenn sie alle Randpunkte enthält und sich nicht ins Unendliche erstreckt. {{< katex "\mathbb{R}^n" >}} ist nicht kompakt.
 
 **Satz von Heine-Borel** Eine nicht-leere Teilmenge von {{< katex "\mathbb{R}^n" >}} ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.
 
