@@ -44,6 +44,7 @@ Beispiele für Metriken, die von keiner Norm induziert werden:
 * Diskrete Metrik {{< katex "d(x,y) := \begin{cases} 0 & \text{wenn }x=y \\ 1 & \text{sonst}\end{cases}" >}}
 * Französische Eisenbahnmetrik (wo die Abstandsmessung immer durch einen zentralen Punkt {{< katex "P" >}} gehen muss)
 {{< katex display="d(x,y) := \begin{cases} \|x-y\| & \text{wenn }x,y\text{ auf einer Geraden durch }P\text{ liegen} \\ \|x-P\| + \|P-y\| & \text{sonst}\end{cases}" >}}
+* p-adische Metrik auf {{< katex "\mathbb{Z}" >}}
 
 Alle Normen über einem endlich-dimensionalen Vektorraum {{< katex "\mathbb{R}^n" >}} sind bis auf eine Konstante (d.h. bis auf Streckung oder Stauchung) äquivalent, d.h. es gibt {{< katex "c_1,c_2" >}}, so dass {{< katex "\|x\|_a \leq c_1\|x\|_b" >}} und {{< katex "\|x\|_b\leq c_2 \|x\|_a" >}}. So kann man z.B. bestimmte Eigenschaften auf der Maximumsnorm zeigen, wo sie einfacher zu beweisen sind, und dann auf äquivalente Normen übertragen.
 
@@ -64,9 +65,27 @@ Faustregel:
 * Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen.
 * Mengen, die mit {{< katex "=,\leq,\geq" >}} zwischen stetigen Funktionen definiert sind, sind abgeschlossen.
 
+**Hausdorff:** ...
+
 Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist **kompakt**, wenn sie alle Randpunkte enthält und sich nicht ins Unendliche erstreckt. {{< katex "\mathbb{R}^n" >}} ist nicht kompakt.
 
-**Satz von Heine-Borel** Eine nicht-leere Teilmenge von {{< katex "\mathbb{R}^n" >}} ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.
+**Satz von Heine-Borel:** Eine nicht-leere Teilmenge von {{< katex "\mathbb{R}^n" >}} ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.
+
+# Topologische Räume
+
+Eine Topologie auf einer Menge {{< katex "X" >}} ist ein System {{< katex "T" >}} von Teilmengen von {{< katex "X" >}} mit folgenden Eigenschaften:
+
+* {{< katex "\emptyset\in T" >}} und {{< katex "X\in T" >}}.
+* Sind {{< katex "U,V\in T" >}}, so auch {{< katex "U\cap V\in T" >}}.
+* Die Vereinigung beliebig vieler Mengen in {{< katex "T" >}} ist auch wieder in {{< katex "T" >}}.
+
+{{< katex "(X,T)" >}} ist dann ein **topologischer Raum**.
+
+Zum Beispiel bildet das System der offenen Mengen eines metrischen Raumes eine Topologie.
+
+Man definiert daher eine Menge {{< katex "U\subseteq X" >}} als offen, wenn {{< katex "U\in T" >}}. {{< katex "T" >}} umfasst also alle offenen Mengen, sowie deren Durchschnitt und Vereinigung (wieder offene Mengen).
+
+{{< katex "(X,T)" >}} heißt **Hausdorff-Raum**, wenn verschiedene Punkte in {{< katex "T" >}} disjunkte Umgebungen besitzen. Ein metrischer Raum mit dem System der offenen Mengen ist z.B. ein Hausdorff-Raum.
 
 # Funktionen über metrischen Räumen
 
