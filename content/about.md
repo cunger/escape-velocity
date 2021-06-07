@@ -12,7 +12,7 @@ All notes are (and will probably always be) work in progress.
 
   &nbsp;&nbsp; 💾 [GitHub](https://github.com/cunger/)
 
-  &nbsp;&nbsp; 📎 [LinkedIn](www.linkedin.com/in/christina-unger)
+  &nbsp;&nbsp; 📎 [LinkedIn](https://www.linkedin.com/in/christina-unger)
 
   &nbsp;&nbsp; ️🛠 JavaScript, Java, Julia, Git, Linux
 
