@@ -3,10 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I’m a software engineer, a technical writer, and an aspiring mathematician; with a strong interest in nuclear technology, space flight, radio astronomy, industrial security, and marine conservation.
-
-These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
-All notes are (and will probably always be) work in progress.
+I’m a software engineer, a technical writer, and an aspiring mathematician; with a strong interest in nuclear technology and space flight.
 
 ---
 
@@ -19,6 +16,9 @@ All notes are (and will probably always be) work in progress.
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
 ---
+
+These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
+All notes are (and will probably always be) work in progress.
 
 # Education
 
