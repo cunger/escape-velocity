@@ -2,7 +2,7 @@
 title: "Polynomials"
 summary: "German notes on polynomials. Draft."
 date: 2020-11-23
-weight: 3
+weight: 4
 math: true
 toc: true
 draft: false

@@ -21,7 +21,7 @@ Eine Lösung der Differentialgleichung ist ein Intervall {{< katex "J\subseteq I
 {{< katex display="F(x,y(x),y'(x),\ldots,y^{(k)}(x)) = 0" >}}
 Oft ist zusätzlich eine Anfangsbedingung {{< katex "y(a)=b" >}} gegeben.
 
-Bemerkungen:
+_Bemerkungen:_
 * Implizite Form: {{< katex "F(x,y,y',\ldots,y^{(k)}) = 0" >}}
 * Explizite Form: {{< katex "y^{(k)} = f(x,y,y',\ldots,y^{(k-1)})" >}}
 * In **partiellen Differentialgleichungen** hängt {{< katex "y" >}} von mehreren Veränderlichen ab.
