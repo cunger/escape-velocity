@@ -1,6 +1,6 @@
 ---
-title: "Topologie"
-summary: "German notes on topology. In progress."
+title: "Topologische, normierte und metrische Räume"
+summary: "Sowie Funktionen, Folgen und Reihen in metrischen Räumen."
 date: 2020-08-26
 weight: 2
 math: true
@@ -8,11 +8,19 @@ toc: true
 draft: false
 ---
 
-Ein **Raum** ist eine Menge von mathematischen Objekten, typischerweise mit irgendeiner Art von Struktur.
+Ein Raum ist eine Menge von mathematischen Objekten zusammen mit einer Struktur.
+Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt (eng verbunden mit den Begriffen Abstand, Umgebung und Konvergenz) und wo man von Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
+Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist die Dimension des Raumes, was wiederum für die [Analysis](analysis.md) wichtig ist.
+
+Andere interessante Räume ergeben sich dann, wenn eine Topologie mit einer anderen Struktur verträglich ist:
+zum Beispiel topologische Gruppen, topologische Vektorräume
+und darauf aufbauend normierte und metrische Räume (Vektorräume, in denen eine Norm oder Metrik eine zusätzliche Struktur vorgeben).
 
 # Topologische Räume
 
-Eine Topologie auf einer Menge {{< katex "X" >}} ist ein System {{< katex "T" >}} von Teilmengen von {{< katex "X" >}} mit folgenden Eigenschaften:
+Die mengentheoretische Topologie ist die Theorie von offenen und abgeschlossenen Mengen.
+
+Eine Topologie auf einer Menge {{< katex "X" >}} ist definiert als System {{< katex "T" >}} von Teilmengen von {{< katex "X" >}} mit folgenden Eigenschaften:
 
 * {{< katex "\emptyset\in T" >}} und {{< katex "X\in T" >}}.
 * Sind {{< katex "U,V\in T" >}}, so auch {{< katex "U\cap V\in T" >}}.
@@ -32,17 +40,9 @@ Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x\in X" >}}, wen
 
 ## Grundbegriffe
 
-Haeufugspunkt
+Häufungspunkt
 innerer und äusserer Punkt, Randpunkt,
-das Innere und abgeschlossene Huelle
-
-## Trennungseigenschaften
-
-**Hausdorffsches Trennungsaxiom:** Ein topologischer Raum heißt **Hausdorff-Raum**, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.
-
-In einem Hausdorff-Raum kann eine Folge hoechstens einen Grenzwert haben.
-Beispiele fuer Nicht-Hausdorff-Raume: Eine Menge X mit mehr als einem Element und der trivialen Topologie.
-In einem trivialen topologischen Raum konvergiert jede Folge gegen jeden Punkt.
+das Innere und abgeschlossene Hülle
 
 ## Kompaktheit
 
@@ -50,19 +50,23 @@ Ein topologischer Raum heißt **kompakt**, wenn ...
 
 Kompaktheit erlaubt es, von lokalen Eigenschaften auf globale Eigenschaften zu schließen.
 
-Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist **kompakt**, wenn sie alle Randpunkte enthält und sich nicht ins Unendliche erstreckt. {{< katex "\mathbb{R}^n" >}} ist nicht kompakt.
+Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist **kompakt**, wenn sie alle Randpunkte enthält und sich nicht ins Unendliche erstreckt. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt.
 
 **Satz von Heine-Borel:** Eine nicht-leere Teilmenge von {{< katex "\mathbb{R}^n" >}} ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.
 
-Folgenkompakt
+* folgenkompakt
+* überdeckunsgkompakt
 
-Ueberdeckunsgkompakt
+## Trennungseigenschaften
 
-## Ueberleitung
+**Hausdorffsches Trennungsaxiom:** Ein topologischer Raum heißt **Hausdorff-Raum**, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.
 
-Interessante Räume ergeben sich besonders dann, wenn eine Topologie mit einer anderen Struktur verträglich ist.
-Zum Beispiel topologische Vektorräume
-und darauf aufbauend normierte und metrische Räume (Vektorräume wo die Norm und Metrik eine zusätzliche Struktur vorgeben).
+Beispiele für Nicht-Hausdorff-Räume:
+
+* Eine Menge {{< katex "X" >}} mit mehr als einem Element und der trivialen Topologie.
+
+In einem Hausdorff-Raum kann eine Folge höchstens einen Grenzwert haben.
+In einem trivialen topologischen Raum konvergiert jede Folge gegen jeden Punkt.
 
 # Normierte und metrische Räume
 
@@ -106,12 +110,6 @@ Ein normierter Raum ist genau dann **vollständig**, wenn jede Cauchy-Folge konv
 
 ## Metrische Räume als topologische Räume
 
-Häufungspunkte
-
-überdeckung
-
-Umgebung
-
 Eine Menge {{< katex "M" >}} ist **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "x\in M" >}} ist, d.h. wenn es zu jedem {{< katex "x\in M" >}} eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "x" >}} gibt, die ganz in {{< katex "M" >}} liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann **geschlossen** bzgl. der Norm (also wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt). Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.
 
 Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.
@@ -123,6 +121,77 @@ Faustregel:
 
 Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
 Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.
+
+# Funktionen über metrischen Räumen
+
+Wir betrachten Abbildungen zwischen metrischen Räumen, insbesondere stetige Funktionen {{< katex "f:X\to Y" >}} zwischen metrischen Räumen {{< katex "(X,d_X)" >}} und {{< katex "(Y,d_Y)" >}}
+(oder zwischen spezielleren metrischen Räumen {{< katex "(X,\|\cdot\|_X)" >}} und {{< katex "(Y,\|\cdot\|_Y)" >}}, wenn {{< katex "d(a,b)=\|a-b\|" >}}).
+
+Besonders wichtig für Anwendungen sind Abbildungen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}}, also reellwertige Funktionen mehrerer Veränderlicher, und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}. Inbesondere lineare Transformationen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}} (für die also gilt {{< katex "f(x+x')=f(x)+f(x')" >}} und {{< katex "f(cx)=cf(x)" >}}), die durch eine eindeutige Matrix {{< katex "A" >}} beschrieben werden können, so dass {{< katex "{}^t(f(x))=A{\,}^tx" >}}.
+
+Eine Abbildung oder Funktion ist
+
+* **surjektiv**, wenn jedes Element des Wertebereichs im Bild von {{< katex "f" >}} liegt.
+* **injektiv**, wenn jedes Element im Bild von {{< katex "f" >}} genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.
+
+Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eigenschaften, d.h. sie hängen nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.
+
+## Stetigkeit
+
+* **{{< katex "\varepsilon-\delta" >}}-Kriterium:**
+
+  {{< katex "f" >}} ist stetig in {{< katex "p" >}}, wenn es für alle {{< katex "\varepsilon > 0" >}} ein {{< katex "\delta > 0" >}} gibt, so dass für alle {{< katex "x\in X" >}} gilt:
+{{< katex display="d_X(x,p) < \delta \Rightarrow d_Y(f(x),f(p)) < \varepsilon" >}}
+
+* **Umgebungskriterium:**
+
+* **Folgenkriterium:**
+
+  {{< katex "f" >}} ist stetig in {{< katex "p" >}}, wenn für jede Folge {{< katex "(x_n)" >}} in {{< katex "X" >}} mit {{< katex "\lim_{n\to\infty} x_n = p" >}} gilt:
+  {{< katex display="\lim_{n\to\infty} f(x_n) = f(\lim_{n\to\infty} x_n) = f(p)" >}}
+
+Weitere, stärkere Arten von Stetigkeit:
+
+* **Gleichmäßige Stetigkeit**
+
+* **Lipschitz-Stetigkeit**
+
+  {{< katex "f" >}} ist Lipschitz-stetig mit Lipschitz-Konstante {{< katex "L" >}} (oder _dehnungsbeschränkt_), wenn für alle {{< katex "p,q\in X" >}} gilt:
+  {{< katex display="d_Y(f(p),f(q)) \leq L\cdot d_X(p,q)" >}}
+  {{< katex display="\|(f(p)-f(q))\|_Y \leq L\cdot \|p-q\|_X" >}}
+
+  Das heißt, der Abstand zweier Punkte {{< katex "x,x'" >}} wird durch Anwendung der Funktion höchstens um den Faktor {{< katex "L" >}} gestreckt (wenn {{< katex "L > 1" >}}) oder gestaucht (wenn {{< katex "L<1" >}}).
+
+* **Hölder-Stetigkeit**
+
+  {{< katex "f" >}} ist Hölder-stetig zum Exponenten {{< katex "\alpha\in(0,\infty)" >}}, wenn es eine Konstante {{< katex "C>0" >}} gibt, so dass für alle {{< katex "p,q\in X" >}} gilt:
+  {{< katex display="d_Y(f(p),f(q)) \leq C\cdot d_X(p,q)^\alpha" >}}
+  {{< katex display="\|(f(p)-f(q))\|_Y \leq C\cdot \|p-q\|_X^\alpha" >}}
+
+Zum Beispiel ist {{< katex "f(x)=x^2" >}} stetig, aber nicht gleichmäßig stetig oder Lipschitz-stetig.
+
+In einem Punkt {{< katex "a" >}} stetig fortsetzbar?
+Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} Häufungspunkt, dann nur wenn {{< katex "f" >}} in {{< katex "a" >}} konvergiert.
+
+## Umkehrfunktionen
+
+[Tao 6.7 (p. 152ff)]
+
+# Folgen und Reihen in metrischen Räumen
+
+Eine **reelle Folge** ist eine Abbildung {{< katex "f:\mathbb{N}\to\mathbb{R}" >}}. (Eine Folge hat also immer unendlich viele Elemente.)
+
+Folgen von Punkten in einem metrischen Raum
++ Konvergenz
+
+Folgen von Funktionen zwischen metrischen Räumen
++ Konvergenz:
+
+  * punktweise Konvergenz
+  * gleichmäßige Konvergenz
+  * andere Konvergenzen (z.B. {{< katex "L^1" >}}- und {{< katex "L^2" >}}-Konvergenz)
+
+Reihen von Funktionen
 
 # Literatur
 

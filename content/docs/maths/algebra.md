@@ -37,6 +37,7 @@ Groups capture the notion of symmetry.
 ## Vector spaces
 
 A _vector space_ (also called _linear space_) is a collection {{< katex "V" >}} of _vectors_ together with two operations: addition ({{< katex "V\times V\to V" >}}) and scalar multiplication ({{< katex "\mathbb{F}\times V\to V" >}} with {{< katex "\mathbb{F}" >}} a field), that satisfy the following conditions:
+
 * Addition is commutative and associative, has a neutral element (the zero vector 0) and is invertible for every vector.
 * Scalar multiplication is associative and has a neutral element (the scalar 1).
 * Scalar multiplication distributes over addition.
@@ -48,12 +49,14 @@ So a vector space is not so much determined not by what the vectors look like, b
 
 A map (_Abbildung_) {{< katex "F" >}} between vector spaces is _linear_ if it respects the vector spaces' linear structure,
 i.e. if it distributes over addition and scalar multiplication:
+
 * {{< katex "F(ax) = aF(x)" >}}, i.e. scaling the input is the same as scaling the output
 * {{< katex "F(x+y) = F(x)+F(y)" >}}, i.e. adding inputs is the same as adding the outputs
 
 This way, linear operations allow one to divide work on complex inputs into work on simpler inputs.
 
 Examples of linear operations:
+
 * The mapping of each derivable function {{< katex "f(x)" >}} to its derivative {{< katex "\frac{df}{dx}" >}} over the vector space of functions from {{< katex "\mathbb{R}^n" >}} to {{< katex "\mathbb{R}^m" >}} with addition and scalar multiplication defined the usual way.
 
 **Note:** There are [two distinct senses of _linear_](https://en.wikipedia.org/wiki/Linear_function). Polynomials of degree {{< katex "\leq 1" >}}, i.e. functions of the form {{< katex "f(x) = ax + b" >}}, are also called linear functions, as their graph is a line. But they're not linear in the above sense, for example {{< katex "f(2x)=2ax+b\neq 2(ax+b)=2f(x)" >}}.

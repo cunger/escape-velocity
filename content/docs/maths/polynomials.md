@@ -1,5 +1,5 @@
 ---
-title: "Polynomials"
+title: "Polynome"
 summary: "German notes on polynomials. Draft."
 date: 2020-11-23
 weight: 4
