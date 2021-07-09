@@ -1,5 +1,5 @@
 ---
-title: "Differentiale und Integrale"
+title: "Differential- und Integralrechnung"
 summary: "German notes on analysis. In progress."
 date: 2020-11-23
 weight: 3

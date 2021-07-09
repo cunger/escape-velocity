@@ -10,7 +10,7 @@ draft: false
 
 Ein Raum ist eine Menge von mathematischen Objekten zusammen mit einer Struktur.
 Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt (eng verbunden mit den Begriffen Abstand, Umgebung und Konvergenz) und wo man von Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
-Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist die Dimension des Raumes, was wiederum für die [Analysis](analysis.md) wichtig ist.
+Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist die Dimension des Raumes, was wiederum für die [Analysis](../analysis) wichtig ist.
 
 Andere interessante Räume ergeben sich dann, wenn eine Topologie mit einer anderen Struktur verträglich ist:
 zum Beispiel topologische Gruppen, topologische Vektorräume
