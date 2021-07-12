@@ -22,7 +22,7 @@ Die mengentheoretische Topologie ist die Theorie von offenen und abgeschlossenen
 
 Eine Topologie auf einer Menge {{< katex "X" >}} ist definiert als System {{< katex "T" >}} von Teilmengen von {{< katex "X" >}} mit folgenden Eigenschaften:
 
-* {{< katex "\emptyset" >}} und {{< katex "X" >}} sind inn {{< katex "T" >}}.
+* {{< katex "\emptyset" >}} und {{< katex "X" >}} sind in {{< katex "T" >}}.
 * Der Schnitt zweier Mengen in {{< katex "T" >}} ist auch wieder in {{< katex "T" >}}.
 * Die Vereinigung beliebig vieler Mengen in {{< katex "T" >}} ist auch wieder in {{< katex "T" >}}.
 
