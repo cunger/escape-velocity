@@ -29,7 +29,7 @@ Eine Topologie auf einer Menge {{< katex "X" >}} ist definiert als System {{< ka
 {{< katex "(X,T)" >}} ist dann ein **topologischer Raum**.
 
 Man nennt die Mengen {{< katex "U\subseteq T" >}} **offen**, d.h. {{< katex "T" >}} umfasst alle offenen Mengen, sowie deren Durchschnitt und Vereinigung (wieder offene Mengen).
-Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\backslash U" >}} offen ist. So sind z.B. {{< katex "\emptyset" >}} und {{< katex "X" >}} beide nicht nur offen, sondern auch abgeschlossen. Für die Definition eines topologischen Raumes ist es außerdem gleich, ob man {{< katex "T" >}} als die offenen oder abgeschlossenen Mengen definiert.
+Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\backslash U" >}} offen ist. So sind z.B. {{< katex "\emptyset" >}} und {{< katex "X" >}} beide nicht nur offen, sondern auch abgeschlossen. Für die Definition eines topologischen Raumes ist es tatsächlich gleich, ob man {{< katex "T" >}} als die offenen oder abgeschlossenen Mengen definiert.
 
 **Beispiele:**
 
