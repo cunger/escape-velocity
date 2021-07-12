@@ -9,8 +9,8 @@ draft: false
 ---
 
 Ein Raum ist eine Menge von mathematischen Objekten zusammen mit einer Struktur.
-Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt (eng verbunden mit den Begriffen Abstand, Umgebung und Konvergenz) und wo man von Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
-Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist die Dimension des Raumes, was wiederum für die [Analysis](../analysis) wichtig ist.
+Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt (eng verbunden mit den Begriffen Abstand, Umgebung und Konvergenz) und wo man von stetigen Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
+Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist die Dimension des Raumes, was für die [Analysis](../analysis) wichtig ist.
 
 Andere interessante Räume ergeben sich dann, wenn eine Topologie mit einer anderen Struktur verträglich ist:
 zum Beispiel topologische Gruppen, topologische Vektorräume
@@ -34,7 +34,7 @@ Beispiele:
 * _Diskrete Topologie:_ {{< katex "T" >}} ist die Potenzmenge von {{< katex "X" >}}, d.h. alle Teilmengen von {{< katex "X" >}} sind offen.
 * Die Menge {{< katex "\mathbb{R}" >}} der reellen Zahlen, wobei die offenen Mengen genau die {{< katex "U\subseteq\mathbb{R}" >}} sind, die sich als Vereinigung von offenen Intervallen darstellen lassen.
 
-Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\U" >}} offen ist. So sind z.B. {{< katex "\emptyset" >}} und {{< katex "X" >}} beide nicht nur offen, sondern auch abgeschlossen.
+Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\backslash U" >}} offen ist. So sind z.B. {{< katex "\emptyset" >}} und {{< katex "X" >}} beide nicht nur offen, sondern auch abgeschlossen.
 
 Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x\in X" >}}, wenn es eine offene Menge {{< katex "V\subset U" >}} gibt mit {{< katex "x\in V" >}}, d.h. wenn es eine offene Teilmenge von {{< katex "U" >}} gibt, in der {{< katex "x" >}} liegt.
 
@@ -127,7 +127,13 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
 Wir betrachten Abbildungen zwischen metrischen Räumen, insbesondere stetige Funktionen {{< katex "f:X\to Y" >}} zwischen metrischen Räumen {{< katex "(X,d_X)" >}} und {{< katex "(Y,d_Y)" >}}
 (oder zwischen spezielleren metrischen Räumen {{< katex "(X,\|\cdot\|_X)" >}} und {{< katex "(Y,\|\cdot\|_Y)" >}}, wenn {{< katex "d(a,b)=\|a-b\|" >}}).
 
-Besonders wichtig für Anwendungen sind Abbildungen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}}, also reellwertige Funktionen mehrerer Veränderlicher, und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}. Inbesondere lineare Transformationen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}} (für die also gilt {{< katex "f(x+x')=f(x)+f(x')" >}} und {{< katex "f(cx)=cf(x)" >}}), die durch eine eindeutige Matrix {{< katex "A" >}} beschrieben werden können, so dass {{< katex "{}^t(f(x))=A{\,}^tx" >}}.
+Besonders wichtig für Anwendungen sind Abbildungen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}}, also reellwertige Funktionen mehrerer Veränderlicher, und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}. Inbesondere lineare Transformationen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}, d.h. Funktionen, für die gilt:
+
+* {{< katex "f(x+x')=f(x)+f(x')" >}}
+* {{< katex "f(cx)=cf(x)" >}})
+
+Und die durch eine eindeutige Matrix {{< katex "A" >}} beschrieben werden können, so dass
+{{< katex display="{}^t(f(x))=A{\,}^tx" >}}
 
 Eine Abbildung oder Funktion ist
 
