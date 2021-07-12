@@ -22,19 +22,21 @@ Die mengentheoretische Topologie ist die Theorie von offenen und abgeschlossenen
 
 Eine Topologie auf einer Menge {{< katex "X" >}} ist definiert als System {{< katex "T" >}} von Teilmengen von {{< katex "X" >}} mit folgenden Eigenschaften:
 
-* {{< katex "\emptyset\in T" >}} und {{< katex "X\in T" >}}.
-* Sind {{< katex "U,V\in T" >}}, so auch {{< katex "U\cap V\in T" >}}.
+* {{< katex "\emptyset" >}} und {{< katex "X" >}} sind inn {{< katex "T" >}}.
+* Der Schnitt zweier Mengen in {{< katex "T" >}} ist auch wieder in {{< katex "T" >}}.
 * Die Vereinigung beliebig vieler Mengen in {{< katex "T" >}} ist auch wieder in {{< katex "T" >}}.
 
-{{< katex "(X,T)" >}} ist dann ein **topologischer Raum**. Man nennt die Mengen {{< katex "U\subseteq T" >}} offen, d.h. {{< katex "T" >}} umfasst alle offenen Mengen, sowie deren Durchschnitt und Vereinigung (wieder offene Mengen).
+{{< katex "(X,T)" >}} ist dann ein **topologischer Raum**.
 
-Beispiele:
+Man nennt die Mengen {{< katex "U\subseteq T" >}} **offen**, d.h. {{< katex "T" >}} umfasst alle offenen Mengen, sowie deren Durchschnitt und Vereinigung (wieder offene Mengen).
+Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\backslash U" >}} offen ist. So sind z.B. {{< katex "\emptyset" >}} und {{< katex "X" >}} beide nicht nur offen, sondern auch abgeschlossen. Für die Definition eines topologischen Raumes ist es außerdem gleich, ob man {{< katex "T" >}} als die offenen oder abgeschlossenen Mengen definiert.
+
+**Beispiele:**
 
 * _Triviale Topologie:_ {{< katex "T=\{\emptyset,X\}" >}}
 * _Diskrete Topologie:_ {{< katex "T" >}} ist die Potenzmenge von {{< katex "X" >}}, d.h. alle Teilmengen von {{< katex "X" >}} sind offen.
 * Die Menge {{< katex "\mathbb{R}" >}} der reellen Zahlen, wobei die offenen Mengen genau die {{< katex "U\subseteq\mathbb{R}" >}} sind, die sich als Vereinigung von offenen Intervallen darstellen lassen.
 
-Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\backslash U" >}} offen ist. So sind z.B. {{< katex "\emptyset" >}} und {{< katex "X" >}} beide nicht nur offen, sondern auch abgeschlossen.
 
 Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x\in X" >}}, wenn es eine offene Menge {{< katex "V\subset U" >}} gibt mit {{< katex "x\in V" >}}, d.h. wenn es eine offene Teilmenge von {{< katex "U" >}} gibt, in der {{< katex "x" >}} liegt.
 
