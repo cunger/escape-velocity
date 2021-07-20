@@ -9,8 +9,8 @@ draft: false
 ---
 
 Ein Raum ist eine Menge von mathematischen Objekten zusammen mit einer Struktur.
-Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt (eng verbunden mit den Begriffen Abstand, Umgebung und Konvergenz) und wo man von stetigen Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
-Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist die Dimension des Raumes, was für die [Analysis](../analysis) wichtig ist.
+Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt und wo man von stetigen Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
+Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist zum Beispiel die Dimension des Raumes, was für die [Analysis](../analysis) wichtig ist.
 
 Andere interessante Räume ergeben sich dann, wenn eine Topologie mit einer anderen Struktur verträglich ist:
 zum Beispiel topologische Gruppen, topologische Vektorräume
@@ -37,12 +37,12 @@ Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\backslash 
 * _Diskrete Topologie:_ {{< katex "T" >}} ist die Potenzmenge von {{< katex "X" >}}, d.h. alle Teilmengen von {{< katex "X" >}} sind offen.
 * Die Menge {{< katex "\mathbb{R}" >}} der reellen Zahlen, wobei die offenen Mengen genau die {{< katex "U\subseteq\mathbb{R}" >}} sind, die sich als Vereinigung von offenen Intervallen darstellen lassen.
 
+## Grundbegriffe
 
 Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x\in X" >}}, wenn es eine offene Menge {{< katex "V\subset U" >}} gibt mit {{< katex "x\in V" >}}, d.h. wenn es eine offene Teilmenge von {{< katex "U" >}} gibt, in der {{< katex "x" >}} liegt.
 
-## Grundbegriffe
+Ein Punkt {{< katex "x" >}} ist ein **Häufungspunkt** der Menge, wenn in jeder Umgebung von {{< katex "x" >}} unendlich viele Elemente der Menge liegen.
 
-Häufungspunkt
 innerer und äusserer Punkt, Randpunkt,
 das Innere und abgeschlossene Hülle
 
@@ -79,10 +79,19 @@ Eine reelle Folge {{< katex "(x_n)" >}} konvergiert gegen {{< katex "x" >}} gdw 
 Will man diese Begriffe verallgemeinern für andere mathematische Objekte, wie Folgen von Vektoren, komplexe Zahlen und Funktionen, müsste man sie spezifisch für jedes dieser Objekte neu definieren.
 Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusammen mit einem allgemeinen Konzept für Abstand zwischen Objekten in diese Räumen und darauf aufbauend allgemeine Begriffe wie den der Konvergenz.
 
-**Metrische Räume** sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine **Metrik** ist eine Abbildung {{< katex "d" >}} zweier Vektoren auf eine reelle Zahl, die den Abstand zwischen diesen Vektoren ausdrückt.
+**Metrische Räume** sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine **Metrik** ist eine Abbildung {{< katex "d" >}} zweier Vektoren auf eine reelle Zahl, die den Abstand zwischen diesen Vektoren ausdrückt, also die folgenden Eigenschaften erfüllt:
 
-**Normierte Räume** sind Vektorräume, auf denen eine Norm definiert ist, die die Länge eines Vektors ausdrückt.
-Eine **Norm** {{< katex "\|x\|" >}} ist eine Abbildung eines Vektors {{< katex "x" >}} auf eine reelle Zahl (die Länge des Vektors).
+* {{< katex "d(x,y)\geq 0" >}}
+* {{< katex "d(x,y)=d(y,x)" >}}
+* {{< katex "d(x,y)\leq d(x,z) + d(z,y)" >}}
+
+**Normierte Räume** sind Vektorräume, auf denen eine Norm definiert ist, die die Länge bzw. Größe eines Vektors ausdrückt.
+Eine **Norm** {{< katex "\|x\|" >}} ist eine Abbildung eines Vektors {{< katex "x" >}} auf eine reelle Zahl (die Länge bzw. Größe des Vektors), die die folgenden Eigenschaften erfüllt:
+
+* {{< katex "\|x\|\geq 0" >}} und {{< katex "\|x\| = 0" >}} gdw {{< katex "x = 0" >}}
+* {{< katex "\|\alpha x\| = |\alpha| \|x\|" >}} für alle {{< katex "\alpha\in\mathbb{R}" >}}
+* {{< katex "\|x+y\| \leq \|x\| + \|y\|" >}}
+
 Eine Norm setzt eine lineare Struktur voraus, ist also nur für Vektorräume definiert.
 Beispiele:
 
@@ -95,7 +104,8 @@ Beispiele:
     * {{< katex "\|x\|_\infty := \text{max}\,\{|x_k|\,\mid\,1\leq k\leq n\}" >}} Maximumnorm
 * Vektorraum aller beschränkten Funktionen mit der Supremumsnorm {{< katex "\|\cdot\|_\infty" >}}
 
-Jede Norm induziert auch eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich
+Eine Norm kann vom Skalarprodukt abgeleitet werden.
+Und jede Norm induziert eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich
 {{< katex "d(x,y) = \|x-y\|" >}}, d.h. der Abstand zweier Vektoren wird definiert als die Länge des Differenzvektors.
 Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig umgekehrt: Ein metrischer Raum ist nicht unbedingt ein Vektorraum, denn eine Metrik muss die lineare Struktur eines Raumes nicht respektieren.
 
@@ -106,11 +116,11 @@ Beispiele für Metriken, die von keiner Norm induziert werden:
 {{< katex display="d(x,y) := \begin{cases} \|x-y\| & \text{wenn }x,y\text{ auf einer Geraden durch }P\text{ liegen} \\ \|x-P\| + \|P-y\| & \text{sonst}\end{cases}" >}}
 * p-adische Metrik auf {{< katex "\mathbb{Z}" >}}
 
-Alle Normen über einem endlich-dimensionalen Vektorraum {{< katex "\mathbb{R}^n" >}} sind bis auf eine Konstante (d.h. bis auf Streckung oder Stauchung) äquivalent, d.h. es gibt {{< katex "c_1,c_2" >}}, so dass {{< katex "\|x\|_a \leq c_1\|x\|_b" >}} und {{< katex "\|x\|_b\leq c_2 \|x\|_a" >}}. So kann man z.B. bestimmte Eigenschaften auf der Maximumsnorm zeigen, wo sie einfacher zu beweisen sind, und dann auf äquivalente Normen übertragen.
+Alle Normen über einem endlich-dimensionalen Vektorraum {{< katex "\mathbb{R}^n" >}} sind bis auf eine Konstante (d.h. bis auf Streckung oder Stauchung) äquivalent, d.h. es gibt {{< katex "c_1,c_2" >}}, so dass {{< katex "\|x\|_a \leq c_1\|x\|_b" >}} und {{< katex "\|x\|_b\leq c_2 \|x\|_a" >}}. Sie induzieren also die gleiche Topologie. So kann man z.B. bestimmte Eigenschaften auf der Maximumsnorm zeigen, wo sie einfacher zu beweisen sind, und dann auf äquivalente Normen übertragen.
 
 Ein normierter Raum ist genau dann **vollständig**, wenn jede Cauchy-Folge konvergiert. Vollständige Räume umfassen immer geschlossene Mengen, es gibt also keine Lücken im Raum. Ein vollständiger normierter Raum heißt **Banachraum**. Zum Beispiel ist jeder endlich-dimensionale Raum über {{< katex "\mathbb{R}" >}} (also {{< katex "\mathbb{R}^n" >}}) mit einer beliebigen Norm vollständig.
 
-## Metrische Räume als topologische Räume
+## Normierte Räume als topologische Räume
 
 Eine Menge {{< katex "M" >}} ist **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "x\in M" >}} ist, d.h. wenn es zu jedem {{< katex "x\in M" >}} eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "x" >}} gibt, die ganz in {{< katex "M" >}} liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann **geschlossen** bzgl. der Norm (also wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt). Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.
 
@@ -123,6 +133,8 @@ Faustregel:
 
 Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
 Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.
+
+Für jede Metrik {{< katex "d" >}} ist auch {{< katex "d'(x,y):=\frac{d(x,y)}{1+d{x,y}}" >}} eine Metrik und die erzeugte Topologie ist die gleiche.
 
 # Funktionen über metrischen Räumen
 
@@ -189,8 +201,17 @@ Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} H
 
 Eine **reelle Folge** ist eine Abbildung {{< katex "f:\mathbb{N}\to\mathbb{R}" >}}. (Eine Folge hat also immer unendlich viele Elemente.)
 
-Folgen von Punkten in einem metrischen Raum
-+ Konvergenz
+## Folgen von Punkten in einem metrischen Raum
+
+**Konvergenz im metrischen Raum**:
+(x^k)\to a gdw d(x^k,a)\to 0
+rechts ist Konvergenz im R
+In vollständigen Räumen: wenn (x^k) eine Cauchyfolge ist, also der Abstand zwischen zwei Folgengliedern beleibig klein wird
+
+**Konvergenz im topologischen Raum**:
+(x^k)\to a gdw für alle Umgebungen von a gilt, dass ab einem k_0 alle x^k (m>=k_0) in dieser Umgebung liegen.
+
+Der Grenzwert einer Folge ist immer auch Häufungspunkt. In einem metrischen Raum kann eine Folge mehrere Häufungspunkte haben, aber nur einen Grenzwert (Hausdorff).
 
 Folgen von Funktionen zwischen metrischen Räumen
 + Konvergenz:
