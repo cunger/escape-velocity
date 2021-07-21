@@ -120,16 +120,19 @@ Alle Normen über einem endlich-dimensionalen Vektorraum {{< katex "\mathbb{R}^n
 
 Ein normierter Raum ist genau dann **vollständig**, wenn jede Cauchy-Folge konvergiert. Vollständige Räume umfassen immer geschlossene Mengen, es gibt also keine Lücken im Raum. Ein vollständiger normierter Raum heißt **Banachraum**. Zum Beispiel ist jeder endlich-dimensionale Raum über {{< katex "\mathbb{R}" >}} (also {{< katex "\mathbb{R}^n" >}}) mit einer beliebigen Norm vollständig.
 
-## Normierte Räume als topologische Räume
+## Metrische und normierte Räume als topologische Räume
 
-Eine Menge {{< katex "M" >}} ist **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "x\in M" >}} ist, d.h. wenn es zu jedem {{< katex "x\in M" >}} eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "x" >}} gibt, die ganz in {{< katex "M" >}} liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann **geschlossen** bzgl. der Norm (also wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt). Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.
+In einem metrischen Raum {{< katex "(M,d)" >}} lässt sich eine {{< katex "\varepsilon" >}}-Umgebung {{< katex "U_\varepsilon" >}} von {{< katex "x_0" >}} definieren als {{< katex "\{ x\in M \,|\, d(x,x_0) < \varepsilon \}" >}}. Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x_0" >}}, wenn es ein {{< katex "\varepsilon" >}} gibt, so dass {{< katex "U_\varepsilon(x_0)\subseteq U" >}}.
+
+Auf normierte Räume überträgt sich diese Definition, indem man die durch die Norm induzierte Metrik betrachtet. Eine Menge {{< katex "M" >}} ist also **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "x\in M" >}} ist, d.h. wenn es zu jedem {{< katex "x\in M" >}} eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "x" >}} gibt, die ganz in {{< katex "M" >}} liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann **geschlossen** bzgl. der Norm, also wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.
 
 Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.
 
-Faustregel:
+_Faustregeln:_
 
-* Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen.
-* Mengen, die mit {{< katex "=,\leq,\geq" >}} zwischen stetigen Funktionen definiert sind, sind abgeschlossen.
+* Offene Intervalle in {{< katex "\mathbb{R}" >}} sind offen, abgeschlossene Intervalle sind abgeschlossen.
+* Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen (z.B. {{< katex "\{(x,y)\in\mathbb{R}^2 \,|\, x<y^2\}" >}}).
+* Mengen, die mit {{< katex "=,\leq,\geq" >}} zwischen stetigen Funktionen definiert sind, sind abgeschlossen (z.B. {{< katex "\{(x,y)\in\mathbb{R}^2 \,|\, x\leq y^2\}" >}}).
 
 Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
 Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.
