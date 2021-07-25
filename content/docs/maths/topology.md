@@ -102,7 +102,7 @@ Beispiele:
     * {{< katex "\|\cdot\|_1" >}} Summennorm
     * {{< katex "\|\cdot\|_2" >}} euklidische Norm
     * {{< katex "\|x\|_\infty := \text{max}\,\{|x_k|\,\mid\,1\leq k\leq n\}" >}} Maximumnorm
-* Vektorraum aller beschränkten Funktionen mit der Supremumsnorm {{< katex "\|\cdot\|_\infty" >}}
+* Vektorraum aller beschränkten, stetigen, differenzierbaren oder integrierbaren Funktionen mit der Supremumsnorm {{< katex "\|\cdot\|_\infty" >}}
 
 Eine Norm kann vom Skalarprodukt abgeleitet werden.
 Und jede Norm induziert eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich
