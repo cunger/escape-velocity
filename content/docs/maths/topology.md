@@ -41,23 +41,40 @@ Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\backslash 
 
 Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x\in X" >}}, wenn es eine offene Menge {{< katex "V\subset U" >}} gibt mit {{< katex "x\in V" >}}, d.h. wenn es eine offene Teilmenge von {{< katex "U" >}} gibt, in der {{< katex "x" >}} liegt.
 
-Ein Punkt {{< katex "x" >}} ist ein **Häufungspunkt** der Menge, wenn in jeder Umgebung von {{< katex "x" >}} unendlich viele Elemente der Menge liegen.
+Ein Punkt {{< katex "x" >}} ist für eine Menge {{< katex "M" >}}
 
-innerer und äusserer Punkt, Randpunkt,
-das Innere und abgeschlossene Hülle
+* ein **Häufungspunkt**, wenn in jeder Umgebung von {{< katex "x" >}} unendlich viele Elemente der Menge liegen
+* ein **innerer Punkt**, wenn {{< katex "M" >}} eine Umgebung von {{< katex "x" >}} ist
+* ein **äußerer Punkt**, wenn {{< katex "X\backslash M" >}} eine Umgebung von {{< katex "x" >}} ist
+* ein **Randpunkt**, wenn weder {{< katex "M" >}} noch {{< katex "X\backslash M" >}} eine Umgebung von {{< katex "x" >}} ist
+
+Die Menge {{< katex "\mathring{M}" >}} aller inneren Punkte von {{< katex "M" >}} heißt das **Innere** oder der **offene Kern**.
+
+Die Menge {{< katex "\overline{M}" >}} aller Punkte, die nicht äußere Punkte von {{< katex "M" >}} sind, heißt die **abgeschlossene Hülle**.
 
 ## Kompaktheit
 
-Ein topologischer Raum heißt **kompakt**, wenn ...
+Ein topologischer Raum {{< katex "(X,T)" >}} heißt **kompakt**, wenn jede offene Überdeckung
 
-Kompaktheit erlaubt es, von lokalen Eigenschaften auf globale Eigenschaften zu schließen.
+{{< katex "X=\bigcup_{i\in I} U_i" >}} mit {{< katex "U_i\in T" >}}
 
-Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist **kompakt**, wenn sie alle Randpunkte enthält und sich nicht ins Unendliche erstreckt. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt.
+eine endliche Teilüberdeckung
 
-**Satz von Heine-Borel:** Eine nicht-leere Teilmenge von {{< katex "\mathbb{R}^n" >}} ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.
+{{< katex "X=\bigcup_{j\in J} U_j" >}} mit {{< katex "U_j\in T" >}} und {{< katex "J\subseteq I" >}} endlich
 
-* folgenkompakt
-* überdeckunsgkompakt
+enthält.
+
+Kompakte Räume kann man verstehen als eine Verallgemeinerung endlicher Räume. Zum Beispiel kann man mithilfe der Kompatkheit den Schritt von unendlich vielen Umgebungen zu endlich vielen machen und Beweise dann sehr ähnlich führen wie im endlichen Fall.
+
+Eine Teilmenge {{< katex "M" >}} eines topologischen Raumes ist:
+* **überdeckunsgkompakt**, wenn es zu jeder offenen Überdeckung {{< katex "M\subseteq \bigcup_{i\in I} U_i" >}} eine endliche Teilüberdeckung {{< katex "M\subseteq\bigcup_{j\in J} U_j" >}} gibt;
+* **folgenkompakt**, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört.
+
+In beliebigen topologischen Räumen sind beide Arten von Kompaktheit nicht unbedingt gleich.
+
+Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist (**Satz von Heine-Borel**). Sie darf keine Folgen enthalten, die entweder keinen Grenzwert haben oder gegen einen Grenzwert konvergieren, der nicht in der Menge liegt.
+
+So sind zum Beispiele alle abgeschlossenen Intervalle in {{< katex "\mathbb{R}" >}} (wie {{< katex "[0,1]" >}}) kompakt, während offene und halboffene Intervalle nicht kompakt sind. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt.
 
 ## Trennungseigenschaften
 
@@ -81,16 +98,16 @@ Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusam
 
 **Metrische Räume** sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine **Metrik** ist eine Abbildung {{< katex "d" >}} zweier Vektoren auf eine reelle Zahl, die den Abstand zwischen diesen Vektoren ausdrückt, also die folgenden Eigenschaften erfüllt:
 
-* {{< katex "d(x,y)\geq 0" >}}
-* {{< katex "d(x,y)=d(y,x)" >}}
-* {{< katex "d(x,y)\leq d(x,z) + d(z,y)" >}}
+* {{< katex "d(x,y)\geq 0" >}} (Positive Definitheit)
+* {{< katex "d(x,y)=d(y,x)" >}} (Symmetrie)
+* {{< katex "d(x,y)\leq d(x,z) + d(z,y)" >}} (Dreiecksungleichung)
 
 **Normierte Räume** sind Vektorräume, auf denen eine Norm definiert ist, die die Länge bzw. Größe eines Vektors ausdrückt.
 Eine **Norm** {{< katex "\|x\|" >}} ist eine Abbildung eines Vektors {{< katex "x" >}} auf eine reelle Zahl (die Länge bzw. Größe des Vektors), die die folgenden Eigenschaften erfüllt:
 
-* {{< katex "\|x\|\geq 0" >}} und {{< katex "\|x\| = 0" >}} gdw {{< katex "x = 0" >}}
-* {{< katex "\|\alpha x\| = |\alpha| \|x\|" >}} für alle {{< katex "\alpha\in\mathbb{R}" >}}
-* {{< katex "\|x+y\| \leq \|x\| + \|y\|" >}}
+* {{< katex "\|x\|\geq 0" >}} und {{< katex "\|x\| = 0" >}} gdw {{< katex "x = 0" >}} (Definitheit, es reicht zu zeigen: {{< katex "\|x\| = 0\Rightarrow x = 0" >}})
+* {{< katex "\|\alpha x\| = |\alpha| \|x\|" >}} für alle {{< katex "\alpha\in\mathbb{R}" >}} (Homogenität)
+* {{< katex "\|x+y\| \leq \|x\| + \|y\|" >}} (Dreiecksungleichung)
 
 Eine Norm setzt eine lineare Struktur voraus, ist also nur für Vektorräume definiert.
 Beispiele:
@@ -104,9 +121,11 @@ Beispiele:
     * {{< katex "\|x\|_\infty := \text{max}\,\{|x_k|\,\mid\,1\leq k\leq n\}" >}} Maximumnorm
 * Vektorraum aller beschränkten, stetigen, differenzierbaren oder integrierbaren Funktionen mit der Supremumsnorm {{< katex "\|\cdot\|_\infty" >}}
 
-Eine Norm kann vom Skalarprodukt abgeleitet werden.
-Und jede Norm induziert eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich
-{{< katex "d(x,y) = \|x-y\|" >}}, d.h. der Abstand zweier Vektoren wird definiert als die Länge des Differenzvektors.
+Eine Norm kann vom Skalarprodukt {{< katex "\langle\cdot,\cdot\rangle" >}} abgeleitet werden:
+{{< katex display="\|x\| = \sqrt{\langle x,x\rangle}" >}}
+Und jede Norm induziert eine Metrik (aber nicht zwangsläufig umgekehrt), nämlich:
+{{< katex display="d(x,y) = \|x-y\|" >}}
+D.h. der Abstand zweier Vektoren wird definiert als die Länge des Differenzvektors.
 Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig umgekehrt: Ein metrischer Raum ist nicht unbedingt ein Vektorraum, denn eine Metrik muss die lineare Struktur eines Raumes nicht respektieren.
 
 Beispiele für Metriken, die von keiner Norm induziert werden:
@@ -124,7 +143,14 @@ Ein normierter Raum ist genau dann **vollständig**, wenn jede Cauchy-Folge konv
 
 In einem metrischen Raum {{< katex "(M,d)" >}} lässt sich eine {{< katex "\varepsilon" >}}-Umgebung {{< katex "U_\varepsilon" >}} von {{< katex "x_0" >}} definieren als {{< katex "\{ x\in M \,|\, d(x,x_0) < \varepsilon \}" >}}. Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x_0" >}}, wenn es ein {{< katex "\varepsilon" >}} gibt, so dass {{< katex "U_\varepsilon(x_0)\subseteq U" >}}.
 
-Auf normierte Räume überträgt sich diese Definition, indem man die durch die Norm induzierte Metrik betrachtet. Eine Menge {{< katex "M" >}} ist also **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "x\in M" >}} ist, d.h. wenn es zu jedem {{< katex "x\in M" >}} eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "x" >}} gibt, die ganz in {{< katex "M" >}} liegt. Was heißt, dass kein Randpunkt der Menge in ihr enthalten ist. Die Differenzmenge ist dann **geschlossen** bzgl. der Norm, also wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist geschlossen, wenn sie alle Randpunkte enthält.
+Ein Punkt {{< katex "x" >}} ist **Häufungspunkt** einer Menge, wenn in jeder {{< katex "\varepsilon" >}}-Umgebung {{< katex "U_\varepsilon(x)" >}} mindestens ein von {{< katex "x" >}} verschiedenes Element liegt. (Es liegen dann sogar unendlich viele Elemente der Menge in jeder {{< katex "\varepsilon" >}}-Umgebung.)
+Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und umgekehrt.
+
+Auf normierte Räume übertragen sich diese Definitionen, indem man die durch die Norm induzierte Metrik betrachtet.
+
+* Eine Menge {{< katex "M" >}} ist **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "x\in M" >}} ist, d.h. wenn es zu jedem {{< katex "x\in M" >}} eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "x" >}} gibt, die ganz in {{< katex "M" >}} liegt. Eine Menge ist also genau dann offen, wenn sie nur aus inneren Punkten besteht, d.h. keinen ihrer Randpunkte enthält.
+
+* Eine Menge ist **geschlossen** bzgl. einer Norm, wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist genau dann geschlossen, wenn sie alle ihre Häufungspunkte enthält.
 
 Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.
 
