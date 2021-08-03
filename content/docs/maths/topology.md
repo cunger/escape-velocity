@@ -154,10 +154,14 @@ Auf normierte Räume übertragen sich diese Definitionen, indem man die durch di
 
 Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.
 
-_Faustregeln:_
+**Faustregeln:**
 
 * Offene Intervalle in {{< katex "\mathbb{R}" >}} sind offen, abgeschlossene Intervalle sind abgeschlossen.
+
+  Die Grundmenge ist hierbei wichtig. Zum Beispiel ist {{< katex "[0,1)" >}} nicht offen in {{< katex "\mathbb{R}" >}}, aber offen in {{< katex "[0,\infty)" >}}. Analog ist {{< katex "[0,1)" >}} nicht abgeschlossen in {{< katex "\mathbb{R}" >}}, aber abgeschlossen in {{< katex "(-1,1)" >}}.
+
 * Mengen, die mit strikten Ungleichungen zwischen stetigen Funktionen definiert sind, sind offen (z.B. {{< katex "\{(x,y)\in\mathbb{R}^2 \,|\, x<y^2\}" >}}).
+
 * Mengen, die mit {{< katex "=,\leq,\geq" >}} zwischen stetigen Funktionen definiert sind, sind abgeschlossen (z.B. {{< katex "\{(x,y)\in\mathbb{R}^2 \,|\, x\leq y^2\}" >}}).
 
 Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
@@ -178,6 +182,8 @@ Besonders wichtig für Anwendungen sind Abbildungen von {{< katex "\mathbb{R}^n"
 Und die durch eine eindeutige Matrix {{< katex "A" >}} beschrieben werden können, so dass
 {{< katex display="{}^t(f(x))=A{\,}^tx" >}}
 
+Lineare Abbildungen zwischen Vektorräumen sind strukturerhaltend - in dem Sinne, dass sie sich mit der Addition und Skalarmultiplikation des Vektorraums vertragen, d.h. Linearkombinationen wieder auf Linearkombinationen abbilden. (Generell sind für algebraische Strukturen besonders die strukturerhaltenden Abbildungen zwischen ihnen interessant.)
+
 Eine Abbildung oder Funktion ist
 
 * **surjektiv**, wenn jedes Element des Wertebereichs im Bild von {{< katex "f" >}} liegt.
@@ -187,12 +193,20 @@ Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eig
 
 ## Stetigkeit
 
+* **Umgebungskriterium:**
+
+  Topologisch bedeutet Stetigkeit einer Abbildung, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist. Das kann mithilfe von Umgebungen definiert werden.
+
+  {{< katex "f:M\to\mathbb{R}" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn gilt: Für jede Umgebung {{< katex "N" >}} von {{< katex "(f(p))" >}} ist {{< katex "f^{-1}(N)" >}} eine Umgebung von {{< katex "p" >}} in M.
+
+  {{< katex "f:M\to\mathbb{R}" >}} ist **stetig** genau dann, wenn gilt: Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen, die Urbilder abgeschlossener Mengen sind abgeschlossen.)
+
 * **{{< katex "\varepsilon-\delta" >}}-Kriterium:**
+
+  Hinreichend kleine Änderungen des Arguments ziehen nur beliebig kleine Änderungen des Funktionswertes nach sich.
 
   {{< katex "f" >}} ist stetig in {{< katex "p" >}}, wenn es für alle {{< katex "\varepsilon > 0" >}} ein {{< katex "\delta > 0" >}} gibt, so dass für alle {{< katex "x\in X" >}} gilt:
 {{< katex display="d_X(x,p) < \delta \Rightarrow d_Y(f(x),f(p)) < \varepsilon" >}}
-
-* **Umgebungskriterium:**
 
 * **Folgenkriterium:**
 
