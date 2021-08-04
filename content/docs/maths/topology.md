@@ -197,9 +197,12 @@ Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eig
 
   Topologisch bedeutet Stetigkeit einer Abbildung, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist. Das kann mithilfe von Umgebungen definiert werden.
 
-  {{< katex "f:M\to\mathbb{R}" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn gilt: Für jede Umgebung {{< katex "N" >}} von {{< katex "(f(p))" >}} ist {{< katex "f^{-1}(N)" >}} eine Umgebung von {{< katex "p" >}} in M.
+  {{< katex "f:M\to\mathbb{R}" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn gilt:
+  Zu jeder Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} gibt es eine Umgebung {{< katex "U" >}} von {{< katex "p" >}}, so dass {{< katex "f(U\cap M)\subseteq V" >}} (d.h. für alle {{< katex "x\in U\cap M" >}} gilt, dass {{< katex "f(x)\in V" >}}).
 
-  {{< katex "f:M\to\mathbb{R}" >}} ist **stetig** genau dann, wenn gilt: Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen, die Urbilder abgeschlossener Mengen sind abgeschlossen.)
+  Anders ausgedrückt ist {{< katex "f" >}} genau dann stetig in {{< katex "p\in M" >}}, wenn für jede Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} die Menge {{< katex "f^{-1}(V)" >}} eine Umgebung von {{< katex "p" >}} ist. 
+
+  {{< katex "f:M\to\mathbb{R}" >}} ist **stetig** genau dann, wenn gilt: Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)
 
 * **{{< katex "\varepsilon-\delta" >}}-Kriterium:**
 
