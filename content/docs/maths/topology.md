@@ -68,7 +68,7 @@ Kompakte Räume kann man verstehen als eine Verallgemeinerung endlicher Räume. 
 
 Eine Teilmenge {{< katex "M" >}} eines topologischen Raumes ist:
 * **überdeckunsgkompakt**, wenn es zu jeder offenen Überdeckung {{< katex "M\subseteq \bigcup_{i\in I} U_i" >}} eine endliche Teilüberdeckung {{< katex "M\subseteq\bigcup_{j\in J} U_j" >}} gibt;
-* **folgenkompakt**, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört.
+* **folgenkompakt**, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört (anders ausgedrückt: wenn jede Folge Häufungspunkte hat, die zur Menge gehören).
 
 In beliebigen topologischen Räumen sind beide Arten von Kompaktheit nicht unbedingt gleich.
 
@@ -119,7 +119,7 @@ Beispiele:
     * {{< katex "\|\cdot\|_1" >}} Summennorm
     * {{< katex "\|\cdot\|_2" >}} euklidische Norm
     * {{< katex "\|x\|_\infty := \text{max}\,\{|x_k|\,\mid\,1\leq k\leq n\}" >}} Maximumnorm
-* Vektorraum aller beschränkten, stetigen, differenzierbaren oder integrierbaren Funktionen mit der Supremumsnorm {{< katex "\|\cdot\|_\infty" >}}
+* Vektorraum aller beschränkten Funktionen {{< katex "f:M\to Y" >}} mit der Supremumsnorm {{< katex "\|f\|_\infty := \sup_{x\in M}\|f(x)\|_Y" >}}
 
 Eine Norm kann vom Skalarprodukt {{< katex "\langle\cdot,\cdot\rangle" >}} abgeleitet werden:
 {{< katex display="\|x\| = \sqrt{\langle x,x\rangle}" >}}
@@ -200,7 +200,7 @@ Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eig
   {{< katex "f:M\to\mathbb{R}" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn gilt:
   Zu jeder Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} gibt es eine Umgebung {{< katex "U" >}} von {{< katex "p" >}}, so dass {{< katex "f(U\cap M)\subseteq V" >}} (d.h. für alle {{< katex "x\in U\cap M" >}} gilt, dass {{< katex "f(x)\in V" >}}).
 
-  Anders ausgedrückt ist {{< katex "f" >}} genau dann stetig in {{< katex "p\in M" >}}, wenn für jede Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} die Menge {{< katex "f^{-1}(V)" >}} eine Umgebung von {{< katex "p" >}} ist. 
+  Anders ausgedrückt ist {{< katex "f" >}} genau dann stetig in {{< katex "p\in M" >}}, wenn für jede Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} die Menge {{< katex "f^{-1}(V)" >}} eine Umgebung von {{< katex "p" >}} ist.
 
   {{< katex "f:M\to\mathbb{R}" >}} ist **stetig** genau dann, wenn gilt: Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)
 
@@ -211,6 +211,12 @@ Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eig
   {{< katex "f" >}} ist stetig in {{< katex "p" >}}, wenn es für alle {{< katex "\varepsilon > 0" >}} ein {{< katex "\delta > 0" >}} gibt, so dass für alle {{< katex "x\in X" >}} gilt:
 {{< katex display="d_X(x,p) < \delta \Rightarrow d_Y(f(x),f(p)) < \varepsilon" >}}
 
+  Das garantiert Approximierbarkeit der Funktion: Für jeden maximalen Fehler {{< katex "\varepsilon" >}} und eine Stelle {{< katex "p" >}} findet man ein {{< katex "\delta" >}}, so dass sich jeder Funktionswert {{< katex "f(x)" >}} für Argumente {{< katex "x" >}} in der Umgebung {{< katex "U_\delta(p)" >}} um maximal {{< katex "\varepsilon" >}} von {{< katex "f(p)" >}} unterscheiden.
+
+  ![Non-uniform approximation](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Nonuniform_approximation_of_a_function.svg/350px-Nonuniform_approximation_of_a_function.svg.png)
+
+  (Quelle: [Serlo](https://de.wikibooks.org/wiki/Mathe_für_Nicht-Freaks:_Gleichmäßige_Stetigkeit))
+
 * **Folgenkriterium:**
 
   {{< katex "f" >}} ist stetig in {{< katex "p" >}}, wenn für jede Folge {{< katex "(x_n)" >}} in {{< katex "X" >}} mit {{< katex "\lim_{n\to\infty} x_n = p" >}} gilt:
@@ -219,6 +225,17 @@ Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eig
 Weitere, stärkere Arten von Stetigkeit:
 
 * **Gleichmäßige Stetigkeit**
+
+  {{< katex "\delta" >}} ist global, hängt also nicht mehr von der Stelle der Funktion ab.
+
+  {{< katex "f" >}} ist gleichmäßig stetig, wenn es für alle {{< katex "\varepsilon > 0" >}} ein {{< katex "\delta > 0" >}} gibt, so dass für alle {{< katex "x,y\in X" >}} gilt:
+  {{< katex display="d_X(x,y) < \delta \Rightarrow d_Y(f(x),f(y)) < \varepsilon" >}}
+
+  Das entspricht einer gleichmäßigen Approximierbarkeit.
+
+  ![Uniform approximation](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Uniform_approximation_of_a_function.svg/350px-Uniform_approximation_of_a_function.svg.png)
+
+  (Quelle: [Serlo](https://de.wikibooks.org/wiki/Mathe_für_Nicht-Freaks:_Gleichmäßige_Stetigkeit))
 
 * **Lipschitz-Stetigkeit**
 
@@ -234,7 +251,11 @@ Weitere, stärkere Arten von Stetigkeit:
   {{< katex display="d_Y(f(p),f(q)) \leq C\cdot d_X(p,q)^\alpha" >}}
   {{< katex display="\|(f(p)-f(q))\|_Y \leq C\cdot \|p-q\|_X^\alpha" >}}
 
-Zum Beispiel ist {{< katex "f(x)=x^2" >}} stetig, aber nicht gleichmäßig stetig oder Lipschitz-stetig.
+Diese Begriffe lassen sich ihrer Stärke nach ordnen:
+
+  Hölder-stetig {{< katex "\Rightarrow" >}} Lipschitz-stetig {{< katex "\Rightarrow" >}} gleichmäßig stetig {{< katex "\Rightarrow" >}} stetig
+
+Die Umkehrungen gelten im allgemeinen nicht, zum Beispiel ist {{< katex "f(x)=x^2" >}} stetig, aber nicht gleichmäßig stetig oder Lipschitz-stetig.
 
 In einem Punkt {{< katex "a" >}} stetig fortsetzbar?
 Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} Häufungspunkt, dann nur wenn {{< katex "f" >}} in {{< katex "a" >}} konvergiert.
