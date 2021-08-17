@@ -1,6 +1,6 @@
 ---
-title: "Topologische, normierte und metrische Räume"
-summary: "Sowie Funktionen, Folgen und Reihen in metrischen Räumen."
+title: "Topologie"
+summary: "Topologische, normierte und metrische Räume."
 date: 2020-08-26
 weight: 2
 math: true
@@ -72,9 +72,9 @@ Eine Teilmenge {{< katex "M" >}} eines topologischen Raumes ist:
 
 In beliebigen topologischen Räumen sind beide Arten von Kompaktheit nicht unbedingt gleich.
 
-Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist (**Satz von Heine-Borel**). Sie darf keine Folgen enthalten, die entweder keinen Grenzwert haben oder gegen einen Grenzwert konvergieren, der nicht in der Menge liegt.
+Wenn ein metrischer Raum kompakt ist, dann ist er abgeschlossen und beschränkt. Für Teilmengen von {{< katex "\mathbb{R}^n" >}} gilt auch die Umkehrung (**Satz von Heine-Borel**). So sind zum Beispiele alle abgeschlossenen Intervalle in {{< katex "\mathbb{R}" >}} (wie {{< katex "[0,1]" >}}) kompakt, während offene und halboffene Intervalle nicht kompakt sind. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt.
 
-So sind zum Beispiele alle abgeschlossenen Intervalle in {{< katex "\mathbb{R}" >}} (wie {{< katex "[0,1]" >}}) kompakt, während offene und halboffene Intervalle nicht kompakt sind. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt.
+Kompaktheit einer Menge bedeutet auch, dass sie keine Folgen enthalten darf, die entweder keinen Grenzwert haben oder gegen einen Grenzwert konvergieren, der nicht in der Menge liegt.
 
 ## Trennungseigenschaften
 
@@ -168,101 +168,6 @@ Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
 Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.
 
 Für jede Metrik {{< katex "d" >}} ist auch {{< katex "d'(x,y):=\frac{d(x,y)}{1+d{x,y}}" >}} eine Metrik und die erzeugte Topologie ist die gleiche.
-
-# Funktionen über metrischen Räumen
-
-Wir betrachten Abbildungen zwischen metrischen Räumen, insbesondere stetige Funktionen {{< katex "f:X\to Y" >}} zwischen metrischen Räumen {{< katex "(X,d_X)" >}} und {{< katex "(Y,d_Y)" >}}
-(oder zwischen spezielleren metrischen Räumen {{< katex "(X,\|\cdot\|_X)" >}} und {{< katex "(Y,\|\cdot\|_Y)" >}}, wenn {{< katex "d(a,b)=\|a-b\|" >}}).
-
-Besonders wichtig für Anwendungen sind Abbildungen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}}, also reellwertige Funktionen mehrerer Veränderlicher, und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}. Inbesondere lineare Transformationen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}, d.h. Funktionen, für die gilt:
-
-* {{< katex "f(x+x')=f(x)+f(x')" >}}
-* {{< katex "f(cx)=cf(x)" >}})
-
-Und die durch eine eindeutige Matrix {{< katex "A" >}} beschrieben werden können, so dass
-{{< katex display="{}^t(f(x))=A{\,}^tx" >}}
-
-Lineare Abbildungen zwischen Vektorräumen sind strukturerhaltend - in dem Sinne, dass sie sich mit der Addition und Skalarmultiplikation des Vektorraums vertragen, d.h. Linearkombinationen wieder auf Linearkombinationen abbilden. (Generell sind für algebraische Strukturen besonders die strukturerhaltenden Abbildungen zwischen ihnen interessant.)
-
-Eine Abbildung oder Funktion ist
-
-* **surjektiv**, wenn jedes Element des Wertebereichs im Bild von {{< katex "f" >}} liegt.
-* **injektiv**, wenn jedes Element im Bild von {{< katex "f" >}} genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.
-
-Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eigenschaften, d.h. sie hängen nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.
-
-## Stetigkeit
-
-* **Umgebungskriterium:**
-
-  Topologisch bedeutet Stetigkeit einer Abbildung, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist. Das kann mithilfe von Umgebungen definiert werden.
-
-  {{< katex "f:M\to\mathbb{R}" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn gilt:
-  Zu jeder Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} gibt es eine Umgebung {{< katex "U" >}} von {{< katex "p" >}}, so dass {{< katex "f(U\cap M)\subseteq V" >}} (d.h. für alle {{< katex "x\in U\cap M" >}} gilt, dass {{< katex "f(x)\in V" >}}).
-
-  Anders ausgedrückt ist {{< katex "f" >}} genau dann stetig in {{< katex "p\in M" >}}, wenn für jede Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} die Menge {{< katex "f^{-1}(V)" >}} eine Umgebung von {{< katex "p" >}} ist.
-
-  {{< katex "f:M\to\mathbb{R}" >}} ist **stetig** genau dann, wenn gilt: Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)
-  
-* **Folgenkriterium:**
-
-  {{< katex "f" >}} ist stetig in {{< katex "p" >}}, wenn für jede Folge {{< katex "(x_n)" >}} in {{< katex "X" >}} mit {{< katex "\lim_{n\to\infty} x_n = p" >}} gilt:
-  {{< katex display="\lim_{n\to\infty} f(x_n) = f(\lim_{n\to\infty} x_n) = f(p)" >}}
-
-* **{{< katex "\varepsilon-\delta" >}}-Kriterium:**
-
-  Hinreichend kleine Änderungen des Arguments ziehen nur beliebig kleine Änderungen des Funktionswertes nach sich.
-
-  {{< katex "f" >}} ist stetig in {{< katex "p" >}}, wenn es für alle {{< katex "\varepsilon > 0" >}} ein {{< katex "\delta > 0" >}} gibt, so dass für alle {{< katex "x\in X" >}} gilt:
-{{< katex display="d_X(x,p) < \delta \Rightarrow d_Y(f(x),f(p)) < \varepsilon" >}}
-
-  Das garantiert Approximierbarkeit der Funktion: Für jeden maximalen Fehler {{< katex "\varepsilon" >}} und eine Stelle {{< katex "p" >}} findet man ein {{< katex "\delta" >}}, so dass sich jeder Funktionswert {{< katex "f(x)" >}} für Argumente {{< katex "x" >}} in der Umgebung {{< katex "U_\delta(p)" >}} um maximal {{< katex "\varepsilon" >}} von {{< katex "f(p)" >}} unterscheiden.
-
-  ![Non-uniform approximation](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Nonuniform_approximation_of_a_function.svg/350px-Nonuniform_approximation_of_a_function.svg.png)
-
-  (Quelle: [Serlo](https://de.wikibooks.org/wiki/Mathe_für_Nicht-Freaks:_Gleichmäßige_Stetigkeit))
-
-Weitere, stärkere Arten von Stetigkeit:
-
-* **Gleichmäßige Stetigkeit**
-
-  {{< katex "\delta" >}} ist global, hängt also nicht mehr von der Stelle der Funktion ab.
-
-  {{< katex "f" >}} ist gleichmäßig stetig, wenn es für alle {{< katex "\varepsilon > 0" >}} ein {{< katex "\delta > 0" >}} gibt, so dass für alle {{< katex "x,y\in X" >}} gilt:
-  {{< katex display="d_X(x,y) < \delta \Rightarrow d_Y(f(x),f(y)) < \varepsilon" >}}
-
-  Das entspricht einer gleichmäßigen Approximierbarkeit.
-
-  ![Uniform approximation](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Uniform_approximation_of_a_function.svg/350px-Uniform_approximation_of_a_function.svg.png)
-
-  (Quelle: [Serlo](https://de.wikibooks.org/wiki/Mathe_für_Nicht-Freaks:_Gleichmäßige_Stetigkeit))
-
-* **Lipschitz-Stetigkeit**
-
-  {{< katex "f" >}} ist Lipschitz-stetig mit Lipschitz-Konstante {{< katex "L" >}} (oder _dehnungsbeschränkt_), wenn für alle {{< katex "p,q\in X" >}} gilt:
-  {{< katex display="d_Y(f(p),f(q)) \leq L\cdot d_X(p,q)" >}}
-  {{< katex display="\|(f(p)-f(q))\|_Y \leq L\cdot \|p-q\|_X" >}}
-
-  Das heißt, der Abstand zweier Punkte {{< katex "x,x'" >}} wird durch Anwendung der Funktion höchstens um den Faktor {{< katex "L" >}} gestreckt (wenn {{< katex "L > 1" >}}) oder gestaucht (wenn {{< katex "L<1" >}}).
-
-* **Hölder-Stetigkeit**
-
-  {{< katex "f" >}} ist Hölder-stetig zum Exponenten {{< katex "\alpha\in(0,\infty)" >}}, wenn es eine Konstante {{< katex "C>0" >}} gibt, so dass für alle {{< katex "p,q\in X" >}} gilt:
-  {{< katex display="d_Y(f(p),f(q)) \leq C\cdot d_X(p,q)^\alpha" >}}
-  {{< katex display="\|(f(p)-f(q))\|_Y \leq C\cdot \|p-q\|_X^\alpha" >}}
-
-Diese Begriffe lassen sich ihrer Stärke nach ordnen:
-
-  Hölder-stetig {{< katex "\Rightarrow" >}} Lipschitz-stetig {{< katex "\Rightarrow" >}} gleichmäßig stetig {{< katex "\Rightarrow" >}} stetig
-
-Die Umkehrungen gelten im allgemeinen nicht, zum Beispiel ist {{< katex "f(x)=x^2" >}} stetig, aber nicht gleichmäßig stetig oder Lipschitz-stetig.
-
-In einem Punkt {{< katex "a" >}} stetig fortsetzbar?
-Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} Häufungspunkt, dann nur wenn {{< katex "f" >}} in {{< katex "a" >}} konvergiert.
-
-## Umkehrfunktionen
-
-[Tao 6.7 (p. 152ff)]
 
 # Folgen und Reihen in metrischen Räumen
 

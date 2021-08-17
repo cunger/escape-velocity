@@ -5,7 +5,7 @@ date: 2020-10-21
 weight: 1
 math: true
 toc: true
-draft: false
+draft: true
 ---
 
 Algebra is a way to reason about the properties of mathematical objects under certain operations.
