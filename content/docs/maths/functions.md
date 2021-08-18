@@ -34,12 +34,12 @@ Stetigkeit und Differenzierbarkeit einer Funktion in einem Punkt sind lokale Eig
 
 Topologisch bedeutet Stetigkeit einer Abbildung, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist. Das kann mithilfe von Umgebungen definiert werden.
 
-{{< katex "f:M\to\mathbb{R}" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn gilt:
+{{< katex "f:M\to Y" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn gilt:
 Zu jeder Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} gibt es eine Umgebung {{< katex "U" >}} von {{< katex "p" >}}, so dass {{< katex "f(U\cap M)\subseteq V" >}} (d.h. für alle {{< katex "x\in U\cap M" >}} gilt, dass {{< katex "f(x)\in V" >}}).
 
 Anders ausgedrückt ist {{< katex "f" >}} genau dann stetig in {{< katex "p\in M" >}}, wenn für jede Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} die Menge {{< katex "f^{-1}(V)" >}} eine Umgebung von {{< katex "p" >}} ist.
 
-{{< katex "f:M\to\mathbb{R}" >}} ist **stetig** genau dann, wenn gilt: Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)
+{{< katex "f:M\to Y" >}} ist **stetig** genau dann, wenn gilt: Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)
 
 ## Folgenkriterium
 
@@ -57,14 +57,13 @@ Das garantiert Approximierbarkeit der Funktion: Für jeden maximalen Fehler {{< 
 
 ## Stärkere Arten von Stetigkeit
 
-Diese Begriffe lassen sich ihrer Stärke nach ordnen:
+Die Stetigskeitsbegriffe lassen sich ihrer Stärke nach ordnen:
 
   Hölder-stetig {{< katex "\Rightarrow" >}} Lipschitz-stetig {{< katex "\Rightarrow" >}} gleichmäßig stetig {{< katex "\Rightarrow" >}} stetig
 
-Die Umkehrungen gelten im allgemeinen nicht, zum Beispiel ist {{< katex "f(x)=x^2" >}} stetig, aber nicht gleichmäßig stetig oder Lipschitz-stetig.
+Die Umkehrungen gelten im allgemeinen nicht, zum Beispiel ist {{< katex "f(x)=x^2" >}} stetig, aber nicht gleichmäßig stetig.
 
 ### Gleichmäßige Stetigkeit
-
 
 {{< katex "f" >}} ist gleichmäßig stetig, wenn es für alle {{< katex "\varepsilon > 0" >}} ein {{< katex "\delta > 0" >}} gibt, so dass für alle {{< katex "x,y\in X" >}} gilt:
 {{< katex display="d_X(x,y) < \delta \Rightarrow d_Y(f(x),f(y)) < \varepsilon" >}}
@@ -75,7 +74,7 @@ Das entspricht einer gleichmäßigen Approximierbarkeit.
 ![Non-uniform approximation](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Nonuniform_approximation_of_a_function.svg/350px-Nonuniform_approximation_of_a_function.svg.png)
 ![Uniform approximation](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Uniform_approximation_of_a_function.svg/350px-Uniform_approximation_of_a_function.svg.png)
 
-_(Links: Stetigkeit, rechts: gleichmäßig Stetigkeit. Quelle: [Serlo](https://de.wikibooks.org/wiki/Mathe_für_Nicht-Freaks:_Gleichmäßige_Stetigkeit))_
+_(Links: Stetigkeit, rechts: gleichmäßige Stetigkeit. Quelle: [Serlo](https://de.wikibooks.org/wiki/Mathe_für_Nicht-Freaks:_Gleichmäßige_Stetigkeit))_
 
 ### Lipschitz-Stetigkeit
 
@@ -102,34 +101,58 @@ Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} H
 
 # Differenzierbarkeit
 
-Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts?
+Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer sehr kleinen Veränderung des Eingabewerts? Es geht also um die **Änderungsrate der Funktion**. Dabei ist eine Funktion differenzierbar, wenn sie linear approximiert werden kann.
+
 Dieses Konzept wird äquivalent erfasst von den folgenden Ableitungsbegriffen, die jeweils einen anderen Blickwinkel einnehmen.
 
 ## Differential
 
-Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes. Es geht also um die Änderungsrate der Funktion.
+Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes.
 
-Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall {{< katex "[x,x_0]" >}}, das entspricht geometrisch der Sekantensteigung:
-{{< katex display="\frac{f(x)-f(x_0)}{x-x_0}" >}}
-Der Grenzwert davon, das Differential, ist dann die lokale Änderungsrate der Funktion an der Stelle {{< katex "x_0" >}}, das entspricht geometrisch der Tangentensteigung:
-{{< katex display="f'(x_0) = \text{lim}_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}" >}}
-Das Problem bei Funktionen {{< katex "f:\mathbb{R}^n\to\mathbb{R}^m" >}} ist, dass {{< katex "x-x_0\in \mathbb{R}^n" >}} und {{< katex "f(x)-f(x_0)\in \mathbb{R}^m" >}}, der Quotient beider also gar nicht vernünftig definiert ist.
+### Eindimensional
 
-Eine äquivalente Formulierung ergibt sich, wenn man {{< katex "x" >}} durch {{< katex "x_0+h" >}} ersetzt. Der Grenzwert der Steigung der Sekanten durch die Punkte {{< katex "(x_0,f(x_0))" >}} und {{< katex "(x_0+h,f(x_0+h))" >}} ist dann:
+Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere **Änderungsrate** der Funktion auf dem Intervall {{< katex "[x,a]" >}}, das entspricht geometrisch der Sekantensteigung:
+{{< katex display="\frac{f(x)-f(a)}{x-a}" >}}
+Der Grenzwert davon, das Differential, ist dann die lokale Änderungsrate der Funktion an der Stelle {{< katex "a" >}}, das entspricht geometrisch der Tangentensteigung:
+{{< katex display="f'(a) = \text{lim}_{x\to a}\frac{f(x)-f(a)}{x-a}" >}}
 
-{{< katex display="f'(x_0)=\text{lim}_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h}" >}}
+Eine äquivalente Formulierung ergibt sich, wenn man {{< katex "x" >}} durch {{< katex "a+h" >}} ersetzt. Der Grenzwert der Steigung der Sekanten durch die Punkte {{< katex "(a,f(a))" >}} und {{< katex "(a+h,f(a+h))" >}} ist dann:
+{{< katex display="f'(a)=\text{lim}_{h\to 0}\frac{f(a+h)-f(a)}{h}" >}}
+Das ist äquivalent zu
+{{< katex display="\text{lim}_{h\to 0}\frac{f(a+h)-f(a)-L(h)}{h}=0" >}}
+Wobei {{< katex "L(h)=f'(a)\,h" >}} eine lineare Abbildung ist.
 
-Das ist äquivalent zu:
-{{< katex display="\text{lim}_{h\to 0}\frac{f(x_0+h)-f(x_0)-L(h)}{h} = 0" >}}
-Wobei {{< katex "L(h)=f'(x_0)(h)" >}} das Differential ist.
-Dieser Begriff des Differentials lässt sich auch auf mehrdimensionale Funktionen übertragen. Das Differential ist die Abbildung {{< katex "L:\mathbb{R}^n\to\mathbb{R}" >}}, so dass
+Man kann Differenzierbarkeit äquivalent als **lineare Approximierbarkeit** definieren.
 
-{{< katex display="\text{lim}_{h\to 0}\frac{f(x_0+h)-f(x_0)-L(h)}{\|h\|} = 0" >}}
+{{< katex "f:M\to Y" >}} ist genau dann differenzierbar in {{< katex "a" >}} mit der Ableitung {{< katex "c=f'(a)\in Y" >}}, wenn es eine Funktion {{< katex "r:M\to Y" >}} gibt, so dass
+
+* {{< katex "f(x) = f(a) + c(x-a) + r(x)" >}}
+* {{< katex "\lim_{x\to a}\dfrac{r(x)}{x-a} = 0" >}}
+
+Hier versteht man {{< katex "f(a) + c(x-a)" >}} als Näherung von {{< katex "f(x)" >}} und {{< katex "r(x)" >}} als Fehler, also als Differenz zwischen der eigentlichen Funktion und ihrer Näherung. Wenn {{< katex "x=a" >}}, dann ist {{< katex "r(x)=0" >}}.
+
+Da {{< katex "r(x) = f(x) - f(a) - c(x-a)" >}} ist, gelten diese Bedingungen genau dann, wenn {{< katex display="\lim_{x\to a}\frac{f(x) - f(a) - c(x-a)}{x-a}=\lim_{x\to a}\frac{f(x) - (a)}{x-a} - c = 0," >}} also wenn {{< katex display="\lim_{x\to a}\frac{f(x) - f(a)}{x-a} = c = f'(a)." >}}
+
+### Mehrdimensional
+
+Das Problem bei mehrdimensionalen Funktionen {{< katex "f:\mathbb{R}^n\to\mathbb{R}^m" >}} ist, dass {{< katex "(x-a)\in \mathbb{R}^n" >}} und {{< katex "(f(x)-f(a))\in \mathbb{R}^m" >}}, der Quotient beider also gar nicht vernünftig definiert ist. Die anderen Formulierungen des Differentials lassen sich aber einfach auf mehrdimensionale Funktionen übertragen.
+
+Das Differential ist die Abbildung {{< katex "L:\mathbb{R}^n\to\mathbb{R}" >}}, so dass
+
+{{< katex display="\text{lim}_{h\to 0}\frac{f(a+h)-f(a)-L(h)}{\|h\|} = 0" >}}
 
 Vor allem ist {{< katex "L" >}} eine lineare Abbildung. Daraus ergibt sich eine leicht andere Sichtweise:
-Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts {{< katex "f(x)" >}} hängt annähernd linear von der Änderung des Wertes {{< katex "x" >}} (von {{< katex "x" >}} zu {{< katex "x+h" >}}) ab. Das entspricht der Vorstellung, dass die Tangente der Graph derjenigen linearen Funktion {{< katex "h\to L(h)" >}} ist, die {{< katex "f(x_0+h)−f(x_0)" >}} mit einem sehr kleinen Fehler approximiert.
+Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts {{< katex "f(x)" >}} hängt annähernd linear von der Änderung des Wertes {{< katex "x" >}} (von {{< katex "x" >}} zu {{< katex "x+h" >}}) ab. Das entspricht der Vorstellung, dass die Tangente der Graph derjenigen linearen Funktion {{< katex "h\to L(h)" >}} ist, die {{< katex "f(a+h)−f(a)" >}} mit einem sehr kleinen Fehler approximiert.
 
 Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt "annähernd linear" ist.
+In der äquivalenten Formulierung als lineare Approximierbarkeit heißt das:
+
+{{< katex "f:M\to Y" >}} ist genau dann differenzierbar in {{< katex "a" >}} mit der Ableitung {{< katex "A=f'(a)\in Y" >}} (die **Jacobi-Matrix**, siehe lineare Abbildung als Matrix), wenn es eine Funktion {{< katex "r:M\to Y" >}} gibt, so dass
+
+* {{< katex "f(x) = f(a) + A(x-a) + r(x)" >}}
+* {{< katex "\lim_{x\to a}\dfrac{r(x)}{\|x-a\|} = 0" >}}
+
+### Operatoren
 
 **Differentialoperator:** {{< katex "\frac{d}{dx}:f\to f'" >}}
 
