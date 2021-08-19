@@ -130,7 +130,7 @@ Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} H
 
 Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie lokal approximiert werden kann.
 
-Das Differential wird in der Regel über euklidischen Räumen {{< katex "(\mathbb{R}^n,\|\cdot\|_2)" >}} betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, wodurch lineare Näherungen möglich sind. In allgemeinen metrischen Räumen ist das nicht gegeben. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
+Das Differential wird in der Regel über euklidischen Räumen {{< katex "(\mathbb{R}^n,\|\cdot\|_2)" >}} betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, da man sich für Näherungen auf lineare Abbildungen beruft. In allgemeinen metrischen Räumen ist das nicht möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
 Für Anwendungen sind sowieso Funktionen über reellen Vektorräumen besonders wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}} und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}.
 
 Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.
@@ -162,9 +162,15 @@ Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt "an
 
 ## Lineare Approximierbarkeit
 
+Aus der Approximation
+{{< katex "f'(a)\approx\dfrac{f(x)-f(a)}{x-a}" >}}
+ergibt sich direkt:
+{{< katex display="f(x)\approx f(a) + f'(a)\cdot (x-a)" >}}
+D.h. {{< katex "f" >}} wird in der Nähe von {{< katex "a" >}} approximiert durch eine Gerade mit der Steigung {{< katex "f'(a)" >}}. Man kann Differenzierbarkeit also wie folgt definieren:
+
 {{< katex "f:M\to \mathbb{R}^m" >}} ist genau dann differenzierbar in {{< katex "a" >}} mit der Ableitung {{< katex "c=f'(a)\in \mathbb{R}^m" >}}, wenn es eine Funktion {{< katex "r:M\to \mathbb{R}^m" >}} gibt, so dass
 
-* {{< katex "f(x) = f(a) + c(x-a) + r(x)" >}}
+* {{< katex "f(x) = f(a) + c\cdot(x-a) + r(x)" >}}
 * {{< katex "\lim_{x\to a}\dfrac{r(x)}{x-a} = 0" >}}
 
 Hier versteht man {{< katex "f(a) + c(x-a)" >}} als Näherung von {{< katex "f(x)" >}} und {{< katex "r(x)" >}} als Fehler, also als Differenz zwischen der eigentlichen Funktion und ihrer Näherung. Wenn {{< katex "x=a" >}}, dann ist {{< katex "r(x)=0" >}}.
@@ -174,7 +180,7 @@ Da {{< katex "r(x) = f(x) - f(a) - c(x-a)" >}} ist, gelten diese Bedingungen gen
 Im mehrdimensionalen Fall heißt das:
 {{< katex "f:M\to Y" >}} ist genau dann differenzierbar in {{< katex "a" >}} mit der Ableitung {{< katex "A=f'(a)\in Y" >}} (die **Jacobi-Matrix**, siehe lineare Abbildung als Matrix), wenn es eine Funktion {{< katex "r:M\to Y" >}} gibt, so dass
 
-* {{< katex "f(x) = f(a) + A(x-a) + r(x)" >}}
+* {{< katex "f(x) = f(a) + A\cdot(x-a) + r(x)" >}}
 * {{< katex "\lim_{x\to a}\dfrac{r(x)}{\|x-a\|} = 0" >}}
 
 ## Operatoren
