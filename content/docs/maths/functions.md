@@ -128,9 +128,9 @@ Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} H
 
 # Differenzierbarkeit
 
-Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie lokal approximiert werden kann.
+Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie linear approximiert werden kann.
 
-Das Differential wird in der Regel über euklidischen Räumen {{< katex "(\mathbb{R}^n,\|\cdot\|_2)" >}} betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, da man sich für Näherungen auf lineare Abbildungen beruft. In allgemeinen metrischen Räumen ist das nicht möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
+Das Differential wird in der Regel über euklidischen Räumen {{< katex "(\mathbb{R}^n,\|\cdot\|_2)" >}} betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, um über lineare Approximationen reden zu können. In allgemeinen metrischen Räumen ist das nicht möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
 Für Anwendungen sind sowieso Funktionen über reellen Vektorräumen besonders wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}} und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}.
 
 Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.
