@@ -27,6 +27,9 @@ Eine Funktion {{< katex "f" >}} ist **linear**, wenn gilt:
 Sie kann dann durch eine eindeutige Matrix {{< katex "A" >}} beschrieben werden, so dass
 {{< katex display="{}^t(f(x))=A{\,}^tx" >}}
 
+<!--
+(Die andere Bedeutung von _linear_ ist, dass die Funktion ein [Polynom](../polynomials) vom Grad 1 oder weniger ist. Das meinen wir in diesem Dokument nicht!)
+-->
 
 Eine Abbildung zwischen [metrischen Räumen](../topology) {{< katex "(X,d_X)" >}} und {{< katex "(Y,d_Y)" >}} ist **isometrisch**, wenn sie die Metrik erhält (d.h. der Abstand zweier Bildpunkte ist gleich dem Abstand ihrer Urbildpunkte):
 {{< katex display="d_Y(f(x),f(y)) = d_X(x,y) \quad\text{für alle }x,y\in X" >}}
@@ -44,6 +47,8 @@ Wir betrachten Abbildungen {{< katex "f:X\to Y" >}} zwischen [topologischen Räu
 
 Topologisch bedeutet Stetigkeit einer Funktion, dass sie die Nähe zwischen Elementen erhält, also im Sinne der Topologie strukturerhaltend ist.
 Das kann mithilfe von Umgebungen definiert werden.
+
+Stetigkeit vererbt auch andere Eigenschaften; wenn z.B. die Urbildmenge einer stetigen Abbildung _kompakt_ oder _zusammenhängend_ ist, so ist es die Bildmenge auch.
 
 ### Umgebungskriterium
 
@@ -114,9 +119,6 @@ Ist {{< katex "M" >}} kompakt und {{< katex "f:M\to Y" >}} stetig, dann ist {{< 
 
 Ist {{< katex "M" >}} zusammenhängend und {{< katex "f:M\to Y" >}} stetig, dann ist {{< katex "f(M)" >}} zusammenhängend.
 
-Ist {{< katex "M\neq\emptyset" >}} kompakt und {{< katex "f:M\to \mathbb{R}" >}} stetig, dann nimmt {{< katex "f" >}} sein Maximum und Minimum an.
-
-
 ## Fortsetzbarkeit
 
 In einem Punkt {{< katex "a" >}} stetig fortsetzbar?
@@ -130,8 +132,7 @@ Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} H
 
 Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie linear approximiert werden kann.
 
-Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, um über lineare Approximationen reden zu können. In allgemeinen metrischen Räumen ist das nicht möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren.)
-Für Anwendungen sind sowieso Funktionen über reellen Vektorräumen besonders wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}} und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}.
+Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben, um über lineare Approximationen reden zu können. In allgemeinen metrischen Räumen ist das nicht möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren. Aber für Anwendungen sind sowieso Funktionen über euklidischen Räumen wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}} und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}.)
 
 Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.
 
@@ -166,7 +167,7 @@ Aus der Approximation
 {{< katex "f'(a)\approx\dfrac{f(x)-f(a)}{x-a}" >}}
 ergibt sich direkt:
 {{< katex display="f(x)\approx f(a) + f'(a)\cdot (x-a)" >}}
-D.h. {{< katex "f" >}} wird in der Nähe von {{< katex "a" >}} approximiert durch eine Gerade mit der Steigung {{< katex "f'(a)" >}}. Man kann Differenzierbarkeit also wie folgt definieren:
+Daher kann man Differenzierbarkeit wie folgt definieren:
 
 {{< katex "f:M\to \mathbb{R}^m" >}} ist genau dann differenzierbar in {{< katex "a" >}} mit der Ableitung {{< katex "c=f'(a)\in \mathbb{R}^m" >}}, wenn es eine Funktion {{< katex "r:M\to \mathbb{R}^m" >}} gibt, so dass
 
@@ -195,6 +196,8 @@ Ein Spezialfall der Richtungsableitung ist die **partielle Ableitung**. Die part
 
 **Differentialoperator:** {{< katex "\frac{\partial}{\partial x_i}:f\to \frac{\partial f}{\partial x_i}" >}}
 
+Wenn {{< katex "f" >}} in einer Umgebung eines Punktes {{< katex "a" >}} partiell differenzierbar ist und alle partiellen Ableitungen stetig sind, dann ist {{< katex "f" >}} in {{< katex "a" >}} auch differenzierbar.
+
 ## Gradient
 
 **Differentialoperator:** {{< katex "\nabla" >}} (grad, Vektoranalysis)
@@ -204,10 +207,16 @@ Ein Spezialfall der Richtungsableitung ist die **partielle Ableitung**. Die part
 
 (https://www.wikiwand.com/en/Differential_operator)
 
+## Wichtige Sätze
+
+**Mittelwertsatz:** ...
+
 # Integrierbarkeit
 
 # Literatur
 
 * Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.
 * Daniel Grieser: Skript zu Analysis II, Universität Oldenburg.
+* Klaus Jänich: Mathematik 1+2.
+* Klaus Jänich: Topologie.
 * Terrence Tao: Analysis II.
