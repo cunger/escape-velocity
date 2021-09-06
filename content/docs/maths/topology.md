@@ -10,7 +10,7 @@ draft: false
 
 Ein Raum ist eine Menge von mathematischen Objekten zusammen mit einer Struktur.
 Topologische Räume sind Räume, in denen es einen Nachbarschaftsbegriff gibt und wo man von stetigen Abbildungen sprechen kann, die benachbarte Elemente wieder auf benachbarte Elemente abbilden.
-Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist zum Beispiel die Dimension des Raumes, was für die [Analysis](../analysis) wichtig ist.
+Man spricht von Eigenschaften oder Parametern als topologische Invariante, wenn sie unter solchen Abbildungen erhalten bleiben. Eine solche Invariante ist zum Beispiel die Dimension des Raumes, was für die Analysis wichtig ist.
 
 Andere interessante Räume ergeben sich dann, wenn eine Topologie mit einer anderen Struktur verträglich ist:
 zum Beispiel topologische Gruppen, topologische Vektorräume
@@ -169,30 +169,31 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
 
 Für jede Metrik {{< katex "d" >}} ist auch {{< katex "d'(x,y):=\frac{d(x,y)}{1+d{x,y}}" >}} eine Metrik und die erzeugte Topologie ist die gleiche.
 
-# Folgen und Reihen in metrischen Räumen
+# Folgen und Reihen
 
-Eine **reelle Folge** ist eine Abbildung {{< katex "f:\mathbb{N}\to\mathbb{R}" >}}. (Eine Folge hat also immer unendlich viele Elemente.)
+Eine **Folge** ist eine Abbildung mit {{< katex "\mathbb{N}" >}} als Wertebereich.
+Eine reelle Folge z.B. ist eine Abbildung {{< katex "f:\mathbb{N}\to\mathbb{R}" >}}.
+(Eine Folge hat also immer unendlich viele Elemente.)
 
-## Folgen von Punkten in einem metrischen Raum
+## Konvergenz von Folgen von Punkten in einem Raum
 
-**Konvergenz im metrischen Raum**:
-(x^k)\to a gdw d(x^k,a)\to 0
-rechts ist Konvergenz im R
-In vollständigen Räumen: wenn (x^k) eine Cauchyfolge ist, also der Abstand zwischen zwei Folgengliedern beleibig klein wird
+Konvergenz lässt sich über Umgebungen und Abstände definieren, die Idee ist jeweils die gleiche.
 
 **Konvergenz im topologischen Raum**:
-(x^k)\to a gdw für alle Umgebungen von a gilt, dass ab einem k_0 alle x^k (m>=k_0) in dieser Umgebung liegen.
+Eine Folge {{< katex "(x^n)" >}} konvergiert gegen {{< katex "x" >}} genau dann, wenn für jede Umgebung von {{< katex "x" >}} gilt, dass es ein {{< katex "n_0\in\mathbb{N}" >}} gibt, so dass für alle {{< katex "n\geq n_0" >}} gilt, dass {{< katex "x_n" >}} in dieser Umgebung liegt (dass also ab einem bestimmten Element alle Folgenglieder in der Umgebung liegen).
+
+**Konvergenz im metrischen Raum**:
+Eine Folge {{< katex "(x^n)" >}} konvergiert gegen {{< katex "x" >}} genau dann, wenn es für jedes {{< katex "\varepsilon > 0" >}} ein {{< katex "n_0\in\mathbb{N}" >}} gibt, so dass für alle {{< katex "n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x)<\varepsilon" >}}.
+
+In vollständigen Räumen konvergiert eine Folge, wenn sie eine **Cauchy-Folge** ist, wenn also der Abstand zwischen zwei Folgengliedern beliebig klein wird, d.h. wenn es für jedes {{< katex "\varepsilon > 0" >}} ein {{< katex "n_0\in\mathbb{N}" >}} gibt, so dass für alle {{< katex "m,n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x_m)<\varepsilon" >}}.
 
 Der Grenzwert einer Folge ist immer auch Häufungspunkt. In einem metrischen Raum kann eine Folge mehrere Häufungspunkte haben, aber nur einen Grenzwert (Hausdorff).
 
-Folgen von Funktionen zwischen metrischen Räumen
-+ Konvergenz:
+## Konvergenz von Folgen von Funktionen zwischen Räumen
 
   * punktweise Konvergenz
   * gleichmäßige Konvergenz
   * andere Konvergenzen (z.B. {{< katex "L^1" >}}- und {{< katex "L^2" >}}-Konvergenz)
-
-Reihen von Funktionen
 
 # Literatur
 
