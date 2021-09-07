@@ -10,12 +10,6 @@ The list of resources below is growing and evolving as I proceed on a learning j
 > Now is the time to understand more, so that we may fear less.
 (Marie Curie)
 
-# Bookshelf
-
-📖 Knapp, Langill: Industrial network security.
-
-📚 Baier, Katoen: Principles of model checking.
-
 # Selected courses
 
 * The Radio Sky: Science and Observations

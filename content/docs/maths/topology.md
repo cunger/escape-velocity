@@ -185,15 +185,15 @@ Eine Folge {{< katex "(x^n)" >}} konvergiert gegen {{< katex "x" >}} genau dann,
 **Konvergenz im metrischen Raum**:
 Eine Folge {{< katex "(x^n)" >}} konvergiert gegen {{< katex "x" >}} genau dann, wenn es für jedes {{< katex "\varepsilon > 0" >}} ein {{< katex "n_0\in\mathbb{N}" >}} gibt, so dass für alle {{< katex "n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x)<\varepsilon" >}}.
 
-In vollständigen Räumen konvergiert eine Folge, wenn sie eine **Cauchy-Folge** ist, wenn also der Abstand zwischen zwei Folgengliedern beliebig klein wird, d.h. wenn es für jedes {{< katex "\varepsilon > 0" >}} ein {{< katex "n_0\in\mathbb{N}" >}} gibt, so dass für alle {{< katex "m,n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x_m)<\varepsilon" >}}.
+Konvergente Folgen sind immer **Cauchy-Folgen**, d.h. für jedes {{< katex "\varepsilon > 0" >}} gibt es ein {{< katex "n_0\in\mathbb{N}" >}}, so dass für alle {{< katex "m,n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x_m)<\varepsilon" >}} (der Abstand zwischen zwei Folgengliedern wird also beliebig klein). Die Umkehrung gilt nicht immer. Einn Raum heißt **vollständig**, wenn jede Cauchy-Folge konvergiert.
 
 Der Grenzwert einer Folge ist immer auch Häufungspunkt. In einem metrischen Raum kann eine Folge mehrere Häufungspunkte haben, aber nur einen Grenzwert (Hausdorff).
 
 ## Konvergenz von Folgen von Funktionen zwischen Räumen
 
-  * punktweise Konvergenz
-  * gleichmäßige Konvergenz
-  * andere Konvergenzen (z.B. {{< katex "L^1" >}}- und {{< katex "L^2" >}}-Konvergenz)
+* punktweise Konvergenz
+* gleichmäßige Konvergenz
+* andere Konvergenzen (z.B. {{< katex "L^1" >}}- und {{< katex "L^2" >}}-Konvergenz)
 
 # Literatur
 

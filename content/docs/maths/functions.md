@@ -35,7 +35,7 @@ Eine Abbildung zwischen [metrischen Räumen](../topology) {{< katex "(X,d_X)" >}
 {{< katex display="d_Y(f(x),f(y)) = d_X(x,y) \quad\text{für alle }x,y\in X" >}}
 Jede isometrische Abbildung ist stetig (sogar gleichmäßig stetig).
 
-Stetigkeit ist auch eine Art der Strukturerhaltung: Sie erhält die Nähe zwischen Elementen in topologischen Räumen.
+Stetigkeit ist eine Art der Strukturerhaltung: Sie erhält die Nähe zwischen Elementen in topologischen Räumen.
 
 # Stetigkeit
 
