@@ -72,7 +72,7 @@ Eine Teilmenge {{< katex "M" >}} eines topologischen Raumes ist:
 
 In beliebigen topologischen Räumen sind beide Arten von Kompaktheit nicht unbedingt gleich.
 
-Wenn ein metrischer Raum kompakt ist, dann ist er abgeschlossen und beschränkt. Für Teilmengen von {{< katex "\mathbb{R}^n" >}} gilt auch die Umkehrung (**Satz von Heine-Borel**). So sind zum Beispiele alle abgeschlossenen Intervalle in {{< katex "\mathbb{R}" >}} (wie {{< katex "[0,1]" >}}) kompakt, während offene und halboffene Intervalle nicht kompakt sind. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt.
+Wenn ein metrischer Raum kompakt ist, dann ist er abgeschlossen und beschränkt. Für Teilmengen von {{< katex "\mathbb{R}^n" >}} gilt auch die Umkehrung (**Satz von Heine-Borel**). So sind zum Beispiele alle abgeschlossenen Intervalle in {{< katex "\mathbb{R}" >}} (wie {{< katex "[0,1]" >}}) kompakt, während offene und halboffene Intervalle nicht kompakt sind. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt. {{< katex "\mathbb{N}" >}} ist auch nicht kompakt.
 
 Kompaktheit einer Menge bedeutet auch, dass sie keine Folgen enthalten darf, die entweder keinen Grenzwert haben oder gegen einen Grenzwert konvergieren, der nicht in der Menge liegt.
 
