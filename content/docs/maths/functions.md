@@ -217,5 +217,4 @@ Wenn {{< katex "f" >}} in einer Umgebung eines Punktes {{< katex "a" >}} partiel
 * Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.
 * Daniel Grieser: Skript zu Analysis II, Universität Oldenburg.
 * Klaus Jänich: Mathematik 1+2.
-* Klaus Jänich: Topologie.
 * Terrence Tao: Analysis II.
