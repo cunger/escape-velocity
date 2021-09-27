@@ -27,6 +27,10 @@ Für alle {{< katex "r\in\mathbb{K}" >}} ist {{< katex "p(r)" >}} das Resultat d
 
 Polynome können wie ganze Zahlen addiert, subtrahiert und multipliziert werden. Das Ergebnis ist erneut ein Polynom.
 
+## Addition
+
+Addition und Subtraktion erfolgt komponentenweise.
+
 ## Multiplikation
 
 Das Produkt zweier Polynome {{< katex "p=\sum_{i=0}^n a_ix_i" >}} und {{< katex "q=\sum_{i=0}^m b_ix_i" >}} in {{< katex "\mathbb{K}[x]" >}} ist definiert durch:
@@ -38,14 +42,9 @@ Zum Beispiel:
 * {{< katex "c_1 = a_0b_1 + a_1b_0" >}}
 * {{< katex "c_2 = a_0b_2 + a_1b_1 + a_2b_0" >}}
 * {{< katex "\ldots" >}}
+(Denn für alle {{< katex "a_ib_j" >}} mit {{< katex "i+j=k" >}} ist der variable Term {{< katex "x^k" >}}.)
 
 Dabei gilt {{< katex "\text{Grad}(pq) = \text{Grad}(p) + \text{Grad}(q)" >}}.
-
-## Division mit Rest
-
-Im Gegensatz zu Addition, Subtraktion und Multiplikation von Polynomen, ergibt die Division von Polynomen nicht notwendig wieder ein Polynom. Z.B. ist {{< katex "\frac{p}{q}=\frac{1}{x}" >}} für {{< katex "p=1" >}} und {{< katex "q=x" >}} kein Polynom. Es gibt aber eindeutig bestimmte Polynome {{< katex "f,r" >}}, so dass
-{{< katex display="p=fq+r" >}}
-mit {{< katex "\text{Grad}(r)<\text{Grad}(q)" >}}.
 
 ## Faktorisierung
 
@@ -53,6 +52,30 @@ Polynome können äquivalent umgeformt werden als Produkt von Polynomen. Zum Bei
 
 * {{< katex "x^2-a^2=(x+a)(x-a)" >}}
 * {{< katex "x^3-2x^2-x+1=(x-2)(x+1)(x-1)" >}}
+
+## Division mit Rest
+
+Im Gegensatz zu Addition, Subtraktion und Multiplikation von Polynomen, ergibt die Division von Polynomen nicht notwendig wieder ein Polynom. Z.B. ist {{< katex "\frac{p}{q}=\frac{1}{x}" >}} für {{< katex "p=1" >}} und {{< katex "q=x" >}} kein Polynom. Es gibt aber eindeutig bestimmte Polynome {{< katex "s,r" >}}, so dass
+{{< katex display="p=sq+r" >}}
+mit {{< katex "\text{Grad}(r)<\text{Grad}(q)" >}}.
+Hier ist ein Algorithmus, um {{< katex "s,r" >}} zu bestimmen:
+
+```
+function euclidian_division(p, q)
+  s = 0;
+  r = p;
+  d = degree(q);
+  c = leading_coefficient(q);
+
+  while degree(r) >= d
+    t = leading_coefficient(r)/c * x^(degree(r) - d);
+    s = s + t;
+    r = r - t * q;
+  end
+
+  return (s, r);
+end
+```
 
 ## Komposition
 

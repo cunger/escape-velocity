@@ -10,6 +10,11 @@ The list of resources below is growing and evolving as I proceed on a learning j
 > Now is the time to understand more, so that we may fear less.
 (Marie Curie)
 
+# Currently reading
+
+* J.M. Steele: The Cauchy-Schwarz Master Class.
+* IPCC 6th Assessment Report, WG1: Physical Science Basis.
+
 # Selected courses
 
 * The Radio Sky: Science and Observations
