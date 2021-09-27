@@ -77,6 +77,22 @@ function euclidian_division(p, q)
 end
 ```
 
+Den größten gemeinsamen Teiler zweier Polynome erhält man dann durch wiederholte Division, bis der Rest 0 ist:
+```
+function gcd(p1, p2)
+  (q, r) = euclidian_division(p1, p2);
+
+  # Which means:
+  # p1 = q * p2 + r
+
+  if (r == 0)
+    return q;
+  else
+    return gcd(r, q);
+  end
+end
+```
+
 ## Komposition
 
 # Nullstellen
