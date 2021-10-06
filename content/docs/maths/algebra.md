@@ -52,7 +52,7 @@ Sn := “symmetrische Gruppe” := “Gruppe aller Permutationen von n Elementen
 
 Ein **Ring** {{< katex "(M,+,\cdot)" >}} ist eine abelsche Gruppe {{< katex "(M,+)" >}} mit einer weiteren Verknüpfung {{< katex "\cdot" >}}, die
 * assoziativ ist (d.h. {{< katex "a\cdot(b\cdot c) = (a\cdot b)\cdot c" >}}),
-* distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}),
+* distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}), dass beide Verknüpfungen miteinander vertrlich sind,
 * aber nicht kommutativ sein muss, nicht zwangsläufig ein neutrales Element haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.
 
 In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente {{< katex "a,b\in M" >}} mit {{< katex "ab=0" >}}.
@@ -114,6 +114,8 @@ A _vector space_ (also called _linear space_) is a collection {{< katex "V" >}} 
 
 Vectors can be anything we can take linear combinations of (i.e. that we can add and scale by the elements of a field): coordinates or arrows in {{< katex "n" >}}-dimensional space, matrices, functions.
 So a vector space is not so much determined not by what the vectors look like, but by what properties they have.
+
+## Skalarprodukt
 
 # Strukturerhaltende Abbildungen
 

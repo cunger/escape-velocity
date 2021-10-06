@@ -12,7 +12,7 @@ Ein **Polynom** {{< katex "p\in\mathbb{K}[x]" >}} über einen Körper {{< katex 
 
 {{< katex display="\sum_{i=0}^n a_ix_i=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_1x+a_0," >}}
 
-wobei {{< katex "a_0,\ldots,a_n\in\mathbb{K}" >}} Konstanten sind und die Koeffizienten {{< katex "i\in\mathbb{N}" >}} ganzzahlig und nicht-negativ sind. Der **Grad** eines solchen Polynoms ist der größte Koeffizient {{< katex "i\neq 0" >}}.
+wobei die Koeffizienten {{< katex "a_0,\ldots,a_n\in\mathbb{K}" >}} sind. Der **Grad** eines solchen Polynoms ist das {{< katex "i\neq 0" >}} des größten Koeffizienten ungleich 0. (Der Grad des Nullpolynoms wird als -1 definiert.)
 
 **Polynomfunktionen** sind Funktionen der Form
 {{< katex display="p(x)=\sum_{i=0}^n a_ix_i=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_1x+a_0." >}}
@@ -29,7 +29,7 @@ Polynome können wie ganze Zahlen addiert, subtrahiert und multipliziert werden.
 
 ## Addition
 
-Addition und Subtraktion erfolgt komponentenweise.
+Die Addition erfolgt komponentenweise.
 
 ## Multiplikation
 
@@ -77,7 +77,7 @@ function euclidian_division(p, q)
 end
 ```
 
-Den größten gemeinsamen Teiler zweier Polynome erhält man dann durch wiederholte Division, bis der Rest 0 ist:
+Den **größten gemeinsamen Teiler** zweier Polynome erhält man dann durch wiederholte Division, bis der Rest 0 ist:
 ```
 function gcd(p1, p2)
   (q, r) = euclidian_division(p1, p2);
@@ -92,6 +92,10 @@ function gcd(p1, p2)
   end
 end
 ```
+
+## Algebraischer Abschluss
+
+Ein Körper {{< katex "K" >}} heißt **algebraisch abgeschlossen**, wenn jedes nicht-konstante Polynom {{< katex "p\] in {{< katex "\mathbb{K}[T]" >}} (d.h. jedes Polynom in {{< katex "\mathbb{K}[T]\backslash\mathbb{K}" >}}) eine Nullstelle in {{< katex "K" >}} besitzt. Das ist äquivalent dazu, dass es in Linearfaktoren zerfällt (d.h. es gibt {{< katex "a,z_1,\ldots,z_n\in\mathbb{K}" >}}, so dass {{< katex "p = a(T-z_1)\cdots(T-z_n)" >}}), denn hat ein Polynom eine Nullstelle {{< katex "a" >}}, so ist es ohne Rest durch {{< katex "T-a" >}} teilbar.
 
 ## Komposition
 
