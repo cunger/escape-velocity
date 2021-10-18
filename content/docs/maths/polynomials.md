@@ -95,7 +95,7 @@ end
 
 ## Algebraischer Abschluss
 
-Ein Körper {{< katex "K" >}} heißt **algebraisch abgeschlossen**, wenn jedes nicht-konstante Polynom {{< katex "p\] in {{< katex "\mathbb{K}[T]" >}} (d.h. jedes Polynom in {{< katex "\mathbb{K}[T]\backslash\mathbb{K}" >}}) eine Nullstelle in {{< katex "K" >}} besitzt. Das ist äquivalent dazu, dass es in Linearfaktoren zerfällt (d.h. es gibt {{< katex "a,z_1,\ldots,z_n\in\mathbb{K}" >}}, so dass {{< katex "p = a(T-z_1)\cdots(T-z_n)" >}}), denn hat ein Polynom eine Nullstelle {{< katex "a" >}}, so ist es ohne Rest durch {{< katex "T-a" >}} teilbar.
+Ein Körper {{< katex "K" >}} heißt **algebraisch abgeschlossen**, wenn jedes nicht-konstante Polynom {{< katex "p\in \mathbb{K}[T]" >}} (d.h. jedes Polynom in {{< katex "\mathbb{K}[T]\backslash\mathbb{K}" >}}) eine Nullstelle in {{< katex "K" >}} besitzt. Das ist äquivalent dazu, dass es in Linearfaktoren zerfällt (d.h. es gibt {{< katex "a,z_1,\ldots,z_n\in\mathbb{K}" >}}, so dass {{< katex "p = a(T-z_1)\cdots(T-z_n)" >}}), denn hat ein Polynom eine Nullstelle {{< katex "a" >}}, so ist es ohne Rest durch {{< katex "T-a" >}} teilbar.
 
 ## Komposition
 
