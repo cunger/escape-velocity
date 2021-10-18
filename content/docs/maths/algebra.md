@@ -44,15 +44,19 @@ Keine Gruppe:
 
 ## Symmetrische Gruppen
 
-> Eine Darstellung, die sich an den wichtigsten Beispielen orientiert, den Zahlen im kommutativen Fall und den Permutationen im nichtkommutativen Fall.
+Ein wichtiges Beispiel für nicht-kommutative Gruppen sind die **symmetrischen Gruppe** {{< katex "(S_n, \circ)" >}}:
+die Gruppe aller Permutationen von {{< katex "n" >}} Elementen. Wobei {{< katex "S_n" >}} die Menge der bijektiven Abbildungen auf {{< katex "\{1,\ldots,n\}" >}} ist.
 
-Sn := “symmetrische Gruppe” := “Gruppe aller Permutationen von n Elementen” := Bijektionen([n]) = {f: [n] ➝ [n] | f ist bijektiv}
+{{< katex "S_n" >}} ist für {{< katex "n\geq 3" >}} nicht abelsch, d.h. {{< katex "\circ" >}} ist in dem Fall nicht für alle Abbildungen kommutativ.
+
+Transpositionen sind Permutationen, die genau zwei Elemente vertauschen.
+Jede Permuattion kann als Komposition von Transpositionen dargestellt werden.
 
 # Ringe
 
 Ein **Ring** {{< katex "(M,+,\cdot)" >}} ist eine abelsche Gruppe {{< katex "(M,+)" >}} mit einer weiteren Verknüpfung {{< katex "\cdot" >}}, die
 * assoziativ ist (d.h. {{< katex "a\cdot(b\cdot c) = (a\cdot b)\cdot c" >}}),
-* distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}), dass beide Verknüpfungen miteinander vertrlich sind,
+* distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}), dass beide Verknüpfungen miteinander verträglich sind,
 * aber nicht kommutativ sein muss, nicht zwangsläufig ein neutrales Element haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.
 
 In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente {{< katex "a,b\in M" >}} mit {{< katex "ab=0" >}}.
