@@ -2,9 +2,9 @@
 {{ define "main" }}
   <div id="main">
     <div id="hero">
-      <h1> {{ .Title }} </h1>
+      <h1> {{ .Params.title }} </h1>
       <p class="hero-lead">
-         {{ .Summary | safeHTML }}
+         {{ .Params.summary | safeHTML }}
       </p>
 
     </div>

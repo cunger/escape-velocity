@@ -50,7 +50,7 @@ die Gruppe aller Permutationen von {{< katex "n" >}} Elementen. Wobei {{< katex 
 {{< katex "S_n" >}} ist für {{< katex "n\geq 3" >}} nicht abelsch, d.h. {{< katex "\circ" >}} ist in dem Fall nicht für alle Abbildungen kommutativ.
 
 Transpositionen sind Permutationen, die genau zwei Elemente vertauschen.
-Jede Permuattion kann als Komposition von Transpositionen dargestellt werden.
+Jede Permutation kann als Komposition von Transpositionen dargestellt werden.
 
 # Ringe
 
@@ -67,7 +67,7 @@ Beispiele:
 * {{< katex "(\mathbb{Z},+,\cdot)" >}}
 * Die Menge der Abbildungen mit punktweiser Definition von Addition und Multiplikation.
 
-Die **Einheitengruppe** {{< katex "R^\times" >}} eines Rings {{< katex "R" >}} mit Einselement ist die Menge aller Elemente, die bezüglich {{< katex "\cdot" >}} invertierbar sind. (Zusammen mit {{< katex "\cdot" >}} bildet diese Menge eine Gruppe.) 
+Die **Einheitengruppe** {{< katex "R^\times" >}} eines Rings {{< katex "R" >}} mit Einselement ist die Menge aller Elemente, die bezüglich {{< katex "\cdot" >}} invertierbar sind. (Zusammen mit {{< katex "\cdot" >}} bildet diese Menge eine Gruppe.)
 
 ## Restklassenringe
 
