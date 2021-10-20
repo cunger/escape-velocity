@@ -57,7 +57,7 @@ Jede Permuattion kann als Komposition von Transpositionen dargestellt werden.
 Ein **Ring** {{< katex "(M,+,\cdot)" >}} ist eine abelsche Gruppe {{< katex "(M,+)" >}} mit einer weiteren Verknüpfung {{< katex "\cdot" >}}, die
 * assoziativ ist (d.h. {{< katex "a\cdot(b\cdot c) = (a\cdot b)\cdot c" >}}),
 * distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}), dass beide Verknüpfungen miteinander verträglich sind,
-* aber nicht kommutativ sein muss, nicht zwangsläufig ein neutrales Element haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.
+* aber nicht kommutativ sein muss, nicht zwangsläufig ein neutrales Element bezüglich {{< katex "\cdot" >}} (d.h. ein Einselement) haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.
 
 In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente {{< katex "a,b\in M" >}} mit {{< katex "ab=0" >}}.
 Ein Ring ohne Nullteiler heißt **Integritätsbereich**.
@@ -66,6 +66,8 @@ Beispiele:
 
 * {{< katex "(\mathbb{Z},+,\cdot)" >}}
 * Die Menge der Abbildungen mit punktweiser Definition von Addition und Multiplikation.
+
+Die **Einheitengruppe** {{< katex "R^\times" >}} eines Rings {{< katex "R" >}} mit Einselement ist die Menge aller Elemente, die bezüglich {{< katex "\cdot" >}} invertierbar sind. (Zusammen mit {{< katex "\cdot" >}} bildet diese Menge eine Gruppe.) 
 
 ## Restklassenringe
 
