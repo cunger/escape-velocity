@@ -69,9 +69,9 @@ Beispiele:
 
 ## Restklassenringe
 
-{{< katex "(\mathbb{Z}/n\mathbb{Z},+,\cdot)" >}}
+Der Restklassenring {{< katex "(\mathbb{Z}/n\mathbb{Z},+,\cdot)" >}} ist die Menge der Reste bei Division durch {{< katex "n" >}}, also {{< katex "\{0,1,\ldots,n-1\}" >}}, wobei die Elemente nicht die natürlichen Zahlen sind, sondern Stellvertreter für die jeweilige Restklasse (z.B. steht {{< katex "1" >}} stellvertretend für alle Zahlen, die bei Division durch {{< katex "n" >}} den Rest 1 lassen). Addition und Multiplikation liefern immer ein Element der Menge, z.B. ist {{< katex "3 + 1 = 0" >}} in {{< katex "\mathbb{Z}/2\mathbb{Z}" >}}.
 
-Ein Element a ist invertierbar gdw ggT(a,n)=1.
+Ein Element {{< katex "a" >}} ist invertierbar genau dann, wenn {{< katex "\text{ggT}(a,n)=1" >}}.
 
 ## Polynomringe
 
