@@ -11,8 +11,6 @@ I'm a software engineer and aspiring mathematician, with a deep love for the oce
 
   &nbsp;&nbsp; 📎 [LinkedIn](https://www.linkedin.com/in/christina-unger)
 
-  &nbsp;&nbsp; ️🛠 JavaScript, Java, Julia, Git, Linux
-
   &nbsp;&nbsp; 🌍 Bielefeld, Germany
 
 ---
