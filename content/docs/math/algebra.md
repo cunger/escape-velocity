@@ -109,19 +109,23 @@ Keine Körper:
 
 # Vektorräume
 
-Ein **Vektorraum** (_vector space_ oder _linear space_) ist im Prinzip ein n-dimensionaler Körper, also {{< katex "(\mathbb{K}^n,+,\cdot)" >}},
-wobei Multiplikation keine Verknüpfung von Körperelementen ist, sondern die Skalarmultiplikation (d.h. eine Stauchung/Streckung von Körperelementen).
+Ein **Vektorraum** {{< katex "(V,+,\cdot)" >}} (_vector space_ oder _linear space_) über dem Körper {{< katex "\mathbb{K}" >}} ist eine Menge {{< katex "V" >}} von Vektoren zusammen mit zwei Operationen: Addition ({{< katex "V\times V\to V" >}}) und Skalarmultiplikation ({{< katex "\mathbb{K}\times V\to V" >}}), die die folgenden Axiome erfüllen.
 
-A _vector space_ (also called _linear space_) is a collection {{< katex "V" >}} of _vectors_ together with two operations: addition ({{< katex "V\times V\to V" >}}) and scalar multiplication ({{< katex "\mathbb{F}\times V\to V" >}} with {{< katex "\mathbb{F}" >}} a field), that satisfy the following conditions:
+* Addition ist kommutativ und assoziativ, hat ein neutrales Element (den Nullvektor 0) und jeder Vektor ist bezüglich Addition invertierbar.
+* Skalarmultiplikation ist assoziativ und hat ein neutrales Element (den Skalar 1).
+* Skalarmultiplikation distribuiert über Addition.
 
-* Addition is commutative and associative, has a neutral element (the zero vector 0) and is invertible for every vector.
-* Scalar multiplication is associative and has a neutral element (the scalar 1).
-* Scalar multiplication distributes over addition.
+Wir verbinden also eine abelsche Gruppe {{< katex "(V,+)" >}} mit einem Körper {{< katex "\mathbb{K}" >}}, dessen Multiplikation kompatibel mit der Addition in {{< katex "V" >}} ist.
 
-Vectors can be anything we can take linear combinations of (i.e. that we can add and scale by the elements of a field): coordinates or arrows in {{< katex "n" >}}-dimensional space, matrices, functions.
-So a vector space is not so much determined not by what the vectors look like, but by what properties they have.
+**Vektoren** sind die Elemente eines Vektorraums, sie können also alles sein, solange Addition und Skalarmultiplikation so definiert sind, dass sie die obigen Axiome erfüllen: Koordinaten im n-dimensionalen Raum ({{< katex "\mathbb{R}^n" >}} oder {{< katex "\mathbb{C}^n" >}}, hier ist der Vektorraum im Prinzip ein n-dimensionaler Körper, wobei die Multiplikation keine Verknüpfung von Körperelementen ist, sondern deren Stauchung oder Streckung), Matrizen, Funktionen.
+Entscheidend ist nicht so sehr die Form von Vektoren, sondern ihre Eigenschaften.
+Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sind, wovon man Linearkombinationen bilden kann.
 
 ## Skalarprodukt
+
+Das Skalarprodukt (_dot product_ oder _inner product_) bildet zwei Vektoren auf ein Skalar ab, das so etwas wie ... ausdrückt.
+
+Ein Vektorraum mit einem Skalarprodukt heißt **Prähilbertraum**.
 
 # Strukturerhaltende Abbildungen
 
