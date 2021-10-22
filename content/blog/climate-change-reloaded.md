@@ -1,6 +1,6 @@
 ---
 title: "Climate change reloaded"
-description: "The world is changing. Here is what we need to understand."
+description: "We're not at war. But we're losing."
 author: "Christina Unger"
 tags: ["climate change"]
 date: 2021-10-20
