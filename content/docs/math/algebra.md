@@ -59,9 +59,6 @@ Ein **Ring** {{< katex "(M,+,\cdot)" >}} ist eine abelsche Gruppe {{< katex "(M,
 * distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}), dass beide Verknüpfungen miteinander verträglich sind,
 * aber nicht kommutativ sein muss, nicht zwangsläufig ein neutrales Element bezüglich {{< katex "\cdot" >}} (d.h. ein Einselement) haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.
 
-In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente {{< katex "a,b\in M" >}} mit {{< katex "ab=0" >}}.
-Ein Ring ohne Nullteiler heißt **Integritätsbereich**.
-
 Beispiele:
 
 * {{< katex "(\mathbb{Z},+,\cdot)" >}}
@@ -69,11 +66,22 @@ Beispiele:
 
 Die **Einheitengruppe** {{< katex "R^\times" >}} eines Rings {{< katex "R" >}} mit Einselement ist die Menge aller Elemente, die bezüglich {{< katex "\cdot" >}} invertierbar sind. (Zusammen mit {{< katex "\cdot" >}} bildet diese Menge eine Gruppe.)
 
+In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente {{< katex "a,b\in M" >}} mit {{< katex "ab=0" >}}.
+
+Ein kommutativer Ring mit Einselement, aber ohne Nullteiler, heißt **Integritätsbereich** oder **Integritätsring**. Zum Beispiel: {{< katex "\mathbb{Z}" >}} und jeder Körper.
+
 ## Restklassenringe
 
-Der Restklassenring {{< katex "(\mathbb{Z}/n\mathbb{Z},+,\cdot)" >}} ist die Menge der Reste bei Division durch {{< katex "n" >}}, also {{< katex "\{0,1,\ldots,n-1\}" >}}, wobei die Elemente nicht die natürlichen Zahlen sind, sondern Stellvertreter für die jeweilige Restklasse (z.B. steht {{< katex "1" >}} stellvertretend für alle Zahlen, die bei Division durch {{< katex "n" >}} den Rest 1 lassen). Addition und Multiplikation liefern immer ein Element der Menge, z.B. ist {{< katex "3 + 1 = 0" >}} in {{< katex "\mathbb{Z}/2\mathbb{Z}" >}}.
+Der Restklassenring {{< katex "(\mathbb{Z}/n\mathbb{Z},+,\cdot)" >}} ist die Menge der Reste bei Division durch {{< katex "n" >}}, also {{< katex "\{0,1,\ldots,n-1\}" >}}, wobei die Elemente {{< katex "k" >}} nicht die natürlichen Zahlen sind, sondern Stellvertreter für die jeweilige Restklasse {{< katex "k+n\mathbb{Z}" >}} (z.B. steht {{< katex "1" >}} stellvertretend für alle Zahlen, die bei Division durch {{< katex "n" >}} den Rest 1 lassen). Addition und Multiplikation liefern immer ein Element der Menge, z.B. ist {{< katex "3 + 1 = 0" >}} in {{< katex "\mathbb{Z}/2\mathbb{Z}" >}}.
 
 Ein Element {{< katex "a" >}} ist invertierbar genau dann, wenn {{< katex "\text{ggT}(a,n)=1" >}}.
+
+Für jede natürliche Zahl {{< katex "n" >}} ist {{< katex "(\mathbb{Z}/n\mathbb{Z},+,\cdot)" >}} ein kommutativer Ring mit Einselement.
+* Das Nullelement ist {{< katex "0=n\mathbb{Z}" >}}.
+* Das Einselement ist {{< katex "1=1+n\mathbb{Z}" >}}.
+
+Ist {{< katex "n" >}} eine Primzahl, ist der Restklassenring ein endlicher Körper.
+Ist {{< katex "n" >}} keine Primzahl, ist er kein Körper (denn er hat von Null verschiedene Nullteiler, z.B. 2 in {{< katex "(\mathbb{Z}/4\mathbb{Z},+,\cdot)" >}}, denn {{< katex "2\cdot 2 = 0" >}}).
 
 ## Polynomringe
 
