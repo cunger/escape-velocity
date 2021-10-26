@@ -1,8 +1,8 @@
 ---
 title: "Polynome"
-summary: "German notes on polynomials. Draft."
+summary: "Arithmetik, Nullstellen, Approximation."
 date: 2020-11-23
-weight: 4
+weight: 2
 math: true
 toc: true
 draft: false

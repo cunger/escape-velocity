@@ -2,7 +2,7 @@
 title: "Eigenschaften von Funktionen"
 summary: "Stetigkeit. Differenzierbarkeit. Integrierbarkeit."
 date: 2021-08-17
-weight: 3
+weight: 5
 math: true
 toc: true
 draft: false
