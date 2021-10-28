@@ -13,19 +13,62 @@ Eine {{< katex "m\times n" >}}-Matrix über einem Körper {{< katex "\mathbb{K}"
 
 Die Menge aller solcher Matrizen wird mit {{< katex "M_{mn}(\mathbb{K})" >}} bezeichnet.
 
-Matrizen können auch über einem Ring statt einem Körper definiert werden. Dann ...
+Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Dann ergeben sich folgende Unterschiede:
+* Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.
 
-# Matrizenmultiplikation
+# Matrizenrechnung
+
+Addition und Skalarmultiplikation passieren elementweise.
+
+Multiplikation
+
+Transponierte Matrix
 
 ## Elementarmatrizen
+
+Elementare Zeilenumformungen:
+* {{< katex "P_{ij}" >}} Vertauschen der Zeilen {{< katex "i" >}} und {{< katex "j" >}}
+* {{< katex "D_{i}(c)" >}} Multiplikation der Zeile {{< katex "i" >}} mit einem Skalar {{< katex "c" >}}
+* {{< katex "T_{ij}(c)" >}} Addition des {{< katex "c" >}}-fachen der Zeile {{< katex "j" >}} zu einer anderen (nicht derselben!) Zeile {{< katex "i" >}}
+
+Analog für Spalten. Diese Umformungen ändern den Rang einer Matrix nicht.
 
 # Rang, Inverse, Determinante, Adjungierte
 
 ## Rang
 
+Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf's gleiche raus).
+
 ## Determinante
 
-Die **Determinante** ist eine eindeutige Abbildung {{< katex "M_{nn}(\mathbb{K})\to\mathbb{K}" >}} mit folgenden Eigenschaften: ...
+Die **Determinante** ist eine eindeutige Abbildung {{< katex "M_{nn}(\mathbb{K})\to\mathbb{K}" >}}, die so definiert ist, dass sie genau dann 0 wird, wenn die Spalten der Matrix nicht linear unabhängig sind (die Matrix also nicht invertierbar ist):
+{{< katex display="\text{det}(A) = ..." >}}
+
+Für {{< katex "A\in M_{22}(\mathbb{K})" >}} ist das einfach:
+{{< katex display="\text{det}(A) = a_{11} a_{22} - a_{12} a_{21}" >}}
+Das lässt sich gut nachvollziehen, denn wenn die Spaltenvektoren linear abhängig sind (und von 0 verschieden), heißt das es gibt ein {{< katex "c\in\mathbb{K}" >}}, so dass:
+{{< katex display="\begin{pmatrix} a_{11} \\ a_{12} \end{pmatrix} = c\cdot \begin{pmatrix} a_{21} \\ a_{22} \end{pmatrix}" >}}
+Also {{< katex "a_{11} = c\cdot a_{21}" >}} und {{< katex "a_{12} = c\cdot a_{22}" >}},
+d.h. {{< katex "c=\dfrac{a_{11}}{a_{21}}" >}} und damit {{< katex "a_{12} = \dfrac{a_{11}}{a_{21}} a_{22}" >}}. Daraus ergibt sich {{< katex "a_{12} a_{21} = a_{11} a_{22}" >}} bzw. {{< katex "0 = a_{11} a_{22} - a_{12} a_{21}" >}}.
+
+Die Determinante hat die folgenden Eigenschaften:
+* {{< katex "\text{det}(I)=1" >}} (Identitätsmatrix)
+* {{< katex "\text{det}(AB)=\text{det}(A)\,\text{det}(B)" >}} für Matrizen über Integritätsbereichen
+* {{< katex "\text{det}(A)=0" >}} genau dann, wenn {{< katex "\text{rang}(A) < n" >}}
+
+  Ob {{< katex "\text{det}(A)=0" >}} oder nicht ändert sich also nicht durch Zeilenumformungen. Die Determinanten ist damit eine Invariante der Matrix.
+
+  Für Elementarmatrizen gilt:
+  * {{< katex "\text{det}(P_{ij}) = -1" >}}, also
+    {{< katex "\text{det}(P_{ij}A)=-\text{det}(A)" >}}
+  * {{< katex "\text{det}(D_{i}(c)) = c" >}}, also
+    {{< katex "\text{det}(D_{i}(c)A)=c\cdot\text{det}(A)" >}}
+  * {{< katex "\text{det}(T_{ij}(c)) = 1" >}}, also
+    {{< katex "\text{det}(T_{ij}(c)A)=\text{det}(A)" >}}
+
+* {{< katex "\text{det}(\text{normalform}(A))" >}} = Produkt der Diagonalelemente
+
+  Die Determinante wird also genau dann 0, wenn das Produkt der Diagonalelemente der Normalform 0 ist, d.h. wenn mindestens eins der Diagonalelemente 0 ist. Die Determinanten erfasst damit, ob eine quadratische Matrix invertierbar (regulär) ist.
 
 ## Adjungierte
 
@@ -34,10 +77,12 @@ Die **Determinante** ist eine eindeutige Abbildung {{< katex "M_{nn}(\mathbb{K})
 Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden Aussagen äquivalent:
 
 * {{< katex "A" >}} ist invertierbar.
-* {{< katex "\text{Rang}(A)=n" >}}
+* {{< katex "\text{rang}(A)=n" >}}
 * Die Spaltenvektoren von {{< katex "A" >}} sind linear unabhängig.
 * {{< katex "A" >}} kann als endliches Produkt von Elementarmatrizen ausgedrückt werden.
 * {{< katex "\text{det}(A)\neq 0" >}} (d.h. wenn {{< katex "\text{det}(A)" >}} im Körper oder Ring, über dem die Matriz definiert ist, invertierbar ist)
+
+Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
 
 # Matrizen als lineare Transformationen
 
@@ -76,3 +121,5 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
   * Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.
 
 # Matrizen als Gleichungssysteme
+
+# Charakteristische Polynome von Matrizen
