@@ -1,5 +1,6 @@
 ---
 title: "Physics"
-summary: "Notes on physics basics."
+summary: ""
+weight: 2
 draft: false
 ---

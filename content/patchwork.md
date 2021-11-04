@@ -1,5 +1,5 @@
 ---
-title: "Patchwork Studies"
+title: "Patchwork studies"
 date: 2020-07-03
 toc: true
 math: false
