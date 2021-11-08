@@ -1,6 +1,6 @@
 ---
 title: "Climate change reloaded"
-description: "Our understanding of climate change needs an update. Here is a primer."
+description: ""
 author: "Christina Unger"
 tags: ["climate change"]
 date: 2021-11-04
@@ -8,50 +8,47 @@ lastmod: 2021-11-04
 draft: true
 ---
 
-When I first learned about climate change, there was plenty of uncertainty and time. It was one of many problems.
+When I first learned about climate change, there was plenty of uncertainty and time. It was one of many problems. And it was easy to ignore.
 
-Now the game has changed. And we're not as informed about it as we should be.
+Now the game has changed, in ways I was not aware of and few people seem to be.
 
-* **Part 1** summarizes what I think we really need to understand - and what you might not yet be aware of. There are no elaborate examples and arguments, and no reference lists, rather it is a succinct invitation to reconsider what you know and think about climate change.
+Here are the most important things I realized when studying the climate landscape at [Terra.do](https://www.terra.do/).
+And an invitation to update what you know and think about climate change.
 
-* **Part 2** then points to excellent resources that will get you up to speed if you don't want to take my word for it.
+# It's serious.
 
-# Part 1: What we need to understand
+Climate change is happening. We have already warmed the planet over 1°C on average, and we're currently on track for 2 to 4. What awaits us there is an uncertain - but certainly very uncomfortable - future.
 
-## It's serious.
+We're moving towards changes that we will not be able to stop or revert, and that can eventually lead to a global ecosystem collapse.
 
-Climate change is happening. We have already warmed the planet over 1 degree C on average, and we're currently on track for 2 to 4 degrees C. What awaits us there is an uncertain - but certainly very uncomfortable - future.
-
-We're moving towards changes that we will not be able to stop or revert, and that can eventually lead to a global ecosystem collapse and to parts of Earth being uninhabitable.
-
-If this sounds bad, that's because it is.
 Climate change is not a minor problem, it really is an existential crisis.
 
 And it started already.
 
-The closer we stay to 2 degrees C, the less catastrophic this will play out.
+The closer we stay to 2°C, the less catastrophic this will play out.
 
-## It's personal.
+# It's personal.
 
 Climate change does and will affect things you care about.
-
 It's about you, your place, and your family.
 
 For everyone of us.
 
-## It's urgent.
+# It's urgent.
 
 The roadmap to staying somewhat safe says we need to halve our greenhouse gas emissions by 2030 and get to net zero by 2050.
 
 The scale of this task is staggering.
 
-In fact, the numbers are so big and the timescale so tight, that no one single measure is enough. We need a wide range of scalable solutions.
-And that cutting emissions alone will not do it. We also need to remove CO2 from the atmosphere. (A lot of it.)
+In fact, the numbers are so big and the timescale so tight, that:
 
-## It's not a technological problem.
+* No one single measure is enough. We need a wide range of scalable solutions.
+* Cutting emissions alone will not do it. We also need to remove CO2 from the atmosphere. (A lot of it.)
 
-It's easy to frame climate change as a problem that technology and money can fix.
-But when we take a step back and look at the environmental problems of our time, the root runs much deeper.
+# It's not a technological problem.
+
+It's easy to frame climate change as a war that we can fight with technology and investments.
+But when we take a step back and look at the environmental problems of our time, the root runs much deeper:
 
 We are consuming more than Earth can regenerate.
 We are producing more than it can absorb.
@@ -59,24 +56,25 @@ And both at an increasingly damaging pace.
 
 Our current economic markets and development models are failing us, because they are based on a world that doesn't exist anymore.
 
-So this is not only a technological challenge, it's an economic, social, and cultural challenge as well.
+So this is not only a technological challenge, but an economic, social, and cultural one as well.
+If we want to stabilize Earth's ecosystem, we need to rethink our place in it and transform how we live.
 
-If we want to stabilize Earth's ecosystem, we need to transform our place in it.
+# It's not too late.
 
-## It's not too late.
+Whether we hit or miss a threshold of 1.5 or 2°C average global warming is not the point.
+Either way we are neither doomed nor saved.
 
-We are moving too slow. The world is already changing and it's too late to save all of it.
-But that doesn't mean we're doomed.
+The goal is to bend the curve as soon as possible and bring it back down as fast as possible.
+Every fraction of a degree matters. Every year it takes us matters.
+Because on our way along this curve, we are committing the world to changes.
 
-There is a lot we can do to accelerate.
-And there is a growing number of people ...
+Currently we are moving too slow. The world as we know it is changing and it's probably too late to save all of it.
+But it's not too late to save anything at all.
 
-If you want to join, proceed to Part 2.
+We are moving.
 
-# Part 2: From zero to hero
+And we are accelerating.
 
-Breathe.
-Think.
-Act.
+# Welcome to the climate movement!
 
-Here's a learning path to get up to speed.
+TODO: onboarding path
