@@ -84,6 +84,8 @@ Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden 
 
 Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
 
+## Eigenvektoren und Eigenwerte
+
 # Matrizen als lineare Transformationen
 
 Eine Matrix {{< katex "A\in M_{mn}(\mathbb{K})" >}} kann als lineare Abbildung zwischen endlichen Vektorräumen verstanden werden ({{< katex "\mathbb{K}^n\to\mathbb{K}^m" >}} ), bildet also Vektoren {{< katex "x\in\mathbb{K}^n" >}} auf Vektoren {{< katex "Ax\in\mathbb{K}^m" >}} ab.
