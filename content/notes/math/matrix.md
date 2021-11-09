@@ -16,6 +16,10 @@ Die Menge aller solcher Matrizen wird mit {{< katex "M_{mn}(\mathbb{K})" >}} bez
 Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Dann ergeben sich folgende Unterschiede:
 * Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.
 
+## Rang
+
+Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf's gleiche raus).
+
 # Matrizenrechnung
 
 Addition und Skalarmultiplikation passieren elementweise.
@@ -33,26 +37,60 @@ Elementare Zeilenumformungen:
 
 Analog für Spalten. Diese Umformungen ändern den Rang einer Matrix nicht.
 
-# Rang, Inverse, Determinante, Adjungierte
-
-## Rang
-
-Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf's gleiche raus).
-
-## Determinante
+# Determinante
 
 Die **Determinante** ist eine eindeutige Abbildung {{< katex "M_{nn}(\mathbb{K})\to\mathbb{K}" >}}, die so definiert ist, dass sie genau dann 0 wird, wenn die Spalten der Matrix nicht linear unabhängig sind (die Matrix also nicht invertierbar ist):
-{{< katex display="\text{det}(A) = ..." >}}
+{{< katex display="\text{det}(A) = \sum_{\sigma\in S_n}\text{sgn}(\sigma)a_{1\sigma(1)}\cdots a_{n\sigma(n)}" >}}
 
-Für {{< katex "A\in M_{22}(\mathbb{K})" >}} ist das einfach:
-{{< katex display="\text{det}(A) = a_{11} a_{22} - a_{12} a_{21}" >}}
+Für die Berechnung der Determinante ist die Leibniz-Formel aber nur bis {{< katex "n=2" >}} praktisch handhabbar.
+
+## Für {{< katex "n=1" >}}: trivial
+{{< katex display="\text{det}\begin{pmatrix} a \end{pmatrix} = a" >}}
+
+## Für {{< katex "n=2" >}}: einfach
+
+{{< katex display="\text{det}\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} = a_{11} a_{22} - a_{12} a_{21}" >}}
 Das lässt sich gut nachvollziehen, denn wenn die Spaltenvektoren linear abhängig sind (und von 0 verschieden), heißt das es gibt ein {{< katex "c\in\mathbb{K}" >}}, so dass:
 {{< katex display="\begin{pmatrix} a_{11} \\ a_{12} \end{pmatrix} = c\cdot \begin{pmatrix} a_{21} \\ a_{22} \end{pmatrix}" >}}
 Also {{< katex "a_{11} = c\cdot a_{21}" >}} und {{< katex "a_{12} = c\cdot a_{22}" >}},
 d.h. {{< katex "c=\dfrac{a_{11}}{a_{21}}" >}} und damit {{< katex "a_{12} = \dfrac{a_{11}}{a_{21}} a_{22}" >}}. Daraus ergibt sich {{< katex "a_{12} a_{21} = a_{11} a_{22}" >}} bzw. {{< katex "0 = a_{11} a_{22} - a_{12} a_{21}" >}}.
 
+## Für {{< katex "n=3" >}}: Sarrus-Regel
+
+![Saruss-Regel](../img/sarrus.png)
+
+Man summiert:
+
+* durchgezogene Linie: positives Produkt der Elemente
+* gestrichelte Linie: negatives Produkt der Elemente
+
+Funktioniert genauso, wenn man die ersten beiden Zeilen unter die Matriz schreibt.
+
+## Für {{< katex "n>3" >}}: Laplace-Entwicklung
+
+Die Laplace-Entwicklung nach der i-ten Zeile ist die Summe aus folgendem Summanden für jedes Element {{< katex "a_{ij}" >}}:
+{{< katex display="a_{ij}\cdot(-1)^{i+j}\cdot\text{det}(A_{ij})" >}}
+Wobei {{< katex "A_{ij}" >}} die Matrix ist, die übrig bleibt, wenn man in {{< katex "A" >}} die i-te Zeile und j-te Spalte (also jeweils die Zeile und Spalte mit dem Eintrag {{< katex "a_{ij}" >}}) entfernt.
+
+Je mehr 0en in einer Zeile stehen, desto einfacher wird die Laplace-Entwicklung, deswegen macht es manchmal Sinn, erst elementare Zeilenumformungen auf die Matrix anzuwenden (wodurch sich die Determinante höchstens im Vorzeichen ändert, siehe _Eigenschaften_ unten). Die Matrix wird also um {{< katex "n=1" >}} kleiner. Das wiederholt man so lange, bis {{< katex "n<3" >}}.
+
+Analog funktioniert die Laplace-Entwicklung nach der j-ten Spalte.
+
+## Spezialfälle
+
+* Wenn eine Zeile oder Spalte 0 ist, ist die Determinante 0.
+* Wenn eine Zeile oder Spalte doppelt vorkommt, ist die Determinante 0.
+* {{< katex "\text{det}(\text{normalform}(A))" >}} = Produkt der Diagonalelemente
+
+  Die Determinante wird also genau dann 0, wenn das Produkt der Diagonalelemente der Normalform 0 ist, d.h. wenn mindestens eins der Diagonalelemente 0 ist. Die Determinanten erfasst damit, ob eine quadratische Matrix invertierbar (regulär) ist. Normalform bedeutet obere Dreiecksmatrix.
+
+## Eigenschaften
+
 Die Determinante hat die folgenden Eigenschaften:
 * {{< katex "\text{det}(I)=1" >}} (Identitätsmatrix)
+* {{< katex "\text{det}(A)=\text{det}(A^T)" >}}
+* {{< katex "\text{det}(A^{-1})=(\text{det}(A))^{-1}" >}}
+* {{< katex "\text{det}(cA)=c^n\text{det}(A)" >}} (Skalarfaktor)
 * {{< katex "\text{det}(AB)=\text{det}(A)\,\text{det}(B)" >}} für Matrizen über Integritätsbereichen
 * {{< katex "\text{det}(A)=0" >}} genau dann, wenn {{< katex "\text{rang}(A) < n" >}}
 
@@ -66,13 +104,7 @@ Die Determinante hat die folgenden Eigenschaften:
   * {{< katex "\text{det}(T_{ij}(c)) = 1" >}}, also
     {{< katex "\text{det}(T_{ij}(c)A)=\text{det}(A)" >}}
 
-* {{< katex "\text{det}(\text{normalform}(A))" >}} = Produkt der Diagonalelemente
-
-  Die Determinante wird also genau dann 0, wenn das Produkt der Diagonalelemente der Normalform 0 ist, d.h. wenn mindestens eins der Diagonalelemente 0 ist. Die Determinanten erfasst damit, ob eine quadratische Matrix invertierbar (regulär) ist.
-
-## Adjungierte
-
-## Invertierbarkeit
+# Invertierbarkeit
 
 Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden Aussagen äquivalent:
 
@@ -84,7 +116,7 @@ Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden 
 
 Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
 
-## Eigenvektoren und Eigenwerte
+# Eigenvektoren und Eigenwerte
 
 # Matrizen als lineare Transformationen
 
