@@ -3,8 +3,8 @@ title: "Climate change reloaded"
 description: "⚠️ Work in progress."
 author: "Christina Unger"
 tags: ["climate change"]
-date: 2021-11-04
-lastmod: 2021-11-09
+date: 2021-11-10
+lastmod: 2021-11-10
 draft: false
 ---
 
@@ -91,7 +91,7 @@ And we are accelerating.
 [🤹] Simulation playground:
 
 * [En-ROADS](https://en-roads.climateinteractive.org/scenario.html)
-* [Road to 10 Gigatonnes](https://www.roadto10gigatons.com/) 
+* [Road to 10 Gigatonnes](https://www.roadto10gigatons.com/)
 
 [🎬] [Kurzgesagt - In a nutshell](https://www.youtube.com/user/Kurzgesagt)
 

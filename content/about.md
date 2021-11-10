@@ -16,13 +16,12 @@ I'm a freelance software engineer and aspiring mathematician, with a deep love f
 ---
 
 These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
-All notes are (and will probably always be) work in progress.
 
 # Education
 
 * Mathematics (B.Sc., currently enrolled)
 * [Terra.do climate fellowship](https://www.terra.do/climate-change-learning-for-action/)
-* [edX](https://profile.edx.org/u/christinaunger)
+* [edX](https://profile.edx.org/u/christinaunger) pathwork studies
 * [Full-stack web development](https://launchschool.com/)
 * Computational linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)
