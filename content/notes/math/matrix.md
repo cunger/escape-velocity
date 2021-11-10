@@ -14,6 +14,7 @@ Eine {{< katex "m\times n" >}}-Matrix über einem Körper {{< katex "\mathbb{K}"
 Die Menge aller solcher Matrizen wird mit {{< katex "M_{mn}(\mathbb{K})" >}} bezeichnet.
 
 Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Dann ergeben sich folgende Unterschiede:
+
 * Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.
 
 ## Rang
@@ -116,7 +117,44 @@ Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden 
 
 Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
 
+# Charakteristische Polynome von Matrizen
+
+{{< katex display="\Chi_A=\text{det}(xI_n-A)" >}}
+
 # Eigenvektoren und Eigenwerte
+
+Die **Eigenvektoren** {{< katex "u" >}} einer Matrix {{< katex "A" >}} bzw. eines Endomorphismus {{< katex "f" >}} sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige **Eigenwert** {{< katex "\lambda" >}} ist der Faktor der Stauchung oder Streckung (z.B. eine Rotationsachse im 3D).
+
+{{< katex display="Au = \lambda u" >}}
+bzw. {{< katex display="f(u) = \lambda u" >}}
+
+D.h. {{< katex "Au" >}} bzw. {{< katex "f(u)" >}} hat die gleiche Richtung wie {{< katex "u" >}}, nur um den Faktor {{< katex "\lambda" >}} gestaucht oder gestreckt.
+
+* Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.
+* Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.
+* Eigenwerte sind die Nullstellen des charakteristischen Polynoms. Das sieht man wie folgt: Es gilt {{< katex "A=\lambda I" >}}, woraus folgt, dass {{< katex "Au=(lambda I)u" >}}, also {{< katex "Au - (lambda I)u = 0" >}}, also {{< katex "(A-lambda I)u=0" >}}, d.h. {{< katex "det(A-lambda I) =0" >}}.
+  Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchtsens {{< katex "n" >}} Eigenwerte haben.
+
+# Normalformen
+
+Matrizen lassen sich nach **Ähnlichkeit** in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen. Technisch heißt das:
+
+Zwei Matrizen A,B sind **ähnlich**, wenn es eine invertierbare Matrix S gibt, so dass A=S^{-1}BS. Das bedeutet, dass A die Matrix ist, die die gleiche Transformation wie B ausdrückt, nur in einer anderen Basis (wobei S die Basiswechselmatrix ist; S ist nicht eindeutig, denn jedes Vielfache cS erfüllt die Gleichung auch).
+
+Ähnliche Matrizen haben also:
+
+* den gleichen Rang,
+* die gleiche Determinante,
+* das gleiche charakteristische Polynom und Minimalpolynom,
+* die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),
+* die gleiche Jordansche Normalform.
+
+## Diagonalisierbarkeit
+
+Diagonalmatrix :
+Transformation skaliert nur die Basisvektoren.
+
+Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)
 
 # Matrizen als lineare Transformationen
 
@@ -155,5 +193,3 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
   * Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.
 
 # Matrizen als Gleichungssysteme
-
-# Charakteristische Polynome von Matrizen

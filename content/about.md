@@ -22,6 +22,7 @@ All notes are (and will probably always be) work in progress.
 
 * Mathematics (B.Sc., currently enrolled)
 * [Terra.do climate fellowship](https://www.terra.do/climate-change-learning-for-action/)
+* [edX](https://profile.edx.org/u/christinaunger)
 * [Full-stack web development](https://launchschool.com/)
 * Computational linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)
