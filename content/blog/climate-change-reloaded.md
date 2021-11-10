@@ -1,19 +1,19 @@
 ---
 title: "Climate change reloaded"
-description: ""
+description: "⚠️ Work in progress."
 author: "Christina Unger"
 tags: ["climate change"]
 date: 2021-11-04
-lastmod: 2021-11-04
-draft: true
+lastmod: 2021-11-09
+draft: false
 ---
 
 When I first learned about climate change, there was plenty of uncertainty and time. It was one of many problems. And it was easy to ignore.
 
-Now the game has changed, in ways I was not aware of and few people seem to be.
+Now the game has changed.
 
-Here are the most important things I realized when studying the climate landscape at [Terra.do](https://www.terra.do/).
-And an invitation to update what you know and think about climate change.
+Here are my main takeaways from studying the current climate landscape at [Terra.do](https://www.terra.do/climate-change-learning-for-action/).
+Don't take them as hard facts, but as an invitation to reconsider and update what you understand and think about climate change.
 
 # It's serious.
 
@@ -30,7 +30,7 @@ The closer we stay to 2°C, the less catastrophic this will play out.
 # It's personal.
 
 Climate change does and will affect things you care about.
-It's about you, your place, and your family.
+It's about you, your family, your place and community.
 
 For everyone of us.
 
@@ -48,7 +48,7 @@ In fact, the numbers are so big and the timescale so tight, that:
 # It's not a technological problem.
 
 It's easy to frame climate change as a war that we can fight with technology and investments.
-But when we take a step back and look at the environmental problems of our time, the root runs much deeper:
+But when we take a step back and look at the environmental problems of our time, the root runs much deeper.
 
 We are consuming more than Earth can regenerate.
 We are producing more than it can absorb.
@@ -68,13 +68,33 @@ The goal is to bend the curve as soon as possible and bring it back down as fast
 Every fraction of a degree matters. Every year it takes us matters.
 Because on our way along this curve, we are committing the world to changes.
 
-Currently we are moving too slow. The world as we know it is changing and it's probably too late to save all of it.
-But it's not too late to save anything at all.
+Currently we are moving too slow.
 
-We are moving.
+But we are moving.
 
 And we are accelerating.
 
-# Welcome to the climate movement!
+# Resources
 
-TODO: onboarding path
+[✉️] [Zopeful: Intro to climate](https://zopeful.com/course/intro-to-climate)
+
+[🎨] [Visualization](http://openclimatedata.net/climate-spirals/carbon-budget-concentration/) of CO2 concentrations and our carbon budget
+
+[🎙️] [How to save a planet: Is your carbon footprint BS?](https://gimletmedia.com/shows/howtosaveaplanet/llh8gxg/is-your-carbon-footprint-bs)
+
+[📖] [Carbon Brief](https://www.carbonbrief.org/)
+
+[🎓] [Terra.do](https://www.terra.do/)
+
+[💬] [ClimateAction.tech](https://climateaction.tech/)
+
+[🤹] Simulation playground:
+
+* [En-ROADS](https://en-roads.climateinteractive.org/scenario.html)
+* [Road to 10 Gigatonnes](https://www.roadto10gigatons.com/) 
+
+[🎬] [Kurzgesagt - In a nutshell](https://www.youtube.com/user/Kurzgesagt)
+
+[🧑‍🏫] [SDG Academy](https://sdgacademy.org/)
+
+[🧑‍🏫] [Climate Change Academy](http://climatechangeacademy.com/)

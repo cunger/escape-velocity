@@ -3,7 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a software engineer and aspiring mathematician, with a deep love for the ocean and a strong interest in nuclear technology and space.
+I'm a freelance software engineer and aspiring mathematician, with a deep love for the ocean and a strong interest in climate change, nuclear technology and space.
 
 ---
 
@@ -21,7 +21,7 @@ All notes are (and will probably always be) work in progress.
 # Education
 
 * Mathematics (B.Sc., currently enrolled)
-* [Patchwork studies](/patchwork)
+* [Terra.do climate fellowship](https://www.terra.do/climate-change-learning-for-action/)
 * [Full-stack web development](https://launchschool.com/)
 * Computational linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)

@@ -1,4 +1,4 @@
 ---
 title: "Blog"
-description: "Coming soon."
+description: ""
 ---
