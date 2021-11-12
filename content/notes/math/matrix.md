@@ -117,29 +117,28 @@ Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden 
 
 Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
 
-# Charakteristische Polynome von Matrizen
+# Das charakteristische Polynom einer Matrix
 
 {{< katex display="\Chi_A=\text{det}(xI_n-A)" >}}
 
 # Eigenvektoren und Eigenwerte
 
-Die **Eigenvektoren** {{< katex "u" >}} einer Matrix {{< katex "A" >}} bzw. eines Endomorphismus {{< katex "f" >}} sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige **Eigenwert** {{< katex "\lambda" >}} ist der Faktor der Stauchung oder Streckung (z.B. eine Rotationsachse im 3D).
-
-{{< katex display="Au = \lambda u" >}}
-bzw. {{< katex display="f(u) = \lambda u" >}}
+Die **Eigenvektoren** {{< katex "u" >}} einer Matrix {{< katex "A" >}} bzw. eines Endomorphismus {{< katex "f" >}} sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige **Eigenwert** {{< katex "\lambda" >}} ist der Faktor der Stauchung oder Streckung (und entspricht dann z.B. eine Rotationsachse im 3D).
+Formal:
+{{< katex display="Au = \lambda u \quad\text{bzw.}\quad f(u) = \lambda u" >}}
 
 D.h. {{< katex "Au" >}} bzw. {{< katex "f(u)" >}} hat die gleiche Richtung wie {{< katex "u" >}}, nur um den Faktor {{< katex "\lambda" >}} gestaucht oder gestreckt.
 
 * Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.
 * Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.
-* Eigenwerte sind die Nullstellen des charakteristischen Polynoms. Das sieht man wie folgt: Es gilt {{< katex "A=\lambda I" >}}, woraus folgt, dass {{< katex "Au=(lambda I)u" >}}, also {{< katex "Au - (lambda I)u = 0" >}}, also {{< katex "(A-lambda I)u=0" >}}, d.h. {{< katex "det(A-lambda I) =0" >}}.
+* Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
   Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchtsens {{< katex "n" >}} Eigenwerte haben.
 
 # Normalformen
 
 Matrizen lassen sich nach **Ähnlichkeit** in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen. Technisch heißt das:
 
-Zwei Matrizen A,B sind **ähnlich**, wenn es eine invertierbare Matrix S gibt, so dass A=S^{-1}BS. Das bedeutet, dass A die Matrix ist, die die gleiche Transformation wie B ausdrückt, nur in einer anderen Basis (wobei S die Basiswechselmatrix ist; S ist nicht eindeutig, denn jedes Vielfache cS erfüllt die Gleichung auch).
+Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass {{< katex "A=S^{-1}BS" >}}. Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch).
 
 Ähnliche Matrizen haben also:
 
@@ -150,9 +149,6 @@ Zwei Matrizen A,B sind **ähnlich**, wenn es eine invertierbare Matrix S gibt, s
 * die gleiche Jordansche Normalform.
 
 ## Diagonalisierbarkeit
-
-Diagonalmatrix :
-Transformation skaliert nur die Basisvektoren.
 
 Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)
 
@@ -179,6 +175,8 @@ Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werde
 Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich folgendes Bild:
 
 * Die Elementarmatrizen entsprechen Basistransformationen (Rotation, Verschieben, Stauchen oder Strecken) und dass jede Matrix als Produkt von Elementarmatrizen darstellbar ist, bedeutet dass eine Transformation als Komposition von Basistransformationen beschrieben werden kann.
+
+* Eine Diagonalmatrix stellt einer Transformation dar, die die Basisvektoren nur skaliert.
 
 * Die **Matrizenmultiplikation** {{< katex "AB" >}} entspricht der Komposition der beiden Transformationen ({{< katex "A\circ B" >}}, d.h. erst wird {{< katex "B" >}} ausgeführt, dann {{< katex "A" >}}).
 
