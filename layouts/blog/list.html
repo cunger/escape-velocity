@@ -11,7 +11,7 @@
   </div>
 
   <div id="components">
-    {{ range .Data.Pages.ByDate }}
+    {{ range .Data.Pages.ByDate.Reverse }}
       {{ if .Draft }}
       {{ else }}
         <div class="item">
