@@ -138,7 +138,7 @@ D.h. {{< katex "Au" >}} bzw. {{< katex "f(u)" >}} hat die gleiche Richtung wie {
 
 Matrizen lassen sich nach **Ähnlichkeit** in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen. Technisch heißt das:
 
-Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass {{< katex "A=S^{-1}BS" >}}. Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch).
+Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass {{< katex display="A=S^{-1}BS" >}}. Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch).
 
 Ähnliche Matrizen haben also:
 
@@ -147,6 +147,12 @@ Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare 
 * das gleiche charakteristische Polynom und Minimalpolynom,
 * die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),
 * die gleiche Jordansche Normalform.
+
+Matrizen lassen sich auch nach **Kongruenz** in Äquivalenzklassen (sogenannte **Kongruenzklassen**) einteilen:
+
+Zwei Matrizen {{< katex "A,B" >}} sind **kongruent**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass {{< katex display="A=S^TBS" >}}.
+
+Da in der Regel {{< katex "S^T\neq S^{-1}">}}, sind kongruente Matrizen in der Regel nicht ähnlich.
 
 ## Diagonalisierbarkeit
 
@@ -189,5 +195,7 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
 * Die **Determinante** einer Matrix ist der Faktor, um den ein Teil des Raumes durch die Transformation gestaucht oder gestreckt wird (z.B. der Inhalt einer Fläche im zweidimensionalen Raum oder das Volumen im dreidimensionalen Raum).
   * Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.
   * Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.
+
+Jede Matrix ist Darstellung eines Endomorhismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Binlinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)). 
 
 # Matrizen als Gleichungssysteme
