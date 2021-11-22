@@ -1,6 +1,6 @@
 ---
 title: "Algebraische Strukturen"
-summary: "Ringe, Gruppen, Körper, Vektorräume."
+summary: "Ringe, Gruppen, Körper, Vektorräume. Und Abbildungen zwischen diesen."
 date: 2021-09-20
 weight: 1
 math: true
@@ -137,31 +137,31 @@ Das Skalarprodukt (_dot product_ oder _inner product_) bildet zwei Vektoren auf 
 
 Ein Vektorraum mit einem Skalarprodukt heißt **Prähilbertraum**.
 
+## Euklidische Vektorräume
+
+Ein **Euklidischer Vektorraum** ist ein reeller Vektorraum mit einem Skalarprodukt.
+
 # Strukturerhaltende Abbildungen
 
-Homomorphismus
+## Lineare Abbildungen
 
-Isomporphismus + Endomorphismus
+Ein **Homomorphismus** zwischen zwei algebraischen Strukturen {{< katex "\mathbf{A}=(A,(\circ_A)_i)" >}} und {{< katex "\mathbf{B}=(B,(\circ_B)_i)" >}} ist eine Abbildung {{< katex "f:A\to B" >}}, die die algebraische Struktur erhält, d.h. dass für alle Operationen {{< katex "\circ_A" >}} und {{< katex "\circ_B" >}} gilt:
+{{< katex display="f(x\circ_A y)=f(x)\circ_B f(y)" >}}
+Sowie dass die neutralen Elemente von {{< katex "\mathbf{A}" >}} auf die neutralen Elemente von {{< katex "\mathbf{B}" >}} abgebildet werden.
 
-**Zwischen Grupppen:** {{< katex "F(x\ast y) = F(x)\ast F(y)" >}}
-und das neutrale Element der einen muss auf das neutrale Element der anderen abgebildet werden
+Ein bijektiver Homomorphismus heißt **Isomorphismus**.
 
-**Zwischen Vektorräumen:**
-
-A map (_Abbildung_) {{< katex "F" >}} between vector spaces is _linear_ if it respects the vector spaces' linear structure,
-i.e. if it distributes over addition and scalar multiplication:
-
-* {{< katex "F(ax) = aF(x)" >}}, i.e. scaling the input is the same as scaling the output
-* {{< katex "F(x+y) = F(x)+F(y)" >}}, i.e. adding inputs is the same as adding the outputs
-
-This way, linear operations allow one to divide work on complex inputs into work on simpler inputs.
-
-Examples of linear operations:
-
-* The mapping of each derivable function {{< katex "f(x)" >}} to its derivative {{< katex "\frac{df}{dx}" >}} over the vector space of functions from {{< katex "\mathbb{R}^n" >}} to {{< katex "\mathbb{R}^m" >}} with addition and scalar multiplication defined the usual way.
-
-**Note:** There are [two distinct senses of _linear_](https://en.wikipedia.org/wiki/Linear_function). Polynomials of degree {{< katex "\leq 1" >}}, i.e. functions of the form {{< katex "f(x) = ax + b" >}}, are also called linear functions, as their graph is a line. But they're not linear in the above sense, for example {{< katex "f(2x)=2ax+b\neq 2(ax+b)=2f(x)" >}}.
+Ein Homomorphismus {{< katex "f:A\to A" >}}, der eine algebraische Struktur auf sich selbst abbildet, heißt **Endomorphismus** (oder **Automorphismus**, wenn er bijektiv ist).
 
 ## Bilinearformen
 
-Linearität in beiden Komponenten
+Eine **Bilinearform** verallgemeinert die Eigenschaften eines Vektorraumhomomorphismus auf zweistellige Abbildungen und bedeutet dann Linearität in beiden Komponenten:
+
+Seien {{< katex "V,W" >}} Vektorräume über einem Körper {{< katex "\mathbb{K}" >}}. Dann ist eine Abbildung {{< katex "\langle\cdot,\cdot\rangle:V\times W\to\mathbb{K}" >}} eine Bilinearform, wenn die Abbildungen {{< katex "\langle \cdot, w\rangle:V\to\mathbb{K}" >}} und {{< katex "\langle v,\cdot\rangle:W\to\mathbb{K}" >}} beide linear sind, d.h. wenn gilt:
+
+* {{< katex "\langle v_1 + v_2, w\rangle = \langle v_1,w\rangle + \langle v_2,w\rangle" >}}
+und {{< katex "\langle \lambda v, w\rangle = \lambda\langle v,w\rangle" >}}
+* {{< katex "\langle v,w_1 + w_2\rangle = \langle v,w_1\rangle + \langle v,w_2\rangle" >}}
+und {{< katex "\langle v, \lambda w\rangle = \lambda\langle v,w\rangle" >}}
+
+Zum Beispiel ist das Skalarprodukt eines Vektorraums eine Bilinearform (die zusätzlich symmetrisch und positiv definit ist).

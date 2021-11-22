@@ -17,9 +17,11 @@ Matrizen können auch über einem kommutativen Ring statt einem Körper definier
 
 * Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.
 
-## Rang
+## Eigenschaften
 
 Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf's gleiche raus).
+
+Eine Matrix heißt **symmetrisch**, wenn {{< katex "A=A^T" >}}.
 
 # Matrizenrechnung
 
@@ -196,6 +198,6 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
   * Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.
   * Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.
 
-Jede Matrix ist Darstellung eines Endomorhismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Binlinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)). 
+Jede Matrix ist Darstellung eines Endomorhismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Binlinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)).
 
 # Matrizen als Gleichungssysteme
