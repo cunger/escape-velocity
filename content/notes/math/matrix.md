@@ -162,7 +162,8 @@ Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist.
 
 # Matrizen als lineare Transformationen
 
-Eine Matrix {{< katex "A\in M_{mn}(\mathbb{K})" >}} kann als lineare Abbildung zwischen endlichen Vektorräumen verstanden werden ({{< katex "\mathbb{K}^n\to\mathbb{K}^m" >}} ), bildet also Vektoren {{< katex "x\in\mathbb{K}^n" >}} auf Vektoren {{< katex "Ax\in\mathbb{K}^m" >}} ab.
+Eine Matrix {{< katex "A\in M_{mn}(\mathbb{K})" >}} kann eine lineare Abbildung zwischen endlichen Vektorräumen ({{< katex "\mathbb{K}^n\to\mathbb{K}^m" >}}) darstellen. Sie bildet dann die Vektoren {{< katex "x\in\mathbb{K}^n" >}} auf die Vektoren {{< katex "Ax\in\mathbb{K}^m" >}} ab. (Dabei können diese Vektoren zum Beispiel auch die Koordinatenvektoren beliebiger Vektoren aus {{< katex "\mathbb{K}" >}} sein.)
+
 Linear ist eine solche Abbildung, weil die Matrizenmultiplikation sowohl Addition als auch Skalarmultiplikation respektiert:
 * {{< katex "A(x+y) = Ax + Ay" >}}
 * {{< katex "A(cx) = c(Ax)" >}}
@@ -198,6 +199,6 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
   * Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.
   * Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.
 
-Jede Matrix ist Darstellung eines Endomorhismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Binlinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)).
+Jede Matrix ist Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)).
 
 # Matrizen als Gleichungssysteme

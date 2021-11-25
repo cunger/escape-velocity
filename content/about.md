@@ -21,7 +21,7 @@ These pages are notes for my future self, as I'm sure it will need to look up st
 
 * Mathematics (B.Sc., currently enrolled)
 * [Terra.do climate fellowship](https://www.terra.do/climate-change-learning-for-action/)
-* [edX](https://profile.edx.org/u/christinaunger) pathwork studies
+* [edX](https://profile.edx.org/u/christinaunger) patchwork studies
 * [Full-stack web development](https://launchschool.com/)
 * Computational linguistics (PhD)
 * Logic and Linguistics (M.A., passed with distinction)

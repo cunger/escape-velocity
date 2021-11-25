@@ -145,13 +145,20 @@ Ein **Euklidischer Vektorraum** ist ein reeller Vektorraum mit einem Skalarprodu
 
 ## Lineare Abbildungen
 
-Ein **Homomorphismus** zwischen zwei algebraischen Strukturen {{< katex "\mathbf{A}=(A,(\circ_A)_i)" >}} und {{< katex "\mathbf{B}=(B,(\circ_B)_i)" >}} ist eine Abbildung {{< katex "f:A\to B" >}}, die die algebraische Struktur erhält, d.h. dass für alle Operationen {{< katex "\circ_A" >}} und {{< katex "\circ_B" >}} gilt:
-{{< katex display="f(x\circ_A y)=f(x)\circ_B f(y)" >}}
+Ein **Homomorphismus** zwischen zwei algebraischen Strukturen {{< katex "\mathbf{A}=(A,(\circ_\mathbf{A})_i)" >}} und {{< katex "\mathbf{B}=(B,(\circ_\mathbf{B})_i)" >}} ist eine Abbildung {{< katex "f:A\to B" >}}, die die algebraische Struktur erhält, d.h. dass für alle Operationen {{< katex "\circ_\mathbf{A}" >}} und {{< katex "\circ_\mathbf{B}" >}} gilt:
+{{< katex display="f(x\circ_\mathbf{A} y)=f(x)\circ_\mathbf{B} f(y)" >}}
 Sowie dass die neutralen Elemente von {{< katex "\mathbf{A}" >}} auf die neutralen Elemente von {{< katex "\mathbf{B}" >}} abgebildet werden.
 
 Ein bijektiver Homomorphismus heißt **Isomorphismus**.
 
 Ein Homomorphismus {{< katex "f:A\to A" >}}, der eine algebraische Struktur auf sich selbst abbildet, heißt **Endomorphismus** (oder **Automorphismus**, wenn er bijektiv ist).
+
+Wie viele Informationen bei einer Abbildung {{< katex "f:A\to B" >}} verloren gehen, kann am Kern der Abbildung abgelesen werden.
+Der **Kern** sind all die Elemente aus {{< katex "A" >}}, die auf Null abgebildet werden, also {{< katex "\text{ker}(f)=\{x\in A\,|\,f(x)=0_\mathbf{B}\}" >}}. Der Kern enthält immer wenigstens {{< katex "0_\mathbf{A}" >}}. Wenn er keine weiteren Elemente enthält, ist die Abbildung injektiv, d.h. es gehen keine Informationen verloren.
+
+Zum Beispiel ist eine Abbildung nicht injektiv, wenn es unterschiedliche Elemente {{< katex "x,x'\in A" >}} gibt, so dass {{< katex "f(x)=f(x')" >}}, also {{< katex "f(x)-f(x')=0" >}}. Bei einer linearen Abbildung heißt das {{< katex "f(x-x')=0" >}}, d.h. {{< katex "x-x'" >}} liegt im Kern; der Unterschied zwischen {{< katex "x" >}} und {{< katex "x'" >}} geht also bei der Abbildung verloren.
+
+Ist {{< katex "\mathbf{A}" >}} ein Vektorraum, dann bildet der Kern einer Abbildung zusammen mit den Operationen in {{< katex "\mathbf{A}" >}} einen Untervektorraum von {{< katex "\mathbf{A}" >}}.
 
 ## Bilinearformen
 

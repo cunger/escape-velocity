@@ -15,26 +15,20 @@ Eine Funktion {{< katex "f" >}} ist
 
 # Strukturerhaltung
 
-Für algebraische Strukturen sind besonders die strukturerhaltenden Abbildungen zwischen ihnen interessant.
+Für algebraische Strukturen sind besonders die [strukturerhaltenden Abbildungen](.../algebra/#strukturerhaltende-abbildungen) zwischen ihnen interessant.
 
-Lineare Abbildungen zwischen Vektorräumen sind strukturerhaltend in dem Sinne, dass sie sich mit der Addition und Skalarmultiplikation des Vektorraums vertragen, d.h. Linearkombinationen wieder auf Linearkombinationen abbilden.
+Lineare Abbildungen zwischen Vektorräumen sind strukturerhaltend in dem Sinne, dass sie sich mit der Addition und Skalarmultiplikation des Vektorraums vertragen, d.h. Linearkombinationen wieder auf Linearkombinationen abbilden, und intrinsische Eigenschaften der Vektoren (wie Verschiedenheit und lineare Unabhängigkeit) erhalten blieben.
+
 Genauer gesagt ist eine Funktion {{< katex "f" >}} **linear**, wenn gilt:
 
 * {{< katex "f(x+x')=f(x)+f(x')" >}}
 * {{< katex "f(cx)=cf(x)" >}}
 
-Sie kann dann durch eine eindeutige Matrix {{< katex "A" >}} beschrieben werden, so dass
-{{< katex display="{}^t(f(x))=A{\,}^tx" >}}
-
-<!--
-(Die andere Bedeutung von _linear_ ist, dass die Funktion ein [Polynom](../polynomials) vom Grad 1 oder weniger ist. Das meinen wir in diesem Dokument nicht!)
--->
-
 Eine Abbildung zwischen [metrischen Räumen](../topology) {{< katex "(X,d_X)" >}} und {{< katex "(Y,d_Y)" >}} ist **isometrisch**, wenn sie die Metrik erhält (d.h. der Abstand zweier Bildpunkte ist gleich dem Abstand ihrer Urbildpunkte):
 {{< katex display="d_Y(f(x),f(y)) = d_X(x,y) \quad\text{für alle }x,y\in X" >}}
 Jede isometrische Abbildung ist stetig (sogar gleichmäßig stetig).
 
-Stetigkeit ist eine Art der Strukturerhaltung: Sie erhält die Nähe zwischen Elementen in topologischen Räumen.
+Stetigkeit ist auch eine Art der Strukturerhaltung: Sie erhält die Nähe zwischen Elementen in topologischen Räumen.
 
 # Stetigkeit
 
