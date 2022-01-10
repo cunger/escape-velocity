@@ -21,6 +21,8 @@ Matrizen können auch über einem kommutativen Ring statt einem Körper definier
 
 Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf's gleiche raus).
 
+Die **Spur** einer Matrix ist die Summe der Diagonalelemente.
+
 Eine Matrix heißt **symmetrisch**, wenn {{< katex "A=A^T" >}}.
 
 # Matrizenrechnung
@@ -151,8 +153,8 @@ Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare 
 * die gleiche Jordansche Normalform.
 
 Matrizen lassen sich auch nach **Kongruenz** in Äquivalenzklassen (sogenannte **Kongruenzklassen**) einteilen:
-
-Zwei Matrizen {{< katex "A,B" >}} sind **kongruent**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass {{< katex display="A=S^TBS" >}}.
+Zwei Matrizen {{< katex "A,B" >}} sind **kongruent**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass
+{{< katex display="A=S^TBS" >}}
 
 Da in der Regel {{< katex "S^T\neq S^{-1}">}}, sind kongruente Matrizen in der Regel nicht ähnlich.
 

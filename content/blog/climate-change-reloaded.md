@@ -4,7 +4,7 @@ description: "This is not the beginning. And it won't be the end."
 author: "Christina Unger"
 tags: ["climate change"]
 date: 2021-11-10
-lastmod: 2021-11-12
+lastmod: 2021-12-30
 draft: false
 ---
 

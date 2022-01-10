@@ -133,13 +133,28 @@ Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sin
 
 ## Skalarprodukt
 
-Das Skalarprodukt (_dot product_ oder _inner product_) bildet zwei Vektoren auf ein Skalar ab, das so etwas wie ... ausdrückt.
+Das Skalarprodukt (_dot product_ oder _inner product_) bildet zwei Vektoren auf ein Skalar ab und liefert damit eine zusätzliche Struktur, die es erlaubt geometrische Maße wie Längen und Winkel zu definieren, indem es eine [Norm](../topology/#normierte-und-metrische-räume) induziert.
 
-Ein Vektorraum mit einem Skalarprodukt heißt **Prähilbertraum**.
+Technisch ist das **Skalarprodukt** eines Vektorraums {{< katex "(V,+,\cdot)" >}} über dem Körper {{< katex "\mathbb{K}" >}} eine Abbildung {{< katex "\langle\,\rangle:V\times V\to \mathbb{K}" >}}, die für alle für {{< katex "v,w\in V" >}} folgende Eigenschaften erfüllt:
+
+* Positive Definitheit: {{< katex "\langle v,v\rangle > 0" >}}
+* Symmetrie: {{< katex "\langle v,w\rangle = \langle w,v\rangle" >}}
+* Bilinearität: {{< katex "\langle v,\cdot\rangle" >}} und {{< katex "\langle \cdot, v\rangle" >}} sind linear (d.h. das Skalarprodukt ist eine [Bilinearform](#bilinearformen))
+
+**Beispiele** kanonischer Skalarprodukte:
+
+* {{< katex "\mathbb{R}^n" >}}: {{< katex "\langle x,y\rangle := \sum_{i=1}^n x_i y_i = x^Ty" >}}
+* {{< katex "\mathbb{C}^n" >}}: {{< katex "\langle x,y\rangle := \sum_{i=1}^n x_i \overline{y_i}" >}}
+* Reellwertige Funktionen {{< katex "C[a,b]" >}}: {{< katex "\langle f,g\rangle := \int_a^b f(x)g(x) dx" >}}
+  (stetig und damit auch integrierbar, umfasst auch die Polynome über {{< katex "\mathbb{R}" >}})
+* Komplexwertige Funktionen {{< katex "C[a,b]" >}}: {{< katex "\langle f,g\rangle := \int_a^b f(x)\overline{g(x)} dx" >}}
 
 ## Euklidische Vektorräume
 
 Ein **Euklidischer Vektorraum** ist ein reeller Vektorraum mit einem Skalarprodukt.
+
+Die Norm (d.h. die Länge eines Vektors), die von einem Skalarprodukt über {{< katex "\mathbb{K}=\mathbb{R}" >}} oder {{< katex "\mathbb{K}=\mathbb{C}" >}} induziert wird, ist folgende:
+{{< katex display="\|v\|=\sqrt{\langle v,v\rangle}" >}}
 
 # Strukturerhaltende Abbildungen
 
@@ -162,9 +177,9 @@ Ist {{< katex "\mathbf{A}" >}} ein Vektorraum, dann bildet der Kern einer Abbild
 
 ## Bilinearformen
 
-Eine **Bilinearform** verallgemeinert die Eigenschaften eines Vektorraumhomomorphismus auf zweistellige Abbildungen und bedeutet dann Linearität in beiden Komponenten:
+Eine Bilinearform verallgemeinert die Eigenschaften eines Vektorraumhomomorphismus auf zweistellige Abbildungen und bedeutet dann Linearität in beiden Komponenten:
 
-Seien {{< katex "V,W" >}} Vektorräume über einem Körper {{< katex "\mathbb{K}" >}}. Dann ist eine Abbildung {{< katex "\langle\cdot,\cdot\rangle:V\times W\to\mathbb{K}" >}} eine Bilinearform, wenn die Abbildungen {{< katex "\langle \cdot, w\rangle:V\to\mathbb{K}" >}} und {{< katex "\langle v,\cdot\rangle:W\to\mathbb{K}" >}} beide linear sind, d.h. wenn gilt:
+Seien {{< katex "V,W" >}} Vektorräume über einem Körper {{< katex "\mathbb{K}" >}}. Dann ist eine Abbildung {{< katex "\langle\cdot,\cdot\rangle:V\times W\to\mathbb{K}" >}} **bilinear** bzw. eine **Bilinearform**, wenn die Abbildungen {{< katex "\langle \cdot, w\rangle:V\to\mathbb{K}" >}} und {{< katex "\langle v,\cdot\rangle:W\to\mathbb{K}" >}} beide linear sind, d.h. wenn gilt:
 
 * {{< katex "\langle v_1 + v_2, w\rangle = \langle v_1,w\rangle + \langle v_2,w\rangle" >}}
 und {{< katex "\langle \lambda v, w\rangle = \lambda\langle v,w\rangle" >}}
