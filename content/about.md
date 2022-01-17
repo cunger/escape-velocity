@@ -3,7 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I'm a freelance software engineer and aspiring mathematician, with a deep love for the ocean and a strong interest in climate change, nuclear technology and space.
+I’m a software engineer and aspiring mathematician, with a strong interest in nuclear technology and radiation protection.
 
 ---
 

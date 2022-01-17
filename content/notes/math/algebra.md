@@ -131,6 +131,11 @@ Wir verbinden also eine abelsche Gruppe {{< katex "(V,+)" >}} mit einem Körper 
 Entscheidend ist nicht so sehr die Form von Vektoren, sondern ihre Eigenschaften.
 Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sind, wovon man Linearkombinationen bilden kann.
 
+Eine Menge von Vektoren ist **linear unabhängig**, wenn keiner der Vektoren eine Linearkombination der anderen ist. Das ist [äquivalent](https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Lineare_Unabh%C3%A4ngigkeit_von_Vektoren#Vom_ersten_Kriterium_zur_formalen_Definition) zu der Bedingung, dass der Nullvektor nur durch eine triviale Linearkombination darstellbar ist. Oder technisch:
+
+* Ein endliches System von Vektoren {{< katex "(v_1,\ldots,v_n)" >}} ist linear unabhängig, wenn aus {{< katex "\sum_{i=1}^n a_i v_i = 0" >}} folgt, dass {{< katex "a_1=\ldots=a_n=0" >}}.
+* Ein unendliches System von Vektoren {{< katex "(v_i)_{i\in I}" >}} ist linear unabhängig, wenn für jede endliche Teilmenge {{< katex "J" >}} von {{< katex "I" >}} aus {{< katex "\sum_{j\in J} a_j v_j=0" >}} folgt, dass {{< katex "a_j=0" >}} für alle {{< katex "j\in J" >}}.
+
 ## Skalarprodukt
 
 Das Skalarprodukt (_dot product_ oder _inner product_) bildet zwei Vektoren auf ein Skalar ab und liefert damit eine zusätzliche Struktur, die es erlaubt geometrische Maße wie Längen und Winkel zu definieren, indem es eine [Norm](../topology/#normierte-und-metrische-räume) induziert.
