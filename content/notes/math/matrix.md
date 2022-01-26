@@ -19,7 +19,7 @@ Matrizen können auch über einem kommutativen Ring statt einem Körper definier
 
 ## Eigenschaften
 
-Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten (oder Zeilen, das kommt auf's gleiche raus).
+Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten. Oder Zeilen, denn Spalten- und Zeilenrang sind immer gleich. (Die möglichen Ränge einer {{< katex "m\times n" >}}-Matrix sind also {{< katex "0">}} bis {{< katex "\text{min}(m,n)" >}}.)
 
 Die **Spur** einer Matrix ist die Summe der Diagonalelemente.
 
@@ -142,7 +142,7 @@ D.h. {{< katex "Au" >}} bzw. {{< katex "f(u)" >}} hat die gleiche Richtung wie {
 
 Matrizen lassen sich nach **Ähnlichkeit** in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen. Technisch heißt das:
 
-Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass {{< katex display="A=S^{-1}BS" >}}. Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch).
+Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass: {{< katex display="A=S^{-1}BS" >}} Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch).
 
 Ähnliche Matrizen haben also:
 
@@ -161,6 +161,20 @@ Da in der Regel {{< katex "S^T\neq S^{-1}">}}, sind kongruente Matrizen in der R
 ## Diagonalisierbarkeit
 
 Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)
+
+## Treppennormalform
+
+* Alle Nullreihen stehen ganz unten.
+* In jeder Zeile ist der von links erste Eintrag ungleich 0 eine 1. Das sind die Pivot-Positionen.
+* Stufung: Jede Pivot-Position ist rechts von der Pivot-Position der Zeile darüber.
+* Daraus folgt, dass alle Einträge unter den Pivot-Positionen 0 sind. In der reduzierten Treppennormalform sind auch alle Einträge über den Pivot-Positionen 0.
+
+Beispiele:
+{{< katex display="\left(\begin{matrix} 1 & \ast & \ast & \ast \\ 0 & 0 & 1 & \ast \\ 0 & 0 & 0 & 1 \end{matrix}\right) \qquad \left(\begin{matrix} 1 & \ast & \ast \\ 0 & 1 & \ast \\ 0 & 0 & 0 \end{matrix}\right) \qquad \left(\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{matrix}\right)">}}
+
+Die Treppennormalform erleichtert das Lösen eines linearen Gleichungssystems.
+
+## Jordan-Normalform
 
 # Matrizen als lineare Transformationen
 
@@ -204,3 +218,8 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
 Jede Matrix ist Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)).
 
 # Matrizen als Gleichungssysteme
+
+# Literatur
+
+* Luise Unger: Skript Lineare Algebra (1143), FernUniversität Hagen.
+* Klaus Jänich: Lineare Algebra.
