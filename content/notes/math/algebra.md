@@ -161,6 +161,24 @@ Ein **Euklidischer Vektorraum** ist ein reeller Vektorraum mit einem Skalarprodu
 Die Norm (d.h. die Länge eines Vektors), die von einem Skalarprodukt über {{< katex "\mathbb{K}=\mathbb{R}" >}} oder {{< katex "\mathbb{K}=\mathbb{C}" >}} induziert wird, ist folgende:
 {{< katex display="\|v\|=\sqrt{\langle v,v\rangle}" >}}
 
+Ein Vektor ist **normalisiert**, wenn er Länge 1 hat. Jeder Vektor {{< katex "v" >}} lässt sich normalisieren zu {{< katex "\dfrac{v}{\|v\|}" >}}.
+(Das funktioniert mit dem Skalarprodukt, ist aber allgemein mit Bilinearformen nicht immer möglich.)
+
+Zwei Vektoren {{< katex "v,w" >}} sind **orthogonal**, wenn {{< katex "\langle v,w\rangle = 0" >}}.
+
+### Orthonormalbasen
+
+Zu einer beliebigen Basis {{< katex "\{v_1,v_2,v_3,\ldots,v_n\}" >}} lässt sich eine orthonormale Basis {{< katex "\{w_1,w_2,w_3,\ldots,w_n\}" >}} konstruieren (Gram-Schmidt-Verfahren), indem man jeden Vektor zu den vorherigen orthogonalisiert und dann normalisiert:
+
+* {{< katex "w_1=\dfrac{v_1}{\|v_1\|}" >}}
+* {{< katex "w_2'=v_2 - \langle w_1,v_2\rangle w_1" >}}
+* {{< katex "w_2=\dfrac{w_2'}{\|w_2'\|}" >}}
+* {{< katex "w_3'=v_3 - \langle w_1,v_3\rangle w_1 - \langle w_2,v_3\rangle w_2" >}}
+* {{< katex "w_3=\dfrac{w_3'}{\|w_3'\|}" >}}
+* ...
+* {{< katex "w_n'=v_n - \sum_{i=1}^{n-1}\langle w_i,v_n\rangle w_i" >}}
+* {{< katex "w_n=\dfrac{w_n'}{\|w_n'\|}" >}}
+
 # Strukturerhaltende Abbildungen
 
 ## Lineare Abbildungen
@@ -192,3 +210,5 @@ und {{< katex "\langle \lambda v, w\rangle = \lambda\langle v,w\rangle" >}}
 und {{< katex "\langle v, \lambda w\rangle = \lambda\langle v,w\rangle" >}}
 
 Zum Beispiel ist das Skalarprodukt eines Vektorraums eine Bilinearform (die zusätzlich symmetrisch und positiv definit ist).
+
+Die Matrixdarstellungen einer Bilinearform bezüglich verschiedener Basen sind immer kongruent.
