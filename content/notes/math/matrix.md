@@ -17,21 +17,17 @@ Matrizen können auch über einem kommutativen Ring statt einem Körper definier
 
 * Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.
 
-## Eigenschaften
-
 Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten. Oder Zeilen, denn Spalten- und Zeilenrang sind immer gleich. (Die möglichen Ränge einer {{< katex "m\times n" >}}-Matrix sind also {{< katex "0">}} bis {{< katex "\text{min}(m,n)" >}}.)
 
 Die **Spur** einer Matrix ist die Summe der Diagonalelemente.
-
-Eine Matrix heißt **symmetrisch**, wenn {{< katex "A=A^T" >}}.
 
 # Matrizenrechnung
 
 Addition und Skalarmultiplikation passieren elementweise.
 
-Multiplikation
+Multiplikation ...
 
-Transponierte Matrix
+Eine Matrix ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, so dass {{< katex "A^m = 0" >}} und {{< katex "A^{m-1}\neq 0" >}}.
 
 ## Elementarmatrizen
 
@@ -41,6 +37,31 @@ Elementare Zeilenumformungen:
 * {{< katex "T_{ij}(c)" >}} Addition des {{< katex "c" >}}-fachen der Zeile {{< katex "j" >}} zu einer anderen (nicht derselben!) Zeile {{< katex "i" >}}
 
 Analog für Spalten. Diese Umformungen ändern den Rang einer Matrix nicht.
+
+## Transponierte
+
+Die **Transponierte** {{< katex "A^T" >}} einer Matrix {{< katex "A" >}} ist ...
+
+{{< katex "A" >}} und {{< katex "A^T" >}} haben den gleichen Rang, die gleiche Spur und Determinante, aber möglicherweise unterschiedliche Eigenwerte.
+Sonst gelten die folgenden Eigenschaften:
+
+* {{< katex "(A+B)^T = A^T + B^T" >}}
+* {{< katex "(A\cdot B)^T = B^T \cdot A^T" >}} (also {{< katex "(A^m)^T = (A^T)^m" >}})
+* {{< katex "(cA)^T = cA^T" >}}
+* {{< katex "(A^T)^T = A" >}}
+* {{< katex "(A^{-1})^T = (A^T)^{-1}" >}}
+
+Eine Matrix heißt **orthogonal**, wenn {{< katex "A^T=A^{-1}" >}}.
+
+Eine reelle Matrix heißt
+
+* **symmetrisch**, wenn {{< katex "A^T=A" >}},
+* **schiefsymmetrisch**, wenn {{< katex "A^T=-A" >}}.
+
+Eine komplexe Matrix heißt
+
+* **hermitesch**, wenn {{< katex "A^T=\overline{A}" >}},
+* **schiefhermitesch**, wenn {{< katex "A^T=-\overline{A}" >}}.
 
 # Determinante
 
