@@ -14,6 +14,8 @@ Ein **Polynom** {{< katex "p\in\mathbb{K}[x]" >}} über einen Körper {{< katex 
 
 wobei die Koeffizienten {{< katex "a_0,\ldots,a_n\in\mathbb{K}" >}} sind. Der **Grad** eines solchen Polynoms ist das {{< katex "i\neq 0" >}} des größten Koeffizienten ungleich 0. (Der Grad des Nullpolynoms wird als -1 definiert.)
 
+Das Polynom heißt **normiert**, wenn {{< katex "a_n=1" >}} ist.
+
 **Polynomfunktionen** sind Funktionen der Form
 {{< katex display="p(x)=\sum_{i=0}^n a_ix_i=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_1x+a_0." >}}
 
@@ -21,9 +23,6 @@ Jedes Polynom liefert also eine Polynomfunktion {{< katex "f:\mathbb{R}\to\mathb
 Für alle {{< katex "r\in\mathbb{K}" >}} ist {{< katex "p(r)" >}} das Resultat davon, {{< katex "r" >}} in {{< katex "p" >}} einzusetzen (d.h. {{< katex "p(r) = \sum_{i=0}^n a_ir^i" >}}).
 
 # Arithmetische Operationen
-
-> many of our algorithms apply (with small modifications) to both the integer and polynomial cases: multiplication, division with remainder, gcd and Chinese remainder computation.
-(Aber nicht: Faktorisierung)
 
 Polynome können wie ganze Zahlen addiert, subtrahiert und multipliziert werden. Das Ergebnis ist erneut ein Polynom.
 
@@ -45,13 +44,6 @@ Zum Beispiel:
 (Denn für alle {{< katex "a_ib_j" >}} mit {{< katex "i+j=k" >}} ist der variable Term {{< katex "x^k" >}}.)
 
 Dabei gilt {{< katex "\text{Grad}(pq) = \text{Grad}(p) + \text{Grad}(q)" >}}.
-
-## Faktorisierung
-
-Polynome können äquivalent umgeformt werden als Produkt von Polynomen. Zum Beispiel:
-
-* {{< katex "x^2-a^2=(x+a)(x-a)" >}}
-* {{< katex "x^3-2x^2-x+1=(x-2)(x+1)(x-1)" >}}
 
 ## Division mit Rest
 
@@ -93,19 +85,34 @@ function gcd(p1, p2)
 end
 ```
 
-## Algebraischer Abschluss
-
-Ein Körper {{< katex "K" >}} heißt **algebraisch abgeschlossen**, wenn jedes nicht-konstante Polynom {{< katex "p\in \mathbb{K}[T]" >}} (d.h. jedes Polynom in {{< katex "\mathbb{K}[T]\backslash\mathbb{K}" >}}) eine Nullstelle in {{< katex "K" >}} besitzt. Das ist äquivalent dazu, dass es in Linearfaktoren zerfällt (d.h. es gibt {{< katex "a,z_1,\ldots,z_n\in\mathbb{K}" >}}, so dass {{< katex "p = a(T-z_1)\cdots(T-z_n)" >}}), denn hat ein Polynom eine Nullstelle {{< katex "a" >}}, so ist es ohne Rest durch {{< katex "T-a" >}} teilbar.
-
 ## Komposition
 
-# Nullstellen
+# Nullstellen und Faktorisierung
 
-Ein Polynom {{< katex "n" >}}-ten Grades hat höchstens {{< katex "n" >}} Nullstellen. {{< katex "r" >}} ist eine Nullstelle genau dann, wenn {{< katex "(x-r)" >}} ein Faktor des Polynoms ist. D.h. wenn {{< katex "r_1,\ldots,r_n" >}} die Nullstellen des  Polynoms {{< katex "p(x)" >}} sind, ist  
-{{< katex display="p(x)=a_n(x-r_n)(x-r_{n-1})\cdots(x-r_2)(x-r_1)q(x)" >}}
-eine Faktorisierung des Polynoms (wobei {{< katex "q(x)" >}} wieder ein Polynom ist).
+Zu jedem normierten Polynom
 
-# Gleichungen
+{{< katex display="p(x) = x^n+a_{n-1}x^{n-1}+\ldots+a_1x+a_0" >}}
+
+gibt es eindeutig bestimmte Zahlen {{< katex "\lambda_1,\ldots,\lambda_n\in\mathbb{C}" >}}, so dass das Polynom
+äquivalent in seine Linearfaktorzerlegung umgeformt werden kann:
+
+{{< katex display="p(x) = (x-\lambda_1)\cdots(x-\lambda_n)" >}}
+
+Das sind genau die Nullstellen des Polynoms, d.h. für jedes {{< katex "\lambda" >}} gilt:
+
+{{< katex display="p(\lambda) = \lambda^n+a_{n-1}\lambda^{n-1}+\ldots+a_1\lambda+a_0 = 0" >}}
+
+D.h. {{< katex "\lambda" >}} ist eine Nullstelle genau dann, wenn {{< katex "(x-\lambda)" >}} ein Faktor des Polynoms ist.
+
+Die Nullstellen müssen nicht verschieden sein, ein Polynom {{< katex "n" >}}-ten Grades hat also höchstens {{< katex "n" >}} Nullstellen. Wie oft eine Nullstelle in einem Faktor vorkommt, nennt man ihre Vielfachheit.
+
+Vor allem müssen die Nullstellen nicht reell sein, d.h. in {{< katex "\mathbb{R}" >}} kann es sein, dass eine Faktorisierung nur unvollständig möglich ist: Ist {{< katex "r" >}} eine reelle Nullstelle des Polynoms {{< katex "p(x)" >}}, dann ist {{< katex "p(x)=(x-r)q(x)" >}} eine Faktorisierung des Polynoms (wobei {{< katex "q(x)" >}} wieder ein Polynom ist).
+
+Ein Körper {{< katex "\mathbb{K}" >}} heißt **algebraisch abgeschlossen**, wenn jedes nicht-konstante Polynom {{< katex "p\in \mathbb{K}[x]" >}} (d.h. jedes Polynom in {{< katex "\mathbb{K}[x]\backslash\mathbb{K}" >}}) eine Nullstelle in {{< katex "\mathbb{K}" >}} besitzt. Das ist äquivalent dazu, dass das Polynom in Linearfaktoren zerfällt, denn hat ein Polynom eine Nullstelle {{< katex "\lambda" >}}, so ist es ohne Rest durch {{< katex "(x-\lambda)" >}} teilbar.
+
+**Fundamentalsatz der Algebra:** {{< katex "\mathbb{C}" >}} ist algebraisch abgeschlossen.
+
+({{< katex "\mathbb{N},\mathbb{Z}, \mathbb{Q},\mathbb{R}" >}} sind alle nicht algebraisch abgeschlossen. Z.B. hat das Polynom {{< katex "x^2 + 1" >}} in keinem dieser Körper eine Nullstelle, weil {{< katex "x^2 + 1 = 0" >}} bedeutet, dass {{< katex "x = \sqrt{-1}" >}}.)
 
 # Approximation mit Polynomen
 

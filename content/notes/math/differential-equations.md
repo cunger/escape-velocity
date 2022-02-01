@@ -1,8 +1,8 @@
 ---
 title: "Differentialgleichungen"
-summary: "German notes on differential equations. In progress."
+summary: "Analytische und numerische Lösungen."
 date: 2021-06-25
-weight: 9
+weight: 8
 math: true
 toc: true
 ---

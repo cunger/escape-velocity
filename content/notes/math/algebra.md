@@ -101,21 +101,18 @@ Ein **Körper** {{< katex "(\mathbb{K},+,\cdot)" >}} (_field_) ist eine Menge {{
 Das heißt: {{< katex "(\mathbb{K},+)" >}} und {{< katex "(\mathbb{K}\backslash\{0\},\cdot)" >}} sind abelsche Gruppen.
 
 Beispiele:
-* {{< katex "\mathbb{F}_p = (\mathbb{Z}/p\mathbb{Z},+,\cdot)" >}} (mit {{< katex "p" >}} eine Primzahl)
+* {{< katex "\mathbb{F}_p = (\mathbb{Z}/p\mathbb{Z},+,\cdot)" >}} (mit {{< katex "p" >}} eine Primzahl, auch: **Galoiskörper**)
 * {{< katex "(\mathbb{Q},+,\cdot)" >}}
 * {{< katex "(\mathbb{R},+,\cdot)" >}}
-* {{< katex "(\mathbb{C},+,\cdot)" >}} mit {{< katex "\mathbb{C}=\mathbb{R}\times\mathbb{R}" >}} und
+* {{< katex "(\mathbb{C},+,\cdot)" >}} mit {{< katex "\mathbb{C}=\mathbb{R}^2" >}} und
   * {{< katex "(a,b)+(c,d) = (a+c,b+d)" >}}
   * {{< katex "(a,b)\cdot(c,d) = (ac-bd,ad+bc)" >}}
   * {{< katex "i = (0,1)" >}}
+  * {{< katex "1 = (1,0)" >}}
 
 Keine Körper:
 * {{< katex "(\mathbb{N},+,\cdot)" >}} (nicht alle Elemente sind invertierbar)
 * {{< katex "(\mathbb{Z},+,\cdot)" >}} (nicht alle Elemente sind bezüglich der Multiplikation invertierbar)
-
-## Galois-Körper
-
-...
 
 # Vektorräume
 
@@ -135,6 +132,14 @@ Eine Menge von Vektoren ist **linear unabhängig**, wenn keiner der Vektoren ein
 
 * Ein endliches System von Vektoren {{< katex "(v_1,\ldots,v_n)" >}} ist linear unabhängig, wenn aus {{< katex "\sum_{i=1}^n a_i v_i = 0" >}} folgt, dass {{< katex "a_1=\ldots=a_n=0" >}}.
 * Ein unendliches System von Vektoren {{< katex "(v_i)_{i\in I}" >}} ist linear unabhängig, wenn für jede endliche Teilmenge {{< katex "J" >}} von {{< katex "I" >}} aus {{< katex "\sum_{j\in J} a_j v_j=0" >}} folgt, dass {{< katex "a_j=0" >}} für alle {{< katex "j\in J" >}}.
+
+## Untervektorräume
+
+Untervektorräume sind Teilmengen von Vektorräumen, die selber wieder eine Vektorraum sind. D.h. zu einem Vektorraum {{< katex "(V,+,\cdot)" >}} über einem Körper {{< katex "\mathbb{K}">}} ist {{< katex "(U,+,\cdot)" >}} mit {{< katex "U\subseteq V" >}} ein Untervektorraum, wenn:
+
+* {{< katex "0_V\in U" >}}
+* {{< katex "cv \in U" >}} für alle {{< katex "v \in V, c\in\mathbb{K}" >}}
+* {{< katex "v+w \in U" >}} für alle {{< katex "v,w \in V" >}}
 
 ## Skalarprodukt
 
