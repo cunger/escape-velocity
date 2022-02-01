@@ -38,30 +38,39 @@ Elementare Zeilenumformungen:
 
 Analog für Spalten. Diese Umformungen ändern den Rang einer Matrix nicht.
 
-## Transponierte
+## Transponierte, inverse und adjungierte Matrix
 
-Die **Transponierte** {{< katex "A^T" >}} einer Matrix {{< katex "A" >}} ist ...
+Die **Transponierte** {{< katex "A^T" >}} einer Matrix {{< katex "A" >}} ist diejenige Matrix, in der Zeilen und Spalten vertauscht sind.
 
-{{< katex "A" >}} und {{< katex "A^T" >}} haben den gleichen Rang, die gleiche Spur und Determinante, aber möglicherweise unterschiedliche Eigenwerte.
-Sonst gelten die folgenden Eigenschaften:
+Die **Inverse** {{< katex "A^{-1}" >}} einer Matrix {{< katex "A" >}} ist diejenige Matrix, so dass {{< katex "A\cdot A^{-1} = A^{-1}\cdot A = I" >}}. Siehe [Invertierbarkeit](#invertierbarkeit).
 
-* {{< katex "(A+B)^T = A^T + B^T" >}}
-* {{< katex "(A\cdot B)^T = B^T \cdot A^T" >}} (also {{< katex "(A^m)^T = (A^T)^m" >}})
-* {{< katex "(cA)^T = cA^T" >}}
-* {{< katex "(A^T)^T = A" >}}
-* {{< katex "(A^{-1})^T = (A^T)^{-1}" >}}
+Die **adjungierte Matrix** einer komplexen Matrix {{< katex "A" >}} ist {{< katex "A^H=\overline{A}^T = \overline{A^T}" >}}.
 
-Eine Matrix heißt **orthogonal**, wenn {{< katex "A^T=A^{-1}" >}}.
+Es gelten folgende Eigenschaften:
+
+Transponierte | Adjungierte | Inverse
+-------- | -------- | --------
+{{< katex "(A+B)^T = A^T + B^T" >}} | {{< katex "(A+B)^H = A^H + B^H" >}} |
+{{< katex "(A\cdot B)^T = B^T \cdot A^T" >}} | {{< katex "(A\cdot B)^H = B^H \cdot A^H" >}} | {{< katex "(A\cdot B)^{-1} = B^{-1} \cdot A^{-1}" >}}
+{{< katex "(cA)^T = cA^T" >}} | {{< katex "(cA)^H = \overline{c}A^H" >}} | {{< katex "(cA)^{-1} = c^{-1}A^{-1}" >}}
+{{< katex "(A^T)^T = A" >}} | {{< katex "(A^H)^H = A" >}} | {{< katex "(A^{-1})^{-1} = A" >}}
+{{< katex "(A^{-1})^T = (A^T)^{-1}" >}} | {{< katex "(A^{-1})^H = (A^H)^{-1}" >}} |
+{{< katex "\overline{A^T} = (\overline{A})^T" >}} | | {{< katex "\overline{A^{-1}} = (\overline{A})^{-1}" >}}
+{{< katex "\text{rang}({A^T}) = \text{rang}({A})" >}} | {{< katex "\text{rang}({A^H}) = \text{rang}({A})" >}} | {{< katex "\text{rang}({A^{-1}}) = \text{rang}({A})" >}}
+{{< katex "\text{spur}({A^T}) = \text{spur}({A})" >}} | {{< katex "\text{spur}({A^H}) = \overline{\text{spur}({A})}" >}} |
+{{< katex "\text{det}({A^T}) = \text{det}({A})" >}} | {{< katex "\text{det}({A^H}) = \overline{\text{det}({A})}" >}} | {{< katex "\text{det}({A^{-1}}) = (\text{det}({A}))^{-1}" >}}
 
 Eine reelle Matrix heißt
 
-* **symmetrisch**, wenn {{< katex "A^T=A" >}},
-* **schiefsymmetrisch**, wenn {{< katex "A^T=-A" >}}.
+* **symmetrisch**, wenn {{< katex "A^T=A" >}}, und schiefsymmetrisch, wenn {{< katex "A^T=-A" >}}
+* **orthogonal**, wenn {{< katex "A^T=A^{-1}" >}} (und damit {{< katex "A^T\cdot A = I" >}}).
 
 Eine komplexe Matrix heißt
 
-* **hermitesch**, wenn {{< katex "A^T=\overline{A}" >}},
-* **schiefhermitesch**, wenn {{< katex "A^T=-\overline{A}" >}}.
+* **hermitesch**, wenn {{< katex "A^T=\overline{A}" >}} (und damit {{< katex "A^H=A" >}}), und schiefhermitesch, wenn {{< katex "A^T=-\overline{A}" >}}
+* **unitär**, wenn {{< katex "A^H=A^{-1}" >}} (und damit {{< katex "A^H\cdot A = I" >}}).
+
+Reelle symmetrische Matrizen und komplexe hermitesche Matrizen haben viele Eigenschaften gemeinsam.
 
 # Determinante
 
@@ -114,8 +123,6 @@ Analog funktioniert die Laplace-Entwicklung nach der j-ten Spalte.
 
 Die Determinante hat die folgenden Eigenschaften:
 * {{< katex "\text{det}(I)=1" >}} (Identitätsmatrix)
-* {{< katex "\text{det}(A)=\text{det}(A^T)" >}}
-* {{< katex "\text{det}(A^{-1})=(\text{det}(A))^{-1}" >}}
 * {{< katex "\text{det}(cA)=c^n\text{det}(A)" >}} (Skalarfaktor)
 * {{< katex "\text{det}(AB)=\text{det}(A)\,\text{det}(B)" >}} für Matrizen über Integritätsbereichen
 * {{< katex "\text{det}(A)=0" >}} genau dann, wenn {{< katex "\text{rang}(A) < n" >}}
@@ -157,7 +164,13 @@ D.h. {{< katex "Au" >}} bzw. {{< katex "f(u)" >}} hat die gleiche Richtung wie {
 * Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.
 * Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.
 * Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
-  Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchtsens {{< katex "n" >}} Eigenwerte haben.
+  Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchstens {{< katex "n" >}} Eigenwerte haben.
+
+Und:
+
+* {{< katex "A" >}} und {{< katex "A^T" >}} haben möglicherweise unterschiedliche Eigenwerte.
+* {{< katex "A" >}} und {{< katex "A^{-1}" >}}: Eigenwerte sind invertiert.
+
 
 # Normalformen
 
