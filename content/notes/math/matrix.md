@@ -31,7 +31,12 @@ Eine Matrix ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, 
 
 ## Elementarmatrizen
 
-Elementare Zeilenumformungen:
+Die Identitätsmatrix {{< katex "I_n" >}} ist die {{< katex "n\times n">}}-Matrix, die in der Hauptdiagonale den Wert 1 hat und sonst 0. Zum Beispiel:
+{{< katex display="I_1 = (1) \quad I_2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \quad I_3 = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}" >}}
+
+Elementarmatrizen unterscheiden sich von der Identitätsmatrix nur durch die Anwendung einer
+elementaren Zeilenumformung:
+
 * {{< katex "P_{ij}" >}} Vertauschen der Zeilen {{< katex "i" >}} und {{< katex "j" >}}
 * {{< katex "D_{i}(c)" >}} Multiplikation der Zeile {{< katex "i" >}} mit einem Skalar {{< katex "c" >}}
 * {{< katex "T_{ij}(c)" >}} Addition des {{< katex "c" >}}-fachen der Zeile {{< katex "j" >}} zu einer anderen (nicht derselben!) Zeile {{< katex "i" >}}
@@ -151,26 +156,33 @@ Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< 
 
 # Das charakteristische Polynom einer Matrix
 
+Für Matrixen {{< katex "A\in M_{nn}(\mathbb{K})">}} berecht man das charakteristische Polynom wie folgt:
+
 {{< katex display="\Chi_A=\text{det}(xI_n-A)" >}}
+
+Die Nullstellen des charakteristischen Polynoms sind die Eigenwerte der Matrix.
 
 # Eigenvektoren und Eigenwerte
 
-Die **Eigenvektoren** {{< katex "u" >}} einer Matrix {{< katex "A" >}} bzw. eines Endomorphismus {{< katex "f" >}} sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige **Eigenwert** {{< katex "\lambda" >}} ist der Faktor der Stauchung oder Streckung (und entspricht dann z.B. eine Rotationsachse im 3D).
+Die **Eigenvektoren** {{< katex "v" >}} einer Matrix {{< katex "A" >}} bzw. eines Endomorphismus {{< katex "f" >}} sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige **Eigenwert** {{< katex "\lambda" >}} ist der Faktor der Stauchung oder Streckung (und entspricht dann z.B. eine Rotationsachse im 3D).
 Formal:
-{{< katex display="Au = \lambda u \quad\text{bzw.}\quad f(u) = \lambda u" >}}
+{{< katex display="Av = \lambda v \quad\text{bzw.}\quad f(v) = \lambda v" >}}
 
-D.h. {{< katex "Au" >}} bzw. {{< katex "f(u)" >}} hat die gleiche Richtung wie {{< katex "u" >}}, nur um den Faktor {{< katex "\lambda" >}} gestaucht oder gestreckt.
+D.h. {{< katex "Av" >}} bzw. {{< katex "f(v)" >}} hat die gleiche Richtung wie {{< katex "v" >}}, nur um den Faktor {{< katex "\lambda" >}} gestaucht oder gestreckt.
 
 * Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.
 * Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.
+* {{< katex "A" >}} und {{< katex "A^T" >}} haben möglicherweise unterschiedliche Eigenwerte.
 * Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
   Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchstens {{< katex "n" >}} Eigenwerte haben.
 
-Und:
+**Berechnung:**
 
-* {{< katex "A" >}} und {{< katex "A^T" >}} haben möglicherweise unterschiedliche Eigenwerte.
-* {{< katex "A" >}} und {{< katex "A^{-1}" >}}: Eigenwerte sind invertiert.
-
+1. Um die Eigenwerte {{< katex "\lambda">}} zu bestimmen, berechnet man die Nullstellen des charakteristischen Polynoms.
+2. Die Gleichung {{< katex "Av = \lambda v">}} lässt sich äquivalent umformen zu:
+   {{< katex display="(A-\lambda E_n)v=0" >}}
+   Setzt man die Eigenwerte {{< katex "\lambda">}} in diese Gleichung ein, erhält man ein Gleichungssystem, über das sich jeweils die zugehörigen Eigenvektoren {{< katex "v" >}} bestimmen lassen. (Die müssen nicht eindeutig sein.)
+3. Überprüfen kann man die gefundenen Eigenvektoren dann durch Einsetzen in {{< katex "Av = \lambda v">}}.
 
 # Normalformen
 
