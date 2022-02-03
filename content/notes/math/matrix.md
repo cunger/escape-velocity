@@ -156,13 +156,13 @@ Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< 
 
 # Das charakteristische Polynom einer Matrix
 
-Für Matrixen {{< katex "A\in M_{nn}(\mathbb{K})">}} berecht man das charakteristische Polynom wie folgt:
+Für Matrizen {{< katex "A\in M_{nn}(\mathbb{K})">}} berecht man das charakteristische Polynom wie folgt:
 
 {{< katex display="\Chi_A=\text{det}(xI_n-A)" >}}
 
 Die Nullstellen des charakteristischen Polynoms sind die Eigenwerte der Matrix.
 
-# Eigenvektoren und Eigenwerte
+# Eigenwerte, Eigenvektoren, Eigenraum
 
 Die **Eigenvektoren** {{< katex "v" >}} einer Matrix {{< katex "A" >}} bzw. eines Endomorphismus {{< katex "f" >}} sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige **Eigenwert** {{< katex "\lambda" >}} ist der Faktor der Stauchung oder Streckung (und entspricht dann z.B. eine Rotationsachse im 3D).
 Formal:
@@ -175,6 +175,8 @@ D.h. {{< katex "Av" >}} bzw. {{< katex "f(v)" >}} hat die gleiche Richtung wie {
 * {{< katex "A" >}} und {{< katex "A^T" >}} haben möglicherweise unterschiedliche Eigenwerte.
 * Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
   Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchstens {{< katex "n" >}} Eigenwerte haben.
+  Wie oft eine Nullstelle vorkommt, nennt man die algebraische Vielfachheit des Eigenwerts.
+* Die Eigenvektoren zu einem Eigenwert spannen einen Unterraum auf, den Eigenraum {{< katex "\text{kern}(A-\lambda I_n)" >}}. Die Dimension des Eigenraums ist die geometrische Vielfachheit des Eigenwerts.
 
 **Berechnung:**
 
@@ -196,17 +198,13 @@ Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare 
 * die gleiche Determinante,
 * das gleiche charakteristische Polynom und Minimalpolynom,
 * die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),
-* die gleiche Jordansche Normalform.
+* die gleiche Jordan-Normalform.
 
 Matrizen lassen sich auch nach **Kongruenz** in Äquivalenzklassen (sogenannte **Kongruenzklassen**) einteilen:
 Zwei Matrizen {{< katex "A,B" >}} sind **kongruent**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass
 {{< katex display="A=S^TBS" >}}
 
 Da in der Regel {{< katex "S^T\neq S^{-1}">}}, sind kongruente Matrizen in der Regel nicht ähnlich.
-
-## Diagonalisierbarkeit
-
-Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)
 
 ## Treppennormalform
 
@@ -215,12 +213,40 @@ Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist.
 * Stufung: Jede Pivot-Position ist rechts von der Pivot-Position der Zeile darüber.
 * Daraus folgt, dass alle Einträge unter den Pivot-Positionen 0 sind. In der reduzierten Treppennormalform sind auch alle Einträge über den Pivot-Positionen 0.
 
-Beispiele:
-{{< katex display="\left(\begin{matrix} 1 & \ast & \ast & \ast \\ 0 & 0 & 1 & \ast \\ 0 & 0 & 0 & 1 \end{matrix}\right) \qquad \left(\begin{matrix} 1 & \ast & \ast \\ 0 & 1 & \ast \\ 0 & 0 & 0 \end{matrix}\right) \qquad \left(\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{matrix}\right)">}}
-
 Die Treppennormalform erleichtert das Lösen eines linearen Gleichungssystems.
 
+**Beispiele:**
+{{< katex display="\left(\begin{matrix} 1 & \ast & \ast & \ast \\ 0 & 0 & 1 & \ast \\ 0 & 0 & 0 & 1 \end{matrix}\right) \qquad \left(\begin{matrix} 1 & \ast & \ast \\ 0 & 1 & \ast \\ 0 & 0 & 0 \end{matrix}\right) \qquad \left(\begin{matrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{matrix}\right)">}}
+
+**Berechnung:** Gaußsches Eliminationsverfahren
+
+## Diagonalisierbarkeit
+
+Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)
+
 ## Jordan-Normalform
+
+Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen.
+
+Eine Jordan-Matrix enthälten auf der Diagonalen Jordan-Blöcke und sonst 0. Ein Jordan-Block ist eine quadratische Matrix mit einem Eigenwert auf der Diagonalen, 1 auf einer der Nebendiagonalen und sonst 0. Zum Beispiel:
+
+* {{< katex "\,\,(\lambda_1)" >}}
+* {{< katex "\,\begin{pmatrix} \lambda_2 & 1 \\ 0 & \lambda_2 \end{pmatrix}\text{ oder }\begin{pmatrix} \lambda_2 & 0 \\ 1 & \lambda_2 \end{pmatrix}" >}}
+* {{< katex "\begin{pmatrix} \lambda_3 & 1 & 0 \\ 0 & \lambda_3 & 1 \\ 0 & 0 & \lambda_3 \end{pmatrix}\text{ oder }\begin{pmatrix} \lambda_3 & 0 & 0 \\ 1 & \lambda_3 & 0 \\ 0 & 1 & \lambda_3 \end{pmatrix}" >}}
+
+Die Reihenfolge der Blöcke in einer Jordan-Matrix ist egal.
+
+**Berechnung:** Für eine Matrix {{< katex "A\in M_{nn}(\mathbb{K})">}}.
+
+1. Eigenwerte der Matrix berechnen, d.h. die Nullstellen des charakteristischen Polynoms {{< katex "\Chi_A=\text{det}(xI_n-A)" >}} bestimmen, zusammen mit ihrer algebraischen Vielfachheit. (Wenn {{< katex "\Chi_A" >}} nicht in Linearfaktoren über {{< katex "\mathbb{K}">}} zerfällt, dann hat die Matrix keine Jordan-Normalform in {{< katex "\mathbb{K}">}}.)
+2. Für jeden Eigenwert {{< katex "\lambda">}}:
+    * Wenn die algebraische Vielfachheit 1 ist, dann gibt es einen Jordan-Block der Größe 1, also {{< katex "(\lambda)">}}.
+    * Ansonsten berechne die Haupträume {{< katex "H_k = \text{kern}((A-\lambda I_n)^k)">}} zu {{< katex "\lambda">}}, wobei
+      {{< katex display="\{0\} \subset H_1 \subset H_2 \subset \ldots">}}
+      bis {{< katex "\text{dim}(H_k)">}} die algebraische Vielfachheit von {{< katex "\lambda">}} ist. Dann wissen wir:
+      Es gibt {{< katex "\text{dim}(H_1)">}} viele Jordan-Blöcke und
+      es gibt {{< katex "\text{dim}(H_{i+1}) - \text{dim}(H_i)">}} viele Jordan-Blöcke von mindestens der Größe {{< katex "i">}}.
+3. Aus diesen Informationen können wir die Jordan-Normalform bauen.
 
 # Matrizen als lineare Transformationen
 
