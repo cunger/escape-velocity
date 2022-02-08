@@ -164,33 +164,43 @@ Die Nullstellen des charakteristischen Polynoms sind die Eigenwerte der Matrix.
 
 # Eigenwerte, Eigenvektoren, Eigenraum
 
-Die **Eigenvektoren** {{< katex "v" >}} einer Matrix {{< katex "A" >}} bzw. eines Endomorphismus {{< katex "f" >}} sind alle Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden (die Richtung bleibt gleich). Der dazugehörige **Eigenwert** {{< katex "\lambda" >}} ist der Faktor der Stauchung oder Streckung (und entspricht dann z.B. eine Rotationsachse im 3D).
+Die **Eigenvektoren** {{< katex "v" >}} eines Endomorphismus {{< katex "f" >}} eines Vektorraums {{< katex "V" >}} bzw. seiner Matrixdarstellung {{< katex "A" >}} sind alle (vom Nullvektor verschiedene) Vektoren, die durch die Transformation nur gestaucht oder gestreckt werden, deren Richtung aber gleich bleibt. Der dazugehörige **Eigenwert** {{< katex "\lambda" >}} ist der Faktor der Stauchung oder Streckung.
 Formal:
-{{< katex display="Av = \lambda v \quad\text{bzw.}\quad f(v) = \lambda v" >}}
+{{< katex display="\quad f(v) = \lambda v \quad\text{bzw.}\quad Av = \lambda v" >}}
 
-D.h. {{< katex "Av" >}} bzw. {{< katex "f(v)" >}} hat die gleiche Richtung wie {{< katex "v" >}}, nur um den Faktor {{< katex "\lambda" >}} gestaucht oder gestreckt.
+D.h. {{< katex "f(v)" >}} bzw. {{< katex "Av" >}} hat die gleiche Richtung wie {{< katex "v" >}}, nur um den Faktor {{< katex "\lambda" >}} gestaucht oder gestreckt.
 
-* Eine Matrix muss keine Eigenvektoren besizten - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.
-* Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.
+* Eine Matrix muss keine Eigenvektoren besitzen - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum (und {{< katex "\lambda" >}} entspricht dann der Rotationsachse).
 * {{< katex "A" >}} und {{< katex "A^T" >}} haben möglicherweise unterschiedliche Eigenwerte.
-* Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
-  Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchstens {{< katex "n" >}} Eigenwerte haben.
-  Wie oft eine Nullstelle vorkommt, nennt man die algebraische Vielfachheit des Eigenwerts.
-* Die Eigenvektoren zu einem Eigenwert spannen einen Unterraum auf, den Eigenraum {{< katex "\text{kern}(A-\lambda I_n)" >}}. Die Dimension des Eigenraums ist die geometrische Vielfachheit des Eigenwerts.
+* Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.
+
+Eigenwerte sind die Nullstellen des charakteristischen Polynoms.
+Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchstens {{< katex "n" >}} Eigenwerte haben.
+Wie oft eine Nullstelle vorkommt, nennt man die **algebraische Vielfachheit** des Eigenwerts.
+
+Die Eigenvektoren zu einem Eigenwert spannen zusammen mit dem Nullvektor einen Unterraum auf, den **Eigenraum**:
+{{< katex display="\text{Eigenraum}(f,\lambda) = \{ v\in V \,|\, f(v) = \lambda v \} = \text{kern}(A-\lambda I_n)" >}}
+Die Dimension des Eigenraums ist die **geometrische Vielfachheit** des Eigenwerts.
+
+Stimmen algebraische und geometrische Vielfachheit der Eigenwerte einer Matrix überein, ist die Matrix diagonalisierbar.
 
 **Berechnung:**
 
 1. Um die Eigenwerte {{< katex "\lambda">}} zu bestimmen, berechnet man die Nullstellen des charakteristischen Polynoms.
 2. Die Gleichung {{< katex "Av = \lambda v">}} lässt sich äquivalent umformen zu:
-   {{< katex display="(A-\lambda E_n)v=0" >}}
+   {{< katex display="(A-\lambda I_n)v=0" >}}
    Setzt man die Eigenwerte {{< katex "\lambda">}} in diese Gleichung ein, erhält man ein Gleichungssystem, über das sich jeweils die zugehörigen Eigenvektoren {{< katex "v" >}} bestimmen lassen. (Die müssen nicht eindeutig sein.)
 3. Überprüfen kann man die gefundenen Eigenvektoren dann durch Einsetzen in {{< katex "Av = \lambda v">}}.
 
 # Normalformen
 
-Matrizen lassen sich nach **Ähnlichkeit** in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen. Technisch heißt das:
+Matrizen lassen sich nach **Ähnlichkeit** in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen.
+Technisch heißt das:
 
-Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass: {{< katex display="A=S^{-1}BS" >}} Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch).
+Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass:
+{{< katex display="A=S^{-1}BS" >}}
+Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch).
+Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.
 
 Ähnliche Matrizen haben also:
 
@@ -244,8 +254,8 @@ Die Reihenfolge der Blöcke in einer Jordan-Matrix ist egal.
     * Ansonsten berechne die Haupträume {{< katex "H_k = \text{kern}((A-\lambda I_n)^k)">}} zu {{< katex "\lambda">}}, wobei
       {{< katex display="\{0\} \subset H_1 \subset H_2 \subset \ldots">}}
       bis {{< katex "\text{dim}(H_k)">}} die algebraische Vielfachheit von {{< katex "\lambda">}} ist. Dann wissen wir:
-      Es gibt {{< katex "\text{dim}(H_1)">}} viele Jordan-Blöcke und
-      es gibt {{< katex "\text{dim}(H_{i+1}) - \text{dim}(H_i)">}} viele Jordan-Blöcke von mindestens der Größe {{< katex "i">}}.
+      Es gibt {{< katex "\text{dim}(H_1)">}} viele Jordan-Blöcke für {{< katex "(\lambda)">}} und
+      davon sind {{< katex "\text{dim}(H_{i+1}) - \text{dim}(H_i)">}} viele Jordan-Blöcke von mindestens der Größe {{< katex "i">}}.
 3. Aus diesen Informationen können wir die Jordan-Normalform bauen.
 
 # Matrizen als lineare Transformationen

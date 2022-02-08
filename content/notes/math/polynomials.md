@@ -85,6 +85,14 @@ function gcd(p1, p2)
 end
 ```
 
+Ein Polynom ist **irreduzibel**, wenn es sich nicht als Produkt zweier Polynome schreiben lässt.
+Für Polynome über Körpern gilt:
+
+* Polynome vom Grad 1 sind irreduzibel.  
+* In einem algebraisch abgeschlossenen Körper (z.B. {{< katex "\mathbb{C}">}}) haben alle irreduziblen Polynome Grad 1.
+* In {{< katex "\mathbb{R}">}} haben alle irreduziblen Polynome Grad 1 oder 2. (Weil der algebraische Abschluss {{< katex "\mathbb{C}">}} den Grad 2 über {{< katex "\mathbb{R}">}} hat.)
+* In anderen Körpern sind Polynome vom Grad 2 oder 3 dann irreduzibel, wenn sie keine Nullstellen haben.
+
 ## Komposition
 
 # Nullstellen und Faktorisierung
