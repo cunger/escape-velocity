@@ -1,11 +1,11 @@
 ---
 title: "Rust"
-summary: "Coming soon."
+summary: "Early draft. Work in progress."
 date: 2022-01-17
-weight: 7
+weight: 8
 math: true
 toc: true
-draft: true
+draft: false
 ---
 
 ### Comments

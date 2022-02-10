@@ -1,5 +1,5 @@
 ---
-title: "Interactions with matter"
+title: "Interactions of radiation with matter"
 summary: "Draft."
 date: 2020-08-05
 weight: 3

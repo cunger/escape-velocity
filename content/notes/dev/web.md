@@ -1,6 +1,6 @@
 ---
 title: "Web Basics"
-summary: "TCP/IP. HTTP. REST."
+summary: "TCP/IP, HTTP, REST, and security."
 date: 2020-01-10
 weight: 3
 math: false

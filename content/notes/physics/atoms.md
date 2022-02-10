@@ -2,7 +2,7 @@
 title: "Atoms"
 summary: "What atoms are composed of, their energy, charge, mass, and stability."
 date: 2019-11-04
-weight: 1
+weight: 5
 math: true
 toc: true
 ---
@@ -18,17 +18,61 @@ Atoms consist of a nucleus of protons ({{< katex "{}^1_1p" >}}) and neutrons ({{
 * {{< katex "A = Z + N" >}} the mass number (with {{< katex "N" >}} the number of neutrons)
 * {{< katex "C" >}} the overall charge of the atom
 
-For example:
-* {{< katex "{}^1_1H" >}} is a neutral Hydrogen atom consisting of 1 proton and 1 electron.
-* {{< katex "{}^4_2He^{+}" >}} is a Helium atom with 2 protons, 2 neutrons, and 1 electron.
-
 Elements are determined by their number of protons.
 
-* A **neutral atom** has the same number of protons and electrons, thus has an overall net charge of 0.
-* An **ion** has a different number of electrons, and thus has a positive or negative net charge. Ionizing radiation is anything that has enough energy to eject an electron from an atom, thus forming an ion.
-* An **isotope** has a different number of neutrons, and thus has a different mass.
+A **neutral atom** has the same number of protons and electrons, thus has an overall net charge of 0.
+
+* {{< katex "{}^1_1H" >}} is a neutral Hydrogen atom consisting of 1 proton and 1 electron.
+* {{< katex "{}^4_2He" >}} is a Helium atom with 2 protons, 2 neutrons, and 2 electrons.
+
+An **ion** has a different number of electrons, and thus has a positive or negative net charge. Ionizing radiation is anything that has enough energy to eject an electron from an atom, thus forming an ion.
+
+* {{< katex "{}^4_2He^{+}" >}} is a Helium ion with 2 protons, 2 neutrons, and 3 electrons.
+
+An **isotope** of an element has a different number of neutrons, and thus has a different mass.
+
+* {{< katex "{}^2_1H" >}} is a Hydrogen isotope consisting of 1 proton, 1 neutron, and 1 electron (deuterium).
+* {{< katex "{}^3_1H" >}} is a Hydrogen isotope consisting of 1 proton, 2 neutrons, and 1 electron (tritium).
+
+## Nucleus
 
 Nuclei are quantum mechanical systems, thus can be found in different energy states. {{< katex "{}^A_Z X" >}} denotes the _ground state_, {{< katex "{}^A_Z X^\ast" >}} denotes an _excited state_ (with more energy). Long-lived excited states are called _isomeric states_.
+
+## Electrons
+
+Electrons are organized in shells (= energy levels). Each shell can have several subshells in varying orientation. These oriented subshells are call orbitals, and each orbital can hold two electrons.
+
+| subshell | orbitals | max. electrons |
+|----------|----------|----------------|
+| s | 1 | 2 |
+| p | 3 | 6 |
+| d | 5 | 10 |
+| f | 7 | 14 |
+
+Here is the orbitals a shell can have:
+
+| shell | orbitals | max. orbitals | max. electrons |
+|-------|----------|---------------|----------------|
+| 1n | 1s | 1 (1 s) | 2 |
+| 2n | 2s 2p | 4 (1 s + 3 p) | 8 |
+| 3n | 3s 3p 3d | 9 (1 s + 3 p + 5 d) | 18 |
+| 4n | 4s 4p 4d 4f | 16 (1 s + 3 p + 5 d + 7 f) | 32 |
+
+Atoms tend towards their lowest energy state, so electrons first fill the innermost shell. For filling order, cf. the Aufbau principle.
+
+The electrons in the outermost shell (the **valence electrons**) participate in chemical reactions. Thus they determine an atom's reactivity.
+Noble gases are the group of elements with a fully filled outer shell, so they are not reactive at all.
+
+Example electron configurations:
+
+* Hydrogen: {{< katex "1s^1" >}}
+* Helium: {{< katex "1s^2 = [\text{He}]" >}}
+* Lithium: {{< katex "[\text{He}]\,2s^1" >}}
+* Carbon: {{< katex "[\text{He}]\, 2s^2\, 2p^2" >}}
+* Oxygen: {{< katex "[\text{He}]\, 2s^2\, 2p^4" >}}
+* Neon: {{< katex "[\text{He}]\, 2s^2\, 2p^6 = [\text{Ne}]" >}}
+* Argon: {{< katex "[\text{Ne}]\, 3s^2\, 3p^6 = [\text{Ar}]" >}}
+* Calcium: {{< katex "[\text{Ar}]\, 4s^2" >}}
 
 # Electrical charge
 

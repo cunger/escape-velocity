@@ -2,7 +2,7 @@
 title: "Electromagnetic radiation"
 summary: "Making waves."
 date: 2019-11-05
-weight: 6
+weight: 3
 math: true
 toc: true
 ---

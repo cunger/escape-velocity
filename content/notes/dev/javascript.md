@@ -1,6 +1,6 @@
 ---
 title: "JavaScript"
-summary: "Functions. Prototypes. Promises. Etc."
+summary: "Functions, prototypes, promises, etc."
 date: 2020-01-10
 weight: 6
 math: false

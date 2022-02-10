@@ -2,7 +2,7 @@
 title: "CSS"
 summary: "Box model, selectors, positioning."
 date: 2020-01-10
-weight: 10
+weight: 7
 math: false
 toc: true
 ---

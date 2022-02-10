@@ -3,7 +3,7 @@ title: "Hi, I'm Christina."
 date: 2019-11-04
 ---
 
-I’m a software engineer and aspiring mathematician, with a strong interest in nuclear technology and radiation protection.
+I’m a software engineer and aspiring mathematician, with a strong interest in nuclear technology and carbon removal.
 
 ---
 

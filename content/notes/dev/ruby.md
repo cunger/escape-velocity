@@ -1,6 +1,6 @@
 ---
 title: "Ruby"
-summary: "Objects. Closures. Etc."
+summary: "\"Finding out what you're called and repeating your name.\""
 date: 2020-01-10
 weight: 5
 math: false

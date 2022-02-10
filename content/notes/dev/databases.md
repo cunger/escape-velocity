@@ -1,6 +1,6 @@
 ---
 title: "Databases"
-summary: "SQL. PostgreSQL."
+summary: "Relational model and SQL."
 date: 2020-01-10
 weight: 4
 math: false
