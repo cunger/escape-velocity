@@ -67,7 +67,7 @@ Transponierte | Adjungierte | Inverse
 
 Eine reelle Matrix heißt
 
-* **symmetrisch**, wenn {{< katex "A^T=A" >}}, und schiefsymmetrisch, wenn {{< katex "A^T=-A" >}}
+* **symmetrisch**, wenn {{< katex "A^T=A" >}} (bzw. wenn {{< katex "a_{ij}=a_{ji}">}} für alle Einträge), und schiefsymmetrisch, wenn {{< katex "A^T=-A" >}}
 * **orthogonal**, wenn {{< katex "A^T=A^{-1}" >}} (und damit {{< katex "A^T\cdot A = I" >}}).
 
 Eine komplexe Matrix heißt
@@ -150,7 +150,10 @@ Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden 
 * {{< katex "\text{rang}(A)=n" >}}
 * Die Spaltenvektoren von {{< katex "A" >}} sind linear unabhängig.
 * {{< katex "A" >}} kann als endliches Produkt von Elementarmatrizen ausgedrückt werden.
-* {{< katex "\text{det}(A)\neq 0" >}} (d.h. wenn {{< katex "\text{det}(A)" >}} im Körper oder Ring, über dem die Matriz definiert ist, invertierbar ist)
+* {{< katex "\text{det}(A)\neq 0" >}} (d.h. wenn {{< katex "\text{det}(A)" >}} im Körper oder Ring, über dem die Matrix definiert ist, invertierbar ist)
+* 0 ist kein Eigenvektor von {{< katex "A" >}} bzw. {{< katex "\text{ker}(A)\neq\{0\}" >}}.
+
+**Berechnung der Inversen:**
 
 Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
 
@@ -179,10 +182,8 @@ Eine Matrix {{< katex "A\in M_{nn}" >}} kann also höchstens {{< katex "n" >}} E
 Wie oft eine Nullstelle vorkommt, nennt man die **algebraische Vielfachheit** des Eigenwerts.
 
 Die Eigenvektoren zu einem Eigenwert spannen zusammen mit dem Nullvektor einen Unterraum auf, den **Eigenraum**:
-{{< katex display="\text{Eigenraum}(f,\lambda) = \{ v\in V \,|\, f(v) = \lambda v \} = \text{kern}(A-\lambda I_n)" >}}
+{{< katex display="\begin{aligned}\text{Eigenraum}(f,\lambda) &= \{0\}\cup\{ v\in V \,|\, v\text{ ist ein Eigenvektor von }f \} \\ &= \{ v\in V \,|\, f(v) = \lambda v \}\\ &= \text{ker}(A-\lambda I_n) \end{aligned}" >}}
 Die Dimension des Eigenraums ist die **geometrische Vielfachheit** des Eigenwerts.
-
-Stimmen algebraische und geometrische Vielfachheit der Eigenwerte einer Matrix überein, ist die Matrix diagonalisierbar.
 
 **Berechnung:**
 
@@ -199,10 +200,10 @@ Technisch heißt das:
 
 Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass:
 {{< katex display="A=S^{-1}BS" >}}
-Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch).
+Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch). D.h. {{< katex "A" >}} und {{< katex "B" >}} stellen die gleiche Transformation dar, nur in unterschiedlichen Koordinatensystemen.
 Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.
 
-Ähnliche Matrizen haben also:
+Ähnliche Matrizen haben:
 
 * den gleichen Rang,
 * die gleiche Determinante,
@@ -232,11 +233,16 @@ Die Treppennormalform erleichtert das Lösen eines linearen Gleichungssystems.
 
 ## Diagonalisierbarkeit
 
-Eine Matrix ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist. (Die Eigenwerte der Matrix sind dann die Diagonalelemente und alle die Eigenvektoren entsprechen den Basisvektoren.)
+Eine Matrix {{< katex "A">}} ist diagonalisierbar, wenn sie zu einer Diagonalmatrix ähnlich ist (d.h. zu einer Matrix, in der alle Einträge, die nicht Diagonalelemente sind, 0 sind), d.h. wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass {{< katex "S^{-1}AS" >}} eine Diagonalmatrix ist. Die Eigenwerte der Matrix sind dann die Diagonalelemente von {{< katex "S^{-1}AS" >}} und {{< katex "S" >}} hat als Spalten die zugehörigen Eigenvektoren.
+
+Eine Matrix auf jeden Fall diagonalisierbar, wenn
+* sie symmetrisch ist;
+* sie die maximale Anzahl Eigenwerte hat (= Anzahl der Dimensionen des Vektorraums), denn dann sind die zugehörigen Eigenvektoren linear unabhängig und es gibt eine Basis aus Eigenvektoren, d.h. der Vektorraum ist die Summe der Eigenräume;
+* das charakteristische Polynom in Linearfaktoren zerfällt und die algebraische und geometrische Vielfachheit der Eigenwerte übereinstimmen.
 
 ## Jordan-Normalform
 
-Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen.
+Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen. Das kann man mit der Jordan-Normalform, in die jede Matrix überführt werden kann.
 
 Eine Jordan-Matrix enthälten auf der Diagonalen Jordan-Blöcke und sonst 0. Ein Jordan-Block ist eine quadratische Matrix mit einem Eigenwert auf der Diagonalen, 1 auf einer der Nebendiagonalen und sonst 0. Zum Beispiel:
 
@@ -251,7 +257,7 @@ Die Reihenfolge der Blöcke in einer Jordan-Matrix ist egal.
 1. Eigenwerte der Matrix berechnen, d.h. die Nullstellen des charakteristischen Polynoms {{< katex "\Chi_A=\text{det}(xI_n-A)" >}} bestimmen, zusammen mit ihrer algebraischen Vielfachheit. (Wenn {{< katex "\Chi_A" >}} nicht in Linearfaktoren über {{< katex "\mathbb{K}">}} zerfällt, dann hat die Matrix keine Jordan-Normalform in {{< katex "\mathbb{K}">}}.)
 2. Für jeden Eigenwert {{< katex "\lambda">}}:
     * Wenn die algebraische Vielfachheit 1 ist, dann gibt es einen Jordan-Block der Größe 1, also {{< katex "(\lambda)">}}.
-    * Ansonsten berechne die Haupträume {{< katex "H_k = \text{kern}((A-\lambda I_n)^k)">}} zu {{< katex "\lambda">}}, wobei
+    * Ansonsten berechne die Haupträume {{< katex "H_k = \text{ker}((A-\lambda I_n)^k)">}} zu {{< katex "\lambda">}}, wobei
       {{< katex display="\{0\} \subset H_1 \subset H_2 \subset \ldots">}}
       bis {{< katex "\text{dim}(H_k)">}} die algebraische Vielfachheit von {{< katex "\lambda">}} ist. Dann wissen wir:
       Es gibt {{< katex "\text{dim}(H_1)">}} viele Jordan-Blöcke für {{< katex "(\lambda)">}} und
@@ -260,7 +266,7 @@ Die Reihenfolge der Blöcke in einer Jordan-Matrix ist egal.
 
 # Matrizen als lineare Transformationen
 
-Eine Matrix {{< katex "A\in M_{mn}(\mathbb{K})" >}} kann eine lineare Abbildung zwischen endlichen Vektorräumen ({{< katex "\mathbb{K}^n\to\mathbb{K}^m" >}}) darstellen. Sie bildet dann die Vektoren {{< katex "x\in\mathbb{K}^n" >}} auf die Vektoren {{< katex "Ax\in\mathbb{K}^m" >}} ab. (Dabei können diese Vektoren zum Beispiel auch die Koordinatenvektoren beliebiger Vektoren aus {{< katex "\mathbb{K}" >}} sein.)
+Eine Matrix {{< katex "A\in M_{mn}(\mathbb{K})" >}} kann eine lineare Abbildung {{< katex "f:\mathbb{K}^n\to\mathbb{K}^m" >}} zwischen endlichen Vektorräumen darstellen. Sie bildet dann die Vektoren {{< katex "x\in\mathbb{K}^n" >}} auf die Vektoren {{< katex "Ax\in\mathbb{K}^m" >}} ab, d.h. {{< katex "f(x)=Ax" >}}. (Dabei können diese Vektoren zum Beispiel auch die Koordinatenvektoren beliebiger Vektoren aus {{< katex "\mathbb{K}" >}} sein.)
 
 Linear ist eine solche Abbildung, weil die Matrizenmultiplikation sowohl Addition als auch Skalarmultiplikation respektiert:
 * {{< katex "A(x+y) = Ax + Ay" >}}
@@ -297,7 +303,7 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
   * Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.
   * Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.
 
-Jede Matrix ist Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen (TODO)) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen (TODO)).
+Jede Matrix ist die Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen).
 
 # Matrizen als Gleichungssysteme
 

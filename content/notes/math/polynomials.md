@@ -122,6 +122,9 @@ Ein Körper {{< katex "\mathbb{K}" >}} heißt **algebraisch abgeschlossen**, wen
 
 ({{< katex "\mathbb{N},\mathbb{Z}, \mathbb{Q},\mathbb{R}" >}} sind alle nicht algebraisch abgeschlossen. Z.B. hat das Polynom {{< katex "x^2 + 1" >}} in keinem dieser Körper eine Nullstelle, weil {{< katex "x^2 + 1 = 0" >}} bedeutet, dass {{< katex "x = \sqrt{-1}" >}}.)
 
+**Mitternachtsformel**: Ein Polynom {{< katex "ax^2 + bx + c">}} hat folgende Nullstellen:
+{{< katex display="x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}">}}
+
 # Approximation mit Polynomen
 
 ## Taylorpolynome

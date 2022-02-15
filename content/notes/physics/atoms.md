@@ -60,9 +60,6 @@ Here is the orbitals a shell can have:
 
 Atoms tend towards their lowest energy state, so electrons first fill the innermost shell. For filling order, cf. the Aufbau principle.
 
-The electrons in the outermost shell (the **valence electrons**) participate in chemical reactions. Thus they determine an atom's reactivity.
-Noble gases are the group of elements with a fully filled outer shell, so they are not reactive at all.
-
 Example electron configurations:
 
 * Hydrogen: {{< katex "1s^1" >}}
@@ -73,6 +70,8 @@ Example electron configurations:
 * Neon: {{< katex "[\text{He}]\, 2s^2\, 2p^6 = [\text{Ne}]" >}}
 * Argon: {{< katex "[\text{Ne}]\, 3s^2\, 3p^6 = [\text{Ar}]" >}}
 * Calcium: {{< katex "[\text{Ar}]\, 4s^2" >}}
+
+Atoms are energetically most stable when they have 8 electrons in the outermost shell (**valence electrons**), so they strive to form chemical bonds if they have less (donating, accepting, or sharing electrons with other atoms). It is the valence electrons that participate in chemical reactions, so they determine an atom's reactivity. Inert gases are the group of elements with a fully filled outer shell, so they are not reactive at all.
 
 # Electrical charge
 

@@ -171,9 +171,9 @@ Ein Vektor ist **normalisiert**, wenn er Länge 1 hat. Jeder Vektor {{< katex "v
 
 Zwei Vektoren {{< katex "v,w" >}} sind **orthogonal**, wenn {{< katex "\langle v,w\rangle = 0" >}}.
 
-### Orthonormalbasen
+### Orthonormalbasen (Gram-Schmidt-Verfahren)
 
-Zu einer beliebigen Basis {{< katex "\{v_1,v_2,v_3,\ldots,v_n\}" >}} lässt sich eine orthonormale Basis {{< katex "\{w_1,w_2,w_3,\ldots,w_n\}" >}} konstruieren (Gram-Schmidt-Verfahren), indem man jeden Vektor zu den vorherigen orthogonalisiert und dann normalisiert:
+Zu einer beliebigen Basis {{< katex "\{v_1,v_2,v_3,\ldots,v_n\}" >}} lässt sich eine orthonormale Basis {{< katex "\{w_1,w_2,w_3,\ldots,w_n\}" >}} konstruieren, indem man jeden Vektor zu den vorherigen orthogonalisiert und dann normalisiert:
 
 * {{< katex "w_1=\dfrac{v_1}{\|v_1\|}" >}}
 * {{< katex "w_2'=v_2 - \langle w_1,v_2\rangle w_1" >}}
@@ -216,4 +216,30 @@ und {{< katex "\langle v, \lambda w\rangle = \lambda\langle v,w\rangle" >}}
 
 Zum Beispiel ist das Skalarprodukt eines Vektorraums eine Bilinearform (die zusätzlich symmetrisch und positiv definit ist).
 
-Die Matrixdarstellungen einer Bilinearform bezüglich verschiedener Basen sind immer kongruent.
+Die Matrixdarstellung einer Bilinearform {{< katex "\beta">}} bezüglich einer Basis {{< katex "\mathcal{B}=(v_1,\ldots,v_n)">}} ist:
+{{< katex display="M_\mathcal{B}(\beta)=(\beta(v_i,v_j))">}}
+Die Matrixdarstellungen bezüglich verschiedener Basen sind immer kongruent.
+
+Eine Bilinearform ist genau dann symmetrisch, wenn ihre Matrixdarstellung symmetrisch ist.
+
+Eine Bilinearform ist **alternierend**, falls {{< katex "\langle v,v \rangle = 0">}} für alle {{< katex "v\in V">}}.
+
+Eine Bilinearform ist **schiefsymmetrisch**, falls {{< katex "\langle v,w \rangle = - \langle w,v\rangle">}}.
+
+Diese Begriffe sind meist äquivalent: Jede alternierende Bilinearform ist schiefsymmetrisch. Und umgekehrt auch, wenn {{< katex "1+1\neq 0">}} in  {{< katex "\mathbb{K}">}}.
+
+Eine Bilinearform ist **nicht ausgeartet**, wenn gilt:
+* Ist {{< katex "\langle v,w\rangle = 0">}} für ein festes {{< katex "v">}} und jedes {{< katex "w">}}, so ist {{< katex "v=0">}}.
+* Ist {{< katex "\langle v,w\rangle = 0">}} für jedes {{< katex "v">}} und ein festes {{< katex "w">}}, so ist {{< katex "w=0">}}.
+
+Das ist genau dann der Fall, wenn ihre Matrixdarstellung den größtmöglichen Rang hat.
+
+## Endomorphismen auf Euklidischen Vektorräumen
+
+Zu jedem Endomorphismus {{< katex "f" >}} gibt es genau einen **adjungierten** Endomorphismus {{< katex "f^\text{ad}" >}}, so dass {{< katex "\langle v,f(w)\rangle = \langle f^\text{ad}(v), w\rangle" >}} für alle Vektoren {{< katex "v,w" >}} des Vektorraums.
+
+Ein Endomorphismus {{< katex "f" >}} ist **selbstadjungiert**, wenn {{< katex "f=f^\text{ad}" >}}, d.h. wenn {{< katex "\langle v, f(w)\rangle = \langle f(v),w\rangle" >}} für alle Vektoren {{< katex "v,w" >}}.
+
+Im kanonischen Euklidischen Vektorraum ist die Matrixdarstellung des adjungierten Endomorphismus die transponierte Matrixdarstellung des Endomorphismus: {{< katex "M_\mathcal{B}(f^\text{ad}) = (M_\mathcal{B}(f))^T">}}.
+* Für {{< katex "f(v) = Av" >}} ist {{< katex "f^\text{ad}(v) = A^Tv" >}}.
+* Die Matrixdarstellung eines selbstadjungierten Endomorphismus ist diagonalisierbar.
