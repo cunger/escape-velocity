@@ -1,6 +1,6 @@
 ---
 title: "Algebraische Strukturen"
-summary: "Ringe, Gruppen, Körper, Vektorräume. Und Abbildungen zwischen diesen."
+summary: "Gruppen, Ringe, Körper, Vektorräume und strukturerhaltende Abbildungen."
 date: 2021-09-20
 weight: 1
 math: true
@@ -8,9 +8,9 @@ toc: true
 draft: false
 ---
 
-Algebra untersucht die Eigenschaften mathematischer Objekte unter bestimmten Operationen.
+Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen. Die Algebra untersucht die Eigenschaften dieser mathematischen Objekte unter den gegebenen Operationen.
 
-Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen.
+![Algebraische Strukturen](/images/docs/algebraischestrukturen.png)
 
 # Gruppen
 
@@ -44,10 +44,10 @@ Keine Gruppe:
 
 ## Symmetrische Gruppen
 
-Ein wichtiges Beispiel für nicht-kommutative Gruppen sind die **symmetrischen Gruppe** {{< katex "(S_n, \circ)" >}}:
-die Gruppe aller Permutationen von {{< katex "n" >}} Elementen. Wobei {{< katex "S_n" >}} die Menge der bijektiven Abbildungen auf {{< katex "\{1,\ldots,n\}" >}} ist.
+Ein wichtiges Beispiel für nicht-kommutative Gruppen sind die **symmetrischen Gruppen** {{< katex "(S_n, \circ)" >}}:
+die Gruppe aller Permutationen von {{< katex "n" >}} Objekten. Wobei {{< katex "S_n" >}} die Menge der bijektiven Abbildungen auf {{< katex "\{1,\ldots,n\}" >}} ist und die Verknüpfung {{< katex "\circ" >}} die Hintereinanderausführung zweier solcher Abbildungen. Das neutrale Element ist die Abbildung {{< katex "\text{id}:x\mapsto x">}}.
 
-{{< katex "S_n" >}} ist für {{< katex "n\geq 3" >}} nicht abelsch, d.h. {{< katex "\circ" >}} ist in dem Fall nicht für alle Abbildungen kommutativ.
+{{< katex "S_n" >}} ist für {{< katex "n > 2" >}} nicht abelsch, d.h. {{< katex "\circ" >}} ist in dem Fall nicht für alle Abbildungen kommutativ.
 
 Transpositionen sind Permutationen, die genau zwei Elemente vertauschen.
 Jede Permutation kann als Komposition von Transpositionen dargestellt werden.
@@ -56,23 +56,22 @@ Jede Permutation kann als Komposition von Transpositionen dargestellt werden.
 
 Ein **Ring** {{< katex "(M,+,\cdot)" >}} ist eine abelsche Gruppe {{< katex "(M,+)" >}} mit einer weiteren Verknüpfung {{< katex "\cdot" >}}, die
 * assoziativ ist (d.h. {{< katex "a\cdot(b\cdot c) = (a\cdot b)\cdot c" >}}),
-* distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}), dass beide Verknüpfungen miteinander verträglich sind,
+* distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}, also dass beide Verknüpfungen miteinander verträglich sind),
 * aber nicht kommutativ sein muss, nicht zwangsläufig ein neutrales Element bezüglich {{< katex "\cdot" >}} (d.h. ein Einselement) haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.
+
+Die **Einheitengruppe** {{< katex "R^\times" >}} eines Rings {{< katex "R" >}} mit Einselement ist die Menge aller Elemente, die bezüglich {{< katex "\cdot" >}} invertierbar sind, also {{< katex "\{a\in R\,|\, \text{es existiert ein } b\in R \text{ mit } ab = ba = 1\}" >}}. (Zusammen mit {{< katex "\cdot" >}} bildet diese Menge eine Gruppe.)
 
 Beispiele:
 
-* {{< katex "(\mathbb{Z},+,\cdot)" >}}
-* Die Menge der Abbildungen mit punktweiser Definition von Addition und Multiplikation.
+* {{< katex "(\mathbb{Z},+,\cdot)" >}}, es ist {{< katex "\mathbb{Z}^\times = \{1,-1\}" >}}
+* Die Menge {{< katex "M_{nn}(\mathbb{K})" >}} der {{< katex "n\times n">}}-Matrizen über {{< katex "\mathbb{K}" >}} mit Matrizenaddition und Matrizenmultiplikation (nicht kommutativ). Es ist {{< katex "M_{nn}(\mathbb{K})^\times = \{A\,|\,\text{det}(A)\neq 0\}" >}}.
+* Eine Menge von Abbildungen mit punktweiser Definition von Addition und Multiplikation (siehe z.B. Polynomringe).
 
-Die **Einheitengruppe** {{< katex "R^\times" >}} eines Rings {{< katex "R" >}} mit Einselement ist die Menge aller Elemente, die bezüglich {{< katex "\cdot" >}} invertierbar sind. (Zusammen mit {{< katex "\cdot" >}} bildet diese Menge eine Gruppe.)
-
-In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente {{< katex "a,b\in M" >}} mit {{< katex "ab=0" >}}.
-
-Ein kommutativer Ring mit Einselement, aber ohne Nullteiler, heißt **Integritätsbereich** oder **Integritätsring**. Zum Beispiel: {{< katex "\mathbb{Z}" >}} und jeder Körper.
+In einem Ring kann es sein, dass es Nullteiler gibt, also von 0 verschiedene Elemente {{< katex "a,b\in M" >}} mit {{< katex "ab=0" >}} (z.B. im Ring {{< katex "M_{nn}(\mathbb{K})" >}}). Ein kommutativer Ring mit Einselement, aber ohne Nullteiler, heißt **Integritätsbereich** oder **Integritätsring**. Beispiele sind alle Körper, denn in Körpern gibt es außer der 0 keine Nullteiler.
 
 ## Restklassenringe
 
-Der Restklassenring {{< katex "(\mathbb{Z}/n\mathbb{Z},+,\cdot)" >}} ist die Menge der Reste bei Division durch {{< katex "n" >}}, also {{< katex "\{0,1,\ldots,n-1\}" >}}, wobei die Elemente {{< katex "k" >}} nicht die natürlichen Zahlen sind, sondern Stellvertreter für die jeweilige Restklasse {{< katex "k+n\mathbb{Z}" >}} (z.B. steht {{< katex "1" >}} stellvertretend für alle Zahlen, die bei Division durch {{< katex "n" >}} den Rest 1 lassen). Addition und Multiplikation liefern immer ein Element der Menge, z.B. ist {{< katex "3 + 1 = 0" >}} in {{< katex "\mathbb{Z}/2\mathbb{Z}" >}}.
+Der Restklassenring {{< katex "(\mathbb{Z}/n\mathbb{Z},+,\cdot)" >}} ist die Menge der Reste bei Division durch {{< katex "n" >}}, also {{< katex "\{0,1,\ldots,n-1\}" >}}, wobei die Elemente {{< katex "k" >}} nicht die natürlichen Zahlen sind, sondern Stellvertreter für die jeweilige Restklasse {{< katex "k+n\mathbb{Z}" >}} (z.B. steht {{< katex "1" >}} stellvertretend für alle Zahlen, die bei Division durch {{< katex "n" >}} den Rest 1 lassen). Addition und Multiplikation liefern immer ein Element der Menge, z.B. ist {{< katex "3 + 1 = 0" >}} in {{< katex "\mathbb{Z}/4\mathbb{Z}" >}}.
 
 Ein Element {{< katex "a" >}} ist invertierbar genau dann, wenn {{< katex "\text{ggT}(a,n)=1" >}}.
 
@@ -85,9 +84,13 @@ Ist {{< katex "n" >}} keine Primzahl, ist er kein Körper (denn er hat von Null 
 
 ## Polynomringe
 
-Ein Element ist invertierbar gdw ...
+Ein Polynomring {{< katex "(R[x],+,\cdot)" >}} ist eine Menge von [Polynomfunktionen](../polynomials) {{< katex "x\mapsto\sum_{k=0}^n a_kx^k">}} über {{< katex "R">}} zusammen mit Polynom-Addition und -Multiplikation:
+* {{< katex "(p+q)(x):=p(x)+q(x)">}}
+* {{< katex "(p\cdot q)(x):=p(x)\cdot q(x)">}}
 
-Siehe auch [Polynome](../polynomials).
+Das Einselement ist {{< katex "x\mapsto x^0 = 1">}}.
+
+Ist {{< katex "(R,+,\cdot)" >}} ein Integritätsring, so ist auch {{< katex "(R[x],+,\cdot)" >}} einer, mit der Einheitengruppe {{< katex "R[x]^\times = \{ x\mapsto a \,|\, a\in R^\times \}">}}.
 
 # Körper
 
