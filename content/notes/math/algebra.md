@@ -8,7 +8,7 @@ toc: true
 draft: false
 ---
 
-Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen. Die Algebra untersucht die Eigenschaften dieser mathematischen Objekte unter den gegebenen Operationen.
+Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen. 
 
 ![Algebraische Strukturen](/images/docs/algebraischestrukturen.png)
 
