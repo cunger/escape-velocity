@@ -8,7 +8,7 @@ toc: true
 draft: false
 ---
 
-Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen. 
+Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Verknüpfungen, unter denen die Menge abgeschlossen ist und die bestimmte Bedingungen erfüllen.
 
 ![Algebraische Strukturen](/images/docs/algebraischestrukturen.png)
 
@@ -143,6 +143,28 @@ Untervektorräume sind Teilmengen von Vektorräumen, die selber wieder eine Vekt
 * {{< katex "0_V\in U" >}}
 * {{< katex "cv \in U" >}} für alle {{< katex "v \in V, c\in\mathbb{K}" >}}
 * {{< katex "v+w \in U" >}} für alle {{< katex "v,w \in V" >}}
+
+## Quotientenvektorraum
+
+Wenn {{< katex "V,U">}} Vektorräume sind mit {{< katex "U\subseteq V">}}, ist der Quotientenvektorraum {{< katex "(V/U,+,\cdot)">}}
+* die Menge {{< katex "V/U = \{ v + U\,|\, v\in V \}">}}, d.h. die Menge aller um den Vektor {{< katex "v">}} verschobenen Unterräume {{< katex "v+U=\{v+u\,|\,u\in U\}">}}, zusammen mit
+* der Addition {{< katex "(v+U)+(w+U)=(v+w)+U">}} und
+* der Skalarmultiplikation {{< katex "c(v+U)=cv+U">}}.
+
+**Beispiel:** Für eine Gerade {{< katex "U">}} im {{< katex "\mathbb{R}^2">}} besteht {{< katex "\mathbb{R}^2/U">}} aus allen zu {{< katex "U">}} parallelen Geraden (und analog für Ebenen im {{< katex "\mathbb{R}^3">}}).
+
+![Beispiel Quotientenvektorraum](/images/docs/quotientenvektorraum.png)
+
+(Quelle: [Erste Hilfe Lineare Algebra](https://www.aleph1.info/?call=Puc&permalink=ela1_3.11))
+
+Anders betrachtet ist {{< katex "v+U" >}} die Äquivalenzklasse aller Vektoren {{< katex "w_1,w_2">}}, die sich nur durch einen Vektor aus {{< katex "U">}} unterscheiden (d.h. {{< katex "w_1-w_2\in U">}}).
+
+Das Nullelement ist {{< katex "0+U">}} und es gilt
+{{< katex "\text{dim}(V/U) = \text{dim}(V) - \text{dim}(U)">}}.
+
+TODO:
+* Der Quotientenvektorraum ist der Lebensraum der Homomorphismen auf {{< katex "V">}}, die auf {{< katex "U">}} verschwinden.
+* {{< katex "(V/U,+)">}} ist die Faktorgruppe der Gruppe {{< katex "(V,+)">}}.
 
 ## Skalarprodukt
 

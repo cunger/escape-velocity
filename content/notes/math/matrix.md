@@ -27,7 +27,13 @@ Addition und Skalarmultiplikation passieren elementweise.
 
 Multiplikation ...
 
-Eine Matrix ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, so dass {{< katex "A^m = 0" >}} und {{< katex "A^{m-1}\neq 0" >}}.
+Eine Matrix ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, so dass {{< katex "A^m = 0" >}} und {{< katex "A^{m-1}\neq 0" >}}. Für nilpotente Matrizen gilt:
+
+* Das [charakteristische Polynom](#das-charakteristische-polynom-einer-matrix) ist von der Form {{< katex "x^n">}}. Die einzige Nullstelle davon ist 0, also haben nilpotente Matrizen nur den Eigenwert 0.
+* Da sie den Eigenwert 0 haben, ist ihr Kern nicht trivial und damit sind sie nicht [invertierbar](#invertierbarkeit).
+* Außerdem sind ihre Determinante und Spur jeweils 0.
+* Sie sind entweder die Nullmatrix oder nicht diagonalisierbar.
+* Sie haben keinen vollen Rang, d.h. ihre Spaltenvektoren sind linear abhängig.
 
 ## Elementarmatrizen
 
@@ -161,9 +167,11 @@ Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< 
 
 Für Matrizen {{< katex "A\in M_{nn}(\mathbb{K})">}} berecht man das charakteristische Polynom wie folgt:
 
-{{< katex display="\Chi_A=\text{det}(xI_n-A)" >}}
+{{< katex display="\chi_A=\text{det}(xI_n-A)" >}}
 
 Die Nullstellen des charakteristischen Polynoms sind die Eigenwerte der Matrix.
+
+Wenn {{< katex "A" >}} die Nullmatrix oder nilpotent ist, ist {{< katex "\chi_A=x^n" >}} (und umgekehrt).
 
 # Eigenwerte, Eigenvektoren, Eigenraum
 
