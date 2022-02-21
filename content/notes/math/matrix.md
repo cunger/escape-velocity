@@ -15,11 +15,7 @@ Die Menge aller solcher Matrizen wird mit {{< katex "M_{mn}(\mathbb{K})" >}} bez
 
 Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Dann ergeben sich folgende Unterschiede:
 
-* Matrizen über kommutativen Ringen können nicht notwendigerweise in Normalform überführt werden.
-
-Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten. Oder Zeilen, denn Spalten- und Zeilenrang sind immer gleich. (Die möglichen Ränge einer {{< katex "m\times n" >}}-Matrix sind also {{< katex "0">}} bis {{< katex "\text{min}(m,n)" >}}.)
-
-Die **Spur** einer Matrix ist die Summe der Diagonalelemente.
+* Matrizen über kommutativen Ringen können nicht notwendigerweise in eine Normalform überführt werden.
 
 # Matrizenrechnung
 
@@ -32,13 +28,19 @@ Zum Beispiel {{< katex "c_{11}=a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31}" >}}.
 
 ![Matrizenmultiplikation](/images/docs/matrixmultiplication.png)
 
-Eine Matrix ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, so dass {{< katex "A^m = 0" >}} und {{< katex "A^{m-1}\neq 0" >}}. Für nilpotente Matrizen gilt:
+Eine Matrix {{< katex "A" >}} ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, so dass {{< katex "A^m = 0" >}} und {{< katex "A^{m-1}\neq 0" >}}. Für nilpotente Matrizen gilt:
 
 * Das [charakteristische Polynom](#das-charakteristische-polynom-einer-matrix) ist von der Form {{< katex "x^n">}}. Die einzige Nullstelle davon ist 0, also haben nilpotente Matrizen nur den Eigenwert 0.
 * Da sie den Eigenwert 0 haben, ist ihr Kern nicht trivial und damit sind sie nicht [invertierbar](#invertierbarkeit).
 * Außerdem sind ihre Determinante und Spur jeweils 0.
 * Sie sind entweder die Nullmatrix oder nicht diagonalisierbar.
 * Sie haben keinen vollen Rang, d.h. ihre Spaltenvektoren sind linear abhängig.
+
+Der **Rang** einer Matrix ist die Anzahl linear unabhängiger Spalten. Oder Zeilen, denn Spalten- und Zeilenrang sind immer gleich. (Die möglichen Ränge einer {{< katex "m\times n" >}}-Matrix sind also {{< katex "0">}} bis {{< katex "\text{min}(m,n)" >}}.)
+
+Die **Spur** einer Matrix ist die Summe der Diagonalelemente.
+
+Der **Kern** einer Matrix {{< katex "A" >}} ist die Lösungsmenge von {{< katex "Av=0" >}} (d.h. alle Vektoren {{< katex "v" >}}, die diese Gleichung erfüllen).
 
 ## Elementarmatrizen
 
@@ -259,7 +261,7 @@ Eine Matrix auf jeden Fall diagonalisierbar, wenn
 
 ## Jordan-Normalform
 
-Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen. Das kann man mit der Jordan-Normalform, in die jede Matrix überführt werden kann.
+Ist eine Matrix nicht diagonalisierbar, will man einer Diagonalform möglichst nahe kommen. Das kann man mit der Jordan-Normalform.
 
 Eine Jordan-Matrix enthälten auf der Diagonalen Jordan-Blöcke und sonst 0. Ein Jordan-Block ist eine quadratische Matrix mit einem Eigenwert auf der Diagonalen, 1 auf einer der Nebendiagonalen und sonst 0. Zum Beispiel:
 
@@ -271,7 +273,7 @@ Die Reihenfolge der Blöcke in einer Jordan-Matrix ist egal.
 
 **Berechnung:** Für eine Matrix {{< katex "A\in M_{nn}(\mathbb{K})">}}.
 
-1. Eigenwerte der Matrix berechnen, d.h. die Nullstellen des charakteristischen Polynoms {{< katex "\Chi_A=\text{det}(xI_n-A)" >}} bestimmen, zusammen mit ihrer algebraischen Vielfachheit. (Wenn {{< katex "\Chi_A" >}} nicht in Linearfaktoren über {{< katex "\mathbb{K}">}} zerfällt, dann hat die Matrix keine Jordan-Normalform in {{< katex "\mathbb{K}">}}.)
+1. Eigenwerte der Matrix berechnen, d.h. die Nullstellen des charakteristischen Polynoms {{< katex "\chi_A=\text{det}(xI_n-A)" >}} bestimmen, zusammen mit ihrer algebraischen Vielfachheit. (Wenn {{< katex "\chi_A" >}} nicht in Linearfaktoren über {{< katex "\mathbb{K}">}} zerfällt, also z.B. das Produkt von Polynomen ist, von denen mindestens eins keine Nullstellen in {{< katex "\mathbb{K}">}} hat, dann hat die Matrix keine Jordan-Normalform in {{< katex "\mathbb{K}">}}.)
 2. Für jeden Eigenwert {{< katex "\lambda">}}:
     * Wenn die algebraische Vielfachheit 1 ist, dann gibt es einen Jordan-Block der Größe 1, also {{< katex "(\lambda)">}}.
     * Ansonsten berechne die Haupträume {{< katex "H_k = \text{ker}((A-\lambda I_n)^k)">}} zu {{< katex "\lambda">}}, wobei
