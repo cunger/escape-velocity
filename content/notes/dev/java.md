@@ -74,3 +74,7 @@ Spotbugs
 Sonarqube: static code analysis
 
 Linter for consistent style
+
+## Debugging
+
+* At point of interest (e.g. wrong output), throw an exception, so you get a quick peak at the stack trace. Ignore the rest.

@@ -25,7 +25,12 @@ Die **Spur** einer Matrix ist die Summe der Diagonalelemente.
 
 Addition und Skalarmultiplikation passieren elementweise.
 
-Multiplikation ...
+Die Matrizenmultiplikation ist eine Verknüpfung {{< katex "M_{mk}\times M_{kn}\to M_{mn}">}}, wobei sich {{< katex "C=AB" >}} so berechnet, dass der Eintrag i,j in {{< katex "C" >}} das Standardskalarprodukt der i-ten Zeile von {{< katex "A" >}} mit der j-ten Spalte von {{< katex "B" >}} ist:
+{{< katex "c_{ij}=\sum_{k=1}^m a_{ik}b_{kj}">}}.
+
+Zum Beispiel {{< katex "c_{11}=a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31}" >}}.
+
+![Matrizenmultiplikation](/images/docs/matrixmultiplication.png)
 
 Eine Matrix ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, so dass {{< katex "A^m = 0" >}} und {{< katex "A^{m-1}\neq 0" >}}. Für nilpotente Matrizen gilt:
 
@@ -218,6 +223,10 @@ Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wa
 * das gleiche charakteristische Polynom und Minimalpolynom,
 * die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),
 * die gleiche Jordan-Normalform.
+
+Diese Punkte sind alle notwendig, hinreichend ist aber nur der letzte. Das heißt:
+* Wenn zwei Matrizen unterschiedliche Ränge, Determinanten, charakteristische Polynome oder Eigenwerte haben, sind sie nicht ähnlich.
+* Wenn zwei Matrizen die gleiche Jordan-Normalform haben, sind sie ähnlich.
 
 Matrizen lassen sich auch nach **Kongruenz** in Äquivalenzklassen (sogenannte **Kongruenzklassen**) einteilen:
 Zwei Matrizen {{< katex "A,B" >}} sind **kongruent**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass
