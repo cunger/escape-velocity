@@ -144,6 +144,8 @@ Untervektorräume sind Teilmengen von Vektorräumen, die selber wieder eine Vekt
 * {{< katex "cv \in U" >}} für alle {{< katex "v \in V, c\in\mathbb{K}" >}}
 * {{< katex "v+w \in U" >}} für alle {{< katex "v,w \in V" >}}
 
+Der Kern einer linearen Abbildung {{< katex "V\to W">}} ist ein Unterraum von {{< katex "V">}}, ihr Bild ist ein Unterraum von {{< katex "W">}}.
+
 ## Quotientenvektorraum
 
 Wenn {{< katex "V,U">}} Vektorräume sind mit {{< katex "U\subseteq V">}}, ist der Quotientenvektorraum {{< katex "(V/U,+,\cdot)">}}
