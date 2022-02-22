@@ -213,10 +213,15 @@ Die Dimension des Eigenraums ist die **geometrische Vielfachheit** des Eigenwert
 Matrizen lassen sich nach **Ähnlichkeit** in Äquivalenzklassen einteilen, wobei eine Klasse alle Matrizen enthält, die den gleichen Endomorphismus darstellen.
 Technisch heißt das:
 
-Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass:
-{{< katex display="A=S^{-1}BS" >}}
-Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "S" >}} die Basiswechselmatrix ist ({{< katex "S" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cS" >}} erfüllt die Gleichung auch). D.h. {{< katex "A" >}} und {{< katex "B" >}} stellen die gleiche Transformation dar, nur in unterschiedlichen Koordinatensystemen.
+Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "P" >}} gibt, so dass:
+{{< katex display="A=P^{-1}BP" >}}
+Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "P" >}} die Basiswechselmatrix ist ({{< katex "P" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cP" >}} erfüllt die Gleichung auch). D.h. {{< katex "A" >}} und {{< katex "B" >}} stellen die gleiche Transformation dar, nur in unterschiedlichen Koordinatensystemen.
 Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.
+
+![Diagramm für Ähnlichkeit](/images/docs/aehnlichkeitsdiagramm.jpg)
+
+**Berechnung:** {{< katex "P" >}} kann man berechnen, indem man die Eigenwerte von {{< katex "A" >}} mit den dazugehörigen Eigenräumen findet und dann die Basisvektoren dieser Eigenräume als Spalten von {{< katex "P" >}} wählt.
+(Wenn {{< katex "P" >}} orthogonal sein soll, muss man entsprechend die Orthonormalbasis der Eigenräume bilden.)
 
 Ähnliche Matrizen haben:
 
@@ -231,10 +236,10 @@ Diese Punkte sind alle notwendig, hinreichend ist aber nur der letzte. Das heiß
 * Wenn zwei Matrizen die gleiche Jordan-Normalform haben, sind sie ähnlich.
 
 Matrizen lassen sich auch nach **Kongruenz** in Äquivalenzklassen (sogenannte **Kongruenzklassen**) einteilen:
-Zwei Matrizen {{< katex "A,B" >}} sind **kongruent**, wenn es eine invertierbare Matrix {{< katex "S" >}} gibt, so dass
-{{< katex display="A=S^TBS" >}}
+Zwei Matrizen {{< katex "A,B" >}} sind **kongruent**, wenn es eine invertierbare Matrix {{< katex "P" >}} gibt, so dass
+{{< katex display="A=P^TBP" >}}
 
-Da in der Regel {{< katex "S^T\neq S^{-1}">}}, sind kongruente Matrizen in der Regel nicht ähnlich.
+Da in der Regel {{< katex "P^T\neq P^{-1}">}}, sind kongruente Matrizen in der Regel nicht ähnlich.
 
 ## Treppennormalform
 
