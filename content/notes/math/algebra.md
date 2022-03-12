@@ -155,7 +155,7 @@ Beispiele:
 
 * {{< katex "\mathbb{R}">}} hat nur die trivialen Unterräume.
 * {{< katex "\mathbb{R}^2">}} hat zusätzlich alle Geraden durch den Nullpunkt als Unterräume, d.h. alle {{< katex "U=\{(x\ y)\,|\,y = ax, \text{ wobei } a\in\mathbb{R}\}">}}.
-* {{< katex "\mathbb{R}^3">}} hat zusätzlich alle Geraden und Ebenen durch den Nullpunkt als Unterräume. (Die Ebenen sind alle {{< katex "U=\{(x\ y\ z)\,|\, ax+by+cz=d, \text{ wobei } a,b,c,d\in\mathbb{R}\}">}}.)
+* {{< katex "\mathbb{R}^3">}} hat zusätzlich alle Geraden und Ebenen durch den Nullpunkt als Unterräume. (Die Ebenen sind alle {{< katex "U=\{(x\ y\ z)\,|\, ax+by+cz=0, \text{ wobei } a,b,c\in\mathbb{R}\}">}}.)
 * Nicht-triviale Untervektorräume von {{< katex "\mathbb{C}" >}} sind {{< katex "\mathbb{R}" >}} und die imaginären Zahlen {{< katex "i\mathbb{R}=\{ix\,|\,x\in\mathbb{R}\}" >}}.
 * Der Vektorraum der Polynome vom Grad {{< katex "\leq n" >}} hat als Unterräume die Vektorräume der Polynomen vom Grad {{< katex "\leq k" >}} mit {{< katex "k\leq n" >}}. (Die Polynome vom Grad {{< katex "n" >}} sind kein Vektorraum, weil sie nicht unter Addition abgeschlossen sind, z.B. ist die Summe von {{< katex "x^2 + x" >}} und {{< katex "-x^2" >}} das Polynom {{< katex "x" >}} von einem anderen Grad.)
 * Der Vektorraum der reellen Funktionen hat als Unterräume den Vektorraum der linearen Funktionen, den der stetigen Funktionen, sowie den der differenzierbaren und den der integrierbaren Funktionen.
