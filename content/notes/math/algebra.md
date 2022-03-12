@@ -144,7 +144,22 @@ Untervektorräume sind Teilmengen von Vektorräumen, die selber wieder eine Vekt
 * {{< katex "cv \in U" >}} für alle {{< katex "v \in V, c\in\mathbb{K}" >}}
 * {{< katex "v+w \in U" >}} für alle {{< katex "v,w \in V" >}}
 
-Der Kern einer linearen Abbildung {{< katex "V\to W">}} ist ein Unterraum von {{< katex "V">}}, ihr Bild ist ein Unterraum von {{< katex "W">}}.
+Jeder Vektorraum {{< katex "V">}} hat die trivialen Unterräume {{< katex "\{0\}">}} und {{< katex "V">}}. Außerdem gilt:
+
+* Der Kern einer linearen Abbildung {{< katex "V\to W">}} ist ein Unterraum von {{< katex "V">}}.
+* Das Bild einer linearen Abbildung {{< katex "V\to W">}} ist ein Unterraum von {{< katex "W">}}.
+* Wenn {{< katex "U_1">}} und {{< katex "U_2">}} Unterräume von {{< katex "V">}} sind, so ist auch {{< katex "U_1\cap U_2">}} ein Unterraum von {{< katex "V">}}.
+* Wenn {{< katex "U">}} ein Unterraum von {{< katex "V">}} ist, kann {{< katex "V\backslash U">}} nicht auch Unterraum sein (weil {{< katex "0\in U">}}, also {{< katex "0\notin V\backslash U">}}).
+
+Beispiele:
+
+* {{< katex "\mathbb{R}">}} hat nur die trivialen Unterräume.
+* {{< katex "\mathbb{R}^2">}} hat zusätzlich alle Geraden durch den Nullpunkt als Unterräume, d.h. alle {{< katex "U=\{(x\ y)\,|\,y = ax, \text{ wobei } a\in\mathbb{R}\}">}}.
+* {{< katex "\mathbb{R}^3">}} hat zusätzlich alle Geraden und Ebenen durch den Nullpunkt als Unterräume. (Die Ebenen sind alle {{< katex "U=\{(x\ y\ z)\,|\, ax+by+cz=d, \text{ wobei } a,b,c,d\in\mathbb{R}\}">}}.)
+* Nicht-triviale Untervektorräume von {{< katex "\mathbb{C}" >}} sind {{< katex "\mathbb{R}" >}} und die imaginären Zahlen {{< katex "i\mathbb{R}=\{ix\,|\,x\in\mathbb{R}\}" >}}.
+* Der Vektorraum der Polynome vom Grad {{< katex "\leq n" >}} hat als Unterräume die Vektorräume der Polynomen vom Grad {{< katex "\leq k" >}} mit {{< katex "k\leq n" >}}. (Die Polynome vom Grad {{< katex "n" >}} sind kein Vektorraum, weil sie nicht unter Addition abgeschlossen sind, z.B. ist die Summe von {{< katex "x^2 + x" >}} und {{< katex "-x^2" >}} das Polynom {{< katex "x" >}} von einem anderen Grad.)
+* Der Vektorraum der reellen Funktionen hat als Unterräume den Vektorraum der linearen Funktionen, den der stetigen Funktionen, sowie den der differenzierbaren und den der integrierbaren Funktionen.
+* Der Vektorraum quadratischer Matrizen hat als Unterräume den der symmetrischen und den der schiefsymmetrischen Matrizen.
 
 ## Quotientenvektorraum
 
