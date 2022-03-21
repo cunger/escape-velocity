@@ -8,7 +8,7 @@ toc: true
 draft: false
 ---
 
-Eine {{< katex "m\times n" >}}-Matrix über einem Körper {{< katex "\mathbb{K}" >}} ist eine Anordnung von Element von {{< katex "\mathbb{K}" >}} nach folgendem Schema (mit {{< katex "m" >}} Zeilen und {{< katex "n" >}} Spalten):
+Eine {{< katex "m\times n" >}}-Matrix über einem Körper {{< katex "\mathbb{K}" >}} ist eine Anordnung von Elementen von {{< katex "\mathbb{K}" >}} nach folgendem Schema (mit {{< katex "m" >}} Zeilen und {{< katex "n" >}} Spalten):
 {{< katex display="\begin{pmatrix} a_{11} & \ldots & a_{1n} \\ \vdots & \cdots & \vdots \\ a_{m1} & \ldots & a_{mn} \end{pmatrix}" >}}
 
 Die Menge aller solcher Matrizen wird mit {{< katex "M_{mn}(\mathbb{K})" >}} bezeichnet.
@@ -58,7 +58,7 @@ Analog für Spalten. Diese Umformungen ändern den Rang einer Matrix nicht.
 
 ## Transponierte, inverse und adjungierte Matrix
 
-Die **Transponierte** {{< katex "A^T" >}} einer Matrix {{< katex "A" >}} ist diejenige Matrix, in der Zeilen und Spalten vertauscht sind.
+Die **Transponierte** {{< katex "A^T" >}} einer Matrix {{< katex "A" >}} ist diejenige Matrix, in der Zeilen und Spalten vertauscht sind (d.h. die 1. Zeile wird zur 1. Spalte usw.).
 
 Die **Inverse** {{< katex "A^{-1}" >}} einer Matrix {{< katex "A" >}} ist diejenige Matrix, so dass {{< katex "A\cdot A^{-1} = A^{-1}\cdot A = I" >}}. Siehe [Invertierbarkeit](#invertierbarkeit).
 
@@ -188,7 +188,7 @@ Formal:
 
 D.h. {{< katex "f(v)" >}} bzw. {{< katex "Av" >}} hat die gleiche Richtung wie {{< katex "v" >}}, nur um den Faktor {{< katex "\lambda" >}} gestaucht oder gestreckt.
 
-* Eine Matrix muss keine Eigenvektoren besitzen - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum (und {{< katex "\lambda" >}} entspricht dann der Rotationsachse).
+* Eine Matrix muss keine Eigenvektoren besitzen - eine Rotation z.B. ändert die Richtung aller Vektoren im Raum.
 * {{< katex "A" >}} und {{< katex "A^T" >}} haben möglicherweise unterschiedliche Eigenwerte.
 * Sind die Eigenwerte verschieden, sind die dazugehörigen Eigenvektoren linear unabhängig.
 
@@ -198,6 +198,8 @@ Wie oft eine Nullstelle vorkommt, nennt man die **algebraische Vielfachheit** de
 
 Die Eigenvektoren zu einem Eigenwert spannen zusammen mit dem Nullvektor einen Unterraum auf, den **Eigenraum**:
 {{< katex display="\begin{aligned}\text{Eigenraum}(f,\lambda) &= \{0\}\cup\{ v\in V \,|\, v\text{ ist ein Eigenvektor von }f \} \\ &= \{ v\in V \,|\, f(v) = \lambda v \}\\ &= \text{ker}(A-\lambda I_n) \end{aligned}" >}}
+(Das heißt, der Eigenraum zum Eigenwert 0 ist {{< katex "\text{ker}(A)">}} bzw. {{< katex "\text{ker}(f)">}}.)
+
 Die Dimension des Eigenraums ist die **geometrische Vielfachheit** des Eigenwerts.
 
 **Berechnung:**
@@ -205,7 +207,7 @@ Die Dimension des Eigenraums ist die **geometrische Vielfachheit** des Eigenwert
 1. Um die Eigenwerte {{< katex "\lambda">}} zu bestimmen, berechnet man die Nullstellen des charakteristischen Polynoms.
 2. Die Gleichung {{< katex "Av = \lambda v">}} lässt sich äquivalent umformen zu:
    {{< katex display="(A-\lambda I_n)v=0" >}}
-   Setzt man die Eigenwerte {{< katex "\lambda">}} in diese Gleichung ein, erhält man ein Gleichungssystem, über das sich jeweils die zugehörigen Eigenvektoren {{< katex "v" >}} bestimmen lassen. (Die müssen nicht eindeutig sein.)
+   Setzt man die Eigenwerte {{< katex "\lambda">}} in diese Gleichung ein, erhält man ein Gleichungssystem, über das sich jeweils die zugehörigen Eigenvektoren {{< katex "v" >}} bestimmen lassen.  Die müssen nicht eindeutig sein. (Bringt man {{< katex display="A-\lambda I_n" >}} in Treppennormalform und transponiert diese, dann sind die Spaltenvektoren die Basis des Eigenraums.)
 3. Überprüfen kann man die gefundenen Eigenvektoren dann durch Einsetzen in {{< katex "Av = \lambda v">}}.
 
 # Normalformen

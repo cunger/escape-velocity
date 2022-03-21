@@ -141,15 +141,19 @@ Eine Menge von Vektoren ist **linear unabhängig**, wenn keiner der Vektoren ein
 Untervektorräume sind Teilmengen von Vektorräumen, die selber wieder eine Vektorraum sind. D.h. zu einem Vektorraum {{< katex "(V,+,\cdot)" >}} über einem Körper {{< katex "\mathbb{K}">}} ist {{< katex "(U,+,\cdot)" >}} mit {{< katex "U\subseteq V" >}} ein Untervektorraum, wenn:
 
 * {{< katex "0_V\in U" >}}
-* {{< katex "cv \in U" >}} für alle {{< katex "v \in V, c\in\mathbb{K}" >}}
-* {{< katex "v+w \in U" >}} für alle {{< katex "v,w \in V" >}}
+* {{< katex "cv \in U" >}} für alle {{< katex "v \in U, c\in\mathbb{K}" >}}
+* {{< katex "v+w \in U" >}} für alle {{< katex "v,w \in U" >}}
 
-Jeder Vektorraum {{< katex "V">}} hat die trivialen Unterräume {{< katex "\{0\}">}} und {{< katex "V">}}. Außerdem gilt:
+Jeder Vektorraum {{< katex "V">}} hat die trivialen Unterräume {{< katex "\{0\}">}} und {{< katex "V">}}.
+
+Ein Untervektorraum {{< katex "U" >}} heißt **{{< katex "f">}}-invariant**, wenn für alle {{< katex "u\in U" >}} gilt, dass {{< katex "f(u)\in U" >}} (d.h. {{< katex "f" >}} führt nicht aus {{< katex "U" >}} heraus).
+
+Außerdem gilt:
 
 * Der Kern einer linearen Abbildung {{< katex "V\to W">}} ist ein Unterraum von {{< katex "V">}}.
 * Das Bild einer linearen Abbildung {{< katex "V\to W">}} ist ein Unterraum von {{< katex "W">}}.
 * Wenn {{< katex "U_1">}} und {{< katex "U_2">}} Unterräume von {{< katex "V">}} sind, so ist auch {{< katex "U_1\cap U_2">}} ein Unterraum von {{< katex "V">}}.
-* Wenn {{< katex "U">}} ein Unterraum von {{< katex "V">}} ist, kann {{< katex "V\backslash U">}} nicht auch Unterraum sein (weil {{< katex "0\in U">}}, also {{< katex "0\notin V\backslash U">}}).
+* Wenn {{< katex "U">}} ein Unterraum von {{< katex "V">}} ist, kann {{< katex "V\backslash U">}} nicht auch Unterraum sein (weil {{< katex "0\in U">}}, also {{< katex "0\notin V\backslash U">}}). Es gibt aber einen zu {{< katex "U" >}} komplementären Unterraum {{< katex "U'" >}}, so dass {{< katex "U\cap U'=\{0\}" >}} und {{< katex "V=U+U'=\{u+u'\,|\,u\in U,u'\in U'\}" >}}. ({{< katex "U+U'" >}} entspricht dem Schnitt aller Unterräume, in denen {{< katex "U" >}} und {{< katex "U'" >}} enthalten sind.)
 * Die Linearkombinationen von Vektoren {{< katex "v_1,\ldots,v_n\in V">}} bilden einen Unterraum von {{< katex "V">}}.
 
 Beispiele:
@@ -188,9 +192,9 @@ TODO:
 
 Das Skalarprodukt (_dot product_ oder _inner product_) bildet zwei Vektoren auf ein Skalar ab und liefert damit eine zusätzliche Struktur, die es erlaubt geometrische Maße wie Längen und Winkel zu definieren, indem es eine [Norm](../topology/#normierte-und-metrische-räume) induziert.
 
-Technisch ist das **Skalarprodukt** eines Vektorraums {{< katex "(V,+,\cdot)" >}} über dem Körper {{< katex "\mathbb{K}" >}} eine Abbildung {{< katex "\langle\,\rangle:V\times V\to \mathbb{K}" >}}, die für alle für {{< katex "v,w\in V" >}} folgende Eigenschaften erfüllt:
+Technisch ist das **Skalarprodukt** eines Vektorraums {{< katex "(V,+,\cdot)" >}} über dem Körper {{< katex "\mathbb{K}" >}} eine Abbildung {{< katex "\langle\cdot,\cdot\rangle:V\times V\to \mathbb{K}" >}}, die für alle für {{< katex "v,w\in V" >}} folgende Eigenschaften erfüllt:
 
-* Positive Definitheit: {{< katex "\langle v,v\rangle > 0" >}}
+* Positive Definitheit: {{< katex "\langle v,v\rangle > 0" >}} (bzw. {{< katex "\langle v,v\rangle \geq 0" >}}, aber {{< katex "\langle v,v\rangle = 0" >}} nur für {{< katex "v = 0" >}})
 * Symmetrie: {{< katex "\langle v,w\rangle = \langle w,v\rangle" >}}
 * Bilinearität: {{< katex "\langle v,\cdot\rangle" >}} und {{< katex "\langle \cdot, v\rangle" >}} sind linear (d.h. das Skalarprodukt ist eine [Bilinearform](#bilinearformen))
 
@@ -250,7 +254,7 @@ Ist {{< katex "\mathbf{A}" >}} ein Vektorraum, dann bildet der Kern einer Abbild
 
 Eine Bilinearform verallgemeinert die Eigenschaften eines Vektorraumhomomorphismus auf zweistellige Abbildungen und bedeutet dann Linearität in beiden Komponenten:
 
-Seien {{< katex "V,W" >}} Vektorräume über einem Körper {{< katex "\mathbb{K}" >}}. Dann ist eine Abbildung {{< katex "\langle\cdot,\cdot\rangle:V\times W\to\mathbb{K}" >}} **bilinear** bzw. eine **Bilinearform**, wenn die Abbildungen {{< katex "\langle \cdot, w\rangle:V\to\mathbb{K}" >}} und {{< katex "\langle v,\cdot\rangle:W\to\mathbb{K}" >}} beide linear sind, d.h. wenn gilt:
+Seien {{< katex "V,W" >}} Vektorräume über einem Körper {{< katex "\mathbb{K}" >}}. Dann ist eine Abbildung {{< katex "\langle\cdot,\cdot\rangle:V\times W\to\mathbb{K}" >}} **bilinear** bzw. eine **Bilinearform**, wenn die Abbildungen {{< katex "\langle \cdot, w\rangle:V\to\mathbb{K}" >}} und {{< katex "\langle v,\cdot\rangle:W\to\mathbb{K}" >}} beide linear sind (d.h. wenn man eins der beiden Argumente festhält, ist die resultierende Abbildung linear), also wenn gilt:
 
 * {{< katex "\langle v_1 + v_2, w\rangle = \langle v_1,w\rangle + \langle v_2,w\rangle" >}}
 und {{< katex "\langle \lambda v, w\rangle = \lambda\langle v,w\rangle" >}}
