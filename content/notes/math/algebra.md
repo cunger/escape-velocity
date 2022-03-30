@@ -131,10 +131,12 @@ Wir verbinden also eine abelsche Gruppe {{< katex "(V,+)" >}} mit einem Körper 
 Entscheidend ist nicht so sehr die Form von Vektoren, sondern ihre Eigenschaften.
 Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sind, wovon man Linearkombinationen bilden kann.
 
-Eine Menge von Vektoren ist **linear unabhängig**, wenn keiner der Vektoren eine Linearkombination der anderen ist. Das ist [äquivalent](https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Lineare_Unabh%C3%A4ngigkeit_von_Vektoren#Vom_ersten_Kriterium_zur_formalen_Definition) zu der Bedingung, dass der Nullvektor nur durch eine triviale Linearkombination darstellbar ist. Oder technisch:
+Eine Menge von Vektoren ist **linear unabhängig**, wenn keiner der Vektoren eine Linearkombination der anderen ist. Das ist [äquivalent](https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks:_Lineare_Unabh%C3%A4ngigkeit_von_Vektoren#Vom_ersten_Kriterium_zur_formalen_Definition) zu der Bedingung, dass sie sich zum Nullvektor nur mittels Koeffizienten {{< katex "a_i=0">}} linearkombinieren lassen. Oder technisch:
 
 * Ein endliches System von Vektoren {{< katex "(v_1,\ldots,v_n)" >}} ist linear unabhängig, wenn aus {{< katex "\sum_{i=1}^n a_i v_i = 0" >}} folgt, dass {{< katex "a_1=\ldots=a_n=0" >}}.
 * Ein unendliches System von Vektoren {{< katex "(v_i)_{i\in I}" >}} ist linear unabhängig, wenn für jede endliche Teilmenge {{< katex "J" >}} von {{< katex "I" >}} aus {{< katex "\sum_{j\in J} a_j v_j=0" >}} folgt, dass {{< katex "a_j=0" >}} für alle {{< katex "j\in J" >}}.
+
+Eine **Basis** eines Vektorraums ist eine Menge linear unabhängiger Vektoren, mit deren Hilfe sich jeder Vektor eindeutig as Linearkombination darstellen lässt.
 
 ## Untervektorräume
 
@@ -242,6 +244,13 @@ Sowie dass die neutralen Elemente von {{< katex "\mathbf{A}" >}} auf die neutral
 Ein bijektiver Homomorphismus heißt **Isomorphismus**.
 
 Ein Homomorphismus {{< katex "f:A\to A" >}}, der eine algebraische Struktur auf sich selbst abbildet, heißt **Endomorphismus** (oder **Automorphismus**, wenn er bijektiv ist).
+
+Eine Abbildung {{< katex "f" >}} lässt sich als Matrix {{< katex "A" >}} darstellen, so dass {{< katex "f(x)=Ax" >}} (siehe [Matrizen als lineare Transformationen](../matrix/#matrizen-als-lineare-transformationen)).
+
+* Die Matrixdarstellung einer injektiven Abbildung hat linear unabhängige Spalten.
+* Die Matrixdarstellung einer surjektiven Abbildung hat linear unabhängige Zeilen.
+
+Das Lösen eines linearen Gleichungssystems {{< katex "Ax=b">}} entspricht also dem Finden des Urbilds von {{< katex "b">}}.
 
 Wie viele Informationen bei einer Abbildung {{< katex "f:A\to B" >}} verloren gehen, kann am Kern der Abbildung abgelesen werden.
 Der **Kern** sind all die Elemente aus {{< katex "A" >}}, die auf Null abgebildet werden, also {{< katex "\text{ker}(f)=\{x\in A\,|\,f(x)=0_\mathbf{B}\}" >}}. Der Kern enthält immer wenigstens {{< katex "0_\mathbf{A}" >}}. Wenn er keine weiteren Elemente enthält, ist die Abbildung injektiv, d.h. es gehen keine Informationen verloren.

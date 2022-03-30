@@ -7,6 +7,8 @@ math: true
 toc: true
 ---
 
+Differentialgleichungen setzen Funktionen und deren Ableitungen in Bezug zueinander. Sie definieren damit bestimmte Funktionen (nämlich die, die Gleichung lösen).
+
 # Definition
 
 Eine **gewöhnliche Differentialgleichung** ist eine Gleichung, die eine Beziehung zwischen einer Funktion {{< katex "y:x\to y(x)" >}}, ihrem Argument {{< katex "x" >}} und einer oder mehrerer ihrer Ableitungen {{< katex "y',y'',\ldots" >}} ausdrückt.

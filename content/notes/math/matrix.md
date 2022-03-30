@@ -202,6 +202,8 @@ Die Eigenvektoren zu einem Eigenwert spannen zusammen mit dem Nullvektor einen U
 
 Die Dimension des Eigenraums ist die **geometrische Vielfachheit** des Eigenwerts.
 
+Die Eigenwerte charakterisieren eine Matrix in ihren wesentlichen Eigenschaften.
+
 **Berechnung:**
 
 1. Um die Eigenwerte {{< katex "\lambda">}} zu bestimmen, berechnet man die Nullstellen des charakteristischen Polynoms.
