@@ -3,7 +3,7 @@ title: "Hi, I'm Christina"
 date: 2022-06-14
 ---
 
-I’m a professional software engineer with 7 years of experience in application development and a now fading background in research.
+I’m a professional software engineer with 7+ years of experience in application development and a now fading background in research.
 
 ---
 
