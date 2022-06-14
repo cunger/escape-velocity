@@ -1,9 +1,15 @@
 ---
-title: "Hi, I'm Christina."
-date: 2019-11-04
+title: "🛠️☢️"
+date: 2022-06-14
 ---
 
-I’m a software engineer and aspiring mathematician, with a strong interest in nuclear technology and carbon removal.
+I’m Christina, a professional software engineer with a strong interest in nuclear technology.
+
+I love to be a **technical enabler**. For me, software is a tool that is most valuable when it supports experts to do their job well. I see it as my task to properly build, maintain, and improve this tool.
+
+I thrive in **multidisciplinary settings**, and I'm often best when working at the interfaces between topics, fields, or teams.
+
+In the grander scheme of things, I see my place at the foundation for building a better future: properly **tending to our legacy** - in particular nuclear waste, CO2 emissions, complex legacy code bases, and biosphere conservation.
 
 ---
 
