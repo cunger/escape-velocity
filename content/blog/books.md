@@ -29,3 +29,7 @@ Michael Feathers: **Working effectively with legacy code.**
 Bren Smith: **Eat like a fish.**
 
 Scott Kelly: **Endurance: A year in space, a lifetime of discovery.**
+
+Jurek Becker: **Am Strand von Bochum ist allerhand los.**
+
+Wassili Golowanow: **Die Insel.**
