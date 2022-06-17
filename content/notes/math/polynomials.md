@@ -127,4 +127,12 @@ Ein Körper {{< katex "\mathbb{K}" >}} heißt **algebraisch abgeschlossen**, wen
 
 # Approximation mit Polynomen
 
+Jede stetige Funktion kann durch ein Polynom approximiert werden.
+
+**Satz von Weierstrass:** Für jede Funktion {{< katex "f\in\mathbb{C}[a,b]">}} und ein beliebiges {{< katex "\varepsilon > 0">}} gibt es ein Polynom {{< katex "p">}}, so dass {{< katex "\| f-p \|_\infty < \varepsilon">}} (mit {{< katex "\|f\|_\infty = \max_{x\in[ab]}|f|">}} die Maximumnorm).
+
+Polynomfunktionen sind für Approximationen besonders geeignet, weil sie einfach zu differenzieren und integrieren sind und ihre Nullstellen durch Standardalgorithmen bestimmt werden können.
+
 ## Taylorpolynome
+
+## Interpolation
