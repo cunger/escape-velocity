@@ -1,6 +1,6 @@
 ---
 title: "Matrizen"
-summary: "Matrizen, deren Eigenschaften und Interpretationen"
+summary: "Matrizen, deren Eigenschaften und Anwendungen"
 date: 2020-08-26
 weight: 3
 math: true
@@ -335,7 +335,13 @@ Jede Matrix ist die Darstellung eines Endomorphismus des Vektorraums (mit Ähnli
 
 # Matrizen als Gleichungssysteme
 
-# Literatur
+Wenn wir ein System von {{< katex "m">}} linearen Gleichungen mit {{< katex "n" >}} Unbekannten {{< katex "x_1,\ldots,x_n" >}} haben:
+{{< katex display="\begin{aligned}a_{11}x_1+\cdots +a_{1n}x_n & = b_1\\ & \ \vdots \\ a_{m1}x_1+\cdots +a_{mn}x_n & = b_m\end{aligned}" >}}
+Dann kann das dargestellt werden als Matrizengleichung {{< katex "Ax=b" >}} mit folgender Matrix {{< katex "A">}} und Vektoren {{< katex "b">}} und {{< katex "x">}}:
+{{< katex display="A = \begin{pmatrix} a_{11} & \ldots & a_{1n} \\ \vdots & \cdots & \vdots \\ a_{m1} & \ldots & a_{mn} \end{pmatrix},\quad b = \begin{pmatrix} b_1 \\ \vdots \\ b_m \end{pmatrix},\quad x = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}" >}}
 
-* Luise Unger: Skript Lineare Algebra (1143), FernUniversität Hagen.
-* Klaus Jänich: Lineare Algebra.
+Ist {{< katex "m>n">}}, also wenn es mehr Gleichungen als Unbekannte gibt, gibt es oft keine Lösung.
+
+Ist {{< katex "m<n">}}, also wenn es mehr Unbekannte als Gleichungen gibt, gibt es oft mehrere (ggf. unendlich viele) Lösungen.
+
+Im Fall {{< katex "m=n">}} ist {{< katex "A">}} eine quadratische {{< katex "n\times n">}}-Matrix. Wenn {{< katex "A">}} [invertierbar](#invertierbarkeit) ist, dann ist die Lösung des Gleichungssystems {{< katex "x=A^{-1}b">}} (denn {{< katex "Ax=A(A^{-1}b)=Ib=b">}}). Die Lösung des Gleichungssystems zu finden, hängt also eng mit der Frage zusammen, ob {{< katex "A">}} invertierbar ist.

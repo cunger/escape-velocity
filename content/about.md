@@ -15,11 +15,11 @@ I’m a professional software engineer with 7+ years of experience in applicatio
 
 ---
 
-☢️ I have a strong interest in **nuclear technology**.
+☢️ I have a strong interest in **nuclear technology** and hold a basic certificate in radiation protection.
 
 🛠️ I love to be a **technical enabler**. For me, software is a tool that is most valuable when it supports experts to do their job well. I see it as my task to properly build, maintain, and improve this tool.
 
-🚀 I thrive in **multidisciplinary settings**, and I'm often best when working at the interfaces between topics, fields, or teams.
+🚀 I thrive in **multidisciplinary settings**.
 
 🫠 In the grander scheme of things, I see my place at the foundation for building a better future: properly **tending to our legacy** - in particular nuclear waste, CO2 emissions, complex legacy code bases, and biosphere conservation.
 

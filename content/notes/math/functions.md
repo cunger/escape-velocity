@@ -10,8 +10,8 @@ draft: false
 
 Eine Funktion {{< katex "f" >}} ist
 
-* **surjektiv**, wenn jedes Element des Wertebereichs im Bild von {{< katex "f" >}} liegt.
-* **injektiv**, wenn jedes Element im Bild von {{< katex "f" >}} genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben.
+* **surjektiv** (_onto_), wenn jedes Element des Wertebereichs im Bild von {{< katex "f" >}} liegt.
+* **injektiv** (_one-to-one_), wenn jedes Element im Bild von {{< katex "f" >}} genau ein Urbild hat. Also wenn keine zwei Elemente im Definitionsbereich das gleiche Bild haben, d.h. wenn {{< katex "a\neq b" >}} impliziert, dass {{< katex "f(a)\neq f(b)" >}}.
 
 # Strukturerhaltung
 
@@ -131,11 +131,11 @@ Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt 
 
 ## Änderungsrate
 
-Die Ableitung ist der Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes, beschreibt also die lokale Änderungsrate der Funktion.
-
-Der Differentialquotient (oder Differential) ist der Grenzwert des Differenzenquotienten. Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall {{< katex "[x,a]" >}}, das entspricht geometrisch der Sekantensteigung:
+Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall {{< katex "[x,a]" >}}, das entspricht geometrisch der Sekantensteigung:
 {{< katex display="\frac{f(x)-f(a)}{x-a}" >}}
+Verringert man das Intervall immer weiter, lässt also {{< katex "x" >}} gegen {{< katex "a" >}} laufen, bekommt man die lokale Änderungsrate an der Stelle {{< katex "a" >}}. Das ist die Ableitung bzw. der Differentialquotient (oder Differential): der Grenzwert des Differenzenquotienten.
 {{< katex display="f'(a) = \text{lim}_{x\to a}\frac{f(x)-f(a)}{x-a}" >}}
+Die lokale Änderungsrate entspricht also dem Proportionalitätsfaktor zwischen infinitesimalen Änderungen des Eingabewertes und daraus resultierenden infinitesimalen Änderungen des Funktionswertes.
 
 Eine äquivalente Formulierung ergibt sich, wenn man {{< katex "x" >}} durch {{< katex "a+h" >}} ersetzt. Der Grenzwert der Steigung der Sekanten durch die Punkte {{< katex "(a,f(a))" >}} und {{< katex "(a+h,f(a+h))" >}} ist dann:
 {{< katex display="f'(a)=\text{lim}_{h\to 0}\frac{f(a+h)-f(a)}{h}" >}}

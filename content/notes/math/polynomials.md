@@ -131,8 +131,13 @@ Jede stetige Funktion kann durch ein Polynom approximiert werden.
 
 **Satz von Weierstrass:** Für jede Funktion {{< katex "f\in\mathbb{C}[a,b]">}} und ein beliebiges {{< katex "\varepsilon > 0">}} gibt es ein Polynom {{< katex "p">}}, so dass {{< katex "\| f-p \|_\infty < \varepsilon">}} (mit {{< katex "\|f\|_\infty = \max_{x\in[ab]}|f|">}} die Maximumnorm).
 
+Analog kann jede periodische Funktion (unter gewissen Voraussetzungen) durch ein trigonometrisches Polynom beliebig genau approximiert werden.
+{{< katex display="c + \sum_{i=0}^n a_i \sin(it) + \sum_{i=0}^n b_i \cos(it)" >}}
+
 Polynomfunktionen sind für Approximationen besonders geeignet, weil sie einfach zu differenzieren und integrieren sind und ihre Nullstellen durch Standardalgorithmen bestimmt werden können.
 
 ## Taylorpolynome
+
+## Fourierreihen
 
 ## Interpolation
