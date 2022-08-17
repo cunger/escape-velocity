@@ -155,16 +155,25 @@ Die Determinante hat die folgenden Eigenschaften:
   * {{< katex "\text{det}(T_{ij}(c)) = 1" >}}, also
     {{< katex "\text{det}(T_{ij}(c)A)=\text{det}(A)" >}}
 
+## Alternative Berechnungen
+
+Aus den eben genannten Eigenschaften ergibt sich, dass man die Determinante einer Matrix {{< katex "A">}} auch berechnen kann, indem man {{< katex "A">}} in eine obere Dreiecksmatrix umformt. Die Determinante der oberen Dreiecksmatrix ist das Produkt ihrer Diagonalelemente und anhand dieser Determinante und den angewandten Elementarumformungen kann man die Determinante der ursprünglichen Matrix {{< katex "A">}} berechnen.
+
+Die Determinante ist außerdem das Produkt der [Eigenwerte](#eigenwerte-eigenvektoren-eigenraum) von {{< katex "A">}} (in ihrer Vielfachheit).
+
+Ist {{< katex "A">}} symmetrisch, so gibt es eine zu {{< katex "A">}} ähnliche Matrix {{< katex "B">}}, deren Diagonalelemente genau die Eigenwerte von {{< katex "A">}} sind. Denn die Eigenvektoren von {{< katex "A">}} formen die Basis, unter der {{< katex "A">}} eine Diagonalmatrix ist.
+
 # Invertierbarkeit
 
 Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden Aussagen äquivalent:
 
 * {{< katex "A" >}} ist invertierbar.
-* {{< katex "\text{rang}(A)=n" >}}
+* {{< katex "\text{det}(A)\neq 0" >}} (d.h. wenn {{< katex "\text{det}(A)" >}} im Körper oder Ring, über dem die Matrix definiert ist, invertierbar ist)
+* {{< katex "Ax=0" >}} hat nur die triviale Lösung {{< katex "x=0">}}, d.h. {{< katex "\text{ker}(A)=\{0\}" >}}.
+* 0 ist kein Eigenvektor von {{< katex "A" >}}.
 * Die Spaltenvektoren von {{< katex "A" >}} sind linear unabhängig.
 * {{< katex "A" >}} kann als endliches Produkt von Elementarmatrizen ausgedrückt werden.
-* {{< katex "\text{det}(A)\neq 0" >}} (d.h. wenn {{< katex "\text{det}(A)" >}} im Körper oder Ring, über dem die Matrix definiert ist, invertierbar ist)
-* 0 ist kein Eigenvektor von {{< katex "A" >}} bzw. {{< katex "\text{ker}(A)\neq\{0\}" >}}.
+* {{< katex "\text{rang}(A)=n" >}}
 
 **Berechnung der Inversen:**
 
@@ -331,7 +340,9 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
   * Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.
   * Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.
 
-Jede Matrix ist die Darstellung eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen).
+Jede Matrix {{< katex "A" >}} ist die Darstellung einer linearen Abbildung (nämlich diejenige, deren Darstellungsmatrix {{< katex "A" >}} ist), genauer gesagt eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen). Die Darstellungsmatrizen einer Abbildung haben die gleiche Determinante. Die Determinante ist also unabhängig von der gewählten Basis und damit charakteristisch für die dargestellte Abbildung.
+
+Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie [ähnlich](#normalformen) sind.
 
 # Matrizen als Gleichungssysteme
 
