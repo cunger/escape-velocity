@@ -257,7 +257,11 @@ Der **Kern** sind all die Elemente aus {{< katex "A" >}}, die auf Null abgebilde
 
 Zum Beispiel ist eine Abbildung nicht injektiv, wenn es unterschiedliche Elemente {{< katex "x,x'\in A" >}} gibt, so dass {{< katex "f(x)=f(x')" >}}, also {{< katex "f(x)-f(x')=0" >}}. Bei einer linearen Abbildung heißt das {{< katex "f(x-x')=0" >}}, d.h. {{< katex "x-x'" >}} liegt im Kern; der Unterschied zwischen {{< katex "x" >}} und {{< katex "x'" >}} geht also bei der Abbildung verloren.
 
-Ist {{< katex "\mathbf{A}" >}} ein Vektorraum, dann bildet der Kern einer Abbildung zusammen mit den Operationen in {{< katex "\mathbf{A}" >}} einen Untervektorraum von {{< katex "\mathbf{A}" >}}.
+Das erklärt auch intuitiv, warum für eine lineare Abbildung {{< katex "f:A\to B" >}} gilt:
+{{< katex display="\text{dim}(\text{ker}(f)) + \text{dim}(\text{im}(f)) = \text{dim}(A)" >}}
+Die Dimension von {{< katex "B" >}} (dem Bild von {{< katex "f" >}}, also {{< katex "\text{dim}(\text{im}(f))" >}}) ist die Dimension von {{< katex "A" >}} minus die Dimensionen, die durch die Abbildung verloren gehen. Obwohl {{< katex "\text{dim}(B)" >}} größer sein kann als {{< katex "\text{dim}(A)" >}}, kann {{< katex "f" >}} also nur in einen höchstens {{< katex "\text{dim}(A)" >}}-dimensionalen Unterraum von {{< katex "B" >}} abbilden.
+
+Ist {{< katex "\mathbf{A}" >}} ein Vektorraum, dann bilden der Kern und das Bild einer Abbildung zusammen mit den Operationen in {{< katex "\mathbf{A}" >}} einen Untervektorraum von {{< katex "\mathbf{A}" >}}.
 
 ## Bilinearformen
 

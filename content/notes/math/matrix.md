@@ -13,6 +13,8 @@ Eine {{< katex "m\times n" >}}-Matrix über einem Körper {{< katex "\mathbb{K}"
 
 Die Menge aller solcher Matrizen wird mit {{< katex "M_{mn}(\mathbb{K})" >}} bezeichnet.
 
+Eine Matrix kann gesehen werden als {{< katex "n" >}} Vektoren (die Spalten) in einem {{< katex "m" >}}-dimensionalen Raum.
+
 Matrizen können auch über einem kommutativen Ring statt einem Körper definiert werden. Dann ergeben sich folgende Unterschiede:
 
 * Matrizen über kommutativen Ringen können nicht notwendigerweise in eine Normalform überführt werden.
@@ -27,6 +29,14 @@ Die Matrizenmultiplikation ist eine Verknüpfung {{< katex "M_{mk}\times M_{kn}\
 Zum Beispiel {{< katex "c_{11}=a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31}" >}}.
 
 ![Matrizenmultiplikation](/images/docs/matrixmultiplication.png)
+
+Anders ausgedrückt: Das Produkt einer Matrix mit einem Vektor ist die Linearkombination der Spaltenvekoren der Matrix mit den Vektoreinträgen als Koeffizienten. Zum Beispiel:
+
+{{< katex display="\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\  \begin{pmatrix}a\\ b\end{pmatrix} = a\cdot \begin{pmatrix}1\\ 3\end{pmatrix} + b \cdot \begin{pmatrix}2\\ 4\end{pmatrix}" >}}
+
+Und übertragen auf Matrizenmultiplikation:
+
+{{< katex display="\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\  \begin{pmatrix}a & c\\ b & d\end{pmatrix} = ( a\cdot \begin{pmatrix}1\\ 3\end{pmatrix} + b \cdot \begin{pmatrix}2\\ 4\end{pmatrix} \quad c\cdot \begin{pmatrix}1\\ 3\end{pmatrix} + d \cdot \begin{pmatrix}2\\ 4\end{pmatrix} )" >}}
 
 Eine Matrix {{< katex "A" >}} ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, so dass {{< katex "A^m = 0" >}} und {{< katex "A^{m-1}\neq 0" >}}. Für nilpotente Matrizen gilt:
 
@@ -356,3 +366,8 @@ Ist {{< katex "m>n">}}, also wenn es mehr Gleichungen als Unbekannte gibt, gibt 
 Ist {{< katex "m<n">}}, also wenn es mehr Unbekannte als Gleichungen gibt, gibt es oft mehrere (ggf. unendlich viele) Lösungen.
 
 Im Fall {{< katex "m=n">}} ist {{< katex "A">}} eine quadratische {{< katex "n\times n">}}-Matrix. Wenn {{< katex "A">}} [invertierbar](#invertierbarkeit) ist, dann ist die Lösung des Gleichungssystems {{< katex "x=A^{-1}b">}} (denn {{< katex "Ax=A(A^{-1}b)=Ib=b">}}). Die Lösung des Gleichungssystems zu finden, hängt also eng mit der Frage zusammen, ob {{< katex "A">}} invertierbar ist.
+
+## Ressourcen
+
+* Klaus Jänich
+* Gilbert Strang
