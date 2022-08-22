@@ -192,7 +192,11 @@ In einfachen Fällen kann man {{< katex "A^{-1}A=I" >}} nutzen, um die Inverse z
 Die Inverse findet man also durch Ausmultiplizieren und Lösen des Gleichungssystems.
 
 Allgemeiner:
-Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
+Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen. Praktisch heißt das, man bildet im obigen Beispiel die Matrix
+{{< katex display="\begin{pmatrix} 2 & 3 & | & 1 & 0 \\ 3 & 5 & | & 0 & 1\end{pmatrix}">}}
+und formt sie um in
+{{< katex display="\begin{pmatrix} 1 & 0 & | & -20/9 & 4/3 \\ 0 & 1 & | & -3 & 2\end{pmatrix}">}}
+woraus man die Inverse ablesen kann.
 
 # Das charakteristische Polynom einer Matrix
 
