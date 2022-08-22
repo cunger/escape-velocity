@@ -185,8 +185,13 @@ Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden 
 * {{< katex "A" >}} kann als endliches Produkt von Elementarmatrizen ausgedrückt werden.
 * {{< katex "\text{rang}(A)=n" >}}
 
-**Berechnung der Inversen:**
+## Berechnung der Inversen
 
+In einfachen Fällen kann man {{< katex "A^{-1}A=I" >}} nutzen, um die Inverse zu berechnen. Ist {{< katex "A">}} zum Beispiel {{< katex "\begin{pmatrix}2 & 3 \\ 3 & 5\end{pmatrix}">}} und man sucht {{< katex "A^{-1}=\begin{pmatrix}a & b \\ c & d\end{pmatrix}">}}, dann gilt:
+{{< katex display="\begin{pmatrix}a & b \\ c & d\end{pmatrix}\ \begin{pmatrix}2 & 3 \\ 3 & 5\end{pmatrix}=\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}">}}
+Die Inverse findet man also durch Ausmultiplizieren und Lösen des Gleichungssystems.
+
+Allgemeiner:
 Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
 
 # Das charakteristische Polynom einer Matrix
