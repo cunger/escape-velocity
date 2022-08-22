@@ -187,15 +187,23 @@ Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden 
 
 ## Berechnung der Inversen
 
-In einfachen Fällen kann man {{< katex "A^{-1}A=I" >}} nutzen, um die Inverse zu berechnen. Ist {{< katex "A">}} zum Beispiel {{< katex "\begin{pmatrix}2 & 3 \\ 3 & 5\end{pmatrix}">}} und man sucht {{< katex "A^{-1}=\begin{pmatrix}a & b \\ c & d\end{pmatrix}">}}, dann gilt:
+Für invertierbare {{< katex "2\times 2">}} Matrizen {{< katex "\begin{pmatrix}a & b \\ c & d\end{pmatrix}">}} gilt:
+{{< katex "\begin{pmatrix}a & b \\ c & d\end{pmatrix}^{-1} = \dfrac{1}{ad-bc}\begin{pmatrix}d & -b \\ -c & a\end{pmatrix}">}}
+
+Es gibt zwei Möglichkeiten, darauf zu kommen.
+In einfachen Fällen kann man {{< katex "A^{-1}A=I" >}} nutzen, um die Inverse zu berechnen.
+
+Ist {{< katex "A">}} zum Beispiel {{< katex "\begin{pmatrix}2 & 3 \\ 3 & 5\end{pmatrix}">}} und man sucht {{< katex "A^{-1}=\begin{pmatrix}a & b \\ c & d\end{pmatrix}">}}, dann gilt:
 {{< katex display="\begin{pmatrix}a & b \\ c & d\end{pmatrix}\ \begin{pmatrix}2 & 3 \\ 3 & 5\end{pmatrix}=\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}">}}
 Die Inverse findet man also durch Ausmultiplizieren und Lösen des Gleichungssystems.
 
 Allgemeiner:
-Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen. Praktisch heißt das, man bildet im obigen Beispiel die Matrix
+Gilt {{< katex "AB=C" >}} und wendet man die gleichen Zeilenumformungen auf {{< katex "A" >}} und {{< katex "C" >}} an (mit dem Ergebnis {{< katex "A'" >}} und {{< katex "C'" >}}), so ist {{< katex "A'B=C'" >}}. Da {{< katex "AA^{-1}=I" >}}, bedeutet das, dass man die Inverse einer Matrix bestimmen kann, indem man die gleichen Zeilenumformungen, die {{< katex "A" >}} in {{< katex "I" >}} überführen, ausführen kann, um {{< katex "I" >}} in {{< katex "A^{-1}" >}} zu überführen.
+
+Praktisch heißt das, man bildet im obigen Beispiel die Matrix
 {{< katex display="\begin{pmatrix} 2 & 3 & | & 1 & 0 \\ 3 & 5 & | & 0 & 1\end{pmatrix}">}}
-und formt sie um in
-{{< katex display="\begin{pmatrix} 1 & 0 & | & -20/9 & 4/3 \\ 0 & 1 & | & -3 & 2\end{pmatrix}">}}
+und formt sie durch elementare Umformungen um in
+{{< katex display="\begin{pmatrix} 1 & 0 & | & 5 & -3 \\ 0 & 1 & | & -3 & 2\end{pmatrix}">}}
 woraus man die Inverse ablesen kann.
 
 # Das charakteristische Polynom einer Matrix
