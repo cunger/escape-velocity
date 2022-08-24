@@ -371,6 +371,22 @@ Jede Matrix {{< katex "A" >}} ist die Darstellung einer linearen Abbildung (näm
 
 Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie [ähnlich](#normalformen) sind.
 
+## Koordinatenvektoren, Basiswechsel und Darstellungsmatrix
+
+Jeder Vektor {{< katex "v">}} eines n-dimensionalen Vektorraums ist eine Linearkombination der Basisvektoren. Der **Koordinatenvektor**, der {{< katex "v">}} repräsentiert, ist derjenige Vektor {{< katex "\text{Repr}_B(v)" >}} in {{< katex "\mathbb{R}^n">}}, dessen Elemente die Koeffizienten der Linearkombination bezüglich der Basis {{< katex "B">}} sind.
+
+Beispiele:
+* Ist {{< katex "v=(x^2-x)\in \mathbb{R}[x]">}}, dann ist sein Koordinatenvektor {{< katex "\text{Repr}_E(v) = \begin{pmatrix}1\\1\\0\end{pmatrix}" >}} bezüglich der Standardbasis {{< katex "\langle x^2,x^1,x^0\rangle">}}, weil {{< katex "v=x^2-x= 1\cdot x^2 - 1\cdot x^1 + 0\cdot x^0">}}.
+* Ist {{< katex "v=\begin{pmatrix}2 \\-1 \end{pmatrix}\in\mathbb{R}^2">}}, dann ist der Koordinatenvektor {{< katex "\text{Repr}_E(v)" >}} bezüglich der Standardbasis {{< katex "E">}} trivialerweise gleich {{< katex "v">}}, weil
+{{< katex "\begin{pmatrix}2 \\-1 \end{pmatrix} = 2\begin{pmatrix}1 \\0 \end{pmatrix} -1 \begin{pmatrix}0 \\1 \end{pmatrix}" >}}.
+Der Koordinatenvektor von {{< katex "v">}} bezüglich einer anderen Basis, zum Beispiel {{< katex "B=\langle\begin{pmatrix}2 \\1 \end{pmatrix}, \begin{pmatrix}-2 \\4 \end{pmatrix}\rangle" >}}
+ist dann {{< katex "\text{Repr}_B(v)=\begin{pmatrix}a \\b \end{pmatrix}">}}, wobei {{< katex "a,b">}} die Koeffizienten der Linearkombination der Basisvektoren {{< katex "B">}} ist, die {{< katex "v">}} ergibt, d.h. die Lösung von {{< katex "\begin{pmatrix}2 \\-1 \end{pmatrix} = a\begin{pmatrix}2 \\1 \end{pmatrix} + b \begin{pmatrix}-2 \\4 \end{pmatrix}">}}.
+
+Eine **Basiswechselmatrix** {{< katex "{}_BM_D">}} ist diejenige Matrix bzw. Transformation, die einen Koordinatenvektor bezüglich {{< katex "B">}} auf einen Koordinatenvektor bezüglich {{< katex "D">}} abbildet:
+{{< katex display="{}_BM_D\cdot \text{Repr}_B(v) = \text{Repr}_D(v)">}}
+Ihre Spalten sind die Darstellungen {{< katex "\text{Repr}_D(b)">}} der Basisvektoren {{< katex "b\in B">}} bezüglich der Zielbasis {{< katex "D">}}.
+Es gilt {{< katex "{}_BM_D = ({}_DM_B)^{-1}">}} und {{< katex "{}_BM_D\cdot {}_DM_B = I">}}.
+
 # Matrizen als Gleichungssysteme
 
 Wenn wir ein System von {{< katex "m">}} linearen Gleichungen mit {{< katex "n" >}} Unbekannten {{< katex "x_1,\ldots,x_n" >}} haben:
@@ -383,8 +399,3 @@ Ist {{< katex "m>n">}}, also wenn es mehr Gleichungen als Unbekannte gibt, gibt 
 Ist {{< katex "m<n">}}, also wenn es mehr Unbekannte als Gleichungen gibt, gibt es oft mehrere (ggf. unendlich viele) Lösungen.
 
 Im Fall {{< katex "m=n">}} ist {{< katex "A">}} eine quadratische {{< katex "n\times n">}}-Matrix. Wenn {{< katex "A">}} [invertierbar](#invertierbarkeit) ist, dann ist die Lösung des Gleichungssystems {{< katex "x=A^{-1}b">}} (denn {{< katex "Ax=A(A^{-1}b)=Ib=b">}}). Die Lösung des Gleichungssystems zu finden, hängt also eng mit der Frage zusammen, ob {{< katex "A">}} invertierbar ist.
-
-## Ressourcen
-
-* Klaus Jänich
-* Gilbert Strang

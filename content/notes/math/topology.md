@@ -194,8 +194,3 @@ Der Grenzwert einer Folge ist immer auch Häufungspunkt. In einem metrischen Rau
 * punktweise Konvergenz
 * gleichmäßige Konvergenz
 * andere Konvergenzen (z.B. {{< katex "L^1" >}}- und {{< katex "L^2" >}}-Konvergenz)
-
-# Literatur
-
-* Wolfgang Beekmann: Skript Analysis (1144), FernUniversität Hagen.
-* Klaus Jänisch: Topologie.
