@@ -342,7 +342,7 @@ Was wiederum bedeutet, dass die Einträge der Darstellungsmatrix davon abhängen
 
 Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie [ähnlich](#normalformen) sind (bzw. kongruent im Fall von Bilinearformen).
 
-Betrachtet man allgemeine Vektorräume, z.B. mit Polynomen oder Funktionen als Vektoren, kann man ggf. nicht direkt mit den Vektoren, sondern nur mit ihren Koordinatenvektoren arbeiten.
+Da endliche Vektorräume viel mehr sind als {{< katex "\mathbb{K}^n" >}}, z.B. wenn die Vektoren Funktionen sind, arbeitet man im allgemeinen nicht direkt mit den Vektoren, sondern mit ihren Koordinatenvektoren.
 
 Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich folgendes Bild:
 
