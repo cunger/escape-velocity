@@ -258,8 +258,6 @@ Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare 
 Das bedeutet, dass {{< katex "A" >}} die gleiche Transformation wie {{< katex "B" >}} ausdrückt, nur in einer anderen Basis, wobei {{< katex "P" >}} die Basiswechselmatrix ist ({{< katex "P" >}} ist nicht eindeutig, denn jedes Vielfache {{< katex "cP" >}} erfüllt die Gleichung auch). D.h. {{< katex "A" >}} und {{< katex "B" >}} stellen die gleiche Transformation dar, nur in unterschiedlichen Koordinatensystemen.
 Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wahl der Basis (und einen entsprechenden Basiswechsel) in eine Normalform bringen.
 
-![Diagramm für Ähnlichkeit](/images/docs/aehnlichkeitsdiagramm.jpg)
-
 **Berechnung:** {{< katex "P" >}} kann man berechnen, indem man die Eigenwerte von {{< katex "A" >}} mit den dazugehörigen Eigenräumen findet und dann die Basisvektoren dieser Eigenräume als Spalten von {{< katex "P" >}} wählt.
 (Wenn {{< katex "P" >}} orthogonal sein soll, muss man entsprechend die Orthonormalbasis der Eigenräume bilden.)
 
@@ -330,28 +328,27 @@ Die Reihenfolge der Blöcke in einer Jordan-Matrix ist egal.
 
 # Matrizen als lineare Transformationen
 
-Eine Matrix {{< katex "A\in M_{mn}(\mathbb{K})" >}} kann eine lineare Abbildung {{< katex "f:\mathbb{K}^n\to\mathbb{K}^m" >}} zwischen endlichen Vektorräumen darstellen. Sie bildet dann die Vektoren {{< katex "x\in\mathbb{K}^n" >}} auf die Vektoren {{< katex "Ax\in\mathbb{K}^m" >}} ab, d.h. {{< katex "f(x)=Ax" >}}. (Dabei können diese Vektoren zum Beispiel auch die Koordinatenvektoren beliebiger Vektoren aus {{< katex "\mathbb{K}" >}} sein.)
+Jede Matrix {{< katex "A\in M_{mn}(\mathbb{K})" >}} stellt eine lineare Abbildung {{< katex "f:\mathbb{K}^n\to\mathbb{K}^m" >}} zwischen endlichen Vektorräumen dar. Sie bildet die Vektoren {{< katex "x\in\mathbb{K}^n" >}} auf die Vektoren {{< katex "Ax\in\mathbb{K}^m" >}} ab, d.h. {{< katex "f(x)=Ax" >}} (die Multiplikation der Matrix {{< katex "A" >}} mit einem beliebigen Vektor {{< katex "x" >}} entspricht die Anwendung der Transformation auf diesen Vektor).
 
-Linear ist eine solche Abbildung, weil die Matrizenmultiplikation sowohl Addition als auch Skalarmultiplikation respektiert:
+Linear ist die dargestellte Abbildung, weil die Matrizenmultiplikation sowohl Addition als auch Skalarmultiplikation respektiert:
 * {{< katex "A(x+y) = Ax + Ay" >}}
 * {{< katex "A(cx) = c(Ax)" >}}
 
-In einem zweidimensionalen Raum kann man Linearität anschaulich so verstehen, dass die Transformation des Raumes seine Gridlinien parallel lässt und der Abstand zwischen ihnen überall gleich bleibt.
+Jeder Vektor {{< katex "x" >}} kann als Linearkombination {{< katex "c_1b_1+\cdots +c_nb_n">}} von Basisvektoren {{< katex "b_1,\ldots,b_n">}} dargestellt werden. Aufgrund der Linearität ergibt sich:
+{{< katex display="Ax=A(c_1b_1+\cdots +c_nb_n)=c_1Ab_1+\cdots + c_nAb_n" >}}
 
-Da jeder Vektor als Linearkombination der kanonischen Basisvektoren dargestellt werden kann, ist eine lineare Abbildung zwischen Vektorräumen vollständig dadurch bestimmt, worauf diese Basisvektoren abgebildet werden.
-Eine Matrix als Darstellung einer linearen Abbildung enthält als Spalten nun genau die Vektoren, auf die die Basisvektoren abgebildet werden.
-Nehmen wir die kanonischen Basisvektoren von {{< katex "x\in\mathbb{K}^n" >}}:
-{{< katex display="e_1 = \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \ldots, e_n = \begin{pmatrix} 0 \\ \vdots \\ 0 \\ 1 \end{pmatrix}" >}}
+Das bedeutet, dass eine lineare Abbildung vollständig dadurch bestimmt ist, worauf die Basisvektoren abgebildet werden. Die **Darstellungsmatrix** einer linearen Abbildung enthält als Spalten demnach genau die Vektoren {{< katex "f(b_1),\ldots,f(b_n)">}}, auf die die Basisvektoren abgebildet werden.
+Was wiederum bedeutet, dass die Einträge der Darstellungsmatrix davon abhängen, welche Basis man betrachtet.
 
-Multiplikation einer Matrix {{< katex "A" >}} mit einem Basisvektor {{< katex "e_i" >}} ergibt genau die i-te Spalte der Matrix, d.h. {{< katex "Ae_i" >}} ist der Vektor, auf den {{< katex "e_i" >}} abgebildet wird.
+Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie [ähnlich](#normalformen) sind (bzw. kongruent im Fall von Bilinearformen).
 
-Allgemeiner bedeutet die Multiplikation der Matrix {{< katex "A" >}} mit einem beliebigen Vektor {{< katex "x" >}} die Anwendung der Transformation auf diesen Vektor.
-Denn jeder Vektor kann als Linearkombination von Basisvektoren geschrieben werden kann, aufgrund der Linearität erhält man also:
-{{< katex display="Ax=A(c_1e_1+\cdots +c_ne_n)=c_1Ae_1+\cdots + c_nAe_n" >}}
+Betrachtet man allgemeine Vektorräume, z.B. mit Polynomen oder Funktionen als Vektoren, kann man ggf. nicht direkt mit den Vektoren, sondern nur mit ihren Koordinatenvektoren arbeiten.
 
 Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich folgendes Bild:
 
 * Die Elementarmatrizen entsprechen Basistransformationen (Rotation, Verschieben, Stauchen oder Strecken) und dass jede Matrix als Produkt von Elementarmatrizen darstellbar ist, bedeutet dass eine Transformation als Komposition von Basistransformationen beschrieben werden kann.
+
+* In einem zweidimensionalen Raum kann man Linearität anschaulich so verstehen, dass die Transformation des Raumes seine Gridlinien parallel lässt und der Abstand zwischen ihnen überall gleich bleibt.
 
 * Eine Diagonalmatrix stellt einer Transformation dar, die die Basisvektoren nur skaliert.
 
@@ -361,31 +358,28 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
   * {{< katex "Ax=v" >}} bedeutet, dass die Tranformation {{< katex "A" >}} den Vektor {{< katex "x" >}} auf den Vektor {{< katex "v" >}} abbildet.
   * Daraus folgt {{< katex "x=A^{-1}v" >}}, d.h. man findet {{< katex "x" >}}, indem man die inverse Transformation {{< katex "A^{-1}" >}} auf {{< katex "v" >}} anwendet.
 
-* Der **Rang** einer Matrix entspricht der Anzahl des Dimensionen des Outputs der Transformation.
+* Der **Rang** einer Matrix entspricht der Anzahl der Dimensionen des Outputs der Transformation.
 
 * Die **Determinante** einer Matrix ist der Faktor, um den ein Teil des Raumes durch die Transformation gestaucht oder gestreckt wird (z.B. der Inhalt einer Fläche im zweidimensionalen Raum oder das Volumen im dreidimensionalen Raum).
   * Ist die Determinante negativ, entspricht das einer Umkehrung der Orientierung des Raumes.
   * Ist die Determinante 0, heißt das, die Transformation bildet auf eine niedrigere Dimension ab. Man verliert also Informationen und kann die Transformation deswegen nicht rückgängig machen, d.h. die Matrix ist nicht invertierbar.
+  * Die Darstellungsmatrizen einer Abbildung haben die gleiche Determinante. Die Determinante ist also unabhängig von der gewählten Basis und damit charakteristisch für die dargestellte Abbildung.
 
-Jede Matrix {{< katex "A" >}} ist die Darstellung einer linearen Abbildung (nämlich diejenige, deren Darstellungsmatrix {{< katex "A" >}} ist), genauer gesagt eines Endomorphismus des Vektorraums (mit Ähnlichkeit als Äquivalenzrelation und den entsprechenden Normalformen) und einer Bilinearform des Vektorraums (mit Kongruenz als Äquivalenzrelation und den entsprechenden Normalformen). Die Darstellungsmatrizen einer Abbildung haben die gleiche Determinante. Die Determinante ist also unabhängig von der gewählten Basis und damit charakteristisch für die dargestellte Abbildung.
-
-Zwei Matrizen stellen die gleiche lineare Abbildung dar, wenn sie [ähnlich](#normalformen) sind.
-
-## Koordinatenvektoren, Basiswechsel und Darstellungsmatrix
-
-Jeder Vektor {{< katex "v">}} eines n-dimensionalen Vektorraums ist eine Linearkombination der Basisvektoren. Der **Koordinatenvektor**, der {{< katex "v">}} repräsentiert, ist derjenige Vektor {{< katex "\text{Repr}_B(v)" >}} in {{< katex "\mathbb{R}^n">}}, dessen Elemente die Koeffizienten der Linearkombination bezüglich der Basis {{< katex "B">}} sind.
-
-Beispiele:
-* Ist {{< katex "v=(x^2-x)\in \mathbb{R}[x]">}}, dann ist sein Koordinatenvektor {{< katex "\text{Repr}_E(v) = \begin{pmatrix}1\\1\\0\end{pmatrix}" >}} bezüglich der Standardbasis {{< katex "\langle x^2,x^1,x^0\rangle">}}, weil {{< katex "v=x^2-x= 1\cdot x^2 - 1\cdot x^1 + 0\cdot x^0">}}.
-* Ist {{< katex "v=\begin{pmatrix}2 \\-1 \end{pmatrix}\in\mathbb{R}^2">}}, dann ist der Koordinatenvektor {{< katex "\text{Repr}_E(v)" >}} bezüglich der Standardbasis {{< katex "E">}} trivialerweise gleich {{< katex "v">}}, weil
-{{< katex "\begin{pmatrix}2 \\-1 \end{pmatrix} = 2\begin{pmatrix}1 \\0 \end{pmatrix} -1 \begin{pmatrix}0 \\1 \end{pmatrix}" >}}.
-Der Koordinatenvektor von {{< katex "v">}} bezüglich einer anderen Basis, zum Beispiel {{< katex "B=\langle\begin{pmatrix}2 \\1 \end{pmatrix}, \begin{pmatrix}-2 \\4 \end{pmatrix}\rangle" >}}
-ist dann {{< katex "\text{Repr}_B(v)=\begin{pmatrix}a \\b \end{pmatrix}">}}, wobei {{< katex "a,b">}} die Koeffizienten der Linearkombination der Basisvektoren {{< katex "B">}} ist, die {{< katex "v">}} ergibt, d.h. die Lösung von {{< katex "\begin{pmatrix}2 \\-1 \end{pmatrix} = a\begin{pmatrix}2 \\1 \end{pmatrix} + b \begin{pmatrix}-2 \\4 \end{pmatrix}">}}.
+## Basiswechsel
 
 Eine **Basiswechselmatrix** {{< katex "{}_BM_D">}} ist diejenige Matrix bzw. Transformation, die einen Koordinatenvektor bezüglich {{< katex "B">}} auf einen Koordinatenvektor bezüglich {{< katex "D">}} abbildet:
 {{< katex display="{}_BM_D\cdot \text{Repr}_B(v) = \text{Repr}_D(v)">}}
 Ihre Spalten sind die Darstellungen {{< katex "\text{Repr}_D(b)">}} der Basisvektoren {{< katex "b\in B">}} bezüglich der Zielbasis {{< katex "D">}}.
 Es gilt {{< katex "{}_BM_D = ({}_DM_B)^{-1}">}} und {{< katex "{}_BM_D\cdot {}_DM_B = I">}}.
+Und ist die Zielbasis die Einheitsbasis, ist es besonders einfach, denn es ist {{< katex "\text{Repr}_E(b)=b">}}.
+
+Um die Matrixdarstellung {{< katex "t">}} einer gegebenen Transformation in ihre Matrixdarstellung {{< katex "t'">}} bezüglich anderer Basen zu übersetzen, geht man in folgendem Diagramm den Weg von {{< katex "\mathbb{R}^n_{B'}">}} zu {{< katex "\mathbb{R}^n_{D'}">}} über {{< katex "t">}} (hoch-rechts-runter).
+
+{{< katex display="\begin{matrix} & \mathbb{R}^n_B & \xrightarrow{t} & \mathbb{R}^n_D & \\ & & & & \\ {}_{B'}M_B & \big\uparrow & & \big\downarrow & {}_DM_{D'} \\ & & & & \\ & \mathbb{R}^n_{B'} & \xrightarrow[t']{} & \mathbb{R}^n_{D'} & \end{matrix}" >}}
+
+Die Hintereinanderausführung dieser Schritte entspricht folgender Matrizenmultiplikation:
+{{< katex display="t' = {}_DM_{D'}\cdot t\cdot {}_{B'}M_B">}}
+Wobei {{< katex "{}_{B'}M_B = ({}_BM_{B'})^{-1}">}}.
 
 # Matrizen als Gleichungssysteme
 

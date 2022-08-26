@@ -138,6 +138,17 @@ Eine Menge von Vektoren ist **linear unabhängig**, wenn keiner der Vektoren ein
 
 Eine **Basis** eines Vektorraums ist eine Menge linear unabhängiger Vektoren, mit deren Hilfe sich jeder Vektor eindeutig as Linearkombination darstellen lässt.
 
+## Koordinatenvektoren
+
+Jeder Vektor {{< katex "v">}} eines n-dimensionalen Vektorraums ist eine Linearkombination der Basisvektoren. Der **Koordinatenvektor**, der {{< katex "v">}} bezüglich einer Basis {{< katex "B">}} repräsentiert, ist derjenige Vektor {{< katex "\text{Repr}_B(v)" >}} in {{< katex "\mathbb{R}^n">}}, dessen Elemente die Koeffizienten der Linearkombination bezüglich der Basis {{< katex "B">}} sind.
+
+Beispiele:
+* Ist {{< katex "v=(x^2-x)\in \mathbb{R}[x]">}}, dann ist sein Koordinatenvektor {{< katex "\text{Repr}_E(v) = \begin{pmatrix}1\\1\\0\end{pmatrix}" >}} bezüglich der Standardbasis {{< katex "\langle x^2,x^1,x^0\rangle">}}, weil {{< katex "v=x^2-x= 1\cdot x^2 - 1\cdot x^1 + 0\cdot x^0">}}.
+* Ist {{< katex "v=\begin{pmatrix}2 \\-1 \end{pmatrix}\in\mathbb{R}^2">}}, dann ist der Koordinatenvektor {{< katex "\text{Repr}_E(v)" >}} bezüglich der Standardbasis {{< katex "E">}} trivialerweise gleich {{< katex "v">}}, weil
+{{< katex "\begin{pmatrix}2 \\-1 \end{pmatrix} = 2\begin{pmatrix}1 \\0 \end{pmatrix} -1 \begin{pmatrix}0 \\1 \end{pmatrix}" >}}.
+Der Koordinatenvektor von {{< katex "v">}} bezüglich einer anderen Basis, zum Beispiel {{< katex "B=\langle\begin{pmatrix}2 \\1 \end{pmatrix}, \begin{pmatrix}-2 \\4 \end{pmatrix}\rangle" >}}
+ist dann {{< katex "\text{Repr}_B(v)=\begin{pmatrix}a \\b \end{pmatrix}">}}, wobei {{< katex "a,b">}} die Koeffizienten der Linearkombination der Basisvektoren {{< katex "B">}} ist, die {{< katex "v">}} ergibt, d.h. die Lösung von {{< katex "\begin{pmatrix}2 \\-1 \end{pmatrix} = a\begin{pmatrix}2 \\1 \end{pmatrix} + b \begin{pmatrix}-2 \\4 \end{pmatrix}">}}.
+
 ## Untervektorräume
 
 Untervektorräume sind Teilmengen von Vektorräumen, die selber wieder eine Vektorraum sind. D.h. zu einem Vektorraum {{< katex "(V,+,\cdot)" >}} über einem Körper {{< katex "\mathbb{K}">}} ist {{< katex "(U,+,\cdot)" >}} mit {{< katex "U\subseteq V" >}} ein Untervektorraum, wenn:
