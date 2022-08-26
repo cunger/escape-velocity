@@ -18,6 +18,8 @@ Charles Seife: **Decoding the universe.**
 
 Edward Wilson: **Half-Earth.**
 
+Fabian Scheidler: **The end of the megamachine: a brief history of a failing civilization.**
+
 Becky Chambers: **Long way to a small angry planet.** (And most of her other books.)
 
 Adam Higginbotham: **Midnight in Chernobyl**.
