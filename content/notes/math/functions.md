@@ -200,8 +200,4 @@ Wenn {{< katex "f" >}} in einer Umgebung eines Punktes {{< katex "a" >}} partiel
 
 (https://www.wikiwand.com/en/Differential_operator)
 
-## Wichtige Sätze
-
-**Mittelwertsatz:** ...
-
 # Integrierbarkeit

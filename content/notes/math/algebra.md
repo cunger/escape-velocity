@@ -15,14 +15,15 @@ Algebraische Strukturen sind Mengen von mathematischen Objekten zusammen mit Ver
 # Gruppen
 
 Eine **Gruppe** {{< katex "(M,\ast)" >}} ist eine Menge {{< katex "M" >}} mit einer Verknüpfung {{< katex "\ast" >}}, so dass:
-* {{< katex "\ast" >}} assoziativ ist (d.h. {{< katex "a\ast(b\ast c) = (a\ast b)\ast c" >}}),
-* es ein neutrales Element {{< katex "e" >}} bezüglich {{< katex "\ast" >}} gibt (d.h. {{< katex "a\ast e=a=e\ast a" >}}),
-* jedes {{< katex "a\in M" >}} ein inverses Element {{< katex "a'" >}} besitzt (d.h. {{< katex "a\ast a' = a'\ast a = e" >}}),
+* {{< katex "\ast" >}} assoziativ ist, d.h. {{< katex "a\ast(b\ast c) = (a\ast b)\ast c" >}}
+* es ein neutrales Element {{< katex "e" >}} bezüglich {{< katex "\ast" >}} gibt, d.h. {{< katex "a\ast e=a=e\ast a" >}}
+* jedes {{< katex "a\in M" >}} ein inverses Element {{< katex "a'" >}} besitzt, d.h. {{< katex "a\ast a' = a'\ast a = e" >}}
+
   Notation: {{< katex "-a" >}} für additive Verknüpfungen und {{< katex "a^{-1}" >}} für multiplikative Verknüpfungen.
 
 Neutrales Element und inverse Elemente sind eindeutig.
 
-In einer **abelsche Gruppe** ist die Verknüpfung auch kommutativ (d.h. {{< katex "a\ast b = b\ast a" >}}).
+In einer **abelsche Gruppe** ist die Verknüpfung außerfdem kommutativ, d.h. {{< katex "a\ast b = b\ast a" >}}.
 Die Verknüpfung wird oft additiv interpretiert für kommutitative Gruppen und multiplikativ für andere.
 
 Beispiele:
@@ -55,8 +56,8 @@ Jede Permutation kann als Komposition von Transpositionen dargestellt werden.
 # Ringe
 
 Ein **Ring** {{< katex "(M,+,\cdot)" >}} ist eine abelsche Gruppe {{< katex "(M,+)" >}} mit einer weiteren Verknüpfung {{< katex "\cdot" >}}, die
-* assoziativ ist (d.h. {{< katex "a\cdot(b\cdot c) = (a\cdot b)\cdot c" >}}),
-* distributiv ist über {{< katex "+" >}} (d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}, also dass beide Verknüpfungen miteinander verträglich sind),
+* assoziativ ist, d.h. {{< katex "a\cdot(b\cdot c) = (a\cdot b)\cdot c" >}}
+* distributiv ist über {{< katex "+" >}}, d.h. {{< katex "a\cdot(b+c) = (a\cdot b)+(a\cdot c)" >}}, also dass beide Verknüpfungen miteinander verträglich sind
 * aber nicht kommutativ sein muss, nicht zwangsläufig ein neutrales Element bezüglich {{< katex "\cdot" >}} (d.h. ein Einselement) haben muss und bezüglich der Elemente deswegen nicht unbedingt invertierbar sind.
 
 Die **Einheitengruppe** {{< katex "R^\times" >}} eines Rings {{< katex "R" >}} mit Einselement ist die Menge aller Elemente, die bezüglich {{< katex "\cdot" >}} invertierbar sind, also {{< katex "\{a\in R\,|\, \text{es existiert ein } b\in R \text{ mit } ab = ba = 1\}" >}}. (Zusammen mit {{< katex "\cdot" >}} bildet diese Menge eine Gruppe.)
@@ -95,16 +96,16 @@ Ist {{< katex "(R,+,\cdot)" >}} ein Integritätsring, so ist auch {{< katex "(R[
 # Körper
 
 Ein **Körper** {{< katex "(\mathbb{K},+,\cdot)" >}} (_field_) ist eine Menge {{< katex "\mathbb{K}" >}} mit zwei Verknüpfungen {{< katex "+" >}} und {{< katex "\cdot" >}}, und zwei verschiedenen Elementen 0 und 1, so dass:
-* {{< katex "+" >}} assoziativ und kommutativ ist,
-* 0 das neutrale Element bezüglich {{< katex "+" >}} ist und jedes Element von {{< katex "\mathbb{K}" >}} invertierbar ist (d.h. {{< katex "a+(-a)=0" >}}),
-* {{< katex "\cdot" >}} assoziativ und kommutativ ist,  
-* 1 das neutrale Element bezüglich {{< katex "\cdot" >}} ist und jedes Element von {{< katex "\mathbb{K}" >}} invertierbar ist (d.h. {{< katex "a\cdot a^{-1}=1" >}}),
+* {{< katex "+" >}} assoziativ und kommutativ ist
+* 0 das neutrale Element bezüglich {{< katex "+" >}} ist und jedes Element von {{< katex "\mathbb{K}" >}} invertierbar ist, d.h. {{< katex "a+(-a)=0" >}}
+* {{< katex "\cdot" >}} assoziativ und kommutativ ist  
+* 1 das neutrale Element bezüglich {{< katex "\cdot" >}} ist und jedes Element von {{< katex "\mathbb{K}" >}} invertierbar ist, d.h. {{< katex "a\cdot a^{-1}=1" >}}
 * {{< katex "\cdot" >}} distributiv ist über {{< katex "+" >}}.
 
 Das heißt: {{< katex "(\mathbb{K},+)" >}} und {{< katex "(\mathbb{K}\backslash\{0\},\cdot)" >}} sind abelsche Gruppen.
 
 Beispiele:
-* {{< katex "\mathbb{F}_p = (\mathbb{Z}/p\mathbb{Z},+,\cdot)" >}} (mit {{< katex "p" >}} eine Primzahl, auch: **Galoiskörper**)
+* {{< katex "\mathbb{F}_p = (\mathbb{Z}/p\mathbb{Z},+,\cdot)" >}} (sogenannte **Galoiskörper**, wobei {{< katex "p" >}} eine Primzahl ist)
 * {{< katex "(\mathbb{Q},+,\cdot)" >}}
 * {{< katex "(\mathbb{R},+,\cdot)" >}}
 * {{< katex "(\mathbb{C},+,\cdot)" >}} mit {{< katex "\mathbb{C}=\mathbb{R}^2" >}} und
@@ -127,7 +128,7 @@ Ein **Vektorraum** {{< katex "(V,+,\cdot)" >}} (_vector space_ oder _linear spac
 
 Wir verbinden also eine abelsche Gruppe {{< katex "(V,+)" >}} mit einem Körper {{< katex "\mathbb{K}" >}}, dessen Multiplikation kompatibel mit der Addition in {{< katex "V" >}} ist.
 
-**Vektoren** sind die Elemente eines Vektorraums, sie können also alles sein, solange Addition und Skalarmultiplikation so definiert sind, dass sie die obigen Axiome erfüllen: Koordinaten im n-dimensionalen Raum ({{< katex "\mathbb{R}^n" >}} oder {{< katex "\mathbb{C}^n" >}}, hier ist der Vektorraum im Prinzip ein n-dimensionaler Körper, wobei die Multiplikation keine Verknüpfung von Körperelementen ist, sondern deren Stauchung oder Streckung), Matrizen, Funktionen.
+**Vektoren** sind die Elemente eines Vektorraums; sie können so ziemlich alles sein, solange Addition und Skalarmultiplikation so definiert sind, dass sie die obigen Axiome erfüllen: Matrizen, Funktionen, Koordinaten im n-dimensionalen Raum ({{< katex "\mathbb{R}^n" >}} oder {{< katex "\mathbb{C}^n" >}}; hier ist der Vektorraum im Prinzip ein n-dimensionaler Körper, wobei die Multiplikation keine Verknüpfung von Körperelementen ist, sondern deren Stauchung oder Streckung durch einen Skalar).
 Entscheidend ist nicht so sehr die Form von Vektoren, sondern ihre Eigenschaften.
 Der Gedanke hinter dem Begriff des linearen Raums ist, dass Vektoren all das sind, wovon man Linearkombinationen bilden kann.
 
@@ -136,7 +137,7 @@ Eine Menge von Vektoren ist **linear unabhängig**, wenn keiner der Vektoren ein
 * Ein endliches System von Vektoren {{< katex "(v_1,\ldots,v_n)" >}} ist linear unabhängig, wenn aus {{< katex "\sum_{i=1}^n a_i v_i = 0" >}} folgt, dass {{< katex "a_1=\ldots=a_n=0" >}}.
 * Ein unendliches System von Vektoren {{< katex "(v_i)_{i\in I}" >}} ist linear unabhängig, wenn für jede endliche Teilmenge {{< katex "J" >}} von {{< katex "I" >}} aus {{< katex "\sum_{j\in J} a_j v_j=0" >}} folgt, dass {{< katex "a_j=0" >}} für alle {{< katex "j\in J" >}}.
 
-Eine **Basis** eines Vektorraums ist eine Menge linear unabhängiger Vektoren, mit deren Hilfe sich jeder Vektor eindeutig as Linearkombination darstellen lässt.
+Eine **Basis** eines Vektorraums ist eine Menge linear unabhängiger Vektoren, mit deren Hilfe sich jeder Vektor eindeutig as Linearkombination darstellen lässt. Alle Basen eines Vektorraums haben die gleiche Anzahl Basisvektoren; das ist die **Dimension** des Vektorraums.
 
 ## Koordinatenvektoren
 
@@ -211,7 +212,7 @@ Technisch ist das **Skalarprodukt** eines Vektorraums {{< katex "(V,+,\cdot)" >}
 * Symmetrie: {{< katex "\langle v,w\rangle = \langle w,v\rangle" >}}
 * Bilinearität: {{< katex "\langle v,\cdot\rangle" >}} und {{< katex "\langle \cdot, v\rangle" >}} sind linear (d.h. das Skalarprodukt ist eine [Bilinearform](#bilinearformen))
 
-**Beispiele** kanonischer Skalarprodukte:
+Beispiele kanonischer Skalarprodukte:
 
 * {{< katex "\mathbb{R}^n" >}}: {{< katex "\langle x,y\rangle := \sum_{i=1}^n x_i y_i = x^Ty" >}}
 * {{< katex "\mathbb{C}^n" >}}: {{< katex "\langle x,y\rangle := \sum_{i=1}^n x_i \overline{y_i}" >}}
@@ -248,9 +249,8 @@ Zu einer beliebigen Basis {{< katex "\{v_1,v_2,v_3,\ldots,v_n\}" >}} lässt sich
 
 ## Lineare Abbildungen
 
-Ein **Homomorphismus** zwischen zwei algebraischen Strukturen {{< katex "\mathbf{A}=(A,(\circ_\mathbf{A})_i)" >}} und {{< katex "\mathbf{B}=(B,(\circ_\mathbf{B})_i)" >}} ist eine Abbildung {{< katex "f:A\to B" >}}, die die algebraische Struktur erhält, d.h. dass für alle Operationen {{< katex "\circ_\mathbf{A}" >}} und {{< katex "\circ_\mathbf{B}" >}} gilt:
+Ein **Homomorphismus** zwischen zwei algebraischen Strukturen {{< katex "\mathbf{A}=(A,(\circ_\mathbf{A})_i)" >}} und {{< katex "\mathbf{B}=(B,(\circ_\mathbf{B})_i)" >}} ist eine Abbildung {{< katex "f:A\to B" >}}, die die neutralen Elemente von {{< katex "\mathbf{A}" >}} auf die neutralen Elemente von {{< katex "\mathbf{B}" >}} abbildet und die die algebraische Struktur erhält, also so dass für alle Operationen {{< katex "\circ_\mathbf{A}" >}} und {{< katex "\circ_\mathbf{B}" >}} gilt:
 {{< katex display="f(x\circ_\mathbf{A} y)=f(x)\circ_\mathbf{B} f(y)" >}}
-Sowie dass die neutralen Elemente von {{< katex "\mathbf{A}" >}} auf die neutralen Elemente von {{< katex "\mathbf{B}" >}} abgebildet werden.
 
 Ein bijektiver Homomorphismus heißt **Isomorphismus**.
 
