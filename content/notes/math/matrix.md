@@ -36,6 +36,8 @@ Und übertragen auf Matrizenmultiplikation:
 
 {{< katex display="\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\  \begin{pmatrix}a & c\\ b & d\end{pmatrix} = ( a\cdot \begin{pmatrix}1\\ 3\end{pmatrix} + b \cdot \begin{pmatrix}2\\ 4\end{pmatrix} \quad c\cdot \begin{pmatrix}1\\ 3\end{pmatrix} + d \cdot \begin{pmatrix}2\\ 4\end{pmatrix} )" >}}
 
+Die Matrizenmultiplikation ist assoziativ (d.h. {{< katex "(AB)C = A(BC)" >}}), aber nicht kommutativ (d.h. im Allgemeinen gilt nicht {{< katex "AB=BA" >}}).
+
 Eine Matrix {{< katex "A" >}} ist **nilpotent**, wenn es ein {{< katex "m\in\mathbb{N}" >}} gibt, so dass {{< katex "A^m = 0" >}} und {{< katex "A^{m-1}\neq 0" >}}. Für nilpotente Matrizen gilt:
 
 * Das [charakteristische Polynom](#das-charakteristische-polynom-einer-matrix) ist von der Form {{< katex "x^n">}}. Die einzige Nullstelle davon ist 0, also haben nilpotente Matrizen nur den Eigenwert 0.
@@ -173,7 +175,9 @@ Ist {{< katex "A">}} symmetrisch, so gibt es eine zu {{< katex "A">}} ähnliche 
 
 # Invertierbarkeit
 
-Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden Aussagen äquivalent:
+Eine {{< katex "n\times n" >}}-Matrix {{< katex "A" >}} ist genau dann invertierbar, wenn die Transformation, die sie darstellt, bijektiv ist.
+
+Die folgenden Aussagen sind äquivalent:
 
 * {{< katex "A" >}} ist invertierbar.
 * {{< katex "\text{det}(A)\neq 0" >}} (d.h. wenn {{< katex "\text{det}(A)" >}} im Körper oder Ring, über dem die Matrix definiert ist, invertierbar ist)
@@ -181,7 +185,7 @@ Für eine {{< katex "n\times n" >}} Matrix {{< katex "A" >}} sind die folgenden 
 * 0 ist kein Eigenvektor von {{< katex "A" >}}.
 * Die Spaltenvektoren von {{< katex "A" >}} sind linear unabhängig.
 * {{< katex "A" >}} kann als endliches Produkt von Elementarmatrizen ausgedrückt werden.
-* {{< katex "\text{rang}(A)=n" >}}
+* {{< katex "\text{rang}(A)=n" >}}, d.h. {{< katex "A" >}} hate vollen Rang.
 
 ## Berechnung der Inversen
 
@@ -230,11 +234,15 @@ Aus der Interpretation von Matrizen als lineare Transformationen ergibt sich fol
 
 * Eine Diagonalmatrix stellt einer Transformation dar, die die Basisvektoren nur skaliert.
 
-* Die **Matrizenmultiplikation** {{< katex "AB" >}} entspricht der Komposition der beiden Transformationen ({{< katex "A\circ B" >}}, d.h. erst wird {{< katex "B" >}} ausgeführt, dann {{< katex "A" >}}).
+* Die **Matrizenmultiplikation** {{< katex "AB" >}} entspricht der Komposition der dargestellten Transformationen: {{< katex "(f_A\circ f_B)(x) = f_A(f_B(x)) = A(Bx) = (AB)x" >}}.
+Das heißt das Produkt {{< katex "AB" >}} bedeutet, dass erst die Transformation {{< katex "B" >}} ausgeführt wird, dann {{< katex "A" >}}. Das macht auch intuitiv deutlich, warum {{< katex "(AB)^{-1} = B^{-1}A^{-1}" >}}:
+{{< katex display="\cdot \xrightarrow{B} \cdot \xrightarrow{A} \cdot \\ \xrightarrow[AB]{\qquad\ \quad} " >}}
 
 * Die **Inverse** einer Matrix entspricht der inversen Transformation:
   * {{< katex "Ax=v" >}} bedeutet, dass die Tranformation {{< katex "A" >}} den Vektor {{< katex "x" >}} auf den Vektor {{< katex "v" >}} abbildet.
   * Daraus folgt {{< katex "x=A^{-1}v" >}}, d.h. man findet {{< katex "x" >}}, indem man die inverse Transformation {{< katex "A^{-1}" >}} auf {{< katex "v" >}} anwendet.
+
+  Eine Matrix also genau dann invertierbar, wenn die dargestellte Transformation bijektiv ist.
 
 * Der **Rang** einer Matrix entspricht der Anzahl der Dimensionen des Outputs der Transformation.
 
@@ -314,6 +322,18 @@ Zwei Matrizen {{< katex "A,B" >}} sind **kongruent**, wenn es eine invertierbare
 
 Da in der Regel {{< katex "P^T\neq P^{-1}">}}, sind kongruente Matrizen in der Regel nicht ähnlich.
 
+Ähnliche Matrizen haben:
+
+* den gleichen Rang,
+* die gleiche Determinante,
+* das gleiche charakteristische Polynom und Minimalpolynom,
+* die gleichen Eigenwerte,
+* die gleiche Jordan-Normalform.
+
+Diese Punkte sind alle notwendig, hinreichend ist aber nur der letzte. Das heißt:
+* Wenn zwei Matrizen gleiche Ränge, Determinanten, charakteristische Polynome oder Eigenwerte haben, sind sie nicht zwangsläufig ähnlich. Aber wenn sie sich in diesen Eigenschaften unterscheiden, wissen wir, dass sie nicht ähnlich sind.
+* Wenn zwei Matrizen die gleiche Jordan-Normalform haben, sind sie ähnlich.
+
 ## Diagonalisierung
 
 Zwei Matrizen {{< katex "A,B" >}} sind **ähnlich**, wenn es eine invertierbare Matrix {{< katex "P" >}} gibt, so dass:
@@ -323,27 +343,20 @@ Die Darstellungsmatrix eines Endomorphismus lässt sich also durch geschickte Wa
 
 {{< katex display="\begin{matrix} \text{Basis }1 & Px & \xrightarrow{A} & APx & \\ & & & & \\ & P\ \big\uparrow & & \big\downarrow\ P^{-1} & \\ & & & & \\ \text{Basis }2 & x & \xrightarrow[B]{} & P^{-1}APx & \end{matrix}" >}}
 
-**Berechnung:** {{< katex "P" >}} kann man berechnen, indem man die Eigenwerte von {{< katex "A" >}} mit den dazugehörigen Eigenräumen findet und dann die Basisvektoren dieser Eigenräume als Spalten von {{< katex "P" >}} wählt.
-(Wenn {{< katex "P" >}} orthogonal sein soll, muss man entsprechend die Orthonormalbasis der Eigenräume bilden.)
+**Berechnung:** {{< katex "P" >}} kann man berechnen, indem man die Eigenwerte von {{< katex "A" >}} mit den dazugehörigen Eigenräumen findet und dann die Basisvektoren dieser Eigenräume als Spalten von {{< katex "P" >}} wählt:
 
-* Eigenwerte von {{< katex "A" >}} bestimmen, d.h. die Nullstellen des charakteristischen Polynoms. Zerfällt das charakteristische Polynom nicht in Linearfaktoren {{< katex "(x-c)^n" >}}, dann ist {{< katex "A" >}} nicht diagonalisierbar.
+* Eigenwerte von {{< katex "A" >}} bestimmen, d.h. die Nullstellen des charakteristischen Polynoms. Zerfällt das charakteristische Polynom nicht in Linearfaktoren, bzw. liegen nicht alle seine Nullstellen in {{< katex "\mathbb{K}">}}, dann ist {{< katex "A" >}} nicht diagonalisierbar.
 * Zu jedem Eigenwert {{< katex "\lambda" >}} den Eigenraum {{< katex "V_\lambda = \text{ker}(A-\lambda I)" >}} und eine Basis davon bestimmen. Ist {{< katex "\text{dim}(V_\lambda)\neq\text{Vielfachheit von }\lambda" >}}, dann ist {{< katex "A" >}} nicht diagonalisierbar.
-* Die Basis der Eigenräume
+* Die Basisvektoren der Eigenräume sind die Spalten von {{< katex "P" >}}. Wenn {{< katex "P" >}} orthogonal sein soll, muss man entsprechend die Orthonormalbasis der Eigenräume bilden, siehe [Gram-Schmidt-Verfahren zur Orthogonalisierung](../algebra/#gram-schmidt).
+* Die Diagonalmatrix ist dann {{< katex "P^{-1}AP" >}}.
 
-Ähnliche Matrizen haben:
+Im Prinzip ist es ein Basiswechsel, bei dem man weder die Zielbasis noch die Zielmatrix kennt. Man weiß aber, dass ähnliche Matrizen (unter Berücksichtigung des Basiswechsels) die gleichen Eigenvektoren haben: Ist {{< katex "x">}} ein Eigenvektor von {{< katex "A">}}, d.h. {{< katex "Ax=\lambda x">}}, dann ist {{< katex "P^{-1}x">}} ein Eigenvektor von {{< katex "B">}}, denn:
+{{< katex display="B(P^{-1}x) = (P^{-1}AP)(P^{-1}x) = P^{-1}A(PP^{-1})x = P^{-1}Ax = P^{-1}\lambda x">}}
 
-* den gleichen Rang,
-* die gleiche Determinante,
-* das gleiche charakteristische Polynom und Minimalpolynom,
-* die gleichen Eigenwerte (aber nicht notwendigerweise die gleichen Eigenvektoren),
-* die gleiche Jordan-Normalform.
-
-Diese Punkte sind alle notwendig, hinreichend ist aber nur der letzte. Das heißt:
-* Wenn zwei Matrizen unterschiedliche Ränge, Determinanten, charakteristische Polynome oder Eigenwerte haben, sind sie nicht ähnlich.
-* Wenn zwei Matrizen die gleiche Jordan-Normalform haben, sind sie ähnlich.
+Eine Diagonalmatrix stellt daher eine Transformation dar, die Vektoren nur skaliert.
 
 Eine Matrix auf jeden Fall diagonalisierbar, wenn
-* sie symmetrisch ist;
+* sie symmetrisch ist (d.h. {{< katex "A^T=A">}}) - die Diagonalelemente sind dann genau die Eigenwerte der Matrix;
 * sie die maximale Anzahl Eigenwerte hat (= Anzahl der Dimensionen des Vektorraums), denn dann sind die zugehörigen Eigenvektoren linear unabhängig und es gibt eine Basis aus Eigenvektoren, d.h. der Vektorraum ist die Summe der Eigenräume;
 * das charakteristische Polynom in Linearfaktoren zerfällt und die algebraische und geometrische Vielfachheit der Eigenwerte übereinstimmen.
 

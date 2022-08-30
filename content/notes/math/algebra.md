@@ -232,7 +232,7 @@ Ein Vektor ist **normalisiert**, wenn er Länge 1 hat. Jeder Vektor {{< katex "v
 
 Zwei Vektoren {{< katex "v,w" >}} sind **orthogonal**, wenn {{< katex "\langle v,w\rangle = 0" >}}.
 
-### Orthonormalbasen (Gram-Schmidt-Verfahren)
+### Orthonormalbasen (Gram-Schmidt-Verfahren) {#gram-schmidt}
 
 Zu einer beliebigen Basis {{< katex "\{v_1,v_2,v_3,\ldots,v_n\}" >}} lässt sich eine orthonormale Basis {{< katex "\{w_1,w_2,w_3,\ldots,w_n\}" >}} konstruieren, indem man jeden Vektor zu den vorherigen orthogonalisiert und dann normalisiert:
 
