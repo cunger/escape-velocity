@@ -1,102 +1,57 @@
 ---
-title: "Complex numbers"
-summary: "Cartesian and polar coordinates, arithmetic operations, Euler's formula."
-date: 2019-11-16T12:02:48+01:00
+title: "Komplexe Zahlen"
+summary: "(In Arbeit)"
+date: 2022-09-03
 weight: 9
 math: true
 toc: true
 ---
 
-> [Complex numbers] are essential to quantum physics, electromagnetism, and many more fields. They are naturally suited to describe anything that turns, waves, ripples, combines or interferes, with itself or with others. [...] Whenever we're describing wavelike phenomena, whether it's sound, electricity or subatomic particles, we're also interested in how the wave evolves and changes. Complex operations are eminently suited for this, because they naturally take place on circles. Numbers that oppose can cancel out, numbers in the same direction will amplify each other, just like two waves do when they meet. (http://acko.net/blog/how-to-fold-a-julia-fractal/)
+Die komplexen Zahlen sind alle Zahlen der Form {{< katex "a+bi" >}} mit {{< katex "a,b\in\mathbb{R}">}} und {{< katex "i" >}} diejenige Zahl, für die gilt {{< katex "i^2=-1" >}}. Diese Zahl ist nicht eindeutig bestimmt, denn es gibt zwei Lösungen für {{< katex "i^2=-1" >}} -- die eine nennen wir {{< katex "i" >}}, die andere {{< katex "-i" >}}. Es ist also {{< katex "\sqrt{-1}=\pm i" >}}. Die Lösungen sind jeweils die Konjugierte voneinander und es macht absolut keinen Unterschied, welche wir als {{< katex "i" >}} und welche als {{< katex "-i" >}} bezeichnen.
 
-A complex number {{< katex "z" >}} can be defined as
+# Arithmetik
 
-* {{< katex "z=x+yi" >}}
-  with a real part {{< katex "x" >}} and an imaginary part {{< katex "y" >}}
-* {{< katex "z=re^{i\theta}" >}}
-  with magnitude {{< katex "r" >}} (its distance to the origin) and phase angle {{< katex "\theta" >}}
+Die arithmetische Operationen entsprechen der üblichen Arithmetik mit Polynomen.
 
-Where {{< katex "i^2=-1" >}}. And thus:
+## Konjugation
 
-![Powers of i](/images/docs/powers-of-i.png)
+# Konstruktion
 
-{{< katex "(x,y)" >}} is a **Cartesian coordinate**.
+Man kann das Zahlensystem der komplexen Zahlen auf verschiedene Weisen konstruieren.
 
-* {{< katex "x = r\,\text{cos}(\theta)" >}}
-* {{< katex "y = r\,\text{sin}(\theta)" >}}
+## {{< katex "\mathbb{C}" >}} als zwei-dimensionaler reeller Vektorraum
 
-{{< katex "(r,\theta)" >}} is a **polar coordinate**, with {{< katex "r" >}} the _modulus_ and {{< katex "\theta" >}} the _argument_.
+Als **Körper** {{< katex "(\mathbb{C},+,\cdot)" >}} mit {{< katex "\mathbb{C}=\mathbb{R}^2" >}} und
+  * {{< katex "(a,b)+(c,d) = (a+c,b+d)" >}}
+  * {{< katex "(a,b)\cdot(c,d) = (ac-bd,ad+bc)" >}}
+  * {{< katex "i = (0,1)" >}}
+  * {{< katex "1 = (1,0)" >}}
 
-* {{< katex "r = |z| = \sqrt{x^2 + y^2}" >}}
-* {{< katex "\theta = \text{atan}2(y,x)" >}}
+Dann sind {{< katex "i" >}} und {{< katex "-i" >}} additive und multiplikative Inverse voneinander. Vor allem sind die komplexen Zahlen ein algebraisch geschlossener Körper. Was man im Gegensatz zu {{< katex "\mathbb{R}" >}} verliert, ist die Ordnung. (Geht man zu mehr Dimensionen über, verliert man noch mehr: in den 4 Dimensionen der Quaternionen z.B. die Kommutativität, in den 8 Dimensionen der Oktonionen auch die Assoziativität, und in allen anderen so gut wie alles.)
 
-It holds that {{< katex "|z^n| = |z|^n" >}} and {{< katex "\text{arg}(z)^n = n\,\text{arg}(z)" >}}. And note that the phase angle comes from:
+Die komplexen Zahlen entsprechen auch einem **reellen Vektorraum** der Dimension 2, mit {{< katex "\{1, i\}">}} als Standardbasis und mit den reellen Zahlen als Unterraum.
 
-{{< katex "\quad\text{tan}(\theta) = \cfrac{\text{sin}(\theta)}{\text{cos}(\theta)} = \cfrac{y}{x}" >}}
+Die komplexen Zahlen füllen die euklidische Ebene. Das erlaubt für die [geometrische Interpretation](#geometrische-interpretation) der komplexen Zahlen, z.B. ein einem kartesischen Koordinatensystem oder in einem Polarkoordinatensystem.
 
-Figure from the [Feynman lectures on algebra](http://www.feynmanlectures.caltech.edu/I_22.html):
+## {{< katex "\mathbb{C}" >}} als Faktorring über Polynomen
 
-![Unification of algebra and geometry](/images/docs/complex-number.png)
+Als **Faktorring** {{< katex "\mathbb{R}[x]/(x^2+1)">}} des Polynomrings mit {{< katex "i" >}} als Unbekannter.
 
-# Arithmetic operations
+## {{< katex "\mathbb{C}" >}} in Matrizendarstellung
 
-**Code:** [complex.exs](https://github.com/cunger/simulacron/blob/master/complex.exs)
+**Matrixrepräsentation** von {{< katex "a+bi" >}}:
+{{< katex display="\begin{pmatrix} a & -b \\ b & a \end{pmatrix}" >}}
 
-While addition is straight-forward in Cartesian form, most operations are much more intuitive in polar form, as they constitute transformations in the Cartesian plane.
+<!-- conjugate = transpose -->
 
-### Addition
+Unter der geometrischen Interpretation der komplexen Zahlen entspricht das einer Rotationsmatrix.
 
-* {{< katex "(x_1+y_1i) + (x_2+y_2i) = (x_1+x_2) + (y_1+y_2)i" >}}
+# Geometrische Interpretation
 
-### Multiplication
+kartesische Koordinaten vs Polarkoordinaten vs Euler-Form
 
-* {{< katex "\quad(x_1+y_1i)(x_2+y_2i) = (x_1x_2 - y_1y_2) + (x_1y_2 + x_2y_1)" >}}
-* {{< katex "(r_1e^{i\theta_1})(r_2e^{i\theta_2}) = r_1r_2e^{i(\theta_1+\theta_2)}" >}}
+![Unification of algebra and geometry](/images/docs/complex-numbers.png)
 
-### n-th power
+Euler: {{< katex "e^{iy}=\cos(y) + i\sin(y)" >}}
 
-* {{< katex "(re^{i\theta})^n = r^n e^{in\theta}" >}}
-
-### Division
-
-* {{< katex "\quad\cfrac{x_1+y_1i}{x_2+y_2i} = \cfrac{x_1x_2 + y_1y_2}{x_2^2+y_2^2} + \cfrac{x_2y_1 - x_1y_2}{x_2^2+y_2^2}i" >}}
-* {{< katex "\cfrac{r_1e^{i\theta_1}}{r_2e^{i\theta_2}} = \cfrac{r_1}{r_2} e^{i(\theta_1-\theta_2)}" >}}
-
-### Reciprocal
-
-* {{< katex "\cfrac{1}{x+yi} = \cfrac{x-yi}{x^2+y^2}" >}}
-* {{< katex "\cfrac{1}{re^{i\theta}} = \cfrac{1}{r}e^{-i\theta}" >}}
-
-## Complex conjugate
-
-Taking the complex conjugate corresponds to negating the imaginary component:
-
-{{< katex display="\overline{x+yi} = x-yi" >}}
-{{< katex display="\overline{re^{i\theta}} = re^{-i\theta}" >}}
-
-This is equivalent to reflecting the complex number across the real axis.
-
-Multiplying a complex number by its conjugate, we get a real number (the square of its distance to the origin):
-
-{{< katex display="z\,\overline{z} = x^2+y^2 = |z|^2" >}}
-
-# Euler's formula
-
-What is the exponential function {{< katex "e^{x+yi}" >}}? Using the exponential law yields {{< katex "e^{x+yi} = e^{x}e^{yi}" >}}, so the question boils down to: What is {{< katex "e^{yi}" >}}? Euler defined this with what is now known as _Euler's formula_:
-{{< katex display="e^{iy} = \text{cos}(y)+i\,\text{sin}(y)" >}}
-(For the complex conjugate we have {{< katex "e^{-iy} = \text{cos}(y)-i\,\text{sin}(y)" >}}.)
-
-Because this is how everything else works out (like {{< katex "\frac{d}{dt}e^{it}=ie^{it}" >}} and exponential laws, including {{< katex "e^{0+0i}=1" >}}). So we have:
-{{< katex display="e^{x+yi} = e^x(\text{cos}(y)+i\,\text{sin}(y))" >}}
-And: {{< katex "|e^{iy}|=1" >}}.
-
-For any complex numbers {{< katex "z,w" >}}, we get:
-
-{{< katex "e^{z+w}=e^ze^w" >}}
-{{< katex "(e^z)^n=e^{n\,z}" >}} (in particular {{< katex "(e^z)^{-1}=e^{-z}" >}})
-
-# Solving real problems in the complex domain
-
-Every algebraic equation can be solved in the complex domain.
-
-Some problems are easier to solve in the complex domain than in the real domain, even if they have a real solution. For example: The integral of the real part of a complex number is the real part of the integral of the complex number (which might be much easier to integrate than the real one).
+Einheitskreis, denn {{< katex "|e^{iy}|=1">}}

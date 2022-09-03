@@ -108,11 +108,13 @@ Beispiele:
 * {{< katex "\mathbb{F}_p = (\mathbb{Z}/p\mathbb{Z},+,\cdot)" >}} (sogenannte **Galoiskörper**, wobei {{< katex "p" >}} eine Primzahl ist)
 * {{< katex "(\mathbb{Q},+,\cdot)" >}}
 * {{< katex "(\mathbb{R},+,\cdot)" >}}
-* {{< katex "(\mathbb{C},+,\cdot)" >}} mit {{< katex "\mathbb{C}=\mathbb{R}^2" >}} und
+* {{< katex "(\mathbb{\mathbb{R}^2},+,\cdot)" >}} mit
   * {{< katex "(a,b)+(c,d) = (a+c,b+d)" >}}
   * {{< katex "(a,b)\cdot(c,d) = (ac-bd,ad+bc)" >}}
   * {{< katex "i = (0,1)" >}}
   * {{< katex "1 = (1,0)" >}}
+
+(Siehe [Konstruktion der komplexen Zahlen](../complex-numbers/#konstruktion).)
 
 Keine Körper:
 * {{< katex "(\mathbb{N},+,\cdot)" >}} (nicht alle Elemente sind invertierbar)

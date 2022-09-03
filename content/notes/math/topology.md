@@ -31,10 +31,10 @@ Eine Topologie auf einer Menge {{< katex "X" >}} ist definiert als System {{< ka
 Man nennt die Mengen {{< katex "U\subseteq T" >}} **offen**, d.h. {{< katex "T" >}} umfasst alle offenen Mengen, sowie deren Durchschnitt und Vereinigung (wieder offene Mengen).
 Eine Menge {{< katex "U" >}} ist **abgeschlossen**, wenn {{< katex "X\backslash U" >}} offen ist. So sind z.B. {{< katex "\emptyset" >}} und {{< katex "X" >}} beide nicht nur offen, sondern auch abgeschlossen. Für die Definition eines topologischen Raumes ist es tatsächlich gleich, ob man {{< katex "T" >}} als die offenen oder abgeschlossenen Mengen definiert.
 
-**Beispiele:**
+Beispiele:
 
-* _Triviale Topologie:_ {{< katex "T=\{\emptyset,X\}" >}}
-* _Diskrete Topologie:_ {{< katex "T" >}} ist die Potenzmenge von {{< katex "X" >}}, d.h. alle Teilmengen von {{< katex "X" >}} sind offen.
+* **Triviale Topologie:** {{< katex "T=\{\emptyset,X\}" >}}
+* **Diskrete Topologie:** {{< katex "T" >}} ist die Potenzmenge von {{< katex "X" >}}, d.h. alle Teilmengen von {{< katex "X" >}} sind offen.
 * Die Menge {{< katex "\mathbb{R}" >}} der reellen Zahlen, wobei die offenen Mengen genau die {{< katex "U\subseteq\mathbb{R}" >}} sind, die sich als Vereinigung von offenen Intervallen darstellen lassen.
 
 ## Grundbegriffe
@@ -102,8 +102,9 @@ Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusam
 * {{< katex "d(x,y)=d(y,x)" >}} (Symmetrie)
 * {{< katex "d(x,y)\leq d(x,z) + d(z,y)" >}} (Dreiecksungleichung)
 
-**Normierte Räume** sind Vektorräume, auf denen eine Norm definiert ist, die die Länge bzw. Größe eines Vektors ausdrückt.
-Eine **Norm** {{< katex "\|x\|" >}} ist eine Abbildung eines Vektors {{< katex "x" >}} auf eine reelle Zahl (die Länge bzw. Größe des Vektors), die die folgenden Eigenschaften erfüllt:
+**Normierte Räume** sind Vektorräume, auf denen eine Norm definiert ist, die die Länge oder Größe eines Vektors ausdrückt (z.B. im Fall von Koordinatenvektoren der Abstand des Punktes zum Koordinatenursprung).
+
+Eine **Norm** {{< katex "\|x\|" >}} ist eine Abbildung eines Vektors {{< katex "x" >}} auf eine reelle Zahl (die Länge des Vektors), die die folgenden Eigenschaften erfüllt:
 
 * {{< katex "\|x\|\geq 0" >}} und {{< katex "\|x\| = 0" >}} gdw {{< katex "x = 0" >}} (Definitheit, es reicht zu zeigen: {{< katex "\|x\| = 0\Rightarrow x = 0" >}})
 * {{< katex "\|\alpha x\| = |\alpha| \|x\|" >}} für alle {{< katex "\alpha\in\mathbb{R}" >}} (Homogenität)
