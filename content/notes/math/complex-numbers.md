@@ -31,7 +31,7 @@ Dann sind {{< katex "i" >}} und {{< katex "-i" >}} additive und multiplikative I
 
 Die komplexen Zahlen entsprechen auch einem **reellen Vektorraum** der Dimension 2, mit {{< katex "\{1, i\}">}} als Standardbasis und mit den reellen Zahlen als Unterraum.
 
-Die komplexen Zahlen füllen die euklidische Ebene. Das erlaubt für die [geometrische Interpretation](#geometrische-interpretation) der komplexen Zahlen, z.B. ein einem kartesischen Koordinatensystem oder in einem Polarkoordinatensystem.
+Die komplexen Zahlen füllen die euklidische Ebene. Das erlaubt für die [geometrische Interpretation](#geometrische-interpretation) der komplexen Zahlen.
 
 ## {{< katex "\mathbb{C}" >}} als Faktorring über Polynomen
 
@@ -48,10 +48,12 @@ Unter der geometrischen Interpretation der komplexen Zahlen entspricht das einer
 
 # Geometrische Interpretation
 
-kartesische Koordinaten vs Polarkoordinaten vs Euler-Form
+In der euklidischen Ebene beschreibt die komplexe Zahl {{< katex "z=x+yi" >}} den Punkt, der die **kartesischen Koordinaten** {{< katex "(x,y)" >}} hat. Auf einem Kreis mit Radius {{< katex "r">}}, auf dem {{< katex "r\ \text{rad}">}} den Winkel {{< katex "\theta">}} aufspannt, entspricht das den Koordinaten {{< katex "(r\cos(\theta), r\sin(\theta))" >}}, der Punkt hat also die **Polarkoordinaten** {{< katex "(r,\theta)" >}} und die komplexe Zahl hat die Form {{< katex "z=r(\cos(\theta)+\sin(\theta)i)" >}}.
 
 ![Unification of algebra and geometry](/images/docs/complex-numbers.png)
 
-Euler: {{< katex "e^{iy}=\cos(y) + i\sin(y)" >}}
+Betrachtet man die Taylorreihen von {{< katex "e^x">}}, {{< katex "\sin(x)">}} und {{< katex "\cos(x)">}}, ergibt sich folgende Gleichheit (**Euler's Formel**):
+{{< katex display="e^{i\theta}=\cos(\theta) + i\sin(\theta)" >}}
+Die komplexe Zahl in **Euler-Form** ist {{< katex "z=re^{i\theta}" >}}.
 
-Einheitskreis, denn {{< katex "|e^{iy}|=1">}}
+<!-- ![Koordinaten](/images/docs/complex-numbers-coordinates.png) -->
