@@ -96,7 +96,7 @@ Eine reelle Folge {{< katex "(x_n)" >}} konvergiert gegen {{< katex "x" >}} gdw 
 Will man diese Begriffe verallgemeinern für andere mathematische Objekte, wie Folgen von Vektoren, komplexe Zahlen und Funktionen, müsste man sie spezifisch für jedes dieser Objekte neu definieren.
 Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusammen mit einem allgemeinen Konzept für Abstand zwischen Objekten in diese Räumen und darauf aufbauend allgemeine Begriffe wie den der Konvergenz.
 
-**Metrische Räume** sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine **Metrik** ist eine Abbildung {{< katex "d" >}} zweier Vektoren auf eine reelle Zahl, die den Abstand zwischen diesen Vektoren ausdrückt, also die folgenden Eigenschaften erfüllt:
+**Metrische Räume** sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine **Metrik** ist eine Abbildung {{< katex "d" >}} zweier Vektoren auf eine reelle Zahl, die den Abstand zwischen diesen Vektoren ausdrückt, indem sie die folgenden Eigenschaften erfüllt:
 
 * {{< katex "d(x,y)\geq 0" >}} (Positive Definitheit)
 * {{< katex "d(x,y)=d(y,x)" >}} (Symmetrie)
@@ -131,7 +131,7 @@ Jeder normierte Raum ist also auch ein metrischer Raum. Aber nicht zwangsläufig
 
 Beispiele für Metriken, die von keiner Norm induziert werden:
 
-* Diskrete Metrik {{< katex "d(x,y) := \begin{cases} 0 & \text{wenn }x=y \\ 1 & \text{sonst}\end{cases}" >}}
+* Diskrete (oder triviale) Metrik {{< katex "d(x,y) := \begin{cases} 0 & \text{wenn }x=y \\ 1 & \text{sonst}\end{cases}" >}}
 * Französische Eisenbahnmetrik (wo die Abstandsmessung immer durch einen zentralen Punkt {{< katex "P" >}} gehen muss)
 {{< katex display="d(x,y) := \begin{cases} \|x-y\| & \text{wenn }x,y\text{ auf einer Geraden durch }P\text{ liegen} \\ \|x-P\| + \|P-y\| & \text{sonst}\end{cases}" >}}
 * p-adische Metrik auf {{< katex "\mathbb{Z}" >}}
@@ -186,7 +186,9 @@ Eine Folge {{< katex "(x^n)" >}} konvergiert gegen {{< katex "x" >}} genau dann,
 **Konvergenz im metrischen Raum**:
 Eine Folge {{< katex "(x^n)" >}} konvergiert gegen {{< katex "x" >}} genau dann, wenn es für jedes {{< katex "\varepsilon > 0" >}} ein {{< katex "n_0\in\mathbb{N}" >}} gibt, so dass für alle {{< katex "n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x)<\varepsilon" >}}.
 
-Konvergente Folgen sind immer **Cauchy-Folgen**, d.h. für jedes {{< katex "\varepsilon > 0" >}} gibt es ein {{< katex "n_0\in\mathbb{N}" >}}, so dass für alle {{< katex "m,n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x_m)<\varepsilon" >}} (der Abstand zwischen zwei Folgengliedern wird also beliebig klein). Die Umkehrung gilt nicht immer. Ein Raum heißt **vollständig**, wenn jede Cauchy-Folge konvergiert.
+Konvergente Folgen sind immer **Cauchy-Folgen**, d.h. für jedes {{< katex "\varepsilon > 0" >}} gibt es ein {{< katex "n_0\in\mathbb{N}" >}}, so dass für alle {{< katex "m,n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x_m)<\varepsilon" >}} (der Abstand zwischen Folgengliedern wird also ab einem bestimmten Index beliebig klein). Die Umkehrung gilt nicht immer. Ein Raum heißt **vollständig**, wenn jede Cauchy-Folge konvergiert.
+
+Das Cauchy-Kriterium für Konvergenz ist vor allem dann praktisch, wenn man den Wert nicht kennt, gegen den die Folge konvergiert.
 
 Der Grenzwert einer Folge ist immer auch Häufungspunkt. In einem metrischen Raum kann eine Folge mehrere Häufungspunkte haben, aber nur einen Grenzwert (Hausdorff).
 
