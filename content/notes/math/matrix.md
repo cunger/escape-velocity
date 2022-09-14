@@ -105,7 +105,8 @@ Reelle symmetrische Matrizen und komplexe hermitesche Matrizen haben viele Eigen
 Die **Determinante** ist eine eindeutige Abbildung {{< katex "M_{nn}(\mathbb{K})\to\mathbb{K}" >}}, die so definiert ist, dass sie genau dann 0 wird, wenn die Spalten der Matrix nicht linear unabhängig sind (die Matrix also nicht invertierbar ist):
 {{< katex display="\text{det}(A) = \sum_{\sigma\in S_n}\text{sgn}(\sigma)a_{1\sigma(1)}\cdots a_{n\sigma(n)}" >}}
 
-Für die Berechnung der Determinante ist die Leibniz-Formel aber nur bis {{< katex "n=2" >}} praktisch handhabbar.
+Wobei {{< katex "\sigma\in S_n">}} eine Permutation der Indexmenge ist.
+Für die Berechnung der Determinante ist die sogenannte Leibniz-Formel aber nur bis {{< katex "n=2" >}} praktisch handhabbar.
 
 ## Für {{< katex "n=1" >}}: trivial
 {{< katex display="\text{det}\begin{pmatrix} a \end{pmatrix} = a" >}}

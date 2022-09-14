@@ -45,12 +45,12 @@ Stetigkeit vererbt auch andere Eigenschaften; wenn z.B. die Urbildmenge einer st
 
 ### Umgebungskriterium
 
-{{< katex "f:M\to Y" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn gilt:
-Zu jeder Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} gibt es eine Umgebung {{< katex "U" >}} von {{< katex "p" >}}, so dass {{< katex "f(U\cap M)\subseteq V" >}} (d.h. für alle {{< katex "x\in U\cap M" >}} gilt, dass {{< katex "f(x)\in V" >}}).
+{{< katex "f:M\to Y" >}} ist **stetig im Punkt** {{< katex "p\in M" >}} genau dann, wenn es zu jedem {{< katex "\varepsilon > 0">}} eine Umgebung {{< katex "U_\varepsilon(p)">}} gibt, so dass für alle {{< katex "u\in U">}} gilt, dass {{< katex "d(f(u), f(p)) < \varepsilon">}}.
 
-Anders ausgedrückt ist {{< katex "f" >}} genau dann stetig in {{< katex "p\in M" >}}, wenn für jede Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} die Menge {{< katex "f^{-1}(V)" >}} eine Umgebung von {{< katex "p" >}} ist.
-
-{{< katex "f:M\to Y" >}} ist **stetig** genau dann, wenn gilt: Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)
+Anders ausgedrückt ist {{< katex "f" >}} genau dann stetig in {{< katex "p" >}}, wenn gilt:
+* Zu jeder Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} gibt es eine Umgebung {{< katex "U" >}} von {{< katex "p" >}}, so dass {{< katex "f(U\cap M)\subseteq V" >}} (d.h. für alle {{< katex "x\in U\cap M" >}} gilt, dass {{< katex "f(x)\in V" >}}).
+* Für jede Umgebung {{< katex "V" >}} von {{< katex "f(p)" >}} ist die Menge {{< katex "f^{-1}(V)" >}} eine Umgebung von {{< katex "p" >}}.
+* Für alle offenen Mengen {{< katex "U" >}} ist {{< katex "f^{-1}(U)" >}} offen in M. (Die Urbilder offener Mengen sind offen. Das gilt analog auch für abgeschlossene Mengen.)
 
 ## Abbildungen zwischen metrischen Räumen
 

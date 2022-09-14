@@ -9,9 +9,17 @@ toc: true
 
 Die komplexen Zahlen sind alle Zahlen der Form {{< katex "a+bi" >}} mit {{< katex "a,b\in\mathbb{R}">}} und {{< katex "i" >}} diejenige Zahl, für die gilt {{< katex "i^2=-1" >}}. Diese Zahl ist nicht eindeutig bestimmt, denn es gibt zwei Lösungen für {{< katex "i^2=-1" >}} -- die eine nennen wir {{< katex "i" >}}, die andere {{< katex "-i" >}}. Es ist also {{< katex "\sqrt{-1}=\pm i" >}}. Die Lösungen sind jeweils die Konjugierte voneinander und es macht absolut keinen Unterschied, welche wir als {{< katex "i" >}} und welche als {{< katex "-i" >}} bezeichnen.
 
+Zusammen mit Addition und Multiplikation bilden die komplexen Zahlen einen Körper {{< katex "\mathbb{C}" >}}, mit {{< katex "\mathbb{R}" >}} als Unterkörper.
+
+Im Gegensatz zu {{< katex "\mathbb{R}" >}} ist {{< katex "\mathbb{C}" >}} **algebraisch abgeschlossen**, d.h. jedes nicht-konstante Polynom aus {{< katex "\mathbb{C}[x]" >}}) hat mindestens eine Nullstelle in {{< katex "\mathbb{C}" >}}, es sind also alle algebraischen Gleichungen lösbar. (Zahlen, die Nullstelle eines Polynoms sind, nennt man algebraisch. Davon gibt es abzählbar viele. Darüber hinaus gibt es überabzählbar viele transzendente Zahlen.)
+
+Was man im Gegensatz zu {{< katex "\mathbb{R}" >}} aber verliert, ist die Ordnung. (Geht man zu mehr Dimensionen über, verliert man mehr: in den 4 Dimensionen der Quaternionen die Kommutativität, in den 8 Dimensionen der Oktonionen auch die Assoziativität, und in allen anderen so gut wie alles.)
+
 # Arithmetik
 
-Die arithmetische Operationen entsprechen der üblichen Arithmetik mit Polynomen.
+Die arithmetischen Operationen entsprechen der üblichen Arithmetik mit Polynomen:
+* {{< katex "(a+bi) + (c+di) = (a+c)+(b+d)i" >}}
+* {{< katex "(a+bi)(c+di) = (ac-bd)+(ad+bc)i" >}}
 
 ## Konjugation
 
@@ -21,17 +29,15 @@ Man kann das Zahlensystem der komplexen Zahlen auf verschiedene Weisen konstruie
 
 ## {{< katex "\mathbb{C}" >}} als zwei-dimensionaler reeller Vektorraum
 
-Als **Körper** {{< katex "(\mathbb{C},+,\cdot)" >}} mit {{< katex "\mathbb{C}=\mathbb{R}^2" >}} und
+Die komplexen Zahlen können als **Körper** {{< katex "(\mathbb{R}^2,+,\cdot)" >}} definiert werden, mit:
   * {{< katex "(a,b)+(c,d) = (a+c,b+d)" >}}
   * {{< katex "(a,b)\cdot(c,d) = (ac-bd,ad+bc)" >}}
   * {{< katex "i = (0,1)" >}}
   * {{< katex "1 = (1,0)" >}}
 
-Dann sind {{< katex "i" >}} und {{< katex "-i" >}} additive und multiplikative Inverse voneinander. Vor allem sind die komplexen Zahlen ein algebraisch geschlossener Körper. Was man im Gegensatz zu {{< katex "\mathbb{R}" >}} verliert, ist die Ordnung. (Geht man zu mehr Dimensionen über, verliert man noch mehr: in den 4 Dimensionen der Quaternionen z.B. die Kommutativität, in den 8 Dimensionen der Oktonionen auch die Assoziativität, und in allen anderen so gut wie alles.)
+Dann sind {{< katex "i" >}} und {{< katex "-i" >}} additive und multiplikative Inverse voneinander.
 
-Die komplexen Zahlen entsprechen auch einem **reellen Vektorraum** der Dimension 2, mit {{< katex "\{1, i\}">}} als Standardbasis und mit den reellen Zahlen als Unterraum.
-
-Die komplexen Zahlen füllen die euklidische Ebene. Das erlaubt für die [geometrische Interpretation](#geometrische-interpretation) der komplexen Zahlen.
+Die komplexen Zahlen entsprechen also einem **reellen Vektorraum** der Dimension 2, mit {{< katex "\{1, i\}">}} als Standardbasis und mit den reellen Zahlen als Unterraum. Die komplexen Zahlen füllen dabei die euklidische Ebene. Das erlaubt für die [geometrische Interpretation](#geometrische-interpretation) der komplexen Zahlen.
 
 ## {{< katex "\mathbb{C}" >}} als Faktorring über Polynomen
 

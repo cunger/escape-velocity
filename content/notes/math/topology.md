@@ -170,6 +170,10 @@ Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorf
 
 Für jede Metrik {{< katex "d" >}} ist auch {{< katex "d'(x,y):=\frac{d(x,y)}{1+d{x,y}}" >}} eine Metrik und die erzeugte Topologie ist die gleiche.
 
+**Sätze:**
+
+* Eine Abbildung zwischen topologischen Räumen ist stetig gdw das Urbild jeder offenen (oder abgeschlossenen) Menge auch offen (oder abgeschlossen) ist.
+
 # Folgen und Reihen
 
 Eine **Folge** ist eine Abbildung mit {{< katex "\mathbb{N}" >}} als Wertebereich.
