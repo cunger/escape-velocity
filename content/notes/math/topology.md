@@ -190,9 +190,11 @@ Eine Folge {{< katex "(x^n)" >}} konvergiert gegen {{< katex "x" >}} genau dann,
 **Konvergenz im metrischen Raum**:
 Eine Folge {{< katex "(x^n)" >}} konvergiert gegen {{< katex "x" >}} genau dann, wenn es für jedes {{< katex "\varepsilon > 0" >}} ein {{< katex "n_0\in\mathbb{N}" >}} gibt, so dass für alle {{< katex "n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x)<\varepsilon" >}}.
 
-Konvergente Folgen sind immer **Cauchy-Folgen**, d.h. für jedes {{< katex "\varepsilon > 0" >}} gibt es ein {{< katex "n_0\in\mathbb{N}" >}}, so dass für alle {{< katex "m,n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x_m)<\varepsilon" >}} (der Abstand zwischen Folgengliedern wird also ab einem bestimmten Index beliebig klein). Die Umkehrung gilt nicht immer. Ein Raum heißt **vollständig**, wenn jede Cauchy-Folge konvergiert.
+Konvergente Folgen sind immer **Cauchy-Folgen**, d.h. für jedes {{< katex "\varepsilon > 0" >}} gibt es ein {{< katex "n_0\in\mathbb{N}" >}}, so dass für alle {{< katex "m,n\geq n_0" >}} gilt, dass {{< katex "d(x_n,x_m)<\varepsilon" >}} (der Abstand zwischen Folgengliedern wird also ab einem bestimmten Index beliebig klein). Die Umkehrung gilt nicht immer.
 
 Das Cauchy-Kriterium für Konvergenz ist vor allem dann praktisch, wenn man den Wert nicht kennt, gegen den die Folge konvergiert.
+
+Ein Raum heißt **vollständig**, wenn jede Cauchy-Folge in diesem Raum konvergiert (d.h. ihr Grenzwert auch in der Grundmenge liegt).
 
 Der Grenzwert einer Folge ist immer auch Häufungspunkt. In einem metrischen Raum kann eine Folge mehrere Häufungspunkte haben, aber nur einen Grenzwert (Hausdorff).
 
