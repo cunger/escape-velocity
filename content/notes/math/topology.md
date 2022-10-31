@@ -52,40 +52,39 @@ Die Menge {{< katex "\mathring{M}" >}} aller inneren Punkte von {{< katex "M" >}
 
 Die Menge {{< katex "\overline{M}" >}} aller Punkte, die nicht äußere Punkte von {{< katex "M" >}} sind, heißt die **abgeschlossene Hülle**.
 
+## Trennungseigenschaften
+
+**Hausdorffsches Trennungsaxiom:** Ein topologischer Raum heißt **Hausdorff-Raum**, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.
+
+Jeder metrische Raum ist ein Hausdorff-Raum.
+
+Beispiele für Nicht-Hausdorff-Räume:
+
+* Eine Menge {{< katex "X" >}} mit mehr als einem Element und der trivialen Topologie (da dann jede Umgebung automatisch die ganze Menge enthält).
+
+In einem Hausdorff-Raum kann eine Folge höchstens einen Grenzwert haben.
+In einem trivialen topologischen Raum konvergiert jede Folge gegen jeden Punkt.
+
 ## Kompaktheit
 
 Ein topologischer Raum {{< katex "(X,T)" >}} heißt **kompakt**, wenn jede offene Überdeckung
 
-{{< katex "X=\bigcup_{i\in I} U_i" >}} mit {{< katex "U_i\in T" >}}
+{{< katex "X=\bigcup_{i\in I} U_i" >}} mit {{< katex "U_i\in T" >}} (und {{< katex "U_i" >}} offen)
 
 eine endliche Teilüberdeckung
 
 {{< katex "X=\bigcup_{j\in J} U_j" >}} mit {{< katex "U_j\in T" >}} und {{< katex "J\subseteq I" >}} endlich
 
-enthält.
+enthält. Und eine Teilmenge {{< katex "A\subset X">}} ist genau dann kompakt, wenn {{< katex "(A,T)" >}} kompakt ist.
 
-Kompakte Räume kann man verstehen als eine Verallgemeinerung endlicher Räume. Zum Beispiel kann man mithilfe der Kompatkheit den Schritt von unendlich vielen Umgebungen zu endlich vielen machen und Beweise dann sehr ähnlich führen wie im endlichen Fall.
+Wichtig ist nicht, dass es eine endliche Überdeckung gibt (die gibt es immer), sondern dass man aus jeder beliebigen Überdeckung eine endliche auswählen kann. Zum Beispiel ist {{< katex "X:=\{\frac{1}{n}\,\mid\,n\in\mathbb{N}_+\}">}} nicht kompakt, da man für die Überdeckung, in der jede Umgebung genau einen Punkt enthält (z.B. {{< katex "U_n=(\frac{1}{n+1},\frac{1}{n-1})">}}) keine endliche Teilüberdeckung finden kann. Anders sieht das aus, wenn es um die Punkte einer konvergenten Folge geht und ihr Grenzwert enthalten ist: Da es in jeder Überdeckung eine Umgebung gibt, die den Grenzwert enthält, liegen schon alle bis auf endlich viele Punkte in dieser Umgebung (und man muss nur noch endlich viele weitere Umgebungen für die endlich vielen anderen Punkte auswählen).
 
-Eine Teilmenge {{< katex "M" >}} eines topologischen Raumes ist:
-* **überdeckunsgkompakt**, wenn es zu jeder offenen Überdeckung {{< katex "M\subseteq \bigcup_{i\in I} U_i" >}} eine endliche Teilüberdeckung {{< katex "M\subseteq\bigcup_{j\in J} U_j" >}} gibt;
-* **folgenkompakt**, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört (anders ausgedrückt: wenn jede Folge Häufungspunkte hat, die zur Menge gehören).
+Kompakte Räume kann man verstehen als eine Verallgemeinerung endlicher Räume. Zum Beispiel kann man mithilfe der Kompaktheit den Schritt von unendlich vielen Umgebungen zu endlich vielen machen und Beweise dann sehr ähnlich führen wie im endlichen Fall.
 
-In beliebigen topologischen Räumen sind beide Arten von Kompaktheit nicht unbedingt gleich.
+Kompaktheit nach der obigen Definition heißt auch **überdeckunsgkompakt**. Zusätzlich ist ein topologischer Raum **folgenkompakt**, wenn jede Folge in der Menge eine konvergente Teilfolge besitzt, deren Grenzwert zur Menge gehört (anders ausgedrückt: wenn jede Folge Häufungspunkte hat, die zur Menge gehören). Metrische Räume sind überdeckungskompakt genau dann, wenn sie folgenkompakt sind, aber in beliebigen topologischen Räumen sind diese beiden Arten von Kompaktheit nicht unbedingt gleich.
 
-Wenn ein metrischer Raum kompakt ist, dann ist er abgeschlossen und beschränkt. Für Teilmengen von {{< katex "\mathbb{R}^n" >}} gilt auch die Umkehrung (**Satz von Heine-Borel**). So sind zum Beispiele alle abgeschlossenen Intervalle in {{< katex "\mathbb{R}" >}} (wie {{< katex "[0,1]" >}}) kompakt, während offene und halboffene Intervalle nicht kompakt sind. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt. {{< katex "\mathbb{N}" >}} ist auch nicht kompakt.
-
-Kompaktheit einer Menge bedeutet auch, dass sie keine Folgen enthalten darf, die entweder keinen Grenzwert haben oder gegen einen Grenzwert konvergieren, der nicht in der Menge liegt.
-
-## Trennungseigenschaften
-
-**Hausdorffsches Trennungsaxiom:** Ein topologischer Raum heißt **Hausdorff-Raum**, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.
-
-Beispiele für Nicht-Hausdorff-Räume:
-
-* Eine Menge {{< katex "X" >}} mit mehr als einem Element und der trivialen Topologie.
-
-In einem Hausdorff-Raum kann eine Folge höchstens einen Grenzwert haben.
-In einem trivialen topologischen Raum konvergiert jede Folge gegen jeden Punkt.
+Jede überdeckungskompakte Menge ist beschränkt.
+Wenn ein metrischer Raum kompakt ist, dann ist er abgeschlossen und beschränkt; für Teilmengen von {{< katex "\mathbb{R}^n" >}} gilt auch die Umkehrung (**Satz von Heine-Borel**). So sind zum Beispiele alle abgeschlossenen Intervalle in {{< katex "\mathbb{R}" >}} (wie {{< katex "[0,1]" >}}) kompakt, während offene und halboffene Intervalle nicht kompakt sind. {{< katex "\mathbb{R}^n" >}} selber ist nicht kompakt. {{< katex "\mathbb{N}" >}} ist auch nicht kompakt.
 
 # Normierte und metrische Räume
 
@@ -94,7 +93,7 @@ Begriffe wie der der Umgebung, des Grenzwerts und der Konvergenz benutzen das Ko
 Eine reelle Folge {{< katex "(x_n)" >}} konvergiert gegen {{< katex "x" >}} gdw {{< katex "\text{lim}_{n\to\infty} d(x_n,x)=0" >}}.
 
 Will man diese Begriffe verallgemeinern für andere mathematische Objekte, wie Folgen von Vektoren, komplexe Zahlen und Funktionen, müsste man sie spezifisch für jedes dieser Objekte neu definieren.
-Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusammen mit einem allgemeinen Konzept für Abstand zwischen Objekten in diese Räumen und darauf aufbauend allgemeine Begriffe wie den der Konvergenz.
+Viel effizienter ist es, eine allgemeine Klasse von Räumen zu definieren, zusammen mit einem allgemeinen Konzept für Abstand zwischen Objekten in diesen Räumen, und darauf aufbauend allgemeine Begriffe wie den der Konvergenz.
 
 **Metrische Räume** sind Räume, auf denen ein Abstandsbegriff definiert ist. Eine **Metrik** ist eine Abbildung {{< katex "d" >}} zweier Vektoren auf eine reelle Zahl, die den Abstand zwischen diesen Vektoren ausdrückt, indem sie die folgenden Eigenschaften erfüllt:
 
@@ -142,18 +141,23 @@ Ein normierter Raum ist genau dann **vollständig**, wenn jede Cauchy-Folge konv
 
 ## Metrische und normierte Räume als topologische Räume
 
-In einem metrischen Raum {{< katex "(M,d)" >}} lässt sich eine {{< katex "\varepsilon" >}}-Umgebung {{< katex "U_\varepsilon" >}} von {{< katex "x_0" >}} definieren als {{< katex "\{ x\in M \,|\, d(x,x_0) < \varepsilon \}" >}}. Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x_0" >}}, wenn es ein {{< katex "\varepsilon" >}} gibt, so dass {{< katex "U_\varepsilon(x_0)\subseteq U" >}}.
+In einem metrischen Raum {{< katex "(M,d)" >}} lässt sich eine {{< katex "\varepsilon" >}}-Umgebung {{< katex "U_\varepsilon" >}} von {{< katex "x_0" >}} definieren als:
+{{< katex display="U_\varepsilon(x_0)=\{ x\in M \,|\, d(x,x_0) < \varepsilon \}" >}}
+Eine Menge {{< katex "U" >}} heißt **Umgebung** von {{< katex "x_0" >}}, wenn es ein {{< katex "\varepsilon" >}} gibt, so dass {{< katex "U_\varepsilon(x_0)\subseteq U" >}}.
 
 Ein Punkt {{< katex "x" >}} ist **Häufungspunkt** einer Menge, wenn in jeder {{< katex "\varepsilon" >}}-Umgebung {{< katex "U_\varepsilon(x)" >}} mindestens ein von {{< katex "x" >}} verschiedenes Element liegt. (Es liegen dann sogar unendlich viele Elemente der Menge in jeder {{< katex "\varepsilon" >}}-Umgebung.)
 Zum Beispiel ist jede rationale Zahl Häufungspunkt der irrationalen Zahlen und umgekehrt.
-
 Auf normierte Räume übertragen sich diese Definitionen, indem man die durch die Norm induzierte Metrik betrachtet.
 
-* Eine Menge {{< katex "M" >}} ist **offen** bzgl. einer Norm, wenn {{< katex "M" >}} Umgebung von jedem {{< katex "x\in M" >}} ist, d.h. wenn es zu jedem {{< katex "x\in M" >}} eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "x" >}} gibt, die ganz in {{< katex "M" >}} liegt. Eine Menge ist also genau dann offen, wenn sie nur aus inneren Punkten besteht, d.h. keinen ihrer Randpunkte enthält.
+Nun ist jeder metrische Raum auch ein topologischer Raum (und sogar ein Hausdorff-Raum), mit der folgenden induzierten Topologie:
 
-* Eine Menge ist **geschlossen** bzgl. einer Norm, wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist genau dann geschlossen, wenn sie alle ihre Häufungspunkte enthält.
+* Eine Menge {{< katex "M" >}} ist **offen**, wenn es für jedes {{< katex "x\in M" >}} eine {{< katex "\varepsilon" >}}-Umgebung von {{< katex "x" >}} gibt, die ganz in {{< katex "M" >}} liegt. Eine Menge ist also genau dann offen, wenn sie nur aus inneren Punkten besteht, d.h. keinen ihrer Randpunkte enthält.
 
-Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist offen oder geschlossen unabhängig davon, welche Norm betrachtet wird.
+* Eine Menge ist **geschlossen**, wenn es für jeden Punkt außerhalb der Menge eine {{< katex "\varepsilon" >}}-Umgebung gibt, die auch außerhalb liegt. Das heißt eine Menge ist genau dann geschlossen, wenn sie alle ihre Häufungspunkte enthält.
+
+Zum Beispiel induziert die diskrete Metrik die diskrete Topologie, unter der alle Teilmengen offen sind.
+
+Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist offen oder geschlossen unabhängig davon, welche Metrik bzw. Norm betrachtet wird.
 
 **Faustregeln:**
 
@@ -165,14 +169,19 @@ Eine Teilmenge von {{< katex "\mathbb{R}^n" >}} ist offen oder geschlossen unabh
 
 * Mengen, die mit {{< katex "=,\leq,\geq" >}} zwischen stetigen Funktionen definiert sind, sind abgeschlossen (z.B. {{< katex "\{(x,y)\in\mathbb{R}^2 \,|\, x\leq y^2\}" >}}).
 
-Das System der offenen Mengen eines metrischen Raumes bildet eine Topologie.
-Ein metrischer Raum mit dem System der offenen Mengen ist außerdem ein Hausdorff-Raum.
-
 Für jede Metrik {{< katex "d" >}} ist auch {{< katex "d'(x,y):=\frac{d(x,y)}{1+d{x,y}}" >}} eine Metrik und die erzeugte Topologie ist die gleiche.
 
-**Sätze:**
+# Stetige Funktionen auf topologischen Räumen
 
-* Eine Abbildung zwischen topologischen Räumen ist stetig gdw das Urbild jeder offenen (oder abgeschlossenen) Menge auch offen (oder abgeschlossen) ist.
+Sind Definitions- und Wertebereich einer Funktion topologische Räume, so ist die Wahl der Topologie entscheidend für die Stetigkeit der Funktion. Stetigkeit lässt sich in diesem Kontext allgemein wie folgt definieren:
+Sind {{< katex "(X,T_X)">}} und {{< katex "(Y,T_Y)">}} topologische Räume, dann ist eine Funktion {{< katex "f:X\to Y">}} **stetig** in {{< katex "x\in X">}}, wenn für jede Umgebung {{< katex "U">}} von {{< katex "f(x)">}} (bzgl. {{< katex "(X,T_X)">}}) das Urbild {{< katex "f^{-1}(U)">}} eine Umgebung von {{< katex "x">}} (bzgl. {{< katex "(Y,T_Y)">}}) ist.
+
+Eine Abbildung zwischen topologischen Räumen ist genau dann stetig, wenn das Urbild jeder offenen (oder abgeschlossenen) Menge auch offen (oder abgeschlossen) ist.
+
+Stetige Abbildungen erhalten Kompaktheit: Seien {{< katex "X,Y">}} Hausdorff-Räume und {{< katex "f:X\to Y">}} eine stetige Abbildung. Ist {{< katex "A\subset X">}} kompakt, so ist auch {{< katex "f(A)\subset Y">}} kompakt. Wenn {{< katex "X,Y">}} metrische Räume sind, ist {{< katex "f">}} sogar gleichmäßig stetig.
+
+Für reellwertige, stetige Funktionen gilt der **Satz von Weierstraß**:
+Eine stetige Funktion {{< katex "f:A\to\mathbb{R}">}}, die auf einer kompakten Teilmenge {{<katex "A">}} eines Hausdorff-Raumes definiert ist, ist beschränkt und nimmt ihr Minimum und Maximum an.
 
 # Folgen und Reihen
 

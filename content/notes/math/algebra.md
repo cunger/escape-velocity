@@ -100,7 +100,7 @@ Ein **Körper** {{< katex "(\mathbb{K},+,\cdot)" >}} (_field_) ist eine Menge {{
 * 0 das neutrale Element bezüglich {{< katex "+" >}} ist und jedes Element von {{< katex "\mathbb{K}" >}} invertierbar ist, d.h. {{< katex "a+(-a)=0" >}}
 * {{< katex "\cdot" >}} assoziativ und kommutativ ist  
 * 1 das neutrale Element bezüglich {{< katex "\cdot" >}} ist und jedes Element von {{< katex "\mathbb{K}" >}} invertierbar ist, d.h. {{< katex "a\cdot a^{-1}=1" >}}
-* {{< katex "\cdot" >}} distributiv ist über {{< katex "+" >}}.
+* {{< katex "\cdot" >}} distributiv ist über {{< katex "+" >}}, d.h. {{< katex "a\cdot (b+c)=a\cdot b + a\cdot c">}}
 
 Das heißt: {{< katex "(\mathbb{K},+)" >}} und {{< katex "(\mathbb{K}\backslash\{0\},\cdot)" >}} sind abelsche Gruppen.
 

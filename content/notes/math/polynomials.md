@@ -124,20 +124,21 @@ Ein Körper {{< katex "\mathbb{K}" >}} heißt **algebraisch abgeschlossen**, wen
 
 **Mitternachtsformel**: Ein Polynom {{< katex "ax^2 + bx + c">}} hat folgende Nullstellen:
 {{< katex display="x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}">}}
+Für komplexe Zahlen interpretiert man {{< katex "\pm\sqrt{b^2-4ac}">}} als die Zahlen {{< katex "z">}}, für die gilt {{< katex "z^2=b^2-4ac">}}.
 
 # Approximation mit Polynomen
 
-Jede stetige Funktion kann durch ein Polynom approximiert werden.
+Jede stetige Funktion kann durch ein Polynom approximiert werden (Interpolation).
 
 **Satz von Weierstrass:** Für jede Funktion {{< katex "f\in\mathbb{C}[a,b]">}} und ein beliebiges {{< katex "\varepsilon > 0">}} gibt es ein Polynom {{< katex "p">}}, so dass {{< katex "\| f-p \|_\infty < \varepsilon">}} (mit {{< katex "\|f\|_\infty = \max_{x\in[ab]}|f|">}} die Maximumnorm).
 
 Analog kann jede periodische Funktion (unter gewissen Voraussetzungen) durch ein trigonometrisches Polynom beliebig genau approximiert werden.
 {{< katex display="c + \sum_{i=0}^n a_i \sin(it) + \sum_{i=0}^n b_i \cos(it)" >}}
 
-Polynomfunktionen sind für Approximationen besonders geeignet, weil sie einfach zu differenzieren und integrieren sind und ihre Nullstellen durch Standardalgorithmen bestimmt werden können.
+Polynomfunktionen sind für Approximationen besonders geeignet, weil sie einfach zu differenzieren und integrieren sind und ihre Nullstellen durch Standardalgorithmen bestimmt werden können. Welche Polynomfunktionen für welche Anwendungen geeignet sind, richtet sich u.a. nach dem Approximationsfehler und danach, wie sich dieser Fehler verteilt.
 
 ## Taylorpolynome
 
 ## Fourierreihen
 
-## Interpolation
+## Chebyshev-Polynome
