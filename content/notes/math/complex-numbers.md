@@ -1,6 +1,6 @@
 ---
 title: "Komplexe Zahlen"
-summary: "(In Arbeit)"
+summary: "(Draft, work in progress)"
 date: 2022-09-03
 weight: 9
 math: true
