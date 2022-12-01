@@ -123,13 +123,11 @@ Wenn {{< katex "a" >}} kein Häufungspunkt, dann immer. Wenn {{< katex "a" >}} H
 
 # Differenzierbarkeit
 
-Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also differenzierbar, wenn sie linear approximiert werden kann. (Wobei _linear_ hier bedeutet, dass die Funktion ein Polynom vom Grad {{< katex "\leq 1" >}} ist.)
-
-Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben. In allgemeinen metrischen Räumen ist eine lineare Approximation nicht immer möglich. (Da kann man aber über isometrische Näherungen ein metrisches Differential definieren. Aber für Anwendungen sind sowieso Funktionen über euklidischen Räumen wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}} und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}.)
+Die Ableitung einer Funktion untersucht deren lokale Veränderung: Wie stark ändert sich der Funktionswert bei einer Veränderung des Eingabewerts? Das kann man verstehen als Änderungsrate der Funktion an einer Stelle. Wobei die Änderungsrate die Steigung derjenigen linearen Funktion ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. Eine Funktion ist also an einer Stelle differenzierbar, wenn sie dort hinreichend gut linear approximiert werden kann. (Wobei _linear_ hier bedeutet, dass die Funktion ein Polynom vom Grad {{< katex "\leq 1" >}} ist.)
 
 Differenzierbarkeit in einem Punkt ist eine lokale Eigenschaft, d.h. sie hängt nur vom Verhalten der Funktion in einer Umgebung des Punktes ab.
 
-## Änderungsrate
+## Änderungsrate und lineare Approximierbarkeit
 
 Der Differenzenquotient ist die mittlere Änderungsrate der Funktion auf dem Intervall {{< katex "[x,a]" >}}, das entspricht geometrisch der Sekantensteigung:
 {{< katex display="\frac{f(x)-f(a)}{x-a}" >}}
@@ -145,59 +143,65 @@ Wobei {{< katex "L(h)=f'(a)\,h" >}} eine lineare Abbildung ist.
 
 Diese Formulierung ist praktisch, da sie sich einfach auf mehrdimensionale Funktionen übertragen lässt.
 (Im Gegensatz zur ersten: Da bei mehrdimensionalen Funktionen {{< katex "x-a" >}} und {{< katex "f(x)-f(a)" >}} Vektoren unterschiedlicher Räume sein können, ist der Quotient beider in vielen Fällen gar nicht vernünftig definiert.)
-Das Differential ist dann die Abbildung {{< katex "L:\mathbb{R}^n\to\mathbb{R}" >}}, so dass
+Das **Differential** ist dann die eindeutig bestimmte Abbildung {{< katex "L:\mathbb{R}^n\to\mathbb{R}" >}}, so dass
 
 {{< katex display="\text{lim}_{h\to 0}\frac{f(a+h)-f(a)-L(h)}{\|h\|} = 0" >}}
 
-Daraus ergibt sich eine leicht andere Sichtweise:
-Die Ableitung ist die Steigung der linearen Funktion, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts {{< katex "f(x)" >}} hängt annähernd linear von der Änderung des Wertes {{< katex "x" >}} (von {{< katex "x" >}} zu {{< katex "x+h" >}}) ab. Das entspricht der Vorstellung, dass die Tangente der Graph derjenigen linearen Funktion {{< katex "h\to L(h)" >}} ist, die {{< katex "f(a+h)−f(a)" >}} mit einem sehr kleinen Fehler approximiert.
+Daraus ergibt sich die Sichtweise, dass die Ableitung einer Funktion die Steigung der linearen Abbildung ist, die die Änderung der betrachteten Funktion in dem gegebenen Punkt lokal am besten approximiert. D.h. die Änderung des Funktionswerts {{< katex "f(x)" >}} hängt annähernd linear von der Änderung des Wertes {{< katex "x" >}} (von {{< katex "x" >}} zu {{< katex "x+h" >}}) ab. Das entspricht der Vorstellung, dass die Tangente der Graph derjenigen linearen Funktion {{< katex "h\to L(h)" >}} ist, die {{< katex "f(a+h)−f(a)" >}} mit einem sehr kleinen Fehler approximiert.
 
 Eine Funktion ist also differenzierbar in einem Punkt, wenn sie in dem Punkt "annähernd linear" ist.
 
-## Lineare Approximierbarkeit
-
 Aus der Approximation
 {{< katex "f'(a)\approx\dfrac{f(x)-f(a)}{x-a}" >}}
-ergibt sich direkt:
-{{< katex display="f(x)\approx f(a) + f'(a)\cdot (x-a)" >}}
+ergibt sich direkt
+{{< katex "f(x)\approx f(a) + f'(a)\cdot (x-a)" >}}.
 Daher kann man Differenzierbarkeit wie folgt definieren:
 
-{{< katex "f:M\to \mathbb{R}^m" >}} ist genau dann differenzierbar in {{< katex "a" >}} mit der Ableitung {{< katex "c=f'(a)\in \mathbb{R}^m" >}}, wenn es eine Funktion {{< katex "r:M\to \mathbb{R}^m" >}} gibt, so dass
+{{< katex "f:M\to \mathbb{R}^m" >}} ist genau dann **differenzierbar** in {{< katex "a" >}} mit der Ableitung {{< katex "c=f'(a)\in \mathbb{R}^m" >}}, wenn es eine Funktion {{< katex "r:M\to \mathbb{R}^m" >}} gibt, so dass
 
-* {{< katex "f(x) = f(a) + c\cdot(x-a) + r(x)" >}}
+* {{< katex "f(x) = f(a) + c\,(x-a) + r(x)" >}}
 * {{< katex "\lim_{x\to a}\dfrac{r(x)}{x-a} = 0" >}}
 
-Hier versteht man {{< katex "f(a) + c(x-a)" >}} als Näherung von {{< katex "f(x)" >}} und {{< katex "r(x)" >}} als Fehler, also als Differenz zwischen der eigentlichen Funktion und ihrer Näherung. Wenn {{< katex "x=a" >}}, dann ist {{< katex "r(x)=0" >}}.
+Hier versteht man {{< katex "f(a) + c\,(x-a)" >}} als Näherung von {{< katex "f(x)" >}}, und {{< katex "r(x)" >}} als Fehler, also als Differenz zwischen der eigentlichen Funktion und ihrer Näherung. Wenn {{< katex "x=a" >}}, dann ist {{< katex "r(x)=0" >}}.
 
-Da {{< katex "r(x) = f(x) - f(a) - c(x-a)" >}} ist, gelten diese Bedingungen genau dann, wenn {{< katex display="\lim_{x\to a}\frac{f(x) - f(a) - c(x-a)}{x-a}=\lim_{x\to a}\frac{f(x) - (a)}{x-a} - c = 0," >}} also wenn {{< katex display="\lim_{x\to a}\frac{f(x) - f(a)}{x-a} = c = f'(a)." >}}
+Da {{< katex "r(x) = f(x) - f(a) - c\,(x-a)" >}} ist, gelten diese Bedingungen genau dann, wenn {{< katex display="\lim_{x\to a}\frac{f(x) - f(a) - c\,(x-a)}{x-a}=\lim_{x\to a}\frac{f(x) - (a)}{x-a} - c = 0," >}} also wenn {{< katex display="\lim_{x\to a}\frac{f(x) - f(a)}{x-a} = c = f'(a)." >}}
 
-Im mehrdimensionalen Fall heißt das:
-{{< katex "f:M\to Y" >}} ist genau dann differenzierbar in {{< katex "a" >}} mit der Ableitung {{< katex "A=f'(a)\in Y" >}} (die **Jacobi-Matrix**, siehe lineare Abbildung als Matrix), wenn es eine Funktion {{< katex "r:M\to Y" >}} gibt, so dass
+Im mehrdimensionalen Fall heißt das,
+{{< katex "f:M\to Y" >}} ist genau dann **differenzierbar** in {{< katex "a" >}} mit der Ableitung {{< katex "A=f'(a)\in Y" >}} (die **Jacobi-Matrix**, siehe [Matrizen für lineare Abbildung](../matrix/#matrizen-als-lineare-transformationen)), wenn es eine Funktion {{< katex "r:M\to Y" >}} gibt, so dass
 
 * {{< katex "f(x) = f(a) + A\cdot(x-a) + r(x)" >}}
 * {{< katex "\lim_{x\to a}\dfrac{r(x)}{\|x-a\|} = 0" >}}
 
 Die Wahl der Norm spielt keine Rolle.
 
+Das Differential wird in der Regel über normierten Räumen betrachtet, die neben einer metrischen Strukur auch eine lineare Strukur haben. In allgemeinen metrischen Räumen ist eine lineare Approximation nicht immer möglich. Da kann man aber über isometrische Näherungen ein metrisches Differential definieren. (Für Anwendungen sind vor allem Funktionen über euklidischen Räumen wichtig, d.h. reellwertige Funktionen mehrerer Veränderlicher von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}" >}} und vektorwertige Funktionen von {{< katex "\mathbb{R}^n" >}} nach {{< katex "\mathbb{R}^m" >}}.)
+
 ## Operatoren
+
+### Richtungsableitung
+
+Bei mehrdimensionalen Funktionen ist die **Richtungsableitung** die momentane relative Änderung des Funktionswertes {{< katex "f(x)" >}}, wenn sich der Wert {{< katex "x" >}} mit dem Vektor {{< katex "h" >}} fortbewegt. Sie beschreibt also ist das lokale Verhalten der Komponentenfunktion bei Änderung dieser Komponente. Das Differential weist im Prinzip jedem Vektor die Richtungsableitung in Richtung des Vektors zu.
 
 **Differentialoperator:** {{< katex "\frac{d}{dx}:f\to f'" >}}
 
-Bei mehrdimensionalen Funktionen ist die **Richtungsableitung** die momentane relative Änderung des Funktionswertes {{< katex "f(x)" >}}, wenn sich der Wert {{< katex "x" >}} mit dem Vektor {{< katex "h" >}} fortbewegt. Sie beschreibt also ist das lokale Verhalten der Komponentenfunktion bei Änderung dieser Komponente. Das Differential weist im Prinzip jedem Vektor die Richtungsableitung in Richtung des Vektors zu.
+### Partielle Ableitung
 
 Ein Spezialfall der Richtungsableitung ist die **partielle Ableitung**. Die partielle Ableitung einer Funktion mehrerer Veränderlicher ist nichts anderes als die Ableitung der Funktion, die man erhält, wenn man alle Veränderlichen bis auf eine festhält.
 
 **Differentialoperator:** {{< katex "\frac{\partial}{\partial x_i}:f\to \frac{\partial f}{\partial x_i}" >}}
 
-Wenn {{< katex "f" >}} in einer Umgebung eines Punktes {{< katex "a" >}} partiell differenzierbar ist und alle partiellen Ableitungen stetig sind, dann ist {{< katex "f" >}} in {{< katex "a" >}} auch differenzierbar.
-
-## Gradient
-
-**Differentialoperator:** {{< katex "\nabla" >}} (grad, Vektoranalysis)
+### Gradient
 
 > In kartesischen Koordinaten sind die Komponenten des Gradientvektors die partiellen Ableitungen im Punkt P, der Gradient zeigt deshalb in die Richtung der größten Änderung. Der Betrag des Gradienten gibt den Wert der größten Änderungsrate an diesem Punkt an.
 (https://www.wikiwand.com/de/Gradient_(Mathematik))
 
-(https://www.wikiwand.com/en/Differential_operator)
+**Differentialoperator:** {{< katex "\nabla" >}} (grad, Vektoranalysis)
+
+## Wichtige Sätze
+
+Wenn {{< katex "f" >}} in einer Umgebung eines Punktes {{< katex "a" >}} partiell differenzierbar ist und alle partiellen Ableitungen stetig sind, dann ist {{< katex "f" >}} in {{< katex "a" >}} differenzierbar.
+
+Wenn {{< katex "f" >}} in einem Punkt {{< katex "a" >}} differenzierbar ist, ist sie in dem Punkt auch stetig.
+
 
 # Integrierbarkeit

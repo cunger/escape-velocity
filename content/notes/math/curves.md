@@ -1,6 +1,6 @@
 ---
 title: "Kurven"
-summary: "(Draft, work in progress)"
+summary: "Die Bewegung eines Punktes durch den Raum."
 date: 2022-11-28
 weight: 6
 math: true
@@ -23,8 +23,8 @@ Eine Kurve {{< katex "f:I\to\mathbb{R}^n" >}} heißt **glatt**, falls {{< katex 
 
 # Rektifizierbarkeit und Bogenlänge
 
-Die Länge einer Kurve ist der Grenzwert der Summe der Längen der in ihr eingeschriebenen Polygonzüge.
-Eine Kurve ist **rektifizierbar**, wenn diese Länge endlich ist.
+Die Länge einer Kurve ist das Supremum der Längen der in ihr eingeschriebenen Polygonzüge.
+Eine Kurve ist **rektifizierbar**, wenn diese Länge endlich ist (also wenn die Mengeder Längen aller möglichen Polygonzüge beschränkt ist).
 
 Eine Kurve ist stetig differenzierbar auf {{< katex "I">}}, wenn jede Funktion {{< katex "f_i">}} auf {{< katex "I">}} stetig differenzierbar ist. Jede stetig differenzierbare Kurve {{< katex "f:[a,b]\to\mathbb{R}^n">}} ist rektifizierbar, d.h. ihre Bogenlänge ist endlich. Die **Bogenlänge** {{< katex "L(f)">}} lässt sich dann berechnen durch:
 
@@ -33,6 +33,6 @@ Eine Kurve ist stetig differenzierbar auf {{< katex "I">}}, wenn jede Funktion {
 Vorausgesetzt, dass das Integral existiert. Wobei {{< katex "\|\cdot\|_2">}} die [euklidische Norm](../topology/#normierte-und-metrische-räume) ist und damit ist {{< katex "\|f'(t)\|_2\in\mathbb{R}">}}. Dadurch ergibt sich:
 {{< katex display="L(f)= \|f'(t)\|_2\,t\;|_a^b = \|f'(t)\|_2(b-a) = \sqrt{f_1'^2+\ldots+ f_n'^2}\,(b-a)">}}
 
-
+# Parameterwechsel
 
 # Kurvenintegrale
