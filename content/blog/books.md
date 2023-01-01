@@ -12,6 +12,8 @@ Merlin Sheldrake: **Entangled life: How fungi make our worlds, change our minds 
 
 Ryusho Kadota, Akira Tokuhiro, Simon Varnam: **On the brink: The inside story of Fukushima Daiichi.**
 
+Theodore Gray: **Elements.**
+
 Brian Cox: **The planets.**
 
 Charles Seife: **Decoding the universe.**
@@ -25,10 +27,6 @@ Becky Chambers: **Long way to a small angry planet.** (And most of her other boo
 Adam Higginbotham: **Midnight in Chernobyl**.
 
 Nancy Leveson: **Engineering a safer world.**
-
-Bren Smith: **Eat like a fish.**
-
-Scott Kelly: **Endurance: A year in space, a lifetime of discovery.**
 
 Jurek Becker: **Am Strand von Bochum ist allerhand los.**
 

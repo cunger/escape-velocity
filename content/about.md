@@ -20,7 +20,7 @@ If you happen to look at them as well and even have suggestions, questions, or f
 
  🛠️ I love to be a **technical enabler**. For me, software is a tool that is most valuable when it supports experts to do their job well. I take pride in building and tending this tool, and I especially enjoy working in multidisciplinary settings.
 
- ☕ Early mornings are for [coffee](https://www.buymeacoffee.com/xoUAIBhZE), contemplation, and studying **mathematics**.
+ ☕ Early mornings are for [coffee](https://www.buymeacoffee.com/xoUAIBhZE) and contemplation.
 
  ☢️ I have a strong interest in **nuclear technology** and hold a basic certificate in radiation protection.
 

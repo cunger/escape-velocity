@@ -11,14 +11,14 @@ Balancing equations are a way of bookkeeping for the main quantities involved in
 
 General balance of {{< katex "x" >}}:
 
-{{< katex display="\frac{dx}{dt}=\Phi_{x,in} - \Phi_{x,out} + \text{production}(x)" >}}
+{{< katex display="\frac{dx}{dt}=\Phi_{x,in} - \Phi_{x,out} + \text{production}(x) - \text{consumption}(x)" >}}
 
 Where:
 
 * {{< katex "\frac{dx}{dt}" >}} is the rate of change of {{< katex "x" >}} in the system as a function of time. In a steady state, {{< katex "\frac{dx}{dt}=0" >}}.
 * {{< katex "\Phi_{x,in}" >}} is the rate of {{< katex "x" >}} entering the system.
 * {{< katex "\Phi_{x,out}" >}} is the rate of {{< katex "x" >}} leaving the system.
-* {{< katex "\text{production}(x)" >}} includes production and consumption or loss of {{< katex "x" >}}, and thus can be positive or negative.
+* {{< katex "\text{production}(x)" >}} refers to the generation and thus gain of {{< katex "x" >}} within the system, and {{< katex "\text{consumption}(x)" >}} refers to the loss of {{< katex "x" >}} within the system.
 
 Balances can be set up on different levels:
 
