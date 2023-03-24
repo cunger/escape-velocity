@@ -1,31 +1,26 @@
 ---
-title: "Hi, I'm Christina"
+title: "About"
 date: 2022-06-14
 ---
 
-I’m a professional software engineer with experience in application and web development and a fading background in research.
+# Hi, I'm Christina.
 
----
+Professional software engineer with 7 years of experience in building and maintaining complex code bases, and a foundation in applied mathematics and formal logic.
 
-  &nbsp;&nbsp; 💾 [GitHub](https://github.com/cunger/)
+I work as a developer for space applications at [OKAPI:Orbits GmbH](https://okapiorbits.space).
 
-  &nbsp;&nbsp; 📎 [LinkedIn](https://www.linkedin.com/in/christina-unger)
+### Main interests
 
----
-
-These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
-If you happen to look at them as well and even have suggestions, questions, or found errata, please feel free to reach out.
+* nuclear technology and radiation protection
+* software system safety and resilience engineering
+* ocean and biosphere conservation
 
 ### Want to know more?
 
- 🛠️ I love to be a **technical enabler**. For me, software is a tool that is most valuable when it supports experts to do their job well. I take pride in building and tending this tool, and I especially enjoy working in multidisciplinary settings.
+Check me out on [GitHub](https://github.com/cunger/) or [LinkedIn](https://www.linkedin.com/in/christina-unger).
 
- ☕ Early mornings are for [coffee](https://www.buymeacoffee.com/xoUAIBhZE) and contemplation.
+### What's this?
 
- ☢️ I have a strong interest in **nuclear technology** and hold a basic certificate in radiation protection.
+These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
 
- 🌊 I care about the ocean, love being in the water, and work on becoming a better scuba diver.
-
- 🚀 I grew up with science fiction and as a result have a hard time to not see humans as a space-faring species.
-
- In the grander scheme of things, I see my place at the foundation for building a better future: properly tending to our legacy - in particular nuclear waste, space debris, CO2 emissions, complex legacy code bases, and biosphere conservation.
+If you happen to look at them as well and have suggestions or questions, found errata, or just want to chat, please feel free to reach out.
