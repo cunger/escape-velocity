@@ -15,7 +15,7 @@ draft: true
 In der Digitalfotographie werden Bilder als **Bitmaps** aufgenommen und dargestellt: als {{< katex "M\times N" >}}-Raster von quadratischen Bildelementen (_Pixeln_), wobei {{< katex "M" >}} die Breite und {{< katex "N" >}} die Höhe des Bildes in Pixeln ist.
 
 {{< rawhtml >}}
-<img src="/images/blog/boot-ausschnitt.png" alt="Farbbild" width="800"/>
+<img src="/images/blog/beispielbild-ausschnitt.png" alt="Ausschnitt" width="800"/>
 {{< /rawhtml >}}
 
 Jeder einzelne Pixel kann {{< katex "2^b" >}} Werte annehmen, üblicherweise von {{< katex "0" >}} bis {{< katex "2^b-1" >}} für ein geeignetes {{< katex "b\in\mathbb{N}" >}}. Dabei wird {{< katex "b" >}} als **Bittiefe** bezeichnet und entspricht der Anzahl von Bits, die für die Speicherung der Information eines Pixels benötigt werden.
@@ -45,11 +45,9 @@ Bei einer verlustfreien Kompression ist die dekodierte Darstellung exakt die gle
 
 Das Ziel bei der Bildkompression ist es nun, eine möglichst hohe Kompressionsrate bei möglichst guter Bildqualität zu erreichen, also möglichst wenig Informationen speichern oder übertragen zu müssen, ohne dass der Unterschied zwischen Originalbild und rekonstruiertem Bild visuell wahrnehmbar ist.
 JPEG ist ein sehr weit verbreiteter Kompressionsstandard,
-% JPEG erlaubt eine flexible Einstellung von Kompressionsrate vs Bildqualität
 der genau das schafft: Das oben erwähnte Beispielbild von reichlich 2 MB benötigt als JPEG in guter Bildqualität nur noch ungefähr 0,2 MB.
 
 Ein wesentlicher Teil des Algorithmus hinter JPEG besteht darin, das Bild zuerst in eine Darstellung zu transformieren, die im Gegensatz zum Pixelraster sehr effizient komprimiert werden kann.
-Im Abschnitt \ref{sec2} wollen wir die zwei relevanten Vektordarstellungen von Bildinformationen definieren, bevor wir in Abschnitt \ref{sec3} anschauen, wie diese aufeinander abgebildet werden können. Beides zusammen bildet die Grundlage für eine anschließende Kompression.
 
 Der Baseline-Algorithmus ... entlang der folgenden Schritte:
 
