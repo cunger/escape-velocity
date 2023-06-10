@@ -161,6 +161,11 @@ Die Funktionswerte {{< katex "f(x)" >}} der Funktion, die unserem Stützstellenv
 Bei Audiosignalen ist die Intuition hinter einer solchen Darstellung, dass das Signal in Grundschwingungen verschiedener Frequenzen zerlegt werden kann.
 Bei Bildern hingegen kann man die Basisfunktionen und ihre Frequenzen als verschiedene Arten von Kontrasten verstehen. Die Linearkombination gibt dann an, welche Kontraste zu welchem Anteil im Bildraster vorkommen, wobei ein großer Koeffizientenwert bedeutet, dass der Kontrast stark ausgeprägt ist, die Unterschiede zwischen benachbarten Pixeln also relativ groß sind.
 
+TODO
+Intuition
+kanonische Basis = weiß mit einem schwarzen Pixel, d.h. räumlich,
+Kosinusfunktionenbasis = Kontraste (1D jeweils horizontal und vertikal, multipliziert dann 2D)
+
 Für den Anwendungsfall der Kompression interessieren uns nur die Koeffizienten, da die Basisfunktionen fix sind und nicht als Information mit gespeichert und übertragen werden müssen.
 Die Koordinatendarstellung liefert uns damit eine weitere diskrete Darstellung der Bildinformation:
 Neben der ursprünglichen Stützstellendarstellung eines Pixelrasters
@@ -236,7 +241,8 @@ Die zweidimensionale Formel für die Berechnung von Elementen {{< katex "C_{ij}"
 {{< katex display="P_{xy} = \sum_{i=0}^{N-1}\sum_{j=0}^{N-1} C_{ij}\,s_x\, s_y\, \cos(x\cdot(i+\frac{1}{2})\cdot\frac{\pi}{N})\, \cos(y\cdot(j+\frac{1}{2})\cdot\frac{\pi}{N})" >}}
 {{< katex display="C_{ij} = \sum_{x=0}^{N-1}\sum_{y=0}^{N-1} P_{xy}\,s_x\, s_y\, \cos(x\cdot(i+\frac{1}{2})\cdot\frac{\pi}{N})\, \cos(y\cdot(j+\frac{1}{2})\cdot\frac{\pi}{N})" >}}
 
-Beispiel
+TODO
+Beispiel:
 Pixelraster --DCT--> transformierten Raster
 
 # Quantisierung
