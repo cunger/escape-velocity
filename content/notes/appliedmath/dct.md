@@ -1,21 +1,22 @@
 ---
-title: "JPEG"
-description: "Deep dive into image compression with JPEG"
-author: "Christina Unger"
-tags: ["signal processing"]
+title: "Diskrete Kosinustransformation"
+summary: "Tief ins Herz der JPEG-Bildkompression"
 date: 2023-05-20
+weight: 1
 toc: true
 math: true
-lastmod: 2023-05-20
-draft: true
+draft: false
 ---
+
+TODO
+Einleitung
 
 # Digitale Bilder und Bildkompression
 
 In der Digitalfotographie werden Bilder als **Bitmaps** aufgenommen und dargestellt: als {{< katex "M\times N" >}}-Raster von quadratischen Bildelementen (_Pixeln_), wobei {{< katex "M" >}} die Breite und {{< katex "N" >}} die Höhe des Bildes in Pixeln ist.
 
 {{< rawhtml >}}
-<img src="/images/blog/beispielbild-ausschnitt.png" alt="Ausschnitt" width="800"/>
+<img src="/images/docs/beispielbild-ausschnitt.png" alt="Ausschnitt" width="800"/>
 {{< /rawhtml >}}
 
 Jeder einzelne Pixel kann {{< katex "2^b" >}} Werte annehmen, üblicherweise von {{< katex "0" >}} bis {{< katex "2^b-1" >}} für ein geeignetes {{< katex "b\in\mathbb{N}" >}}. Dabei wird {{< katex "b" >}} als **Bittiefe** bezeichnet und entspricht der Anzahl von Bits, die für die Speicherung der Information eines Pixels benötigt werden.
@@ -23,13 +24,25 @@ Jeder einzelne Pixel kann {{< katex "2^b" >}} Werte annehmen, üblicherweise von
 Größere Bittiefen von 12, 14 oder 16 werden für höherwertige Fotographie und Druck oder Anwendungen in der Medizin und Astronomie verwendet.
 
 Bei einer Bittiefe von 8 liegen Werte dann im Intervall [0,255], wobei in einem Graustufenbild 0 schwarz und 255 weiß entspricht.
-Ein Farbbild hingegen setzt sich aus mehreren Pixelrastern zusammen, nämlich einem pro Farbkanal. JPEG arbeitet mit dem Farbraum YCbCr, teilt die Informationen eines Bildes also in drei Kanäle auf: Y für die Grundhelligkeit, Cb für Chroma Blau (Farbintensität auf der Achse Blau-Gelb) und Cr für Chroma Rot (Farbintensität auf der Achse Rot-Grün).
 
 {{< rawhtml >}}
-<img src="/images/blog/beispielbild.JPG" alt="Farbbild" width="400"/>
-<img src="/images/blog/beispielbild-y.png" alt="Farbbild: Y-Kanal" width="400"/>
-<img src="/images/blog/beispielbild-cb.png" alt="Farbbild: Cb-Kanal" width="400"/>
-<img src="/images/blog/beispielbild-cr.png" alt="Farbbild: Cr-Kanal" width="400"/>
+<img src="/images/docs/pixelraster-graustufen.png" alt="Pixelraster (Graustufen)" width="340" style="display: block; margin: auto; padding: 10px;"/>
+{{< /rawhtml >}}
+
+Ein Farbbild hingegen setzt sich aus mehreren Pixelrastern zusammen, nämlich einem pro Farbkanal.
+Im Fall von RGB hat man also drei Pixelraster, jeweils eins für Rotwerte, eins für Grünwerte und eins für Blauwerte:
+
+{{< rawhtml >}}
+<img src="/images/docs/pixelraster-rgb-channels.png" alt="Pixelraster (RGB)" width="800"/>
+{{< /rawhtml >}}
+
+JPEG arbeitet mit dem Farbraum YCbCr, teilt die Informationen eines Bildes also in drei Kanäle auf: Y für die Grundhelligkeit, Cb für Chroma Blau (Farbintensität auf der Achse Blau-Gelb) und Cr für Chroma Rot (Farbintensität auf der Achse Rot-Grün).
+
+{{< rawhtml >}}
+<img src="/images/docs/beispielbild-garten.JPG" alt="Farbbild" width="400"/>
+<img src="/images/docs/beispielbild-garten-Y.png" alt="Farbbild: Y-Kanal" width="400"/>
+<img src="/images/docs/beispielbild-garten-Cb.png" alt="Farbbild: Cb-Kanal" width="400"/>
+<img src="/images/docs/beispielbild-garten-Cr.png" alt="Farbbild: Cr-Kanal" width="400"/>
 {{< /rawhtml >}}
 
 _Zerlegung eines Bildes in die einzelnen YCbCr-Kanäle. Oben links sieht man das Originalbild, oben rechts die Grundhelligkeit (Y), unten links die Blau-Gelb-Chroma (Cb) und unten rechts die Rot-Grün-Chroma (Cr)._
@@ -40,7 +53,7 @@ Eine übliche Monitorauflösung von 1920x1200, zum Beispiel, entspricht einem Ra
 Um effizient mit Bilddaten arbeiten zu können, will man sie daher komprimieren, d.h. in eine kompaktere Darstellung überführen, die weniger Daten benötigt und dann zur Speicherung und Übertragung verwendet werden kann. Um das Bild schließlich wieder darzustellen, wird die komprimierte Darstellung zurück in ein Bildraster überführt.
 
 {{< rawhtml >}}
-<img src="/images/blog/bildkompression-allgemein.png" alt="Ausschnitt" width="600"/>
+<img src="/images/docs/bildkompression-allgemein.png" alt="Diagramm Bildkompression" width="600"/>
 {{< /rawhtml >}}
 
 Bei einer verlustfreien Kompression ist die dekodierte Darstellung exakt die gleiche wie die ursprüngliche Darstellung vor der Kodierung, es gehen also keine Informationen verloren. Will man eine hohe Kompressionsrate erreichen, ist das allerdings oft nur mit einer verlustbehafteten Kompression möglich. Bei der Kodierung gehen dann Informationen verloren, die bei der Dekodierung nur annäherungsweise wieder hergestellt werden können; das rekonstruierte Bild entspricht also nicht exakt dem Originalbild.
@@ -52,7 +65,7 @@ der genau das schafft: Das oben erwähnte Beispielbild von reichlich 2 MB benöt
 Ein wesentlicher Teil des Algorithmus hinter JPEG besteht darin, das Bild zuerst in eine Darstellung zu transformieren, die im Gegensatz zum Pixelraster sehr effizient komprimiert werden kann. Dazu wird das Bildraster zuerst in Blöcke zerlegt. Jeden Block kann man als Vektor darstellen, der dann auf einen anderen Vektor angebildet wird, der die visuell relevanten Informationen in einen wenigen Elementen konzentriert (Diskrete Kosinustransformation). Alle anderen Elemente werden bei der Kompression dann fallengelassen (Quantisierung und Kodierung).
 
 {{< rawhtml >}}
-<img src="/images/blog/bildkompression-jpeg.png" alt="Ausschnitt" width="800"/>
+<img src="/images/docs/bildkompression-jpeg.png" alt="Diagramm JPEG-Bildkompression" width="800"/>
 {{< /rawhtml >}}
 
 Im Fall eines Farbbildes werden die Farbkanäle prinzipiell gleich verarbeitet, man kann aber die Kompressionsrate für jeden Farbkanal unterschiedlich wählen. Zum Beispiel ist die menschliche Wahrnehmung sehr viel sensitiver für Grundhelligkeit als für Chroma, weswegen man für den Y-Kanal eine höhere Abtastrate und geringere Kompressionsrate wählt, während man für Cb und Cr mit einer geringeren Abtastrate und größeren Kompressionsrate davonkommt.
@@ -63,15 +76,20 @@ Wir wollen im Folgenden nur einen Kanal betrachten, also entweder ein Graustufen
 
 Der erste Schritt bei der JPEG-Kompression ist ein sogenannter **Level Shift**, der die Werte mithilfe einer Abbildung von {{< katex "[0,2^b - 1]" >}} auf {{< katex "[-2^{b-1},2^{b-1} - 1]" >}} so verschiebt, dass die 0 zentriert ist; im Fall von {{< katex "b=8" >}} von [0,255] auf [-127, 128].
 
+{{< rawhtml >}}
+<div style="margin-top: 10px; margin-bottom: 20px;">
+<img src="/images/docs/pixelraster-graustufen.png" alt="Pixelraster (Graustufen)" width="320" style="vertical-align: middle;"/>
+-- Level shift -->
+<img src="/images/docs/pixelraster-graustufen-shifted.png" alt="Pixelraster (Graustufen)" width="320" style="vertical-align: middle;"/>
+</div>
+{{< /rawhtml >}}
+
 Außerdem wird nicht mit dem Bildraster als Ganzem gearbeitet. Statt dessen wird das Raster zunächst in 8x8-Blöcke zerlegt. (Ist die Höhe oder Breite des Bildes nicht durch 8 teilbar, wird das Pixelraster um entsprechend viele Reihen oder Spalten erweitert, die am Ende wieder entfernt werden.)
 Alle Verarbeitungsschritte werden getrennt auf jeden dieser Blöcke angewendet.
 
-Solche 8x8-Blöcke lassen sich mathematisch als 8x8-Matrix darstellen - oder einfacher als 64-elementige Vektoren, also Elemente im Raum {{< katex "\mathbb{R}^{64}" >}}. [TODO: Warum R und nicht Z?]
+Solche 8x8-Blöcke lassen sich mathematisch als 8x8-Matrix darstellen - oder einfacher als 64-elementige Vektoren, also Elemente im Raum {{< katex "\mathbb{R}^{64}" >}}.
 
-Wir wollen als Beispiel also einen solchen 8x8-Block betrachten. In Abbildung Xa sieht man den Block als ..., in Xb denselben Block mit den entsprechenden numerischen Werten. Letzterer entspricht also einen 64-dimensionalen Vektor. Der Kompaktheit und Anschaulichkeit wegen werden wir Pixelraster immer wie in Abbildung X darstellen, mathematisch arbeiten wir aber mit Vektoren.
-
-[Beispielbblock als Graustufenversion]
-[Selber Block mit numerischen Werten]
+TODO: Warum R und nicht Z?
 
 Der Einfachheit halber betrachten wir aber vorerst nur eine Dimension, nur die Zeilen der Blöcke, d.h. Vektoren im {{< katex "\mathbb{R}^{8}" >}}.
 Die Erweiterung auf zwei Dimensionen ist am Ende unkompliziert.
@@ -109,7 +127,7 @@ Im Fall unseres Beispielvektors
 kennen wir also folgende Werte an den Stützstellen {{< katex "i=0,\ldots,7">}}.
 
 {{< rawhtml >}}
-<img src="/images/blog/stuetzstellen1.png" alt="Stützstellen" width="800"/>
+<img src="/images/docs/stuetzstellen1.png" alt="Stützstellen" width="600"/>
 {{< /rawhtml >}}
 
 Bekannt sind also nur {{< katex "N" >}} Werte der Funktion {{< katex "f" >}} in einem beschränkten Intervall. Um die Menge der möglichen Funktionen, die diese Werte durchlaufen, so weit einzuschränken, dass wir praktisch damit weiterarbeiten können, treffen wir ein paar zusätzliche Annahmen.
@@ -119,7 +137,7 @@ Eine Fortsetzung der Funktion erhalten wir, indem wir die gebenenen Werte zu bei
 Hier gibt es mehrere Möglichkeiten; für JPEG relevant ist eine Spiegelung achsensymmetrisch zur y-Achse in den Punkten zwischen den Stützstellen. Wir erweitern die Funktion also in beide Richtungen als _gerade_ Funktion, d.h. so dass {{< katex "f(-x)=f(x)" >}}, und so dass sich die Randpunkte unseres ursprünglichen Vektors wiederholen.
 
 {{< rawhtml >}}
-<img src="/images/blog/stuetzstellen2.png" alt="Stützstellen" width="800"/>
+<img src="/images/docs/stuetzstellen2.png" alt="Stützstellen" width="800"/>
 {{< /rawhtml >}}
 
 Wir nehmen also an, dass unser diskreter Vektor {{< katex "p" >}} die Werte einer kontinuierlichen, periodischen, geraden Funktion {{< katex "f:\mathbb{R}\to\mathbb{R}" >}} an {{< katex "N" >}} Stützstellen darstellt.
@@ -152,7 +170,7 @@ Setzt man die Stützstellen ein, ergibt sich:
 Für {{< katex "N=8">}} sehen die Funktionen und Stützstellen damit wie folgt aus. (Die Funktionswerte der Basisfunktionen {{< katex "b_k">}} an den Stützstellen {{< katex "x_i">}} werden am Ende unsere neuen Basisvektoren.)
 
 {{< rawhtml >}}
-<img src="/images/blog/basisvektoren.png" alt="Basisvektoren" width="800"/>
+<img src="/images/docs/basisvektoren.png" alt="Basisvektoren" width="800"/>
 {{< /rawhtml >}}
 
 Die Funktionswerte {{< katex "f(x)" >}} der Funktion, die unserem Stützstellenvektors zugrundeliegt, lassen sich also als Linearkombination der Basisfunktionen darstellen, mit Koeffizienten {{< katex "c_k\in\mathbb{R}" >}}:
@@ -241,9 +259,15 @@ Die zweidimensionale Formel für die Berechnung von Elementen {{< katex "C_{ij}"
 {{< katex display="P_{xy} = \sum_{i=0}^{N-1}\sum_{j=0}^{N-1} C_{ij}\,s_x\, s_y\, \cos(x\cdot(i+\frac{1}{2})\cdot\frac{\pi}{N})\, \cos(y\cdot(j+\frac{1}{2})\cdot\frac{\pi}{N})" >}}
 {{< katex display="C_{ij} = \sum_{x=0}^{N-1}\sum_{y=0}^{N-1} P_{xy}\,s_x\, s_y\, \cos(x\cdot(i+\frac{1}{2})\cdot\frac{\pi}{N})\, \cos(y\cdot(j+\frac{1}{2})\cdot\frac{\pi}{N})" >}}
 
-TODO
 Beispiel:
-Pixelraster --DCT--> transformierten Raster
+
+{{< rawhtml >}}
+<div style="margin-top: 10px; margin-bottom: 20px;">
+<img src="/images/docs/pixelraster-dct-before.png" alt="Pixelraster vor DCT" width="320" style="vertical-align: middle;"/>
+-- DCT-II -->
+<img src="/images/docs/pixelraster-dct-after.png" alt="Pixelraster nach DCT" width="340" style="vertical-align: middle;"/>
+</div>
+{{< /rawhtml >}}
 
 # Quantisierung
 
