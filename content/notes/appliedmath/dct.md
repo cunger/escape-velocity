@@ -108,7 +108,7 @@ Da die genaue Abmessung der Blöcke keine Rolle spielt, werden wir im Folgenden 
 Eine Vektordarstellung bezüglich der kanonischen Basis erfasst die räumliche Verteilung von Graustufen- bzw. Farbwerten.
 Sie hat allerdings einen entscheidenden Nachteil: Sie lässt sich nur schwer komprimieren, da die für das Bild wichtigen Informationen wenig Redundanzen aufweisen, über den gesamten Vektor verteilt sind und diese Verteilung keinen statistischen Gleichmäßigkeiten folgt.
 
-Die Grundidee des JPEG-Standards ist deswegen, den räumlichen Vektor in einem ersten Schritt auf einen Vektor abzubilden, der die für die menschliche Wahrnehmung wesentlichen Informationen des Bildes in einigen wenigen Elementen konzentriert. Die restlichen Elemente, die visuell weniger gut wahrnehmbare Informationen erfassen, können dann bei der Kompression verlorengehen. %Dadurch lässt sich die Menge der zu speichernden Informationen deutlich verringern, während der Informationsverlust bei der Rekonstruktion des Bildes kaum sichtbar ist.
+Die Grundidee des JPEG-Standards ist deswegen, den räumlichen Vektor in einem ersten Schritt auf einen Vektor abzubilden, der die für die menschliche Wahrnehmung wesentlichen Informationen des Bildes in einigen wenigen Elementen konzentriert. Die restlichen Elemente, die visuell weniger gut wahrnehmbare Informationen erfassen, können dann bei der Kompression verlorengehen. Dadurch lässt sich die Menge der zu speichernden Informationen deutlich verringern, während der Informationsverlust bei der Rekonstruktion des Bildes kaum sichtbar ist.
 
 Diese Transformation selber komprimiert aber noch nicht; das Ziel ist lediglich eine Darstellung des Bildes zu erhalten, die sich im nächsten Schritt gut komprimieren lässt, ohne die Qualität des rekonstruierten Bildes wahrnehmbar zu beeinträchtigen.
 
@@ -122,7 +122,7 @@ Im Fall unseres Beispielvektors
 kennen wir also folgende Werte an den Stützstellen {{< katex "i=0,\ldots,7">}}.
 
 {{< rawhtml >}}
-<img src="/images/docs/stuetzstellen1.png" alt="Stützstellen" width="600"/>
+<img src="/images/docs/stuetzstellen1.png" alt="Stützstellen" width="600" style="display: block; margin: auto; padding: 10px;"/>
 {{< /rawhtml >}}
 
 Bekannt sind also nur {{< katex "N" >}} Werte der Funktion {{< katex "f" >}} in einem beschränkten Intervall. Um die Menge der möglichen Funktionen, die diese Werte durchlaufen, so weit einzuschränken, dass wir praktisch damit weiterarbeiten können, treffen wir ein paar zusätzliche Annahmen.
