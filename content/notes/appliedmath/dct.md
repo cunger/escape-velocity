@@ -1,15 +1,12 @@
 ---
 title: "Diskrete Kosinustransformation"
-summary: "Tief ins Herz der JPEG-Bildkompression"
+summary: "Ein Blick ins mathematische Herz der JPEG-Bildkompression"
 date: 2023-05-20
 weight: 1
 toc: true
 math: true
 draft: false
 ---
-
-TODO
-Einleitung
 
 # Digitale Bilder und Bildkompression
 
@@ -53,7 +50,7 @@ Eine übliche Monitorauflösung von 1920x1200, zum Beispiel, entspricht einem Ra
 Um effizient mit Bilddaten arbeiten zu können, will man sie daher komprimieren, d.h. in eine kompaktere Darstellung überführen, die weniger Daten benötigt und dann zur Speicherung und Übertragung verwendet werden kann. Um das Bild schließlich wieder darzustellen, wird die komprimierte Darstellung zurück in ein Bildraster überführt.
 
 {{< rawhtml >}}
-<img src="/images/docs/bildkompression-allgemein.png" alt="Diagramm Bildkompression" width="600"/>
+<img src="/images/docs/bildkompression-allgemein.png" alt="Diagramm Bildkompression" width="600" style="display: block; margin: auto; padding: 10px;"/>
 {{< /rawhtml >}}
 
 Bei einer verlustfreien Kompression ist die dekodierte Darstellung exakt die gleiche wie die ursprüngliche Darstellung vor der Kodierung, es gehen also keine Informationen verloren. Will man eine hohe Kompressionsrate erreichen, ist das allerdings oft nur mit einer verlustbehafteten Kompression möglich. Bei der Kodierung gehen dann Informationen verloren, die bei der Dekodierung nur annäherungsweise wieder hergestellt werden können; das rekonstruierte Bild entspricht also nicht exakt dem Originalbild.
@@ -78,18 +75,16 @@ Der erste Schritt bei der JPEG-Kompression ist ein sogenannter **Level Shift**, 
 
 {{< rawhtml >}}
 <div style="margin-top: 10px; margin-bottom: 20px;">
-<img src="/images/docs/pixelraster-graustufen.png" alt="Pixelraster (Graustufen)" width="320" style="vertical-align: middle;"/>
--- Level shift -->
-<img src="/images/docs/pixelraster-graustufen-shifted.png" alt="Pixelraster (Graustufen)" width="320" style="vertical-align: middle;"/>
+<img src="/images/docs/pixelraster-graustufen.png" alt="Pixelraster (Graustufen)" width="340" style="vertical-align: middle;"/>
+---->
+<img src="/images/docs/pixelraster-graustufen-shifted.png" alt="Pixelraster (Graustufen)" width="340" style="vertical-align: middle;"/>
 </div>
 {{< /rawhtml >}}
 
 Außerdem wird nicht mit dem Bildraster als Ganzem gearbeitet. Statt dessen wird das Raster zunächst in 8x8-Blöcke zerlegt. (Ist die Höhe oder Breite des Bildes nicht durch 8 teilbar, wird das Pixelraster um entsprechend viele Reihen oder Spalten erweitert, die am Ende wieder entfernt werden.)
 Alle Verarbeitungsschritte werden getrennt auf jeden dieser Blöcke angewendet.
 
-Solche 8x8-Blöcke lassen sich mathematisch als 8x8-Matrix darstellen - oder einfacher als 64-elementige Vektoren, also Elemente im Raum {{< katex "\mathbb{R}^{64}" >}}.
-
-TODO: Warum R und nicht Z?
+Solche 8x8-Blöcke lassen sich mathematisch als 8x8-Matrix darstellen - oder einfacher als 64-elementige Vektoren, also Elemente im Raum {{< katex "\mathbb{R}^{64}" >}}. (Im Prinzip reicht hier auch {{< katex "\mathbb{Z}^{64}" >}}, aber für die Koeffizientendarstellung später brauchen wir reelle Werte.)
 
 Der Einfachheit halber betrachten wir aber vorerst nur eine Dimension, nur die Zeilen der Blöcke, d.h. Vektoren im {{< katex "\mathbb{R}^{8}" >}}.
 Die Erweiterung auf zwei Dimensionen ist am Ende unkompliziert.
@@ -177,12 +172,7 @@ Die Funktionswerte {{< katex "f(x)" >}} der Funktion, die unserem Stützstellenv
 {{< katex display="f(x) \sim c_0 b_0(x) + c_1 b_1(x) + \ldots + c_{N-1} b_{N-1}(x) = \sum_{k=0}^{N-1}c_k s_k \cos(kx)" >}}
 
 Bei Audiosignalen ist die Intuition hinter einer solchen Darstellung, dass das Signal in Grundschwingungen verschiedener Frequenzen zerlegt werden kann.
-Bei Bildern hingegen kann man die Basisfunktionen und ihre Frequenzen als verschiedene Arten von Kontrasten verstehen. Die Linearkombination gibt dann an, welche Kontraste zu welchem Anteil im Bildraster vorkommen, wobei ein großer Koeffizientenwert bedeutet, dass der Kontrast stark ausgeprägt ist, die Unterschiede zwischen benachbarten Pixeln also relativ groß sind.
-
-TODO
-Intuition
-kanonische Basis = weiß mit einem schwarzen Pixel, d.h. räumlich,
-Kosinusfunktionenbasis = Kontraste (1D jeweils horizontal und vertikal, multipliziert dann 2D)
+Bei Bildern hingegen kann man die Basisfunktionen als Kontraste mit steigender Frequenz verstehen (siehe MathWorks' [grafische Darstellung der Basisfunktionen](https://www.mathworks.com/help/images/basis8.gif)). Die Linearkombination gibt dann an, welche Kontraste zu welchem Anteil im Bildraster vorkommen, wobei ein großer Koeffizientenwert bedeutet, dass der Kontrast stark ausgeprägt ist, die Unterschiede zwischen benachbarten Pixeln also relativ groß sind.
 
 Für den Anwendungsfall der Kompression interessieren uns nur die Koeffizienten, da die Basisfunktionen fix sind und nicht als Information mit gespeichert und übertragen werden müssen.
 Die Koordinatendarstellung liefert uns damit eine weitere diskrete Darstellung der Bildinformation:
@@ -193,7 +183,7 @@ haben wir eine Koeffizientendarstellung
 {{< katex display="c=\begin{pmatrix} c_0 & \ldots & c_{N-1} \end{pmatrix}" >}}
 Die Vektorelemente in {{< katex "c" >}} haben dabei keine räumliche Bedeutung mehr.
 Entscheidend ist, dass sich in der Koeffizientendarstellung {{< katex "c" >}} die visuell wichtigen Information des Bildes in einigen wenigen Koeffizienten konzentriert.
-Die Koeffizientendarstellung erlaubt es also prinzipiell, sehr viel mehr Informationen wegzuwerfen als die Stützstellendarstellung, ohne einen deutliche Informationsverlust zu erleiden. (Zumindestens gilt das für natürliche Bilder, wo Übergänge auf Pixelebene fließend sind. Bei Bitmaps mit sehr harten Übergängen von einem Pixel zum nächsten, wie z.B. bei Text, sind die Informationen mehr im Vektor verteilt, was dazu führt, dass bei der Kompression fälschlicherweise auch für die Wahrnehmung relevante Informationen weggeworfen werden, was dann sichtbare Fehler bei der Rekonstruktion - sogenannte JPEG-Artefakte - zur Folge hat.)
+Die Koeffizientendarstellung erlaubt es also prinzipiell, sehr viel mehr Informationen wegzuwerfen als die Stützstellendarstellung, ohne einen deutliche Informationsverlust zu erleiden.
 
 Um das für die Bildkompression ausnutzen zu können, brauchen wir aber noch eine Abbildung von {{< katex "p" >}} auf {{< katex "c" >}} und umgekehrt.
 
@@ -244,10 +234,14 @@ Daraus ergeben sich die Koeffizienten, die die Vektorelemente von {{< katex "c" 
 
 Mit (2) und (3) haben wir Abbildungen {{< katex "\mathbb{R}^{N}\to\mathbb{R}^{N}" >}} zwischen {{< katex "p" >}} und {{< katex "c" >}}, die **Diskrete Kosinustransformation II** genannt werden.
 
+## 1D
+
 Im eindimensionalen Fall definiert man die Abbildung {{< katex "p\mapsto c" >}} und ihre Inverse {{< katex "c\mapsto p" >}} üblicherweise als Formel, um aus den Elementen von {{< katex "p" >}} die Elemente von {{< katex "c" >}} zu berechnen und umgekehrt. Diese Formeln ergeben sich direkt aus (1) und (4), nur unter Umbenennung von Indizes, wobei {{< katex "i,\in\{0,\ldots,N-1\}" >}} jeweils Vektorindizes sind:
 
 {{< katex display="p_i = \sum_{k=0}^{N-1}c_k\,s_k\cos(k\cdot(i+\frac{1}{2})\cdot\frac{\pi}{N})" >}}
 {{< katex display="c_k = \sum_{i=0}^{N-1}p_i\,s_k\cos(k\cdot(i+\frac{1}{2})\cdot\frac{\pi}{N})" >}}
+
+## 2D
 
 Der zweidimensionale Fall lässt sich auf den eindimensionalen Fall zurückführen, indem beide Dimensionen getrennt transformiert werden.
 Das Bildraster {{< katex "P" >}} ist eine {{< katex "N\times N" >}}-Matrix, deren Zeilenvektoren die Vektoren {{< katex "p" >}} sind. Zunächst werden diese Zeilenvektoren eindimensional transformiert, indem man sie mit {{< katex "T^\top" >}} multipliziert. Das Ergebnis ist eine {{< katex "N\times N" >}}-Matrix {{< katex "A = P\cdot T^\top" >}}. Um die Spalten auf die gleiche Weise zu transformieren, transponiert man diese Matrix {{< katex "A" >}}, multipliziert sie erneut mit {{< katex "T^\top" >}} und transponiert sie anschließend wieder zurück. Das Ergebnis ist die Matrix {{< katex "C=(A^\top\cdot T^\top)^\top = T\cdot A" >}}, deren Elemente nun Koeffizienten sind.
@@ -259,29 +253,52 @@ Die zweidimensionale Formel für die Berechnung von Elementen {{< katex "C_{ij}"
 {{< katex display="P_{xy} = \sum_{i=0}^{N-1}\sum_{j=0}^{N-1} C_{ij}\,s_x\, s_y\, \cos(x\cdot(i+\frac{1}{2})\cdot\frac{\pi}{N})\, \cos(y\cdot(j+\frac{1}{2})\cdot\frac{\pi}{N})" >}}
 {{< katex display="C_{ij} = \sum_{x=0}^{N-1}\sum_{y=0}^{N-1} P_{xy}\,s_x\, s_y\, \cos(x\cdot(i+\frac{1}{2})\cdot\frac{\pi}{N})\, \cos(y\cdot(j+\frac{1}{2})\cdot\frac{\pi}{N})" >}}
 
-Beispiel:
+Da die Basisfunktionen im Voraus berechnet werden können, ist die Transformation insgesamt effizient berechenbar.
+
+# Beispiel
+
+Betrachten wir das Pixelraster vom Beginn:
 
 {{< rawhtml >}}
-<div style="margin-top: 10px; margin-bottom: 20px;">
-<img src="/images/docs/pixelraster-dct-before.png" alt="Pixelraster vor DCT" width="320" style="vertical-align: middle;"/>
--- DCT-II -->
-<img src="/images/docs/pixelraster-dct-after.png" alt="Pixelraster nach DCT" width="340" style="vertical-align: middle;"/>
-</div>
+<img src="/images/docs/pixelraster-graustufen-shifted.png" alt="Pixelraster (Graustufen)" width="340" style="display: block; margin: auto; padding: 10px;"/>
 {{< /rawhtml >}}
 
-# Quantisierung
+Nach Anwendung der Diskreten Kosinustransformation bekommen wir ein Raster von Koeffizienten, in dem sich große Werte vor allem links oben konzentrieren:
 
-%Koeffizienten links oben am größten
-%"Vektorisierung" nun nach ZigZag, so dass die Vektorelemente grob nach Größe geordnet sind
+{{< katex display="\begin{array}{rrrrrrr} 441.4 &	313.7 & -10.6 &	27.5 & -6.5 & -2.6 & 0.4 & -4.0 \\ 539.2 & -236.3 & -61.2 & -11.5 & -5.6 & 5.4 & -0.3 & 5.0 \\ -175.5 & -86.2 & 124.0 & 3.4 & 9.1 & -3.6 & 0.9 & -2.7 \\ 17.8 & 136.7 & -30.0 & -42.8 & 5.4 & -8.3 & 3.5 & 0.0 \\ -26.1 & -44.0 & -45.2 & 23.8 & 11.0 & 0.6 & -3.0 & 1.8 \\ 20.6 & 20.0 & 16.4 & 21.1 & -16.4 & 1.3 & 0.4 & -4.1 \\ -12.3 & -17.8 & -2.9 & -8.3 & -9.2 & 5.3 & 2.1 & 5.0 \\ 8.5 & 3.8 & 9.5 & -11.3 & 15.8 & -3.1 & -5.9 & -0.2 \end{array}">}}
 
-Da die Basisfunktionen im Voraus berechnet werden können, ist die Transformation insgesamt effizient berechenbar.
-Die Diskrete Kosinustransformation bildet dadurch nicht nur die Grundlage für eine anschließende Kompression der Daten, sondern auch für den Erfolg von JPEG.
+Der Informationsverlust passiert nun im nächsten Schritt der **Quantisierung**. Das Ziel ist es, Koeffizienten nur so präzise wie nötig zu speichern. Kleine Koeffizienten, zum Beispiel, spielen für die visuelle Wahrnehmung kaum eine Rolle.
+Dazu werden nun alle Koeffizienten {{< katex "C_{ij}">}} mit einer Schrittgröße {{< katex "Q_{ij}">}} geteilt und ganzzahlig gerundet:
+
+{{< katex display="C'_{ij}=\text{round}_\text{int}(\frac{C_{ij}}{Q_{ij}})" >}}
+
+Die Schrittwerte werden einer Quantisierungstabelle entnommen und bestimmen, wie groß der Informationsverlust und damit auch die Kompressionsrate (und letztendlich die Bildqualität) ist. Intuitiv entspricht die Schrittgröße einem Wahrnehmungsschwellwert: bis zu welchem Koeefizienten man den Beitrag der entsprechenden Basisfunktion visuell wahrnehmen kann.
+
+Je nachdem, welche Tabelle des JPEG-Standards man anwendet, ergeben sich zum Beispiel diese Raster:
+
+{{< katex display="\begin{array}{r} 28 & 29 & -1 & 2 & 0 & 0 & 0 & 0 \\ 45 & -20 & -4 & 0 & 0 & 0 & 0 & 0 \\ -13 & -7 & 8 & 0 & 0 & 0 & 0 & 0 \\ 1 & 8 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 6 & 0 & 0 & 0 & 0 & 0 & 0 \\ -1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \end{array} \qquad \begin{array}{r} 26 & 17 & 0 & 0 & 0 & 0 & 0 & 0 \\ 30 & -11 & -2 & 0 & 0 & 0 & 0 & 0 \\ -7 & -3 & 2 & 0 & 0 & 0 & 0 & 0 \\ 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \end{array}">}}
+
+Ordnet man diese Werte nun nach folgendem Muster, bekommt man eine Reihe, in der die Elemente so geordnet sind, dass die von Null verschiedenen Elemente am Anfang stehen und man einen Großteil der Information nicht mehr speichern muss.
+
+{{< rawhtml >}}
+<img src="/images/docs/jpeg-zigzag.png" alt="Basisvektoren" width="200" style="display: block; margin: auto; padding: 10px;"/>
+{{< /rawhtml >}}
+
+Um die Quantisierung beim Dekodieren wieder rückgängig zu machen, multipliziert man die Werte mit der Schrittgröße:
+{{< katex "C_{ij}=C'_{ij}Q_{ij}" >}}.
+Die Koeffizientenraster, die man so rekonstruiert, entsprechen aufgrund des Informationsverlustes nicht exakt den ursprünglichen Koeffizienten, aber rekonstruiert man daraus wieder ein Pixelraster, ist der Unterschied visuell nur bei hoher Kompressionsrate sichtbar.
+
+Zumindestens gilt das für natürliche Bilder, wo Übergänge auf Pixelebene fließend sind. Denn die Quantisierungstabellen gehen von der Annahme aus, dass sehr harte Übergänge von einem Pixel zum nächsten nicht vorkommen. Ist das in einer Bitmap der Fall, z.B. bei Textdokumenten, dann sind die Informationen gleichmäßiger über die Koeffizienten verteilt, was dazu führt, dass bei der Kompression fälschlicherweise auch für die Wahrnehmung relevante Informationen weggeworfen werden, was dann sichtbare Fehler bei der Rekonstruktion (sogenannte JPEG-Artefakte) zur Folge hat.
+
 
 # Referenzen
 
+Berner, Julius: [Diskrete Kosinustransformation in der Bildverarbeitung.](https://jberner.info/data/BSc_Thesis_Berner.pdf) BSc Thesis, Universität Wien, 2016.
+
 Burger, Wilhelm und Mark James Burge: Digitale Bildverarbeitung. Springer eXamen.press, 2006.
 
-Lang, Hans Werner: [Diskrete Cosinus-Transformation (DCT).](https://
-www.inf.hs-flensburg.de/lang/algorithmen/fft/dct.htm) Hochschule Flensburg, 2005.
+Pound, Mike: [Discrete Cosine Transform (JPEG Pt2)](https://www.youtube.com/watch?v=Q2aEzeMDHMA). YouTube, 2015.
 
-Rousseau, Christiane und Yvan Saint-Aubin: Mathematik und Technologie. Springer Spektrum, 2012.
+Lang, Hans Werner: [Diskrete Cosinus-Transformation (DCT).](https://www.inf.hs-flensburg.de/lang/algorithmen/fft/dct.htm) Hochschule Flensburg, 2005.
+
+Wallace, Gregory K. [The JPEG Still Picture Compression Standard.](https://ieeexplore.ieee.org/document/125072/) IEEE Transactions on Consumer Electronics, 38(1), 1992.
