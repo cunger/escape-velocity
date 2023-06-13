@@ -3,21 +3,18 @@ title: "About"
 date: 2022-06-14
 ---
 
-# Hi, I'm Christina.
+Hi, I'm Christina, a professional software engineer with 7 years of experience in building and maintaining complex code bases, and a foundation in applied mathematics and formal logic. I currently work at [OKAPI:Orbits GmbH](https://okapiorbits.space).
 
-Professional software engineer with 7 years of experience in building and maintaining complex code bases, and a foundation in applied mathematics and formal logic.
+My main interests are:
 
-I work as a developer for space applications at [OKAPI:Orbits GmbH](https://okapiorbits.space).
+* Guess what: Space!
+* Nuclear technology and radiation protection
+* Software system safety
+* Ocean and biosphere conservation
 
-### Main interests
+### Links
 
-* nuclear technology and radiation protection
-* software system safety and resilience engineering
-* ocean and biosphere conservation
-
-### Want to know more?
-
-Check me out on [GitHub](https://github.com/cunger/) or [LinkedIn](https://www.linkedin.com/in/christina-unger).
+I have stuff on [GitHub](https://github.com/cunger/) and [LinkedIn](https://www.linkedin.com/in/christina-unger).
 
 ### What's this?
 
