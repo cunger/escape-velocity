@@ -3,14 +3,9 @@ title: "About"
 date: 2022-06-14
 ---
 
-Hi, I'm Christina, a professional software engineer with 7 years of experience in building and maintaining complex code bases, and a foundation in applied mathematics and formal logic. I currently work at [OKAPI:Orbits GmbH](https://okapiorbits.space).
+Hi, I'm Christina, a software engineer with 8 years of experience in building and maintaining large code bases, a background in formal logic, and a strong interest in nuclear technology and software system safety.
 
-My main interests are:
-
-* Guess what: Space!
-* Nuclear technology and radiation protection
-* Software system safety
-* Ocean and biosphere conservation
+I enjoy working with complex legacy systems, and thrive in multidisciplinary settings and non-mainstream niches.
 
 ### Links
 
