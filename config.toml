@@ -6,7 +6,7 @@ title = "Escape Velocity"
 
 Paginate = 4
 [Params]
-  description = "Notebooks from a programmer's journey into the subatomic world."
+  description = "Getting up to speed and accelerating."
   author = "Christina Unger"
   github = "cunger"
   email = "christina@unger.dev"
@@ -16,7 +16,7 @@ Paginate = 4
     weight = -100
     url = "/docs/"
 [[menu.main]]
-    name = "Blog"
+    name = "🐇🕳️"
     weight = -100
     url = "/blog/"
 [[menu.main]]
