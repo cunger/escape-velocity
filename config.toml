@@ -12,13 +12,13 @@ Paginate = 4
   email = "christina@unger.dev"
 
 [[menu.main]]
-    name = "Notebooks"
+    name = "Notes"
     weight = -100
-    url = "/docs/"
+    url = "/notes/"
 [[menu.main]]
-    name = "🐇🕳️"
+    name = "Books"
     weight = -100
-    url = "/blog/"
+    url = "/books/"
 [[menu.main]]
     name = "About"
     weight = -100

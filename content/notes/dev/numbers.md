@@ -1,10 +1,11 @@
 ---
 title: "Numbers"
-summary: "And arithmetics."
-date: 2020-01-10
-weight: 1
+description: "And their representation in computers"
+author: "Christina Unger"
+tags: ["numbers"]
 math: true
 toc: true
+draft: false
 ---
 
 # Bits and byte ranges

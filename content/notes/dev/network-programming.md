@@ -3,8 +3,9 @@ title: "Network programming"
 description: "Work in progress"
 author: "Christina Unger"
 tags: ["network"]
-date: 2024-02-11
-lastmod: 2024-02-11
+weight: 2
+math: false
+toc: true
 draft: false
 ---
 

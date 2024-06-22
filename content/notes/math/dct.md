@@ -3,7 +3,6 @@ title: "Diskrete Kosinustransformation"
 description: "Term paper on JPEG image compression for an applied mathematics seminar"
 author: "Christina Unger"
 tags: ["applied math", "image compression", "dsp"]
-date: 2023-05-20
 toc: true
 math: true
 draft: false

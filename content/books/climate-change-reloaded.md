@@ -5,7 +5,7 @@ author: "Christina Unger"
 tags: ["climate change"]
 date: 2021-11-10
 lastmod: 2021-12-30
-draft: false
+draft: true
 ---
 
 When I first learned about climate change, there was plenty of uncertainty and time. It was one of many problems. And it was easy to ignore.

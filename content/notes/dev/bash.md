@@ -5,6 +5,7 @@ date: 2020-01-10
 weight: 2
 math: false
 toc: true
+draft: true
 ---
 
 # Commands
