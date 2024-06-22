@@ -1,6 +1,6 @@
 ---
 title: "Fission reactors"
-summary: "Fission reaction, neutron transport, criticality, and reactor types. (Draft)"
+summary: "Fission reaction, neutron transport, criticality, and reactor types."
 date: 2019-11-16
 weight: 5
 math: true
@@ -85,6 +85,7 @@ The relative change of a physical property associated with a given change in tem
 ## Light water reactors (LWRs)
 
 Coolant: Water
+
 Moderator: water, pressurized
 
 ### Boiling water reactors (BWRs | Siedewassereaktoren)
@@ -96,7 +97,9 @@ Moderator: water, pressurized
 e.g. CANDU (Canada Deuterium-Uranium reactor)
 
 Fuel: natural or low-enriched uranium
+
 Coolant: D2O (deuterium oxide)
+
 Moderator: D2O (deuterium oxide), unpressurized
 
 smaller absorption cross-section, so uranium doesn't need to be enriched (so much).
@@ -106,7 +109,9 @@ deuterium oxide is expensive.
 ## Gas cooled reactors
 
 Fuel: low-enriched uranium
+
 Coolant: CO2
+
 Moderator: Graphite
 
 Low power density, because CO2 is less dense and has a lower heat capacity than water.
@@ -125,7 +130,9 @@ fast fission with U-238
 ## Molten salt reactors (Flüssigsalzreaktor)
 
 Fuel: molten salt
+
 Coolant: molten salt
+
 Moderator: Graphite
 
 ## Small modular reactors

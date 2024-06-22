@@ -1,6 +1,6 @@
 ---
 title: "Nuclear engineering"
-summary: ""
+summary: "(Worthiest rabbit hole)"
 weight: 3
 draft: false
 ---

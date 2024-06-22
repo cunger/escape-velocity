@@ -1,6 +1,6 @@
 ---
 title: "Software development"
-summary: ""
+summary: "(Mainly left-overs)"
 weight: 5
 draft: false
 ---

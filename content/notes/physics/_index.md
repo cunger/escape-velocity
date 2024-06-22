@@ -1,6 +1,6 @@
 ---
 title: "Physics & Chemistry"
-summary: "Foundations."
+summary: "(Some foundations)"
 weight: 4
 draft: false
 ---
