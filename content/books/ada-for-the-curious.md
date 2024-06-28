@@ -31,9 +31,8 @@ Ada was designed specifically for safety-critical software, and this has shaped 
 One of Ada's goals is to enable you to express your intent clearly and unambiguously 
 - both towards the compiler and towards your fellow humans.
 Many people find Ada very easy to read, and that's because it tries hard to be.
-Of course you can write obscure code, but Ada does a pretty good job to meet you half way.
-
-(In my experience, writing clear code feels more effortless in Ada than in most other languages.)
+Of course you can write obscure code, but Ada does a pretty good job to meet you half way,
+making it more effortless to write ... code than other languages (not looking at any in particular).
 
 TODO code example
 ```ada
@@ -50,7 +49,8 @@ for example:
 
 Ada might look slighlty archane if you grew up with C-family languages. 🦕
 
-But it's neither dead nor ... The latest version is from 2022, and it's a pretty modern language,
+But it's neither dead nor (eingestaubt). The latest version is from 2022,
+and it's a pretty modern language,
 with X, Y, concurrency and all shit you want to have.
 
 It just looks like Pascal.
@@ -101,13 +101,55 @@ AdaCore
 
 John Barnes
 
-# Imagine there is an integer type and nobody is using it
+https://github.com/ohenley/awesome-ada
 
-# Array indices
+# Gems
 
-# How to not get tripped up when coming from Java
+## Imagine there is an integer type and nobody is using it
 
-## Pass by reference or copy? 
+Ada offers a few safety nets. One of the nicest is baked into the type system; Richard Riehle calls it precision datatypes.
+
+First, you can derive one type from another. Both types are different, and you will never be able to mix them.
+For example, if you define: 
+```ada
+𝚝𝚢𝚙𝚎 𝙿𝚘𝚞𝚗𝚍_𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
+𝚝𝚢𝚙𝚎 𝙽𝚎𝚠𝚝𝚘𝚗_𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
+```
+Then providing `Pound_Seconds` when a function expects `Newton_Seconds`, or taking the sum of both, will not work. You need to explicitely convert one into the other. (I'm sure [the Mars Climate Orbiter]() would have liked this.)
+
+What is even better is that you can define the range that the type should cover. 
+For example, we can define temperature like this:
+```ada
+𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_𝙲𝚎𝚕𝚌𝚒𝚞𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 -𝟸𝟽𝟹.𝟷𝟻..𝟹𝟶𝟶_𝟶𝟶𝟶_𝟶𝟶𝟶.𝟶;
+```
+Anything below -𝟸𝟽𝟹.𝟷𝟻 is not a valid temperature, and it's not something you have to remember to check yourself; Ada checks it for you at compile time and runtime.
+(If you are not building a fusion reactor, your accepted range might be much smaller, of course.)
+
+This way of specifying conditions directly in the types allows you to express your intent as clearly and unambiguously as possible.
+For example:
+```ada
+type Latitude  is new Float range 0.0 .. 360.0;
+type Longitude is new Float range 0.0 .. 360.0;
+
+type Coordinate is record
+   Lat  : Latitude;
+   Long : Longitude;
+end record;
+```
+Now you have to work hard to mix up latitude and longitude in your code.
+
+This is helpful even if you don't want to restrict the data range.
+Consider the neat trick of declaring floating-point types like this:
+```ada
+ type Some_Float is new Float range Float'Range;
+```
+This means your derived type has the same range as `Float`, but excluding anything that is not in its range: NaN, infinity, or whatever non-numeric values your machine defines. So if your code ends up with something that is not a number, numeric operations raise a constraint error instead of propagating the non-numeric value through your whole program.
+
+## Array indices
+
+## How to not get tripped up when coming from Java
+
+### Pass by reference or copy? 
 
 # Setting up tests
 
@@ -127,9 +169,7 @@ Setting up e2e tests in Python
 
 # Let SPARK prove you right
 
-the step from code to proof is really small
-
-pre- and post-conditions
+The step from code to proof is surprisingly small.
 
 # Run Ada in the browser
 
