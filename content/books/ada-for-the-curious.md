@@ -7,17 +7,22 @@ toc: true
 draft: true
 ---
 
-This booklet is for seasoned developers who are curious about Ada.
+This booklet is for developers who are curious about Ada.
 
-I want to highlight some of the aspects of Ada that are different from other languages
-and that make Ada worth looking into. Consider it a teaser that gets you to know Ada
-enough to decide whether you like it or not, with pointers in case you want to
-explore the language further.
+Contrary to some associations you might have (🦕?), Ada is alive and kicking.
+It's a modern language, with concurrency and all shit you want to have.
+It's blazing fast, backed by a cool community, and it's easy to learn.
 
-It is not an extensive introduction to Ada. In [The road to Ada]() below,
+Instead of showing you all the boring stuff that you can easily look up yourself,
+I want to highlight some of the aspects of Ada that are different from other languages 
+and that make Ada worth looking into. 
+Consider it a teaser that gets you to know Ada enough to decide whether you like it or not,
+with pointers in case you want to explore the language further.
+
+So this is not an extensive introduction to Ada. In [The road to Ada]() below,
 I will point to better resources for that.
 
-If you have suggestions, find errors, or disagree, please [get in touch]().
+If you have suggestions, find errors, or disagree with anything, please [get in touch]().
 
 And if you like it, consider buying me a coffee.
 (I write early in the morning, so coffee will have a real effect on speed.)
@@ -34,10 +39,36 @@ Many people find Ada very easy to read, and that's because it tries hard to be.
 Of course you can write obscure code, but Ada does a pretty good job to meet you half way,
 making it more effortless to write ... code than other languages (not looking at any in particular).
 
-TODO code example
+Instead of shouting hello to the world, we are starting with a count down to lift-off:
 ```ada
-...
+with Ada.Text_IO; use Ada.Text_IO;
+
+procedure Countdown is
+begin
+   for I in reverse 1 .. 10 loop
+      Put_Line (Integer'Image (I));
+   end loop;
+
+   Put_Line ("Lift off!");
+end Countdown;
 ```
+
+```
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+Lift off!
+```
+
+Ada might look slighlty archane if you grew up with C-family languages. 
+But that's just because it looks like Pascal. (More on this below, in [Wirth's legacy].)
 
 Another one of Ada's goals is to not trip you up.
 When C feels like walking through a mine field, Ada feels like having extra safety nets everywhere.
@@ -47,13 +78,9 @@ for example:
 
 ## Wirth's legacy
 
-Ada might look slighlty archane if you grew up with C-family languages. 🦕
+Ada looks a bit like Pascal, and this is because it's from the Wirth family of languages.
 
-But it's neither dead nor (eingestaubt). The latest version is from 2022,
-and it's a pretty modern language,
-with X, Y, concurrency and all shit you want to have.
-
-It just looks like Pascal.
+TODO History
 
 ```ada
 declare
@@ -90,6 +117,8 @@ Discord:
 
 Reddit:
 
+Monthly Meetup: drop by and say Hi.
+
 ## The road to Ada
 
 The Ada ecosystem ...
@@ -98,6 +127,8 @@ Alire
 (project template below in ...)
 
 AdaCore
+
+https://www.youtube.com/watch?v=dJ0Pdv1gMzU
 
 John Barnes
 
@@ -120,9 +151,10 @@ Then providing `Pound_Seconds` when a function expects `Newton_Seconds`, or taki
 What is even better is that you can define the range that the type should cover. 
 For example, we can define temperature like this:
 ```ada
-𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_𝙲𝚎𝚕𝚌𝚒𝚞𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 -𝟸𝟽𝟹.𝟷𝟻..𝟹𝟶𝟶_𝟶𝟶𝟶_𝟶𝟶𝟶.𝟶;
+𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_𝙲 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 -𝟸𝟽𝟹.𝟷𝟻..𝟹𝟶𝟶_𝟶𝟶𝟶_𝟶𝟶𝟶.𝟶;
+𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_K 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 0..Float'Last;
 ```
-Anything below -𝟸𝟽𝟹.𝟷𝟻 is not a valid temperature, and it's not something you have to remember to check yourself; Ada checks it for you at compile time and runtime.
+Anything below -𝟸𝟽𝟹.𝟷𝟻 degrees Celcius or 0 Kelvin is not a valid temperature, and it's not something you have to remember to check yourself; Ada checks it for you at compile time and runtime.
 (If you are not building a fusion reactor, your accepted range might be much smaller, of course.)
 
 This way of specifying conditions directly in the types allows you to express your intent as clearly and unambiguously as possible.
