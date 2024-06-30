@@ -10,24 +10,18 @@ draft: true
 This booklet is for developers who are curious about Ada.
 
 Contrary to some associations you might have (🦕?), Ada is alive and kicking.
-It's a modern language, with concurrency and all shit you want to have.
+It's a modern language, with modules, a strong type system, and easy-to-use concurrency. 
 It's blazing fast, backed by a cool community, and it's easy to learn.
 
-Instead of showing you all the boring stuff that you can easily look up yourself,
-I want to highlight some of the aspects of Ada that are different from other languages 
-and that make Ada worth looking into. 
+Instead of giving an extensive introduction, showing you all the boring stuff that 
+you can easily look up yourself,
+I want to highlight some of the aspects that make Ada worth looking into,
+according to the people who love it.
+
 Consider it a teaser that gets you to know Ada enough to decide whether you like it or not,
-with pointers in case you want to explore the language further.
+as well as an entry point in case you're unsure where to start or where to go to explore further.
 
-So this is not an extensive introduction to Ada. In [The road to Ada]() below,
-I will point to better resources for that.
-
-If you have suggestions, find errors, or disagree with anything, please [get in touch]().
-
-And if you like it, consider buying me a coffee.
-(I write early in the morning, so coffee will have a real effect on speed.)
-
-{{< buymeacoffee >}}
+If you have suggestions, find errors, or simply want to get in touch, [please reach out]().
 
 # Meet Ada
 
@@ -49,7 +43,7 @@ begin
       Put_Line (Integer'Image (I));
    end loop;
 
-   Put_Line ("Lift off!");
+   Put_Line ("Lift off! 🚀");
 end Countdown;
 ```
 
@@ -64,28 +58,45 @@ end Countdown;
 3
 2
 1
-Lift off!
+Lift off! 🚀
 ```
 
-Ada might look slighlty archane if you grew up with C-family languages. 
-But that's just because it looks like Pascal. (More on this below, in [Wirth's legacy].)
+Ada might look slighlty archane if you grew up with C-family languages,
+because it looks like Pascal.
+Don't be deceived by this. Ada is more different than you think.
+(More on this below, in [Wirth's legacy].)
 
-Another one of Ada's goals is to not trip you up.
+Another one of Ada's goals is to make it hard for you to make errors.
 When C feels like walking through a mine field, Ada feels like having extra safety nets everywhere.
 
-for example:
-* you don't fall through in case statements
+in small things like for you don't fall through in case statements,
+and a case statement must contain a case for each value.
+
+and in bigger things like the strong type system.
+I thought I knew strong type systems, but Ada's is the moste useful I have seen.
+and A LOT of checks you can include (pre, post conditions, etc.)
+more on this below
+
+As a result, Ada is not perfect for fast prototyping or for dynamic meta-programming.
+Ada was designed for code that has to work. So it was made to allow you to write well-designed,
+solid code, that you can still read when coming back to it after a year.
+That's where Ada can shine.
+
+But that doesn't mean you cannot use it for hobby projects or playing around, like ... Advent of Code.
+I will show you below.
+In fact, if you prefer designing over debugging, you might actually enjoy Ada.
 
 ## Wirth's legacy
 
-Ada looks a bit like Pascal, and this is because it's from the Wirth family of languages.
+Ada is a classical procedural language with a syntax based on Pascal.
 
 TODO History
 
+building blocks
 ```ada
 declare
    -- local declarations (visible within this unit but nowhere else)
-   -- can include functions, procedures, and variables
+   -- can include constants, variables,functions, procedures
    -- note that declared variables are not initialized by default
 begin
    -- sequence of statements or nested blocks
@@ -108,7 +119,7 @@ For basic exception ..., this is arguably all you need.
 ## The community
 
 That Ada is alive and kicking is most obvious when you get to know the community.
-It's admittedly one of the smallest, but also one of the friendliest and most welcoming
+It's admittedly one of the smallest but also one of the friendliest and most welcoming
 programming language communities I have come across.
 
 Forum:
@@ -117,24 +128,47 @@ Discord:
 
 Reddit:
 
-Monthly Meetup: drop by and say Hi.
+Monthly Meetup: Drop by and say Hi.
 
 ## The road to Ada
 
 The Ada ecosystem ...
 
-Alire
-(project template below in ...)
+Ada is a free language. It's an ISO standard and not owned by any company.
 
-AdaCore
+There are free and proprietary compilers.
+The Ada compiler is called GNAT, a front-end for GCC. (https://gcc.gnu.org/wiki/GNAT)
+
+AdaCore is a driving force behnd many current developments in Ada.
+They set up [excellent tutorials](https://learn.adacore.com/) for people from different perspectives,
+which allow you to play with Ada directly in the browser.
+
+A great entry point, built by the community exactly for people like you,
+is [ada-lang.io](https://ada-lang.io/).
+Download Alire,
+select a toolchain,
+create a repository,
+build and run it.
+
+(project template below in ...)
 
 https://www.youtube.com/watch?v=dJ0Pdv1gMzU
 
-John Barnes
+Once you want to know the language in more depth, there is no way around 
+[Programming in Ada 2012](https://doi.org/10.1017/9781009181358) by John Barnes,
+and the [Ada Reference Manual (ARM)](http://ada-auth.org/standards/22rm/html/RM-TOC.html)
+(or a [prettier version of it](https://ada-lang.io/docs/arm/)).
+Both are very extensive and quite accessible,
+but feel free to not worry about them as entry points 
+(although people will probably point you to both if you ask for resources).
 
 https://github.com/ohenley/awesome-ada
 
-# Gems
+# Sneak peaks
+
+## Separation of specification and body
+
+and how this blends design and implementation
 
 ## Imagine there is an integer type and nobody is using it
 
@@ -179,9 +213,26 @@ This means your derived type has the same range as `Float`, but excluding anythi
 
 ## Array indices
 
+## Variant records
+
 ## How to not get tripped up when coming from Java
 
-### Pass by reference or copy? 
+Pass by reference or copy.
+
+## How to not get tripped up when coming from C
+
+If you come from C, you are a master of pointers.
+
+It's hard to let go.
+But in Ada, you don't need pointers.
+Most things you want to do, you can do without pointers (and more safely so). 
+[Jeff would even tell you that you never need them for anything ever.]()
+
+## Tasking, or how to do concurrency in an easy way
+
+Since 83, btw.
+
+# High-level vs low-level
 
 # Setting up tests
 
@@ -195,14 +246,43 @@ Setting up e2e tests in Python
 
 # Enough Ada to do Advent of Code
 
+When I did Advent of Code in Ada, what surprised me most
+
 ## Project template
 
 ## Reading input from files
+
+# Ada code worth reading
+
+Ada is an industrial language used in aerospace, defence, rails, and a couple of other fields.
+So most Ada code - and most very well-written, fire proven Ada code is not on GitHub.
+(That's also why it doesn't show up in the TIOBE index.)
+
+Still,
+...
+
+# Run Ada in the browser
+
+WASM
 
 # Let SPARK prove you right
 
 The step from code to proof is surprisingly small.
 
-# Run Ada in the browser
+state-of-the-art formal verification
 
-WASM
+# Are there jobs in Ada?
+
+Here are a few companies that use Ada:
+Airbus,
+NVIDIA,
+...
+
+
+see also https://www.adacore.com/company/our-customers
+
+It's hidden.
+Ada jobs are less advertised, and they often mention Ada only as a nice-to-have experience - if at all. 
+
+chicken and egg problem:
+Companies don't ... because there are hardly any Ada programmers. And there are hardly any Ada programmers, because there are no jobs.
