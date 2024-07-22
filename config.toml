@@ -16,9 +16,9 @@ Paginate = 4
     weight = -100
     url = "/notes/"
 [[menu.main]]
-    name = "Books"
+    name = "Booklets"
     weight = -100
-    url = "/books/"
+    url = "/booklets/"
 [[menu.main]]
     name = "About"
     weight = -100
