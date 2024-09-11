@@ -3,12 +3,14 @@ title: "About me"
 date: 2022-06-14
 ---
 
-Hi, I'm Christina, a software engineer with 8 years of experience in building and maintaining large code bases.
+Hi, I'm Christina, a **software engineer** with 8 years of experience in building and maintaining large code bases, working across the whole software lifecycle.
 
-I particularly enjoy working with complex legacy systems.
-I love digging through layers of patchwork architecture grown over years and decades, step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
+I particularly enjoy working with **complex legacy systems**.
+I love digging through patchwork code grown over years and decades, step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
 
-I have a background in formal logic and a strong interest in nuclear technology (fission and fusion).
+I tend to take ownership of code you give me, which is probably why I've grown quite naturally into the role as **technical lead**.
+
+Besides code, I have a background in formal logic and a strong interest in nuclear technology (fission and fusion).
 
 In general, I feel most at home in multidisciplinary settings and non-mainstream niches.
 
@@ -21,7 +23,7 @@ I have some code on [GitHub](https://github.com/cunger/), but most lives in prop
 
 ### What I'm up to right now
 
-I look forward to this year's Advent of Code, spending some quality time with Ada. I started writing ["Ada for the curious"](../booklets/ada-for-the-curious/) and want to finish it before December.
+I look forward to this year's Advent of Code, spending some quality time with Ada. I started writing ["Ada for the curious"](../blog/ada-for-the-curious/) and want to finish it before December.
 
 I'm also member of [Nuklearia](https://nuklearia.de/) and work on something I'll share as soon as it's online.
 
@@ -49,7 +51,7 @@ There was a lot still to be learned and done, so it was a tough decision to leav
 
 This was a part-time gig as technical writer. My task was to absorb knowledge from our experts on industrial IT and OT security and put it into texts accessible for different stakeholders. 
 
-I learned how vulnerable our critical infrastructure is - and that although I like technical writing, I like programming more.
+I learned how vulnerable our critical infrastructure is - and that I like technical writing (although I like programming even more).
 
 ### Software Developer and Co-Founder @ Mercury.ai (01/2017 - 09/2021)
 
@@ -71,7 +73,7 @@ But in the end, I decided that I don't want to pursue a career in acedemia.
 
 I was very lucky to have Jan van Eijck as a supervisor, so I had the opportunity to work with logic, learn Haskell, play with continuations, and explore a lot of very nerdy topics.
 
-And I had marvellous colleagues. We had a band, played pen and paper RPGs, and spent a great time together.
+And I had marvellous colleagues. We had a band, played pen and paper RPGs, went out and enjoyed having a great time together.
 
 ### M.A. Linguistics, Logic and Philosophy of Science @ Leipzig
 

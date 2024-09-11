@@ -1,4 +1,4 @@
 ---
-title: "📚 Booklets"
+title: "📚 Blog"
 description: "Early drafts"
 ---
