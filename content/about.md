@@ -8,9 +8,7 @@ Hi, I'm Christina, a **software engineer** with 8 years of experience in buildin
 I particularly enjoy working with **complex legacy systems**.
 I love digging through patchwork code grown over years and decades, step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
 
-I tend to take ownership of code you give me, which is probably why I've grown quite naturally into the role as **technical lead**.
-
-Besides code, I have a background in formal logic and a strong interest in nuclear technology (fission and fusion).
+I have a background in formal logic and a strong interest in nuclear technology (fission and fusion).
 
 In general, I feel most at home in multidisciplinary settings and non-mainstream niches.
 
@@ -25,11 +23,9 @@ I have some code on [GitHub](https://github.com/cunger/), but most lives in prop
 
 I look forward to this year's Advent of Code, spending some quality time with Ada. I started writing ["Ada for the curious"](../blog/ada-for-the-curious/) and want to finish it before December.
 
-I'm also member of [Nuklearia](https://nuklearia.de/) and work on something I'll share as soon as it's online.
-
 ## Professional Experience
 
-### Software Developer for Space Applications @ OKAPI:Orbits (since 10/2022)
+### Software Developer & Product Owner @ OKAPI:Orbits (since 10/2022)
 
 I spend my day designing, developing, and maintaining space traffic management software for satellite operators. 
 Mostly backend in Java.
@@ -98,6 +94,8 @@ I deeply care about marine conservation and volunteered with two organizations:
 * Cetacean Research and Rescue Unit in Scotland. We spent a lot of time on the water, counting dolphins and later photo IDing them. We also learned basic boating and first aid for stranded marine mammals.
 
 Both experiences were tremendously inspiring and humbling. (It sounds cliché but it's true!)
+
+I'm also an active member of [Nuklearia](https://nuklearia.de/).
 
 ## What's this?
 

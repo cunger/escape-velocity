@@ -83,27 +83,100 @@ If you prefer designing over debugging, I bet you will enjoy Ada.
 
 # What makes Ada fun
 
-Here are a few characteristics of Ada that ...
+Here are a few characteristics of Ada that many people like about it.
+This is subjective, of course, but it gives you a taste of why Ada might be worthwhile exloring.
 
 ## Separation of concerns
 
-and how this blends design and implementation
+Like separating header and implementation in C, Ada separates packages into a specification (`.ads`) and a body (`.adb`),
+which tends to blend design and code.
+This approach is not specific to Ada, of course, but it emphasizes Ada's focus on engineering software: 
 
-specification and body
+> Ada as an engineering tool, requires the software developers to adopt an engineering attitude to using it. It is not enough to simply be a good computer programmer when human safety is at risk. Software at that level of risk must be engineered.
 
-design in code
+(Richard Riehle: Ada Distilled)
 
-building blocks
-```
-declare
-   -- local declarations (visible within this unit but nowhere else)
-   -- can include constants, variables,functions, procedures
-   -- note that declared variables are not initialized by default
+Here is an example. Assume we wanted to implement Conway's Game of Life.
+We could start thinking about how to call it from a main procedure:
+```ada
+-- main.adb
+with Game_Of_Life;
+use  Game_Of_Life;
+
+procedure Main is
 begin
-   -- sequence of statements or nested blocks
-exception
-   -- handling exceptions
-end;
+
+   Init_Board (
+      Rows    => 800,
+      Columns => 600,
+      Pattern => Glider_Collision
+   );
+
+   Run;
+
+end Main;
+```
+This defines what we need in the public part of our package specification:
+```ada
+-- game_of_life.ads
+package Game_Of_Life is
+
+    type Patterns is (
+       Ants,
+       Blinker,
+       Dart,
+       Fountain,
+       Glider_Collision,
+       Herschel_Climber,
+       Spaceship
+    );
+    -- Predefined patterns, taken from the pattern catalogue at playgameoflife.com/lexicon.
+    -- Their size is adapted to the board size.
+
+    procedure Init_Board (Rows : Positive, Columns : Positive, Pattern : Patterns);
+    -- Creates a game board with the specified number of rows and columns,
+    -- and initializes the living cells according to the given start pattern.
+    -- TODO: Requires a minimum size to fit the pattern.
+
+    procedure Run;
+    -- Runs the simulation.
+
+private
+   
+    -- Specifications of all private types, functions, and procedures.
+
+end Game_Of_Life;
+```
+If you have a specification file with proper comments, this can serve as a very helpful 
+documentation of a library.
+(Check the `.ads` files in [the gnatcoll-core repository](https://github.com/AdaCore/gnatcoll-core/blob/master/core/src/gnatcoll-email-utils.ads) 
+for examples.)
+
+Then we mirror the specification in the body, providing the actual implementation of the procedures. 
+Doing so would usually inform which private specifications we need in the package specification.
+```ada
+-- game_of_life.adb
+package body Game_Of_Life is
+
+    procedure Init_Board (Rows : Positive, Columns : Positive) is
+    begin
+       -- Implementation left out.
+       null;
+    end Init_Board;
+
+    procedure Load_Pattern (Start_Pattern : Pattern) is
+    begin
+       -- Implementation left out.
+       null;
+    end Load_Pattern;
+
+    procedure Run is
+    begin
+       -- Implementation left out.
+       null;
+    end Run;
+
+end Game_Of_Life;
 ```
 
 ## Simplicity
@@ -128,13 +201,26 @@ raise Timestamp_Is_In_The_Past with "Input timestamp cannot be in the past";
 ```
 That's it. For basic exceptions, this is arguably all you need. 
 
+...
+building blocks
+```
+declare
+   -- local declarations of constants and variables
+   -- (possibly including functions and procedures)
+begin
+   -- sequence of statements or nested blocks
+exception
+   -- handling exceptions
+end;
+```
+
 ## The type system
 
 I never thought the answer to what are the cool features of a language would be: its type system.
 I also thought I knew strong typing.
 Until I met Ada.
 
-Imagine there is an integer type and nobody is using it
+Imagine there is an integer type and nobody is using it.
 
 Ada offers a few safety nets. One of the nicest is baked into the type system; Richard Riehle calls it precision datatypes.
 
@@ -176,6 +262,9 @@ Consider the neat trick of declaring floating-point types like this:
 This means your derived type has the same range as `Float`, but excluding anything that is not in its range: NaN, infinity, or whatever non-numeric values your machine defines. So if your code ends up with something that is not a number, numeric operations raise a constraint error instead of propagating the non-numeric value through your whole program.
 
 ## Array indices
+
+Many languages have arrays / lists (with an opinion whether they start with index 0 or 1) and maps / dictionaries as separate types.
+Pascal used to blend both, and Ada does so too.
 
 ## Variant records
 
