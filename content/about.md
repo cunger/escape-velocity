@@ -28,7 +28,7 @@ I look forward to this year's Advent of Code, spending some quality time with Ad
 ### Software Developer & Product Owner @ OKAPI:Orbits (since 10/2022)
 
 I spend my day designing, developing, and maintaining space traffic management software for satellite operators. 
-Mostly backend in Java.
+Mostly backend in Java, but often enough working across components and the whole stack, including TypeScript and Python.
 
 Pretty early on I became technical lead in a project for ESA's Space Debris Office. I think I was picked because I was the only free Java developer around. But I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
 
