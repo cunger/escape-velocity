@@ -16,6 +16,8 @@ In general, I feel most at home in multidisciplinary settings and non-mainstream
 
 {{< badge text="Java" >}}
 {{< badge text="Ada" >}}
+{{< badge text="TypeScript" >}}
+{{< badge text="Python" >}}
 
 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
 

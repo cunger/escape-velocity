@@ -263,8 +263,49 @@ This means your derived type has the same range as `Float`, but excluding anythi
 
 ## Array indices
 
-Many languages have arrays / lists (with an opinion whether they start with index 0 or 1) and maps / dictionaries as separate types.
-Pascal used to blend both, and Ada does so too.
+0-based? 1-based? Anything-based!
+
+One of the nice features that Ada adopted from Pascal is the fact that array indices can come from any enumerable, bounded type. (The index type can be unbound when declaring the array but needs to be constrained before the array is used.)
+
+So no discussion necessary whether array indices should start with 0 or 1. You define how they start. And whether they use integers at all.
+
+It actually simply means you get arrays and maps in one datatype, which feels very natural once you have it.
+
+```ada
+-- When defining an array type, you specify the index type
+-- as well as the value type.
+
+type Sensor_Id is range 100 .. 999;
+type Sensor_Status is (Active, Inactive);
+
+type Sensors is array (Sensor_Id) of Sensor_Status;
+
+-- When initializing such an array, you can set the values by position,
+-- like (Active, Active, Active, Inactive),
+-- or by index:
+Initial_Status : constant Sensors := (
+   101 => Active,
+   235 => Active,
+   470 => Active,
+   999 => Active,
+   others => Inactive
+);
+```
+
+Finally, attributes like `'First`, `'Last`, and `'Range` make it possible to define loops in a way that's hard to get wrong even if you change the underlying index range later.
+
+```ada
+for Id in Sensor_Id'First .. Sensor_Id'Last loop
+   if Sensors (Id) = Active then
+      Sensors (Id) := Inactive;
+   end if;
+end loop;
+
+-- equivalent to:
+for Id in Sensors'Range loop
+   -- ...
+end loop;
+```
 
 ## Variant records
 
