@@ -15,7 +15,6 @@ It's blazing fast (🚀!), backed by a cool community, and it's easy to learn.
 
 Instead of giving an extensive introduction to syntax you can easily look up yourself,
 I want to highlight some of the aspects that make Ada worth looking into. 
-
 Consider it a teaser that gets you to know Ada enough to decide whether you like it or not,
 and provides pointers where to explore further if you do.
 
@@ -44,7 +43,7 @@ So what's special about it?
 The development of Ada was originally sponsored by the US Department of Defense, 
 when they noticed they spend way too much money on building and fixing embedded systems. 
 Since the first version in 1983, the language has developed continuously and far beyond embedded systems,
-but the most important point to understand about Ada's origin is:
+but the most important point to understand about Ada's origin is that:
 
 **Ada was designed specifically for safety-critical software.**
 
@@ -325,13 +324,25 @@ a free Ada compiler integrated into GCC.
 
 Ada has a small but friendly and ... community.
 
-**Forum:**
+**Forum:** https://forum.ada-lang.io/
 
 **Discord:**
 
 **Reddit:**
 
 **Monthly Meetup:** 
+
+## Are there jobs in Ada?
+
+You can find some of the companies using Ada when checking [the list of customers of AdaCore](https://www.adacore.com/company/our-customers).
+This list is certainly not complete, but the picture is pretty representative. 
+
+Companies range from big names, like Thales, Airbus, and the Automotive Team at NVIDIA,
+to start-ups you probably never heard of, like [Latence Tech](https://www.latencetech.com/).
+
+Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title. 
+
+One good strategy in addition to looking for jobs is to put yourself out there as Ada developer, writing and talking about Ada, so recruiters can find you. 
 
 # Resources to learn Ada
 
@@ -357,12 +368,12 @@ Starting can be as easy as:
 * Create a new repository.
 * Build and run it.
 
-I provide an Alire project template below in [Enough Ada to do Advent of Code](enough-ada-to-do-advanet-of-code).
+I provide an Alire project template below in [Enough Ada to do Advent of Code](#enough-ada-to-do-advent-of-code).
 
 Once you want to know the language in more depth, there is no way around 
 [Programming in Ada 2012](https://doi.org/10.1017/9781009181358) by John Barnes,
 and the [Ada Reference Manual (ARM)](http://ada-auth.org/standards/22rm/html/RM-TOC.html)
-(or a [prettier version of it](https://ada-lang.io/docs/arm/)).
+(or a [prettier version of it on ada-lang.io](https://ada-lang.io/docs/arm/)).
 Both are very extensive and quite accessible,
 but feel free to not worry about them in the beginning - even though people will probably point you 
 to both if you ask for pointers.
@@ -374,64 +385,239 @@ provides a pretty comprehensive list of resources.
 
 Ada is an industrial language used in aerospace, defence, rails, medicine, and a couple of other fields.
 So most Ada code - especially most well-written, fire-proven Ada code - is not on GitHub.
-(That's also why Ada doesn't show up in the TIOBE index.)
 
 Still, here are a few repositories worth exploring if you want to get a feeling
 for bigger Ada projects.
 
 ...
 
-https://alire.ada.dev/crates.html
+If you want, peak at my [code that generates a random Minesweeper board](https://github.com/cunger/100hoursofada/blob/main/minesweeper/src/board/minesweeper-boards-generation.adb) and Jeffrey Carter's [Mine detector](https://github.com/jrcarter/Mine_Detector).
 
-If you want, peak at my [code that generates a random Minesweeper board](https://github.com/cunger/100hoursofada/blob/main/minesweeper/src/board/minesweeper-boards-generation.adb).
+https://alire.ada.dev/crates.html
 
 [Lunar lander simulator](https://github.com/Fabien-Chouteau/eagle-lander)
 
-# A note for C programmers
-
-The most important change when coming from C is that in Ada you don't need pointers.
-
-Seriously. **You do not need pointers.**
-
-Almost everything you want to do, you can do without pointers - and usually more safely so.
-Avoid pointers in the beginning; come back to them only later for more advanced stuff.
+One thing to note when coming from C is that in Ada you don't need pointers.
+Jeffrey Carter makes .... [binary trees without access types](https://github.com/jrcarter/Binary_Trees)
 
 # Enough Ada to do Advent of Code
 
-## Project template
+If you're curious about Ada and want to use [Advent of Code](https://adventofcode.com/) as an opportunity
+to explore it, this section gives you a basic setup to get started.
+
+The Ada forum has [an Advent of Code category](https://forum.ada-lang.io/c/advent-of-code/)
+where each year people meet and discuss their solutions - feel free to drop by and participate.
+
+Some of the repositories of past events are on GitHub.
+For example, [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/tree/642ff0f6151e031b90fb9edfa5c143395a94b344) 
+did many puzzles in both Ada and Rust, and wrote about his solutions and experiences with both.
+He puts each day in its own project.
+[J.C. Moyer (AoC 2023)](https://github.com/jcmoyer/puzzles/tree/f47cb18394123473f3d474782e07267237a828fa/AdventOfCode2023),
+on the other hand, uses a very basic setup but still constructs pretty clean solutions.
+
+## Alire project template
+
+If you use [Alire](https://alire.ada.dev/), which is arguably the easiest and fastest way to get running,
+here is a very basic setup: 
+```
+aoc2025
+  |_ src
+     |_ day_x.adb
+  |_ alire.toml
+  |_ aoc2025.gpr
+  |_ input.txt
+```
+The `input.txt` file is what you get from AoC, and the `src` folder contains your actual Ada source code file.
+We look at the `day_x.adb` below.
+
+The `alire.toml` specifies metadata of your project.
+It is the file where you would specify dependencies if you rely on external libraries.
+If you don't have dependencies and don't want to publish the project, you don't need to worry about it much;
+just make sure to get the name of the executable right.
+```
+name = "aoc2025"
+description = "Doing Advent of Code in Ada, yay!"
+version = "0.1.0-dev"
+
+executables = ["day_x"]
+```
+
+The `aoc2025.gpr` defines how Alire builds your project from source to executable.
+Alire creates it automatically when you initialize a project.
+The important part that might require configuration is to specify the source directories and the main file.
+I usually also play with the compiler switches, but that is just me. 
+```ada
+project AOC2025 is
+
+   for Source_Dirs use ("src/");
+   -- Specify all directories in which you have Ada files
+   -- that need to be compiled. If you have more structure,
+   -- this could look, for example, like this:
+   -- for Source_Dirs use (
+   --    "src/",
+   --    "src/day_01/",
+   --    "src/day_02/",
+   --    ...
+   -- ); 
+
+   for Object_Dir use "obj/";
+   for Exec_Dir use "bin";
+   for Create_Missing_Dirs use "True";
+   -- For the other directories that Alire needs,
+   -- you can just let it create them itself. 
+
+   for Main use ("day_x.adb");
+   -- This is the main file form which the executable will be built. 
+
+   package Compiler is
+      for Default_Switches ("Ada") use (
+          "-g"         -- Generate debug info
+         ,"-gnata"     -- Enable assertions
+         ,"-gnatwa"    -- Enable all warnings
+         ,"-gnaty"     -- Enable all style checks
+         ,"-gnatyC"    -- Check comments without extra space
+         ,"-gnatyM100" -- Check maximum line length of 100
+         ,"-gnat2022"  -- Compile as Ada 2022
+      );
+   end Compiler;
+   -- See https://gcc.gnu.org/onlinedocs/gnat_ugn/Alphabetical-List-of-All-Switches.html
+   -- for a full list of switches.
+
+   package Binder is
+      for Switches ("Ada") use ("-Es");
+   end Binder;
+
+end AOC2025;
+```
+
+Now, all you need to do is tell Alire to run your project:
+
+```
+$ alr run
+```
+It will show the compile, bind and link steps, errors and warnings issued in those,
+and if all is good, it will run the executable.
 
 ## Reading input from files
 
-# TODO Move to different resources
+Advent of Code usually gives you a file from which to read input data.
+Here is a skeleton procedure in Ada for reading a text file line by line:
 
-## Setting up tests
+```ada
+with Ada.Text_IO;
 
-(It's less easy to set up tests than in other languages. But it's still easier to get the code right.)
+procedure Process_Input is
+   Input : Ada.Text_IO.File_Type;
+begin
+   -- Open the input file in read mode.
+   Ada.Text_IO.Open (Input, Ada.Text_IO.In_File, "input.txt");
 
-AUnit
+   -- Walk through the file line by line.
+   while not Ada.Text_IO.End_Of_File (Input) loop
+      declare
+         Line : constant String := Ada.Text_IO.Get_Line (Input);
+      begin
+         -- Do something with Line.
+      end;
+   end loop;
 
-a less powerful but low-effort way
+   -- Finally, close the file again.
+   Ada.Text_IO.Close (Input);
+end Process_Input;
+```
 
-Setting up e2e tests in Python
+You can use this in whatever way you want.
+For a quick and dirty solution, it would be enough to use it as the overall skeleton for the day
+and do whatever processing you need where we put the `Do something` comment.
+Here is a very simple example that reads each line in the input file as a natural number,
+sums them up, and prints the result in the end:
+```ada
+with Ada.Text_IO;
 
-## Run Ada in the browser
+procedure Day_X is
 
-WASM
+   package IO renames Ada.Text_IO;
 
-## Let SPARK prove you right
+   Input    : IO.File_Type;
+   Solution : Natural := 0;
 
-The step from code to proof is surprisingly small.
+begin
 
-State-of-the-art formal verification.
+   IO.Open (File => Input, Mode => IO.In_File, Name => "input.txt");
 
-## Are there jobs in Ada?
+   while not IO.End_Of_File (Input) loop
+      declare
+         Line : constant String := IO.Get_Line (Input);
+      begin
+         Solution := Solution + Natural'Value (Line);
+      end;
+   end loop;
 
-You can find some of the companies using Ada when checking [the list of customers of AdaCore](https://www.adacore.com/company/our-customers).
-This list is certainly not complete, but the picture is pretty representative. 
+   IO.Close (Input);
 
-Companies range from big names, like Thales, Airbus, and the Automotive Team at NVIDIA,
-to start-ups you probably never heard of, like [Latence Tech](https://www.latencetech.com/).
+   IO.Put_Line ("Day X:" & Natural'Image (Solution));
+   
+end Day_X;
+```
 
-Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title. 
+On the other hand side, you could separate parsing the input file
+from constructing a solution based on the data contained in it.
+This can look like [here](https://github.com/cunger/100hoursofada/tree/main/aoc2021/src/01),
+with different specification and body files for both parts,
+or like here for a single-file program:
 
-One good strategy in addition to looking for jobs is to put yourself out there as Ada developer, writing and talking about Ada, so recruiters can find you. 
+```ada
+with Ada.Text_IO;
+
+procedure Day_X is
+
+   package IO renames Ada.Text_IO;
+
+   Solution : Natural := 0;
+   -- Variable for the solution.
+
+   function Parse (S : String) return Natural is
+   -- Take a line of the input file as input
+   -- and parse it as the data type you need.
+   begin
+      return Natural'Value (S);
+   end Parse;
+
+   procedure Construct_Solution (N : Natural) is
+   -- Process the data you get from the input file
+   -- to construct the solution.
+   begin
+      Solution := Solution + N;
+   end Construct_Solution;
+
+   procedure Process_Input is
+      Input : IO.File_Type;
+   begin
+      -- Open the input file in read mode.
+      IO.Open (File => Input, Mode => IO.In_File, Name => "input.txt");
+
+      -- Walk through the file line by line.
+      while not IO.End_Of_File (Input) loop
+         declare
+            Line  : constant String := IO.Get_Line (Input);
+            Value : Natural;
+         begin
+            -- Parse and process each line.
+            Value := Parse (Line);
+            Construct_Solution (Value);
+         end;
+      end loop;
+
+      -- Finally, close the file again.
+      IO.Close (Input);
+   end Process_Input;
+
+begin
+   -- The actual body of your Day X procedure,
+   -- simply calling Process_Input and then printing the solution value.
+
+   Process_Input;
+
+   IO.Put_Line ("Day X:" & Natural'Image (Solution));
+end Day_X;
+```
