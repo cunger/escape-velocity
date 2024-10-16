@@ -20,7 +20,9 @@ and provides pointers where to explore further if you do.
 
 Let's skip ["Hello, world!"](https://en.wikibooks.org/wiki/Ada_Programming/Basic#%22Hello,_world!%22_programs) 
 and start with a countdown instead:
-```
+```ada
+-- countdown.adb
+
 with Ada.Text_IO; use Ada.Text_IO;
 
 procedure Countdown is
@@ -69,8 +71,8 @@ It gently forces you to design when you code. And it provides safety nets everyw
 
 Of course this comes at a cost. 
 It means that Ada is not ideal for fast prototyping or for dynamic meta-programming.
-Ada was made to write well-designed, solid code, that works well and 
-that your colleagues can still read when coming back to it after years.
+Ada was made to write well-designed, solid code, that works and 
+that can still be read when coming back to it after years.
 
 That's where Ada shines.
 
@@ -85,20 +87,138 @@ If you prefer designing over debugging, I bet you will enjoy Ada.
 Here are a few characteristics of Ada that many people like about it.
 This is subjective, of course, but it gives you a taste of why Ada might be worthwhile exloring.
 
+## Simplicity
+
+There is [a very nice interview](https://inf.ethz.ch/news-and-events/spotlights/infk-news-channel/2021/11/niklaus-wirth-video-interview.html) 
+with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
+where he remembers that during his time, all existing programming languages were unneccessarily complex.
+He wanted to design a language that is as simple as possible without losing power. 
+
+In Ada, you see some of this legacy.
+For example, exceptions are like objects, not types. You define an exception like this:
+```
+Timestamp_Is_In_The_Past : exception;
+```
+You raise it like this: 
+```
+raise Timestamp_Is_In_The_Past;
+```
+Or, if you want to include more information, like this: 
+```
+raise Timestamp_Is_In_The_Past with "Input timestamp cannot be in the past";
+```
+That's it. For basic exceptions, this is arguably all you need. 
+**(TODO: hierarchies you probably want)**
+
+## The type system
+
+One of the nicest safety nets that Ada offers is baking range restrictions into the type system.
+
+For example, if you deal with temperature values in the programming language of your choice,
+you might use a floating-point type and at all rlevant interfaces check your values to be 
+within the expected range. 
+In Ada, you can define a type as having floating-point values within a specific range,
+and the compiler and the runtime will check all handled values for you.
+For example:
+```ada
+𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_𝙲elcius 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 -𝟸𝟽𝟹.𝟷𝟻..𝟹𝟶𝟶_𝟶𝟶𝟶_𝟶𝟶𝟶.𝟶;
+𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_Kelvin  𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 0.0..Float'Last;
+```
+Any values below -𝟸𝟽𝟹.𝟷𝟻 degrees Celcius or 0 Kelvin are not a valid temperature. 
+(If you are not building a fusion reactor, your accepted range might be much smaller, of course.)
+
+This not only incredibly handy, it also makes the range restrictions very clear to anyone working with your code.
+And this point is worth some more examples.
+
+Like any strong type system, Ada allows you to derive one type from another.
+The following two types, for example, cover the same values but are different types, which means you will never be able to mix them.
+```
+𝚝𝚢𝚙𝚎 𝙿𝚘𝚞𝚗𝚍_𝚂𝚎𝚌𝚘𝚗𝚍𝚜  𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
+𝚝𝚢𝚙𝚎 𝙽𝚎𝚠𝚝𝚘𝚗_𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
+```
+Providing `Pound_Seconds` when a function expects `Newton_Seconds`, or taking the sum of both, will not work;
+you need to explicitely convert one into the other. (I'm sure [the Mars Climate Orbiter]() would have liked this.)
+
+Combining derived types with range restrictions, you can make your life considerably easy.
+For example:
+```
+type Latitude  is new Float range 0.0 .. 360.0;
+type Longitude is new Float range 0.0 .. 360.0;
+
+type Coordinate is record
+   Lat  : Latitude;
+   Long : Longitude;
+end record;
+```
+Now you have to work hard to mix up latitude and longitude in your code.
+
+Range restrictions in types are, in fact, helpful even if you don't want to restrict the data range.
+Consider the following neat trick. You can declaring a custom floating-point type like this:
+```
+type Some_Float is new Float range Float'Range;
+```
+This means your derived type has the same range as `Float`, but excluding anything that is not in its range: NaN, infinity, or whatever non-numeric values your machine defines. So if your code ends up with something that is not a number, numeric operations raise a constraint error instead of propagating the non-numeric value through your whole program.
+
+## Array indices
+
+0-based? 1-based? Anything-based!
+
+One of the good ideas that Ada adopted from Pascal is the fact that array indices can come from any enumerable, bounded type. (The index type can be unbounded when declaring the array but needs to be constrained before the array is used.)
+
+So no discussion is necessary whether array indices should start with 0 or 1. You define how they start. And whether they use integers at all.
+
+It actually simply means you get arrays and maps in one datatype, which feels very natural once you have it.
+
+```ada
+-- When defining an array type, you specify the index type
+-- as well as the value type.
+
+type Sensor_Id is range 100 .. 999;
+type Sensor_Status is (Active, Inactive);
+
+type Sensors is array (Sensor_Id) of Sensor_Status;
+
+-- When initializing such an array, you can set the values by position,
+-- like (Active, Active, Active, Inactive),
+-- or by index:
+Initial_Status : constant Sensors := (
+   101101 => Active,
+   101235 => Active,
+   101470 => Active,
+   101999 => Active,
+   others => Inactive
+);
+```
+
+Finally, attributes like `'First`, `'Last`, and `'Range` make it possible to define loops in a way that's hard to get wrong even if you change the underlying index range later.
+
+```ada
+for Id in Sensor_Id'First .. Sensor_Id'Last loop
+   if Sensors (Id) = Active then
+      Sensors (Id) := Inactive;
+   end if;
+end loop;
+
+-- This is equivalent to:
+for Id in Sensors'Range loop
+   -- ...
+end loop;
+```
+
 ## Separation of concerns
 
 Like separating header and implementation in C, Ada separates packages into a specification (`.ads`) and a body (`.adb`),
 which tends to blend design and code.
-This approach is not specific to Ada, of course, but it emphasizes Ada's focus on engineering software: 
+This approach is not specific to Ada, of course, but it emphasizes Ada's focus on engineering software.
+Richard Riehle put it like this:
 
 > Ada as an engineering tool, requires the software developers to adopt an engineering attitude to using it. It is not enough to simply be a good computer programmer when human safety is at risk. Software at that level of risk must be engineered.
-
-(Richard Riehle: Ada Distilled)
 
 Here is an example. Assume we wanted to implement Conway's Game of Life.
 We could start thinking about how to call it from a main procedure:
 ```ada
 -- main.adb
+
 with Game_Of_Life;
 use  Game_Of_Life;
 
@@ -118,6 +238,7 @@ end Main;
 This defines what we need in the public part of our package specification:
 ```ada
 -- game_of_life.ads
+
 package Game_Of_Life is
 
     type Patterns is (
@@ -155,6 +276,7 @@ Then we mirror the specification in the body, providing the actual implementatio
 Doing so would usually inform which private specifications we need in the package specification.
 ```ada
 -- game_of_life.adb
+
 package body Game_Of_Life is
 
     procedure Init_Board (Rows : Positive, Columns : Positive) is
@@ -178,139 +300,15 @@ package body Game_Of_Life is
 end Game_Of_Life;
 ```
 
-## Simplicity
-
-There is [a very nice interview](https://inf.ethz.ch/news-and-events/spotlights/infk-news-channel/2021/11/niklaus-wirth-video-interview.html) 
-with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
-where he remembers that during his time, all existing programming languages were unneccessarily complex.
-He wanted to design a language that is as simple as possible, of course without losing power. 
-
-In Ada, you see some of this legacy.
-For example, you define an exception like this:
-```
-Timestamp_Is_In_The_Past : exception;
-```
-You raise it like this: 
-```
-raise Timestamp_Is_In_The_Past;
-```
-Or, if you want to include more information, like this: 
-```
-raise Timestamp_Is_In_The_Past with "Input timestamp cannot be in the past";
-```
-That's it. For basic exceptions, this is arguably all you need. 
-
-...
-building blocks
-```
-declare
-   -- local declarations of constants and variables
-   -- (possibly including functions and procedures)
-begin
-   -- sequence of statements or nested blocks
-exception
-   -- handling exceptions
-end;
-```
-
-## The type system
-
-I never thought the answer to what are the cool features of a language would be: its type system.
-I also thought I knew strong typing.
-Until I met Ada.
-
-Imagine there is an integer type and nobody is using it.
-
-Ada offers a few safety nets. One of the nicest is baked into the type system; Richard Riehle calls it precision datatypes.
-
-First, you can derive one type from another. Both types are different, and you will never be able to mix them.
-For example, if you define: 
-```
-𝚝𝚢𝚙𝚎 𝙿𝚘𝚞𝚗𝚍_𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
-𝚝𝚢𝚙𝚎 𝙽𝚎𝚠𝚝𝚘𝚗_𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
-```
-Then providing `Pound_Seconds` when a function expects `Newton_Seconds`, or taking the sum of both, will not work. You need to explicitely convert one into the other. (I'm sure [the Mars Climate Orbiter]() would have liked this.)
-
-What is even better is that you can define the range that the type should cover. 
-For example, we can define temperature like this:
-```ada
-𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_𝙲 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 -𝟸𝟽𝟹.𝟷𝟻..𝟹𝟶𝟶_𝟶𝟶𝟶_𝟶𝟶𝟶.𝟶;
-𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_K 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 0..Float'Last;
-```
-Anything below -𝟸𝟽𝟹.𝟷𝟻 degrees Celcius or 0 Kelvin is not a valid temperature, and it's not something you have to remember to check yourself; Ada checks it for you at compile time and runtime.
-(If you are not building a fusion reactor, your accepted range might be much smaller, of course.)
-
-This way of specifying conditions directly in the types allows you to express your intent as clearly and unambiguously as possible.
-For example:
-```
-type Latitude  is new Float range 0.0 .. 360.0;
-type Longitude is new Float range 0.0 .. 360.0;
-
-type Coordinate is record
-   Lat  : Latitude;
-   Long : Longitude;
-end record;
-```
-Now you have to work hard to mix up latitude and longitude in your code.
-
-This is helpful even if you don't want to restrict the data range.
-Consider the neat trick of declaring floating-point types like this:
-```
- type Some_Float is new Float range Float'Range;
-```
-This means your derived type has the same range as `Float`, but excluding anything that is not in its range: NaN, infinity, or whatever non-numeric values your machine defines. So if your code ends up with something that is not a number, numeric operations raise a constraint error instead of propagating the non-numeric value through your whole program.
-
-## Array indices
-
-0-based? 1-based? Anything-based!
-
-One of the nice features that Ada adopted from Pascal is the fact that array indices can come from any enumerable, bounded type. (The index type can be unbound when declaring the array but needs to be constrained before the array is used.)
-
-So no discussion necessary whether array indices should start with 0 or 1. You define how they start. And whether they use integers at all.
-
-It actually simply means you get arrays and maps in one datatype, which feels very natural once you have it.
-
-```ada
--- When defining an array type, you specify the index type
--- as well as the value type.
-
-type Sensor_Id is range 100 .. 999;
-type Sensor_Status is (Active, Inactive);
-
-type Sensors is array (Sensor_Id) of Sensor_Status;
-
--- When initializing such an array, you can set the values by position,
--- like (Active, Active, Active, Inactive),
--- or by index:
-Initial_Status : constant Sensors := (
-   101 => Active,
-   235 => Active,
-   470 => Active,
-   999 => Active,
-   others => Inactive
-);
-```
-
-Finally, attributes like `'First`, `'Last`, and `'Range` make it possible to define loops in a way that's hard to get wrong even if you change the underlying index range later.
-
-```ada
-for Id in Sensor_Id'First .. Sensor_Id'Last loop
-   if Sensors (Id) = Active then
-      Sensors (Id) := Inactive;
-   end if;
-end loop;
-
--- equivalent to:
-for Id in Sensors'Range loop
-   -- ...
-end loop;
-```
-
 ## Variant records
 
-## Tasking, or how to do concurrency in an easy way
+## Tasking
 
-Since 83, btw.
+.... take for granted, but Ada has easy concurrency since 1983.
+
+... tasks, and one way for synchronous and one for asynchronous communication between tasks.
+
+
 
 # The ecosystem and community
 
@@ -407,13 +405,12 @@ to explore it, this section gives you a basic setup to get started.
 
 The Ada forum has [an Advent of Code category](https://forum.ada-lang.io/c/advent-of-code/)
 where each year people meet and discuss their solutions - feel free to drop by and participate.
-
-Some of the repositories of past events are on GitHub.
+There you will also find links to the repositories of past events on GitHub.
 For example, [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/tree/642ff0f6151e031b90fb9edfa5c143395a94b344) 
 did many puzzles in both Ada and Rust, and wrote about his solutions and experiences with both.
-He puts each day in its own project.
-[J.C. Moyer (AoC 2023)](https://github.com/jcmoyer/puzzles/tree/f47cb18394123473f3d474782e07267237a828fa/AdventOfCode2023),
-on the other hand, uses a very basic setup but still constructs pretty clean solutions.
+...
+[J.C. Moyer (AoC 2023)](https://github.com/jcmoyer/puzzles/tree/f47cb18394123473f3d474782e07267237a828fa/AdventOfCode2023)
+uses a very basic setup but still constructs pretty clean solutions.
 
 ## Alire project template
 
@@ -425,9 +422,9 @@ aoc2025
      |_ day_x.adb
   |_ alire.toml
   |_ aoc2025.gpr
-  |_ input.txt
+  |_ input_x.txt
 ```
-The `input.txt` file is what you get from AoC, and the `src` folder contains your actual Ada source code file.
+The `input_x.txt` file is what you get from AoC, and the `src` folder contains your actual Ada source code file.
 We look at the `day_x.adb` below.
 
 The `alire.toml` specifies metadata of your project.
@@ -445,7 +442,7 @@ executables = ["day_x"]
 The `aoc2025.gpr` defines how Alire builds your project from source to executable.
 Alire creates it automatically when you initialize a project.
 The important part that might require configuration is to specify the source directories and the main file.
-I usually also play with the compiler switches, but that is just me. 
+I usually also play with the compiler switches, but that's mostly relevant for how much discipline you want to impose on yourself. 
 ```ada
 project AOC2025 is
 
@@ -510,7 +507,7 @@ procedure Process_Input is
    Input : Ada.Text_IO.File_Type;
 begin
    -- Open the input file in read mode.
-   Ada.Text_IO.Open (Input, Ada.Text_IO.In_File, "input.txt");
+   Ada.Text_IO.Open (Input, Ada.Text_IO.In_File, "input_x.txt");
 
    -- Walk through the file line by line.
    while not Ada.Text_IO.End_Of_File (Input) loop
@@ -532,6 +529,8 @@ and do whatever processing you need where we put the `Do something` comment.
 Here is a very simple example that reads each line in the input file as a natural number,
 sums them up, and prints the result in the end:
 ```ada
+-- day_x.adb
+
 with Ada.Text_IO;
 
 procedure Day_X is
@@ -543,7 +542,7 @@ procedure Day_X is
 
 begin
 
-   IO.Open (File => Input, Mode => IO.In_File, Name => "input.txt");
+   IO.Open (File => Input, Mode => IO.In_File, Name => "input_x.txt");
 
    while not IO.End_Of_File (Input) loop
       declare
@@ -567,6 +566,8 @@ with different specification and body files for both parts,
 or like here for a single-file program:
 
 ```ada
+-- day_x.adb
+
 with Ada.Text_IO;
 
 procedure Day_X is
