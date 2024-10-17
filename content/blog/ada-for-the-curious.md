@@ -11,7 +11,7 @@ This post is for developers who are curious about Ada.
 
 Contrary to some associations you might have (🦕?), Ada is a modern language,
 with modules, a strong type system, and easy-to-use concurrency. 
-It's blazing fast (🚀!), backed by a cool community, and it's easy to learn.
+It's blazing fast (🚀!), backed by a small but friendly community, and it's easy to learn.
 
 Instead of giving an extensive introduction to syntax you can easily look up yourself,
 I want to highlight some of the aspects that make Ada worth looking into. 
@@ -43,7 +43,12 @@ So what's special about it?
 # What makes Ada different
 
 The development of Ada was originally sponsored by the US Department of Defense, 
-when they noticed they spend way too much money on building and fixing embedded systems. 
+when they noticed they spend way too much money on building and fixing embedded systems.
+
+{{< rawhtml >}}
+<img src="/images/blog/ada-1.png" alt="History of Ada" width="600"/>
+{{< /rawhtml >}}
+
 Since the first version in 1983, the language has developed continuously and far beyond embedded systems,
 but the most important point to understand about Ada's origin is that:
 
@@ -87,61 +92,27 @@ If you prefer designing over debugging, I bet you will enjoy Ada.
 Here are a few characteristics of Ada that many people like about it.
 This is subjective, of course, but it gives you a taste of why Ada might be worthwhile exloring.
 
-## Simplicity
-
-There is [a very nice interview](https://inf.ethz.ch/news-and-events/spotlights/infk-news-channel/2021/11/niklaus-wirth-video-interview.html) 
-with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
-where he remembers that during his time, all existing programming languages were unneccessarily complex.
-He wanted to design a language that is as simple as possible without losing power. 
-
-In Ada, you see some of this legacy.
-For example, exceptions are like objects, not types. You define an exception like this:
-```
-Timestamp_Is_In_The_Past : exception;
-```
-You raise it like this: 
-```
-raise Timestamp_Is_In_The_Past;
-```
-Or, if you want to include more information, like this: 
-```
-raise Timestamp_Is_In_The_Past with "Input timestamp cannot be in the past";
-```
-That's it. For basic exceptions, this is arguably all you need. 
-**(TODO: hierarchies you probably want)**
-
 ## The type system
 
-One of the nicest safety nets that Ada offers is baking range restrictions into the type system.
+Yes, we start the list of fun features with the type system.
+Because one of the nicest safety nets that Ada offers is baking range restrictions right into the type system.
 
-For example, if you deal with temperature values in the programming language of your choice,
-you might use a floating-point type and at all rlevant interfaces check your values to be 
-within the expected range. 
+Let's assume you deal with temperature readings. 
+In the programming language of your choice, you might use a floating-point type and then at all relevant interfaces 
+check your values to be within the expected range. 
 In Ada, you can define a type as having floating-point values within a specific range,
 and the compiler and the runtime will check all handled values for you.
 For example:
 ```ada
-𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_𝙲elcius 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 -𝟸𝟽𝟹.𝟷𝟻..𝟹𝟶𝟶_𝟶𝟶𝟶_𝟶𝟶𝟶.𝟶;
-𝚝𝚢𝚙𝚎 𝚃𝚎𝚖𝚙𝚎𝚛𝚊𝚝𝚞𝚛𝚎_Kelvin  𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝 𝚛𝚊𝚗𝚐𝚎 0.0..Float'Last;
+type Temperature_Celcius is digits 9 range -273.15 .. 300_000_000.0;
+type Temperature_Kelvin  is digits 9 range 0.0 .. 300_000_000.0;
 ```
 Any values below -𝟸𝟽𝟹.𝟷𝟻 degrees Celcius or 0 Kelvin are not a valid temperature. 
 (If you are not building a fusion reactor, your accepted range might be much smaller, of course.)
 
 This not only incredibly handy, it also makes the range restrictions very clear to anyone working with your code.
-And this point is worth some more examples.
-
-Like any strong type system, Ada allows you to derive one type from another.
-The following two types, for example, cover the same values but are different types, which means you will never be able to mix them.
-```
-𝚝𝚢𝚙𝚎 𝙿𝚘𝚞𝚗𝚍_𝚂𝚎𝚌𝚘𝚗𝚍𝚜  𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
-𝚝𝚢𝚙𝚎 𝙽𝚎𝚠𝚝𝚘𝚗_𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚒𝚜 𝚗𝚎𝚠 𝙵𝚕𝚘𝚊𝚝;
-```
-Providing `Pound_Seconds` when a function expects `Newton_Seconds`, or taking the sum of both, will not work;
-you need to explicitely convert one into the other. (I'm sure [the Mars Climate Orbiter]() would have liked this.)
-
-Combining derived types with range restrictions, you can make your life considerably easy.
 For example:
-```
+```ada
 type Latitude  is new Float range 0.0 .. 360.0;
 type Longitude is new Float range 0.0 .. 360.0;
 
@@ -154,55 +125,53 @@ Now you have to work hard to mix up latitude and longitude in your code.
 
 Range restrictions in types are, in fact, helpful even if you don't want to restrict the data range.
 Consider the following neat trick. You can declaring a custom floating-point type like this:
-```
+```ada
 type Some_Float is new Float range Float'Range;
 ```
 This means your derived type has the same range as `Float`, but excluding anything that is not in its range: NaN, infinity, or whatever non-numeric values your machine defines. So if your code ends up with something that is not a number, numeric operations raise a constraint error instead of propagating the non-numeric value through your whole program.
 
 ## Array indices
 
-0-based? 1-based? Anything-based!
-
-One of the good ideas that Ada adopted from Pascal is the fact that array indices can come from any enumerable, bounded type. (The index type can be unbounded when declaring the array but needs to be constrained before the array is used.)
-
-So no discussion is necessary whether array indices should start with 0 or 1. You define how they start. And whether they use integers at all.
+One of the good ideas that Ada adopted from Pascal is the fact that array indices can come from any enumerable, bounded type.
+So it doesn't matter whether you believe array indices should start with 0 or 1. You define how they start. And whether they use integers at all.
 
 It actually simply means you get arrays and maps in one datatype, which feels very natural once you have it.
+When defining an array type, you simply specify the index type as well as the value type.
 
+Here is an example where we use integers within a specific range to define a DNA strand sequenced from position 600 to 900:
 ```ada
--- When defining an array type, you specify the index type
--- as well as the value type.
+type Position is range 600 .. 900;
+type Base is (A, C, G, T, Unknown);
 
-type Sensor_Id is range 100 .. 999;
-type Sensor_Status is (Active, Inactive);
+type Strand is array (Position) of Base;
 
-type Sensors is array (Sensor_Id) of Sensor_Status;
-
--- When initializing such an array, you can set the values by position,
--- like (Active, Active, Active, Inactive),
--- or by index:
-Initial_Status : constant Sensors := (
-   101101 => Active,
-   101235 => Active,
-   101470 => Active,
-   101999 => Active,
-   others => Inactive
+Example : Strand := (
+   600 => A,
+   601 => C,
+   ...,
+   others => Unknown
 );
 ```
 
-Finally, attributes like `'First`, `'Last`, and `'Range` make it possible to define loops in a way that's hard to get wrong even if you change the underlying index range later.
+Attributes like `'First`, `'Last`, and `'Range` make it possible to define loops in a way that's hard to get wrong even if you change the underlying index range later.
 
 ```ada
-for Id in Sensor_Id'First .. Sensor_Id'Last loop
-   if Sensors (Id) = Active then
-      Sensors (Id) := Inactive;
-   end if;
+for Pos in Position'First .. Position'Last loop
+   ...
 end loop;
 
 -- This is equivalent to:
-for Id in Sensors'Range loop
-   -- ...
+for Pos in Positions'Range loop
+   ...
 end loop;
+```
+
+Or two-dimensional:
+```ada
+type File is (A, B, C, D, E, F, G, H);
+type Rank is (1, 2, 3, 4, 5, 6, 7, 8);
+
+type Board is array (File, Rank) of Piece;
 ```
 
 ## Separation of concerns
@@ -300,14 +269,36 @@ package body Game_Of_Life is
 end Game_Of_Life;
 ```
 
-## Variant records
+## Simplicity
 
-## Tasking
+There is [a very nice interview](https://inf.ethz.ch/news-and-events/spotlights/infk-news-channel/2021/11/niklaus-wirth-video-interview.html) 
+with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
+where he remembers that during his time, all existing programming languages were unneccessarily complex.
+He wanted to design a language that is as simple as possible without losing power. 
 
-.... take for granted, but Ada has easy concurrency since 1983.
+In Ada, you see some of this legacy. Let's look at two examples.
 
+First, exceptions.
+
+In Ada, exceptions are like objects, not types. You define an exception like this:
+```
+Timestamp_Is_In_The_Past : exception;
+```
+You raise it like this: 
+```
+raise Timestamp_Is_In_The_Past;
+```
+Or, if you want to include more information, like this: 
+```
+raise Timestamp_Is_In_The_Past with "Input timestamp cannot be in the past";
+```
+That's it. For basic exceptions, this is arguably all you need. 
+**(TODO: hierarchies you probably want)**
+
+Second, concurrency. 
+
+Ada has concurrency since 1983.
 ... tasks, and one way for synchronous and one for asynchronous communication between tasks.
-
 
 
 # The ecosystem and community
@@ -324,9 +315,9 @@ Ada has a small but friendly and ... community.
 
 **Forum:** https://forum.ada-lang.io/
 
-**Discord:**
+**Discord:** 
 
-**Reddit:**
+**Reddit:** https://www.reddit.com/r/ada 
 
 **Monthly Meetup:** 
 
@@ -338,9 +329,7 @@ This list is certainly not complete, but the picture is pretty representative.
 Companies range from big names, like Thales, Airbus, and the Automotive Team at NVIDIA,
 to start-ups you probably never heard of, like [Latence Tech](https://www.latencetech.com/).
 
-Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title. 
-
-One good strategy in addition to looking for jobs is to put yourself out there as Ada developer, writing and talking about Ada, so recruiters can find you. 
+Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title.
 
 # Resources to learn Ada
 
@@ -376,27 +365,17 @@ Both are very extensive and quite accessible,
 but feel free to not worry about them in the beginning - even though people will probably point you 
 to both if you ask for pointers.
 
-If you want to explore the rest of the iceberg, [Awesome Ada](https://github.com/ohenley/awesome-ada)
+To explore the rest of the iceberg, [Awesome Ada](https://github.com/ohenley/awesome-ada)
 provides a pretty comprehensive list of resources.
 
-## Ada code worth reading
+If you want to dive into existing Ada code bases, here are a few suggestions:
 
-Ada is an industrial language used in aerospace, defence, rails, medicine, and a couple of other fields.
-So most Ada code - especially most well-written, fire-proven Ada code - is not on GitHub.
-
-Still, here are a few repositories worth exploring if you want to get a feeling
-for bigger Ada projects.
-
-...
-
-If you want, peak at my [code that generates a random Minesweeper board](https://github.com/cunger/100hoursofada/blob/main/minesweeper/src/board/minesweeper-boards-generation.adb) and Jeffrey Carter's [Mine detector](https://github.com/jrcarter/Mine_Detector).
-
-https://alire.ada.dev/crates.html
-
-[Lunar lander simulator](https://github.com/Fabien-Chouteau/eagle-lander)
-
-One thing to note when coming from C is that in Ada you don't need pointers.
-Jeffrey Carter makes .... [binary trees without access types](https://github.com/jrcarter/Binary_Trees)
+* [GNATcoll](https://github.com/AdaCore/gnatcoll-core/tree/master/core/src) is a collection ...
+* [Lunar lander simulator](https://github.com/Fabien-Chouteau/eagle-lander)
+* [AdaChess](https://github.com/adachess/AdaChess/tree/main) is a chess engine written in Ada.
+* Jeffrey Carter implements [binary trees without access types](https://github.com/jrcarter/Binary_Trees),
+  to demonstrate how you can do without pointers even in cases whether you would tend to grab for them.
+* A lot more in [the list of Ada crates](https://alire.ada.dev/crates.html).
 
 # Enough Ada to do Advent of Code
 
