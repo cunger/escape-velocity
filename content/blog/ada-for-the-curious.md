@@ -20,7 +20,7 @@ and provides pointers where to explore further if you do.
 
 Let's skip ["Hello, world!"](https://en.wikibooks.org/wiki/Ada_Programming/Basic#%22Hello,_world!%22_programs) 
 and start with a countdown instead:
-```ada
+{{< highlight ada >}}
 -- countdown.adb
 
 with Ada.Text_IO; use Ada.Text_IO;
@@ -33,7 +33,7 @@ begin
 
    Put_Line ("Lift off!");
 end Countdown;
-```
+{{</ highlight >}}
 
 Ada might look unfamiliar if you grew up with C-family languages,
 because its syntax was based on Pascal. But it's a classical procedural language.
@@ -387,9 +387,9 @@ where each year people meet and discuss their solutions - feel free to drop by a
 There you will also find links to the repositories of past events on GitHub.
 For example, [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/tree/642ff0f6151e031b90fb9edfa5c143395a94b344) 
 did many puzzles in both Ada and Rust, and wrote about his solutions and experiences with both.
-...
+And 
 [J.C. Moyer (AoC 2023)](https://github.com/jcmoyer/puzzles/tree/f47cb18394123473f3d474782e07267237a828fa/AdventOfCode2023)
-uses a very basic setup but still constructs pretty clean solutions.
+uses a very basic setup, but constructs pretty clean and readable solutions.
 
 ## Alire project template
 
@@ -479,7 +479,7 @@ and if all is good, it will run the executable.
 Advent of Code usually gives you a file from which to read input data.
 Here is a skeleton procedure in Ada for reading a text file line by line:
 
-```ada
+{{< highlight ada >}}
 with Ada.Text_IO;
 
 procedure Process_Input is
@@ -500,104 +500,13 @@ begin
    -- Finally, close the file again.
    Ada.Text_IO.Close (Input);
 end Process_Input;
-```
+{{</ highlight >}}
 
 You can use this in whatever way you want.
 For a quick and dirty solution, it would be enough to use it as the overall skeleton for the day
 and do whatever processing you need where we put the `Do something` comment.
-Here is a very simple example that reads each line in the input file as a natural number,
-sums them up, and prints the result in the end:
-```ada
--- day_x.adb
-
-with Ada.Text_IO;
-
-procedure Day_X is
-
-   package IO renames Ada.Text_IO;
-
-   Input    : IO.File_Type;
-   Solution : Natural := 0;
-
-begin
-
-   IO.Open (File => Input, Mode => IO.In_File, Name => "input_x.txt");
-
-   while not IO.End_Of_File (Input) loop
-      declare
-         Line : constant String := IO.Get_Line (Input);
-      begin
-         Solution := Solution + Natural'Value (Line);
-      end;
-   end loop;
-
-   IO.Close (Input);
-
-   IO.Put_Line ("Day X:" & Natural'Image (Solution));
-   
-end Day_X;
-```
-
 On the other hand side, you could separate parsing the input file
 from constructing a solution based on the data contained in it.
-This can look like [here](https://github.com/cunger/100hoursofada/tree/main/aoc2021/src/01),
-with different specification and body files for both parts,
-or like here for a single-file program:
 
-```ada
--- day_x.adb
-
-with Ada.Text_IO;
-
-procedure Day_X is
-
-   package IO renames Ada.Text_IO;
-
-   Solution : Natural := 0;
-   -- Variable for the solution.
-
-   function Parse (S : String) return Natural is
-   -- Take a line of the input file as input
-   -- and parse it as the data type you need.
-   begin
-      return Natural'Value (S);
-   end Parse;
-
-   procedure Construct_Solution (N : Natural) is
-   -- Process the data you get from the input file
-   -- to construct the solution.
-   begin
-      Solution := Solution + N;
-   end Construct_Solution;
-
-   procedure Process_Input is
-      Input : IO.File_Type;
-   begin
-      -- Open the input file in read mode.
-      IO.Open (File => Input, Mode => IO.In_File, Name => "input.txt");
-
-      -- Walk through the file line by line.
-      while not IO.End_Of_File (Input) loop
-         declare
-            Line  : constant String := IO.Get_Line (Input);
-            Value : Natural;
-         begin
-            -- Parse and process each line.
-            Value := Parse (Line);
-            Construct_Solution (Value);
-         end;
-      end loop;
-
-      -- Finally, close the file again.
-      IO.Close (Input);
-   end Process_Input;
-
-begin
-   -- The actual body of your Day X procedure,
-   -- simply calling Process_Input and then printing the solution value.
-
-   Process_Input;
-
-   IO.Put_Line ("Day X:" & Natural'Image (Solution));
-end Day_X;
-```
+For common string handling tasks, see my 
+[Ada cookbook](../../notes/dev/ada-cookbook/).

@@ -1,8 +1,9 @@
 ---
 title: "Numbers"
-description: "And their representation in computers"
+summary: "And their representation in computers"
 author: "Christina Unger"
 tags: ["numbers"]
+weight: 3
 math: true
 toc: true
 draft: false

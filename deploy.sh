@@ -1,6 +1,8 @@
 #!/bin/sh
 
-hugo gen chromastyles --style=vs static/css/highlight.css
+hugo gen chromastyles --style=algo static/css/highlight.css
+# tokyonight-moon
+# nord
 
 hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 

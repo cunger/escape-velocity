@@ -1,11 +1,12 @@
 ---
 title: "Bash"
 summary: "Boom. Bang."
-date: 2020-01-10
+author: "Christina Unger"
+tags: ["bash"]
 weight: 2
 math: false
 toc: true
-draft: true
+draft: false
 ---
 
 # Commands

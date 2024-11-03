@@ -1,9 +1,9 @@
 ---
 title: "Network programming"
-description: "Work in progress"
+summary: "Doomed to be a draft"
 author: "Christina Unger"
 tags: ["network"]
-weight: 2
+weight: 4
 math: false
 toc: true
 draft: false
