@@ -16,14 +16,10 @@ In general, I feel most at home in multidisciplinary settings and non-mainstream
 
 {{< badge text="Java" >}}
 {{< badge text="Ada" >}}
-{{< badge text="TypeScript" >}}
 {{< badge text="Python" >}}
+{{< badge text="TypeScript" >}}
 
 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
-
-### What I'm up to right now
-
-I look forward to this year's Advent of Code, spending some quality time with Ada. I started writing ["Ada for the curious"](../blog/ada-for-the-curious/) and want to finish it before December.
 
 ## Professional Experience
 
