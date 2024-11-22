@@ -18,8 +18,7 @@ I want to highlight some of the aspects that make Ada worth looking into.
 Consider it a teaser that gets you to know Ada enough to decide whether you like it or not,
 and provides pointers where to explore further if you do.
 
-Let's skip ["Hello, world!"](https://en.wikibooks.org/wiki/Ada_Programming/Basic#%22Hello,_world!%22_programs) 
-and start with a countdown instead:
+Let's start with a countdown:
 {{< highlight ada >}}
 -- countdown.adb
 
@@ -44,9 +43,10 @@ So what's special about it?
 
 The development of Ada was originally sponsored by the US Department of Defense, 
 when they noticed they spend way too much money on building and fixing embedded systems.
-
 {{< rawhtml >}}
-<img src="/images/blog/ada-1.png" alt="History of Ada" width="600"/>
+<span class="hover_img">
+  <a href="#">(Here's how I imagine it must have started.)<span><img src="/images/blog/ada-1.png" alt="History of Ada" width="600" /></span></a>
+</span>
 {{< /rawhtml >}}
 
 Since the first version in 1983, the language has developed continuously and far beyond embedded systems,
@@ -95,13 +95,12 @@ This is subjective, of course, but it gives you a taste of why Ada might be wort
 ## The type system
 
 Yes, we start the list of fun features with the type system.
-Because one of the nicest safety nets that Ada offers is baking range restrictions right into the type system.
+Because one of the nicest safety nets that Ada offers is range restrictions on the type level.
 
-Let's assume you deal with temperature readings. 
-In the programming language of your choice, you might use a floating-point type and then at all relevant interfaces 
-check your values to be within the expected range. 
-In Ada, you can define a type as having floating-point values within a specific range,
-and the compiler and the runtime will check all handled values for you.
+Let's assume you deal with temperature readings.
+Instead of using a generic floating-point type and check whether the values you get are in your expected range, 
+Ada lets you define a custom type as having floating-point values within a specific range - and the compiler 
+and runtime check this range for you.
 For example:
 ```ada
 type Temperature_Celcius is digits 9 range -273.15 .. 300_000_000.0;
@@ -110,18 +109,13 @@ type Temperature_Kelvin  is digits 9 range 0.0 .. 300_000_000.0;
 Any values below -𝟸𝟽𝟹.𝟷𝟻 degrees Celcius or 0 Kelvin are not a valid temperature. 
 (If you are not building a fusion reactor, your accepted range might be much smaller, of course.)
 
-This not only incredibly handy, it also makes the range restrictions very clear to anyone working with your code.
-For example:
+Or:
 ```ada
 type Latitude  is new Float range 0.0 .. 360.0;
 type Longitude is new Float range 0.0 .. 360.0;
-
-type Coordinate is record
-   Lat  : Latitude;
-   Long : Longitude;
-end record;
 ```
-Now you have to work hard to mix up latitude and longitude in your code.
+
+This is not only incredibly handy, it also makes the range restrictions very clear to anyone working with your code.
 
 Range restrictions in types are, in fact, helpful even if you don't want to restrict the data range.
 Consider the following neat trick. You can declaring a custom floating-point type like this:
@@ -135,20 +129,21 @@ This means your derived type has the same range as `Float`, but excluding anythi
 One of the good ideas that Ada adopted from Pascal is the fact that array indices can come from any enumerable, bounded type.
 So it doesn't matter whether you believe array indices should start with 0 or 1. You define how they start. And whether they use integers at all.
 
-It actually simply means you get arrays and maps in one datatype, which feels very natural once you have it.
+It actually means you get arrays and maps in one datatype, which feels very natural once you have it.
 When defining an array type, you simply specify the index type as well as the value type.
 
-Here is an example where we use integers within a specific range to define a DNA strand sequenced from position 600 to 900:
+Here is an example where we use integers within a specific range as index:
 ```ada
-type Position is range 600 .. 900;
-type Base is (A, C, G, T, Unknown);
+type Position is range 100 .. 999;
+type State is (Open, Closed, Unknown);
 
-type Strand is array (Position) of Base;
+type Valves is array (Position) of State;
 
-Example : Strand := (
-   600 => A,
-   601 => C,
-   ...,
+Example : Valves := (
+   100    => Open,
+   101    => Open,
+   102    => Closed,
+   103    => Open,
    others => Unknown
 );
 ```
@@ -164,14 +159,6 @@ end loop;
 for Pos in Positions'Range loop
    ...
 end loop;
-```
-
-Or two-dimensional:
-```ada
-type File is (A, B, C, D, E, F, G, H);
-type Rank is (1, 2, 3, 4, 5, 6, 7, 8);
-
-type Board is array (File, Rank) of Piece;
 ```
 
 ## Separation of concerns
@@ -311,25 +298,15 @@ There are free and proprietary compilers.
 The one you will come across first and most often is called [GNAT](https://gcc.gnu.org/wiki/GNAT), 
 a free Ada compiler integrated into GCC. 
 
-Ada has a small but friendly and ... community.
+Ada has a small but friendly and welcoming community.
 
 **Forum:** https://forum.ada-lang.io/
 
-**Discord:** 
+**Discord:** https://discord.gg/edM2czVKN4
 
 **Reddit:** https://www.reddit.com/r/ada 
 
-**Monthly Meetup:** 
-
-## Are there jobs in Ada?
-
-You can find some of the companies using Ada when checking [the list of customers of AdaCore](https://www.adacore.com/company/our-customers).
-This list is certainly not complete, but the picture is pretty representative. 
-
-Companies range from big names, like Thales, Airbus, and the Automotive Team at NVIDIA,
-to start-ups you probably never heard of, like [Latence Tech](https://www.latencetech.com/).
-
-Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title.
+There is also a **monthly meetup**, usually at the beginning of each month, which is accounced in the forum and on Discord. 
 
 # Resources to learn Ada
 
@@ -355,8 +332,6 @@ Starting can be as easy as:
 * Create a new repository.
 * Build and run it.
 
-I provide an Alire project template below in [Enough Ada to do Advent of Code](#enough-ada-to-do-advent-of-code).
-
 Once you want to know the language in more depth, there is no way around 
 [Programming in Ada 2012](https://doi.org/10.1017/9781009181358) by John Barnes,
 and the [Ada Reference Manual (ARM)](http://ada-auth.org/standards/22rm/html/RM-TOC.html)
@@ -370,143 +345,23 @@ provides a pretty comprehensive list of resources.
 
 If you want to dive into existing Ada code bases, here are a few suggestions:
 
-* [GNATcoll](https://github.com/AdaCore/gnatcoll-core/tree/master/core/src) is a collection ...
-* [Lunar lander simulator](https://github.com/Fabien-Chouteau/eagle-lander)
+* [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/tree/642ff0f6151e031b90fb9edfa5c143395a94b344) 
+did many Advent of Code puzzles in both Ada and Rust, and wrote about his solutions and experiences with both.
+* [GNATcoll](https://github.com/AdaCore/gnatcoll-core/tree/master/core/src) is a collection of components, like for working with JSON data or file systems in Ada. It's clean and well-documented code.
+* The [Apollo 11 lunar lander simulator](https://github.com/Fabien-Chouteau/eagle-lander) is equally well organized and fun to read.
 * [AdaChess](https://github.com/adachess/AdaChess/tree/main) is a chess engine written in Ada.
 * Jeffrey Carter implements [binary trees without access types](https://github.com/jrcarter/Binary_Trees),
   to demonstrate how you can do without pointers even in cases whether you would tend to grab for them.
 * A lot more in [the list of Ada crates](https://alire.ada.dev/crates.html).
 
-# Enough Ada to do Advent of Code
+For a still small but growing collection of notes on how to do what in Ada, see my [Ada cookbook](../../notes/dev/ada-cookbook/).
 
-If you're curious about Ada and want to use [Advent of Code](https://adventofcode.com/) as an opportunity
-to explore it, this section gives you a basic setup to get started.
+## Are there jobs in Ada?
 
-The Ada forum has [an Advent of Code category](https://forum.ada-lang.io/c/advent-of-code/)
-where each year people meet and discuss their solutions - feel free to drop by and participate.
-There you will also find links to the repositories of past events on GitHub.
-For example, [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/tree/642ff0f6151e031b90fb9edfa5c143395a94b344) 
-did many puzzles in both Ada and Rust, and wrote about his solutions and experiences with both.
-And 
-[J.C. Moyer (AoC 2023)](https://github.com/jcmoyer/puzzles/tree/f47cb18394123473f3d474782e07267237a828fa/AdventOfCode2023)
-uses a very basic setup, but constructs pretty clean and readable solutions.
+You can find some of the companies using Ada when checking [the list of customers of AdaCore](https://www.adacore.com/company/our-customers).
+This list is certainly not complete, but the picture is pretty representative. 
 
-## Alire project template
+Companies range from big names, like Thales, Airbus, and the Automotive Team at NVIDIA,
+to start-ups you probably never heard of, like [Latence Tech](https://www.latencetech.com/).
 
-If you use [Alire](https://alire.ada.dev/), which is arguably the easiest and fastest way to get running,
-here is a very basic setup: 
-```
-aoc2025
-  |_ src
-     |_ day_x.adb
-  |_ alire.toml
-  |_ aoc2025.gpr
-  |_ input_x.txt
-```
-The `input_x.txt` file is what you get from AoC, and the `src` folder contains your actual Ada source code file.
-We look at the `day_x.adb` below.
-
-The `alire.toml` specifies metadata of your project.
-It is the file where you would specify dependencies if you rely on external libraries.
-If you don't have dependencies and don't want to publish the project, you don't need to worry about it much;
-just make sure to get the name of the executable right.
-```
-name = "aoc2025"
-description = "Doing Advent of Code in Ada, yay!"
-version = "0.1.0-dev"
-
-executables = ["day_x"]
-```
-
-The `aoc2025.gpr` defines how Alire builds your project from source to executable.
-Alire creates it automatically when you initialize a project.
-The important part that might require configuration is to specify the source directories and the main file.
-I usually also play with the compiler switches, but that's mostly relevant for how much discipline you want to impose on yourself. 
-```ada
-project AOC2025 is
-
-   for Source_Dirs use ("src/");
-   -- Specify all directories in which you have Ada files
-   -- that need to be compiled. If you have more structure,
-   -- this could look, for example, like this:
-   -- for Source_Dirs use (
-   --    "src/",
-   --    "src/day_01/",
-   --    "src/day_02/",
-   --    ...
-   -- ); 
-
-   for Object_Dir use "obj/";
-   for Exec_Dir use "bin";
-   for Create_Missing_Dirs use "True";
-   -- For the other directories that Alire needs,
-   -- you can just let it create them itself. 
-
-   for Main use ("day_x.adb");
-   -- This is the main file form which the executable will be built. 
-
-   package Compiler is
-      for Default_Switches ("Ada") use (
-          "-g"         -- Generate debug info
-         ,"-gnata"     -- Enable assertions
-         ,"-gnatwa"    -- Enable all warnings
-         ,"-gnaty"     -- Enable all style checks
-         ,"-gnatyC"    -- Check comments without extra space
-         ,"-gnatyM100" -- Check maximum line length of 100
-         ,"-gnat2022"  -- Compile as Ada 2022
-      );
-   end Compiler;
-   -- See https://gcc.gnu.org/onlinedocs/gnat_ugn/Alphabetical-List-of-All-Switches.html
-   -- for a full list of switches.
-
-   package Binder is
-      for Switches ("Ada") use ("-Es");
-   end Binder;
-
-end AOC2025;
-```
-
-Now, all you need to do is tell Alire to run your project:
-
-```
-$ alr run
-```
-It will show the compile, bind and link steps, errors and warnings issued in those,
-and if all is good, it will run the executable.
-
-## Reading input from files
-
-Advent of Code usually gives you a file from which to read input data.
-Here is a skeleton procedure in Ada for reading a text file line by line:
-
-{{< highlight ada >}}
-with Ada.Text_IO;
-
-procedure Process_Input is
-   Input : Ada.Text_IO.File_Type;
-begin
-   -- Open the input file in read mode.
-   Ada.Text_IO.Open (Input, Ada.Text_IO.In_File, "input_x.txt");
-
-   -- Walk through the file line by line.
-   while not Ada.Text_IO.End_Of_File (Input) loop
-      declare
-         Line : constant String := Ada.Text_IO.Get_Line (Input);
-      begin
-         -- Do something with Line.
-      end;
-   end loop;
-
-   -- Finally, close the file again.
-   Ada.Text_IO.Close (Input);
-end Process_Input;
-{{</ highlight >}}
-
-You can use this in whatever way you want.
-For a quick and dirty solution, it would be enough to use it as the overall skeleton for the day
-and do whatever processing you need where we put the `Do something` comment.
-On the other hand side, you could separate parsing the input file
-from constructing a solution based on the data contained in it.
-
-For common string handling tasks, see my 
-[Ada cookbook](../../notes/dev/ada-cookbook/).
+Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title.
