@@ -263,9 +263,7 @@ with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
 where he remembers that during his time, all existing programming languages were unneccessarily complex.
 He wanted to design a language that is as simple as possible without losing power. 
 
-In Ada, you see some of this legacy. Let's look at two examples.
-
-First, exceptions.
+In Ada, you see some of this legacy. One example are exceptions.
 
 In Ada, exceptions are like objects, not types. You define an exception like this:
 ```
@@ -279,14 +277,13 @@ Or, if you want to include more information, like this:
 ```
 raise Timestamp_Is_In_The_Past with "Input timestamp cannot be in the past";
 ```
-That's it. For basic exceptions, this is arguably all you need. 
-**(TODO: hierarchies you probably want)**
+That's it. For basic exceptions, this is arguably all you need. (With the exception of an error hierarchy maybe.)
 
-Second, concurrency. 
+## Safe real-time programming
 
-Ada has concurrency since 1983.
-... tasks, and one way for synchronous and one for asynchronous communication between tasks.
-
+Concurrent and real-time programming are standard parts of Ada since its beginning.
+Their semantics is the same independent of whether you execute them on Linux, an RTOS, or on a bare metal target.
+And it's as deterministic and safe as you can get. [Read more about it.](https://blog.adacore.com/theres-a-mini-rtos-in-my-language)
 
 # The ecosystem and community
 

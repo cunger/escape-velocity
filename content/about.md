@@ -25,13 +25,12 @@ I have some code on [GitHub](https://github.com/cunger/), but most lives in prop
 
 ### Software Developer & Product Owner @ OKAPI:Orbits (since 10/2022)
 
-I spend my day designing, developing, and maintaining space traffic management software for satellite operators. 
+I spend my day designing, developing, and maintaining space traffic coordination software for satellite operators. 
 Mostly backend in Java, but often enough working across components and the whole stack, including TypeScript and Python.
 
-Pretty early on I became technical lead in a project for ESA's Space Debris Office. I think I was picked because I was the only free Java developer around. But I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
+Early on I became technical lead in a project for ESA's Space Debris Office. I think I was picked because I was the only free Java developer around. But I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
 
-As a science fiction fan among space engineers, I feel like the coolest kid in town.
-And I'm proud when people don't notice that I actually don't have a background in space engineering.
+Pretty often, working among space engineers and science fiction fans puts a smile on my face.
 
 ### Engineering Consultant @ ALTEN (03/2022 - 10/2022)
 
