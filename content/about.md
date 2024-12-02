@@ -85,7 +85,10 @@ I tried to pick it up again recently, studying for a B.A. Mathematics at the Fer
 
 ## Volunteering
 
-I deeply care about marine conservation and volunteered with two organizations:
+I enjoy being an active member of [Nuklearia](https://nuklearia.de/)
+and deputy chairman of [Ada Germany](https://ada-deutschland.de/).
+
+I also deeply care about marine conservation and volunteered with two organizations so far:
 
 * Love the Oceans in Mozambique. Volunteers were cataloguing what the local fisherman caught, did underwater coral reef studies, painted school buildings and gave swimming lessions for local children.
 * Cetacean Research and Rescue Unit in Scotland. We spent a lot of time on the water, counting dolphins and later photo IDing them. We also learned basic boating and first aid for stranded marine mammals.
