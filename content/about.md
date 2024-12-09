@@ -6,7 +6,8 @@ date: 2022-06-14
 Hi, I'm Christina, a **software engineer** with 8 years of experience in building and maintaining large code bases, working across the whole software lifecycle.
 
 I particularly enjoy working with **complex legacy systems**.
-I love digging through patchwork code grown over years and decades, step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
+I love digging through patchwork architecture grown over years and decades,
+step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
 
 I have a background in formal logic and a strong interest in nuclear technology (fission and fusion).
 
@@ -28,9 +29,11 @@ I have some code on [GitHub](https://github.com/cunger/), but most lives in prop
 I spend my day designing, developing, and maintaining space traffic coordination software for satellite operators. 
 Mostly backend in Java, but often enough working across components and the whole stack, including TypeScript and Python.
 
-Early on I became technical lead in a project for ESA's Space Debris Office. I think I was picked because I was the only free Java developer around. But I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
+Early on I became technical lead in a project for ESA's Space Debris Office. 
+Probably because I was the only free senior developer around. 
+But I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
 
-Pretty often, working among space engineers and science fiction fans puts a smile on my face.
+And I work among space engineers! This is pretty awesome.
 
 ### Engineering Consultant @ ALTEN (03/2022 - 10/2022)
 
@@ -85,8 +88,8 @@ I tried to pick it up again recently, studying for a B.A. Mathematics at the Fer
 
 ## Volunteering
 
-I enjoy being an active member of [Nuklearia](https://nuklearia.de/)
-and deputy chairman of [Ada Germany](https://ada-deutschland.de/).
+I enjoy being an active member of [Nuklearia](https://nuklearia.de/),
+and try to grow into being deputy chairman of [Ada Germany](https://ada-deutschland.de/).
 
 I also deeply care about marine conservation and volunteered with two organizations so far:
 
@@ -94,8 +97,6 @@ I also deeply care about marine conservation and volunteered with two organizati
 * Cetacean Research and Rescue Unit in Scotland. We spent a lot of time on the water, counting dolphins and later photo IDing them. We also learned basic boating and first aid for stranded marine mammals.
 
 Both experiences were tremendously inspiring and humbling. (It sounds cliché but it's true!)
-
-I'm also an active member of [Nuklearia](https://nuklearia.de/).
 
 ## What's this?
 
