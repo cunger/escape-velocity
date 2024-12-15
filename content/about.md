@@ -77,7 +77,7 @@ Studying logic was somewhat exotic, but it was perfect for me and I passed with 
 
 I initially also had mathematics as a minor, but dropped it after successfully passing the intermediate exams in favor of two majors. This is one of the few decisions I regret. 
 I tried to pick it up again recently, studying for a B.A. Mathematics at the FernUniversität Hagen, but next to a demanding full-time job it felt like you either study math or have a life.
-(I chose the latter. But at least I got far enough to understand and marvel at [the math behind JPEG image compression](../notes/math/dct).)
+(I chose the latter. But at least I got far enough to understand and marvel at [the math behind JPEG image compression](../blog/dct).)
 
 ### Certificates
 
