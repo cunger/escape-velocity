@@ -161,6 +161,8 @@ for Pos in Positions'Range loop
 end loop;
 ```
 
+Most importantly, arrays are memory-safe. The index type and range is part of the array, and both compiler and runtie check that all reads and writesare within the bounds of the array.
+
 ## Separation of concerns
 
 Like separating header and implementation in C, Ada separates packages into a specification (`.ads`) and a body (`.adb`),
@@ -342,8 +344,8 @@ provides a pretty comprehensive list of resources.
 
 If you want to dive into existing Ada code bases, here are a few suggestions:
 
-* [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/tree/642ff0f6151e031b90fb9edfa5c143395a94b344) 
-did many Advent of Code puzzles in both Ada and Rust, and wrote about his solutions and experiences with both.
+* [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/blob/2df768bacb3c7f5c0ee23a495c3b5fe0c7464284/More_Detailed_Comparison.md) 
+did many Advent of Code puzzles in both Ada and Rust, and wrote a detailed comparison.
 * [GNATcoll](https://github.com/AdaCore/gnatcoll-core/tree/master/core/src) is a collection of components, like for working with JSON data or file systems in Ada. It's clean and well-documented code.
 * The [Apollo 11 lunar lander simulator](https://github.com/Fabien-Chouteau/eagle-lander) is equally well organized and fun to read.
 * [AdaChess](https://github.com/adachess/AdaChess/tree/main) is a chess engine written in Ada.
