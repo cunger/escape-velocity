@@ -1,8 +1,9 @@
 ---
 title: "Ada for the curious"
+description: "Work in progress (🇬🇧)"
 author: "Christina Unger"
 tags: ["ada"]
-date: 2024-06-22
+date: 2024-12-01
 toc: true
 draft: false
 ---
