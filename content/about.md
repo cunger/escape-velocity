@@ -13,6 +13,8 @@ I have a background in formal logic and a strong interest in nuclear technology 
 
 In general, I feel most at home in multidisciplinary settings and non-mainstream niches.
 
+If you want to see what I'm up to at the moment, see [/now](../now).
+
 ### Main languages
 
 {{< badge text="Java" >}}
@@ -88,8 +90,8 @@ I tried to pick it up again recently, studying for a B.A. Mathematics at the Fer
 
 ## Volunteering
 
-I enjoy being an active member of [Nuklearia](https://nuklearia.de/),
-and try to grow into being deputy chairman of [Ada Germany](https://ada-deutschland.de/).
+I enjoy being an active member of [Nuklearia](https://nuklearia.de/)
+and deputy chairman of [Ada Germany](https://ada-deutschland.de/).
 
 I also deeply care about marine conservation and volunteered with two organizations so far:
 
