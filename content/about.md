@@ -3,17 +3,16 @@ title: "About me"
 date: 2022-06-14
 ---
 
-Hi, I'm Christina, a **software engineer** with 8 years of experience in building and maintaining large code bases, working across the whole software lifecycle.
+Hi, I'm Christina, a professional **software engineer** with 8 years of experience in building and maintaining large code bases,
+working across the whole software lifecycle.
 
 I particularly enjoy working with **complex legacy systems**.
 I love digging through patchwork architecture grown over years and decades,
 step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
 
-I have a background in formal logic and a strong interest in nuclear technology (fission and fusion).
+I have a background in formal logic and a strong interest in digital signal processing and nuclear technology (fission and fusion).
 
-In general, I feel most at home in multidisciplinary settings and non-mainstream niches.
-
-If you want to see what I'm up to at the moment, see [/now](../now).
+In general, I strive in fast-paced, multidisciplinary settings and non-mainstream niches.
 
 ### Main languages
 
@@ -23,6 +22,20 @@ If you want to see what I'm up to at the moment, see [/now](../now).
 {{< badge text="TypeScript" >}}
 
 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
+
+## Certificates
+
+* [Digital Signal Processing (Specialization)](https://www.coursera.org/specializations/digital-signal-processing)
+  (EPFL, ongoing)
+
+* Software and Systems Engineering Standards Used in Aerospace and Defense
+  (IEEE, 2024)
+
+* Radiation Protection: Fachkunde S1.1, S1.2, S1.3, S2.1, S6.1
+  (Strahlenschutzakademie Dresden, 2021)
+
+* Rescue Diver
+  (NASDS, 2022)
 
 ## Professional Experience
 
