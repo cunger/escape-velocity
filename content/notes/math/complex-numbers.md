@@ -63,3 +63,5 @@ Betrachtet man die Taylorreihen von {{< katex "e^x">}}, {{< katex "\sin(x)">}} u
 Die komplexe Zahl in **Euler-Form** ist {{< katex "z=re^{i\theta}" >}}.
 
 <!-- ![Koordinaten](/images/docs/complex-numbers-coordinates.png) -->
+
+[{{< katex "e^{i\pi}" >}} in 3.14 minutes](https://www.youtube.com/watch?v=v0YEaeIClKY)

@@ -94,13 +94,6 @@ I initially also had mathematics as a minor, but dropped it after successfully p
 I tried to pick it up again recently, studying for a B.A. Mathematics at the FernUniversität Hagen, but next to a demanding full-time job it felt like you either study math or have a life.
 (I chose the latter. But at least I got far enough to understand and marvel at [the math behind JPEG image compression](../blog/dct).)
 
-### Certificates
-
-* Software and Systems Engineering Standards Used in Aerospace and Defense (IEEE, 2024)
-* Rescue Diver (NASDS, October 2022)
-* Radiation Protection | Fachkunde S1.1, S1.2, S1.3, S2.1, S6.1 (Strahlenschutzakademie Dresden, December 2021)
-* Architecture and Systems Engineering: Models and Methods to Manage Complex Systems (MITxPro, March 2020)
-
 ## Volunteering
 
 I enjoy being an active member of [Nuklearia](https://nuklearia.de/)
@@ -112,9 +105,3 @@ I also deeply care about marine conservation and volunteered with two organizati
 * Cetacean Research and Rescue Unit in Scotland. We spent a lot of time on the water, counting dolphins and later photo IDing them. We also learned basic boating and first aid for stranded marine mammals.
 
 Both experiences were tremendously inspiring and humbling. (It sounds cliché but it's true!)
-
-## What's this?
-
-These pages are notes for my future self, as I'm sure it will need to look up stuff regularly.
-
-If you found an error or want to chat, please reach out.
