@@ -8,10 +8,12 @@ working across the whole software lifecycle.
 
 I focus on **Java backend** development for money, and Ada for fun. (Although I wouldn't mind swapping them.)
 
-I particularly enjoy working with **complex legacy systems**, digging through patchwork architecture grown over years and decades,
-step by step understanding and taming systems that have seen better times but still provide value.
+I have a strong interest in **software quality** and particularly enjoy working with **complex legacy systems**,
+digging through patchwork architecture grown over years and decades,
+step by step understanding and taming systems
+that are hard to work with but too valueable to simply give up on.
 
-I have a background in formal logic and a strong interest in **software quality**, digital signal processing and nuclear technology (fission and fusion).
+I have a background in formal logic and basic university-level mathematics.
 
 In general, I strive in fast-paced, multidisciplinary settings and non-mainstream niches.
 
