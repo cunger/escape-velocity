@@ -2,7 +2,7 @@
 title: "Toolbox"
 summary: "Muster und Strategien"
 date: 2022-09-07
-weight: 10
+weight: 11
 math: true
 toc: false
 ---

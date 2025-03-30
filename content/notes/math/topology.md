@@ -2,7 +2,7 @@
 title: "Topologie"
 summary: "Topologische, normierte und metrische Räume."
 date: 2020-08-26
-weight: 4
+weight: 5
 math: true
 toc: true
 draft: false

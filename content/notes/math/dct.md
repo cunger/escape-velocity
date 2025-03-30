@@ -1,12 +1,13 @@
 ---
 title: "Diskrete Kosinustransformation"
-description: "Deep dive into the mathematical heart of JPEG image compression (🇩🇪)"
+summary: "Das mathematische Herz der JPEG-Bildkompression"
 author: "Christina Unger"
 tags: ["applied math", "image compression", "dsp"]
 date: 2024-06-22
 toc: true
 math: true
 draft: false
+weight: 1
 ---
 
 # Digitale Bilder und Bildkompression

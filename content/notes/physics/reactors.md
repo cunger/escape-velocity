@@ -2,7 +2,7 @@
 title: "Fission reactors"
 summary: "Fission reaction, neutron transport, criticality, and reactor types."
 date: 2019-11-16
-weight: 5
+weight: 12
 math: true
 toc: true
 draft: false

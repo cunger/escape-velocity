@@ -6,11 +6,12 @@ date: 2022-06-14
 Hi, I'm Christina, a professional **software engineer** with 8 years of experience in building and maintaining large code bases,
 working across the whole software lifecycle.
 
-I particularly enjoy working with **complex legacy systems**.
-I love digging through patchwork architecture grown over years and decades,
-step by step understanding and taming systems that you can spend months with and still haven’t seen all of it.
+I focus on **Java backend** development for money, and Ada for fun. (Although I wouldn't mind swapping them.)
 
-I have a background in formal logic and a strong interest in digital signal processing and nuclear technology (fission and fusion).
+I particularly enjoy working with **complex legacy systems**, digging through patchwork architecture grown over years and decades,
+step by step understanding and taming systems that have seen better times but still provide value.
+
+I have a background in formal logic and a strong interest in **software quality**, digital signal processing and nuclear technology (fission and fusion).
 
 In general, I strive in fast-paced, multidisciplinary settings and non-mainstream niches.
 
@@ -24,9 +25,6 @@ In general, I strive in fast-paced, multidisciplinary settings and non-mainstrea
 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
 
 ## Certificates
-
-* [Digital Signal Processing (Specialization)](https://www.coursera.org/specializations/digital-signal-processing)
-  (EPFL, ongoing)
 
 * Software and Systems Engineering Standards Used in Aerospace and Defense
   (IEEE, 2024)

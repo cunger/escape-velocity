@@ -1,6 +1,6 @@
 ---
 title: "Mathematics"
 summary: "(German)"
-weight: 1
+weight: 2
 draft: false
 ---

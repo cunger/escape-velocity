@@ -2,7 +2,7 @@
 title: "Komplexe Zahlen"
 summary: "(Draft, work in progress)"
 date: 2022-09-03
-weight: 9
+weight: 10
 math: true
 toc: true
 ---

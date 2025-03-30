@@ -1,9 +1,9 @@
 ---
 title: "Ada cookbook"
-summary: "Common things to do in Ada"
+summary: "Or at least the start of one"
 author: "Christina Unger"
 tags: ["ada"]
-weight: 1
+weight: 2
 math: false
 toc: true
 draft: false

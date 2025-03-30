@@ -1,6 +1,6 @@
 ---
-title: "Physics & Chemistry"
-summary: "(Some foundations)"
-weight: 4
+title: "Physics"
+summary: "(And related topics)"
+weight: 3
 draft: false
 ---

@@ -2,7 +2,7 @@
 title: "Kurven"
 summary: "Die Bewegung eines Punktes durch den Raum."
 date: 2022-11-28
-weight: 6
+weight: 7
 math: true
 toc: true
 draft: false

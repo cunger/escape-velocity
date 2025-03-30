@@ -3,7 +3,7 @@ title: "Bash"
 summary: "Boom. Bang."
 author: "Christina Unger"
 tags: ["bash"]
-weight: 2
+weight: 3
 math: false
 toc: true
 draft: false

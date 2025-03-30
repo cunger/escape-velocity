@@ -2,7 +2,7 @@
 title: "Ressourcen"
 summary: "Literatur, Kurse, usw."
 date: 2022-08-24
-weight: 11
+weight: 12
 math: false
 toc: false
 draft: false

@@ -2,7 +2,7 @@
 title: "Polynome"
 summary: "Arithmetik, Nullstellen, Approximation."
 date: 2020-11-23
-weight: 2
+weight: 3
 math: true
 toc: true
 draft: false

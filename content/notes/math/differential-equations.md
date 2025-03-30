@@ -2,7 +2,7 @@
 title: "Differentialgleichungen"
 summary: "Analytische und numerische Lösungen."
 date: 2021-06-25
-weight: 8
+weight: 9
 math: true
 toc: true
 ---

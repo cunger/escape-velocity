@@ -2,7 +2,7 @@
 title: "Algebraische Strukturen"
 summary: "Gruppen, Ringe, Körper, Vektorräume und strukturerhaltende Abbildungen."
 date: 2021-09-20
-weight: 1
+weight: 2
 math: true
 toc: true
 draft: false

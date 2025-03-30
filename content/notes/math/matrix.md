@@ -2,7 +2,7 @@
 title: "Matrizen"
 summary: "Matrizen, deren Eigenschaften und Anwendungen."
 date: 2020-08-26
-weight: 3
+weight: 4
 math: true
 toc: true
 draft: false
