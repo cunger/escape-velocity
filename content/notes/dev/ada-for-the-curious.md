@@ -1,6 +1,6 @@
 ---
 title: "Ada for the curious"
-summary: "For developers curious about Ada"
+summary: "For developers curious about Ada. Still work in progress."
 author: "Christina Unger"
 tags: ["ada"]
 date: 2024-12-01
@@ -89,15 +89,14 @@ If you prefer designing over debugging, I bet you will enjoy Ada.
 
 {{< youtube 3e-BGblAMC4 >}}
 
-# What makes Ada fun
+# What makes Ada interesting
 
 Here are a few characteristics of Ada that many people like about it.
 This is subjective, of course, but it gives you a taste of why Ada might be worthwhile exloring.
 
 ## The type system
 
-Yes, we start the list of fun features with the type system.
-Because one of the nicest safety nets that Ada offers is range restrictions on the type level.
+One of the nicest safety nets that Ada offers is range restrictions on the type level.
 
 Let's assume you deal with temperature readings.
 Instead of using a generic floating-point type and check whether the values you get are in your expected range, 
@@ -163,7 +162,7 @@ for Pos in Positions'Range loop
 end loop;
 ```
 
-Most importantly, arrays are memory-safe. The index type and range is part of the array, and both compiler and runtie check that all reads and writesare within the bounds of the array.
+Most importantly, arrays are memory-safe. The index type and range is part of the array, and both compiler and runtime check that all reads and writes are within the bounds of the array. (We return this below in [Memory safety and formal verification](#memory-safety-and-formal-verification).)
 
 ## Separation of concerns
 
@@ -174,91 +173,25 @@ Richard Riehle put it like this:
 
 > Ada as an engineering tool, requires the software developers to adopt an engineering attitude to using it. It is not enough to simply be a good computer programmer when human safety is at risk. Software at that level of risk must be engineered.
 
-Here is an example. Assume we wanted to implement Conway's Game of Life.
-We could start thinking about how to call it from a main procedure:
-```ada
--- main.adb
+If you have a specification file with proper comments, this can also serve as a very helpful documentation of a library.
+You can check the `.ads` files in [the gnatcoll-core repository](https://github.com/AdaCore/gnatcoll-core/blob/master/core/src/gnatcoll-email-utils.ads) 
+for examples.
 
-with Game_Of_Life;
-use  Game_Of_Life;
+## Memory safety and formal verification
 
-procedure Main is
-begin
+CVE's [Top 25 Most Dangerous Software Weaknesses](https://cwe.mitre.org/top25/index.html) reveals many recurring issues - with memory management errors still high on the list: out-of-bounds read and write, buffer overflows, null pointer dereferencing, use-after-free, and so forth. Both [Microsoft](https://github.com/Microsoft/MSRC-Security-Research/blob/master/presentations/2019_02_BlueHatIL/2019_01%20-%20BlueHatIL%20-%20Trends%2C%20challenge%2C%20and%20shifts%20in%20software%20vulnerability%20mitigation.pdf) and [Google Chrome](https://security.googleblog.com/2021/09/an-update-on-memory-safety-in-chrome.html) have confirmed that approximately 70% of the vulnerabilities they address stem from insecure memory handling.
 
-   Init_Board (
-      Rows    => 800,
-      Columns => 600,
-      Pattern => Glider_Collision
-   );
+Ada is memory safe. And it goes beyond compiler checks and promises.
 
-   Run;
+It offers a formally verifiable subset, SPARK, which allows for mathematical proofs of correctness, 
+covering things like the absence of out-of-bound access in arrays (statically proofing it at compile time, not only promising that it will raise an exception at runtime) and functional correctness of algorithms.
+And all of this with built-in tooling, which is really almost as easy as adding `with SPARK_Mode`.
+**Welcome to proof-driven development.**
 
-end Main;
-```
-This defines what we need in the public part of our package specification:
-```ada
--- game_of_life.ads
+And this focus on safety extends to concurrent and real-time programming, which have been part of the Ada standard since its beginning.
+Their semantics is the same independent of whether you execute them on Linux or an RTOS, and it's as deterministic and safe as you can get. [Read more about it here.](https://blog.adacore.com/theres-a-mini-rtos-in-my-language) 
 
-package Game_Of_Life is
-
-    type Patterns is (
-       Ants,
-       Blinker,
-       Dart,
-       Fountain,
-       Glider_Collision,
-       Herschel_Climber,
-       Spaceship
-    );
-    -- Predefined patterns, taken from the pattern catalogue at playgameoflife.com/lexicon.
-    -- Their size is adapted to the board size.
-
-    procedure Init_Board (Rows : Positive, Columns : Positive, Pattern : Patterns);
-    -- Creates a game board with the specified number of rows and columns,
-    -- and initializes the living cells according to the given start pattern.
-    -- TODO: Requires a minimum size to fit the pattern.
-
-    procedure Run;
-    -- Runs the simulation.
-
-private
-   
-    -- Specifications of all private types, functions, and procedures.
-
-end Game_Of_Life;
-```
-If you have a specification file with proper comments, this can serve as a very helpful 
-documentation of a library.
-(Check the `.ads` files in [the gnatcoll-core repository](https://github.com/AdaCore/gnatcoll-core/blob/master/core/src/gnatcoll-email-utils.ads) 
-for examples.)
-
-Then we mirror the specification in the body, providing the actual implementation of the procedures. 
-Doing so would usually inform which private specifications we need in the package specification.
-```ada
--- game_of_life.adb
-
-package body Game_Of_Life is
-
-    procedure Init_Board (Rows : Positive, Columns : Positive) is
-    begin
-       -- Implementation left out.
-       null;
-    end Init_Board;
-
-    procedure Load_Pattern (Start_Pattern : Pattern) is
-    begin
-       -- Implementation left out.
-       null;
-    end Load_Pattern;
-
-    procedure Run is
-    begin
-       -- Implementation left out.
-       null;
-    end Run;
-
-end Game_Of_Life;
-```
+And tasking is not very complicated or hard to grasp - which lowers the risk of making mistakes and which brings me to the last point I want to mention: simplicity.
 
 ## Simplicity
 
@@ -267,27 +200,7 @@ with Niklaus Wirth (the Swiss computer scientist who invented Pascal),
 where he remembers that during his time, all existing programming languages were unneccessarily complex.
 He wanted to design a language that is as simple as possible without losing power. 
 
-In Ada, you see some of this legacy. One example are exceptions.
-
-In Ada, exceptions are like objects, not types. You define an exception like this:
-```
-Timestamp_Is_In_The_Past : exception;
-```
-You raise it like this: 
-```
-raise Timestamp_Is_In_The_Past;
-```
-Or, if you want to include more information, like this: 
-```
-raise Timestamp_Is_In_The_Past with "Input timestamp cannot be in the past";
-```
-That's it. For basic exceptions, this is arguably all you need. (With the exception of an error hierarchy maybe.)
-
-## Safe real-time programming
-
-Concurrent and real-time programming are standard parts of Ada since its beginning.
-Their semantics is the same independent of whether you execute them on Linux, an RTOS, or on a bare metal target.
-And it's as deterministic and safe as you can get. [Read more about it.](https://blog.adacore.com/theres-a-mini-rtos-in-my-language)
+In Ada, you see some of this legacy.
 
 # The ecosystem and community
 
@@ -346,8 +259,6 @@ provides a pretty comprehensive list of resources.
 
 If you want to dive into existing Ada code bases, here are a few suggestions:
 
-* [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/blob/2df768bacb3c7f5c0ee23a495c3b5fe0c7464284/More_Detailed_Comparison.md) 
-did many Advent of Code puzzles in both Ada and Rust, and wrote a detailed comparison.
 * [GNATcoll](https://github.com/AdaCore/gnatcoll-core/tree/master/core/src) is a collection of components, like for working with JSON data or file systems in Ada. It's clean and well-documented code.
 * The [Apollo 11 lunar lander simulator](https://github.com/Fabien-Chouteau/eagle-lander) is equally well organized and fun to read.
 * [AdaChess](https://github.com/adachess/AdaChess/tree/main) is a chess engine written in Ada.
@@ -355,14 +266,18 @@ did many Advent of Code puzzles in both Ada and Rust, and wrote a detailed compa
   to demonstrate how you can do without pointers even in cases whether you would tend to grab for them.
 * A lot more in [the list of Ada crates](https://alire.ada.dev/crates.html).
 
-For a still small but growing collection of notes on how to do what in Ada, see my [Ada cookbook](../../notes/dev/ada-cookbook/).
+# Ada or Rust?
 
-## Are there jobs in Ada?
+Here are several pointers for looking into comparisons:
+
+* [John Perry (AoC 2023)](https://github.com/johnperry-math/AoC2023/blob/2df768bacb3c7f5c0ee23a495c3b5fe0c7464284/More_Detailed_Comparison.md) 
+did many Advent of Code puzzles in both Ada and Rust, and wrote a detailed comparison.
+* AdaCore has a more business-oriented view on whether to [choose Ada/SPARK or Rust over C/C++](https://blog.adacore.com/should-i-choose-ada-spark-or-rust-over-c-c#).
+* Zayn Otley looked at [Empirical Evidence of Superior Safety in Critical Systems](https://www.linkedin.com/pulse/adaspark-vs-rust-empirical-evidence-superior-safety-critical-otley-ubzye/) and mentions where Rust falls short in comparison with Ada/SPARK.
+
+# Who is using Ada?
 
 You can find some of the companies using Ada when checking [the list of customers of AdaCore](https://www.adacore.com/company/our-customers).
 This list is certainly not complete, but the picture is pretty representative. 
-
-Companies range from big names, like Thales, Airbus, and the Automotive Team at NVIDIA,
+Companies range from big names, like Thales, Airbus, and the automotive team at NVIDIA,
 to start-ups you probably never heard of, like [Latence Tech](https://www.latencetech.com/).
-
-Unfortunately, Ada jobs are often not heavily advertised. Even if you look at open positions at companies that hire Ada programmers, Ada might be mentioned as a nice-to-have experience, but it’s almost never in the job title.

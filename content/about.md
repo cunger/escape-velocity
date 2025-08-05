@@ -6,7 +6,7 @@ date: 2022-06-14
 Hi, I'm Christina, a professional **software engineer** with 8 years of experience in building and maintaining large code bases,
 working across the whole software lifecycle.
 
-I focus on **Java backend** development for money, and Ada for fun. (Although I wouldn't mind swapping them.)
+I mainly do **Java backend** development for money, and Ada for fun.
 
 I have a strong interest in **software quality** and particularly enjoy working with **complex legacy systems**,
 digging through patchwork architecture grown over years and decades,
@@ -15,14 +15,7 @@ that are hard to work with but too valueable to simply give up on.
 
 I have a background in formal logic and basic university-level mathematics.
 
-In general, I strive in fast-paced, multidisciplinary settings and non-mainstream niches.
-
-### Main languages
-
-{{< badge text="Java" >}}
-{{< badge text="Ada" >}}
-{{< badge text="Python" >}}
-{{< badge text="TypeScript" >}}
+In general, I strive in multidisciplinary settings and non-mainstream niches.
 
 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
 
@@ -41,12 +34,12 @@ I have some code on [GitHub](https://github.com/cunger/), but most lives in prop
 
 ### Software Developer & Product Owner @ OKAPI:Orbits (since 10/2022)
 
-I spend my day designing, developing, and maintaining space traffic coordination software for satellite operators. 
+I spend my day designing, developing, and maintaining space traffic management software for satellite operators. 
 Mostly backend in Java, but often enough working across components and the whole stack, including TypeScript and Python.
 
-Early on I became technical lead in a project for ESA's Space Debris Office. 
-Probably because I was the only free senior developer around. 
-But I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
+Early on I became technical lead in a project for ESA's Space Debris Office (probably because I was the only free senior developer around). I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
+
+Other random stuff I do is performance analysis and optimization of Fortran code, and learning how to break up a monolith into microservice.
 
 And I work among space engineers! This is pretty awesome.
 
@@ -92,7 +85,7 @@ Studying logic was somewhat exotic, but it was perfect for me and I passed with 
 
 I initially also had mathematics as a minor, but dropped it after successfully passing the intermediate exams in favor of two majors. This is one of the few decisions I regret. 
 I tried to pick it up again recently, studying for a B.A. Mathematics at the FernUniversität Hagen, but next to a demanding full-time job it felt like you either study math or have a life.
-(I chose the latter. But at least I got far enough to understand and marvel at [the math behind JPEG image compression](../blog/dct).)
+(I chose the latter. But at least I got far enough to understand and marvel at [the math behind JPEG image compression](../notes/math/dct).)
 
 ## Volunteering
 
