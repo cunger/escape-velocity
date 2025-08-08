@@ -65,7 +65,7 @@ Important to note about two-dimensional arrays is that they need to be stored li
 
 _Illustration of row-major order (left) and column-major order (right). (Source: Wikimedia)_
 
-# Java performance
+# Java under the hood
 
 In order to understand performance of a Java application, both in terms of speed and in terms of resource usage, it helps to have a general understanding of the JVM, the memory model it uses, and how that memory is managed.
 
