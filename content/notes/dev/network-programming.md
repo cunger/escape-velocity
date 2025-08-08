@@ -3,7 +3,7 @@ title: "Network programming"
 summary: "Doomed to be a draft"
 author: "Christina Unger"
 tags: ["network"]
-weight: 5
+weight: 2
 math: false
 toc: true
 draft: false

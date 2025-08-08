@@ -1,9 +1,9 @@
 ---
 title: "Ada cookbook"
-summary: "Or at least the start of one"
+summary: "Or at least the start of one..."
 author: "Christina Unger"
 tags: ["ada"]
-weight: 2
+weight: 5
 math: false
 toc: true
 draft: false

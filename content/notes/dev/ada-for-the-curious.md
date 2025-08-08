@@ -1,12 +1,12 @@
 ---
 title: "Ada for the curious"
-summary: "For developers curious about Ada. Still work in progress."
+summary: "For developers curious about Ada"
 author: "Christina Unger"
 tags: ["ada"]
 date: 2024-12-01
 toc: true
 draft: false
-weight: 1
+weight: 4
 ---
 
 This post is for developers who are curious about Ada.

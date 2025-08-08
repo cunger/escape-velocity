@@ -3,7 +3,7 @@ title: "Numbers"
 summary: "And their representation in computers"
 author: "Christina Unger"
 tags: ["numbers"]
-weight: 4
+weight: 3
 math: true
 toc: true
 draft: false
