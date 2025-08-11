@@ -3,19 +3,14 @@ title: "About me"
 date: 2022-06-14
 ---
 
-Hi, I'm Christina, a professional **software engineer** with 8 years of experience in building and maintaining large code bases,
-working across the whole software lifecycle.
+Hi, I'm Christina, a professional **software engineer** working across the whole software lifecycle,
+striving in multidisciplinary settings and non-mainstream niches.
 
-I mainly do **Java backend** development for money, and Ada for fun.
+🌍 🛰️ I work at [OKAPI:Orbits](https://www.okapiorbits.space/).
 
-I have a strong interest in **software quality** and particularly enjoy working with **complex legacy systems**,
-digging through patchwork architecture grown over years and decades,
-step by step understanding and taming systems
-that are hard to work with but too valueable to simply give up on.
+🛠️ Backend development in Java (and sometimes Python, TypeScript, and Fortran). Interested in performance analysis and tuning, and in understanding and evolving complex legacy code bases.
 
-I have a background in formal logic and basic university-level mathematics.
-
-In general, I strive in multidisciplinary settings and non-mainstream niches.
+📚 ☕ My favorite way to spend early mornings is by learning mathematics and playing with Ada.
 
 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
 
