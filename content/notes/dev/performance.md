@@ -43,7 +43,7 @@ If memory bandwidth is the main bottleneck, we call the application or algorithm
 The main trade-off with memory is between size and speed of access. Modern computers therefore contain different kinds of memory, each allowing a different decision for that trade-off. The general hierarchy of the main types of memory comprises registers and caches on the CPU, random-access memory (RAM), and persisted memory on disk.
 
 {{< rawhtml >}}
-<img src="/images/docs/perf-memory-hierarchy.png" alt="Memory hierarchy" width="360" style="display: block; margin: auto; padding: 10px;" />
+<img src="/images/docs/perf-memory-hierarchy.png" alt="Memory hierarchy" width="460" style="display: inline-block; float: right; margin: auto; padding: 10px;" />
 {{< /rawhtml >}}
 
 The higher in the hierarchy, the faster is memory access but the smaller is memory size. Vice versa, the lower in the hierarchy, the bigger is memory size but the slower is memory access.
@@ -89,7 +89,7 @@ Memory
 When the JVM starts up, it requests memory from the operating system and separates that into three main areas.
 
 {{< rawhtml >}}
-<img src="/images/docs/perf-memory.png" alt="Memory organization" width="260" style="display: block; margin: auto; padding: 10px;"/>
+<img src="/images/docs/perf-memory.png" alt="Memory organization" width="260" style="display: inline-block; float: left; margin: auto; padding: 10px;"/>
 {{< /rawhtml >}}
 
 The stack is used to store method calls, local variables, and references to objects in the heap. It really is a stack (last in first out). You see part of the stack when you inspect the stack trace of an exception, which shows the call hierarchy that was on the stack when the exception occurred.
