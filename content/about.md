@@ -34,13 +34,13 @@ Mostly backend in Java, but often enough working across components and the whole
 
 Early on I became technical lead in a project for ESA's Space Debris Office (probably because I was the only free senior developer around). I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
 
-Other random stuff I do is performance analysis and optimization of Fortran code, and learning how to break up a monolith into microservice.
+Other random stuff I do is performance analysis and optimization of Fortran code, and learning how to break up a monolith into microservices.
 
 And I work among space engineers! This is pretty awesome.
 
 ### Engineering Consultant @ ALTEN (03/2022 - 10/2022)
 
-I was appointed to Idemia Identity & Security Germany.
+I was appointed to Idemia Identity & Security Germany. Mostly Angular.
 
 It was the first time I was working on software that was running on premise, which means you couldn't just deploy bug fixes - everything that was broken would stay broken until the customer updated to the next version half a year later (if you were lucky).
 
@@ -84,7 +84,7 @@ I tried to pick it up again recently, studying for a B.A. Mathematics at the Fer
 
 ## Volunteering
 
-I enjoy being an active member of [Nuklearia](https://nuklearia.de/)
+I'm a proud member of [Nuklearia](https://nuklearia.de/)
 and deputy chairman of [Ada Germany](https://ada-deutschland.de/).
 
 I also deeply care about marine conservation and volunteered with two organizations so far:
