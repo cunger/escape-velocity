@@ -21,13 +21,13 @@ These basic components are nowadays extended by several levels of caches and are
 
 Also, modern processors can contain SIMD (Single Instruction Multiple Data) elements that can perform the same instruction on several data points simultaneously.
 
+The following picture shows a simplified depiction of the architecture of modern computers, here consisting of two CPUs with multiple cores. 
 Each CPU has its own memory bank, i.e. part of the shared memory. Other CPUs on the same node can also access that memory bank, but then data has to transit via a memory bus, which makes the path longer.
+The main performance bottlenecks are (1) computational capacity and (2) memory bandwidth.
 
 {{< rawhtml >}}
 <img src="/images/docs/perf-computer-architecture.png" alt="Modern computer architecture" width="100%" style="display: block; margin: auto; padding: 10px;" />
 {{< /rawhtml >}}
-
-_Simplified architecture of modern computers, here consisting of two CPUs with multiple cores. The main performance bottlenecks are 1) computational capacity, and 2) memory bandwidth._
 
 The performance of an application or algorithm can hit two main bottlenecks, concerning the following two machine capabilities.
 
