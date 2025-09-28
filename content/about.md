@@ -5,18 +5,18 @@ date: 2022-06-14
 
 Hi, I'm Christina, a professional **software engineer** working across the whole software lifecycle.
 
-🌍 🛰️ I work at [OKAPI:Orbits](https://www.okapiorbits.space/).
+* 🌍 🛰️ Currently, I'm planning, developing, and maintaining software for satellite operators at [OKAPI:Orbits](https://www.okapiorbits.space/).
 
-📎 Main interests:
-* Software quality 
-* Performance analysis and tuning
-* Understanding and evolving complex legacy code bases
+* 📎 Main interests:
+  * Software quality 
+  * Performance analysis and tuning
+  * Understanding and evolving complex legacy code bases
 
-🛠️ Java, Ada (and some Python, TypeScript, and Fortran) 
+* 🛠️ Languages: Java, Ada (and some Python, TypeScript, and Fortran) 
 
-📚 ☕ My favorite way to spend early mornings is learning mathematics.
+* 📯 In my spare time, I'm deputy spokesperson of [Ada Germany](https://ada-deutschland.de/).
 
-📯 In my spare time, I'm deputy spokesperson of [Ada Germany](https://ada-deutschland.de/).
+* 📚 ☕ My favorite way to spend early mornings is learning mathematics.
 
 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
 
