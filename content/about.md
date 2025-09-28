@@ -3,14 +3,20 @@ title: "About me"
 date: 2022-06-14
 ---
 
-Hi, I'm Christina, a professional **software engineer** working across the whole software lifecycle,
-striving in multidisciplinary settings and non-mainstream niches.
+Hi, I'm Christina, a professional **software engineer** working across the whole software lifecycle.
 
 🌍 🛰️ I work at [OKAPI:Orbits](https://www.okapiorbits.space/).
 
-🛠️ Backend development in Java (and sometimes Python, TypeScript, and Fortran). Interested in performance analysis and tuning, and in understanding and evolving complex legacy code bases.
+📎 Main interests:
+* Software quality 
+* Performance analysis and tuning
+* Understanding and evolving complex legacy code bases
 
-📚 ☕ My favorite way to spend early mornings is by learning mathematics and playing with Ada.
+🛠️ Java, Ada (and some Python, TypeScript, and Fortran) 
+
+📚 ☕ My favorite way to spend early mornings is learning mathematics.
+
+📯 In my spare time, I'm deputy spokesperson of [Ada Germany](https://ada-deutschland.de/).
 
 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
 
@@ -29,12 +35,15 @@ I have some code on [GitHub](https://github.com/cunger/), but most lives in prop
 
 ### Software Developer & Product Owner @ OKAPI:Orbits (since 10/2022)
 
-I spend my day designing, developing, and maintaining space traffic management software for satellite operators. 
+I spend my day planning, developing, and maintaining space traffic management software for satellite operators. 
 Mostly backend in Java, but often enough working across components and the whole stack, including TypeScript and Python.
+I'm also one of our product owners, responsible for technical planning and delivering what we promise.
 
-Early on I became technical lead in a project for ESA's Space Debris Office (probably because I was the only free senior developer around). I proved good enough to now be one of our product owners, responsible for technical planning and delivering what we promise.
+I already had the pleasure to contribute to several projects:
 
-Other random stuff I do is performance analysis and optimization of Fortran code, and learning how to break up a monolith into microservices.
+* Performance analysis and optimization for ESA contract “Next Generation of Space Objects Population Model” 
+* Technical lead for ESA GSTP project “Collision Avoidance, Satellite Coordination Assessment Demonstration Environment”
+* Senior software engineer for DLR project "Softwareentwicklung von SSA Servicemodulen für das Missionssystem des Weltraumlagezentrums" 
 
 And I work among space engineers! This is pretty awesome.
 
@@ -84,8 +93,7 @@ I tried to pick it up again recently, studying for a B.A. Mathematics at the Fer
 
 ## Volunteering
 
-I'm a proud member of [Nuklearia](https://nuklearia.de/)
-and deputy chairman of [Ada Germany](https://ada-deutschland.de/).
+Proud to be an active member of [Nuklearia](https://nuklearia.de/).
 
 I also deeply care about marine conservation and volunteered with two organizations so far:
 
