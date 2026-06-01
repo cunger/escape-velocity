@@ -3,22 +3,19 @@ title: "About me"
 date: 2022-06-14
 ---
 
-Hi, I'm Christina, a professional **software engineer** working across the whole software lifecycle.
+Hi, I'm Christina, a professional **software engineer**.
 
-* 🌍 🛰️ Currently, I'm planning, developing, and maintaining software for satellite operators at [OKAPI:Orbits](https://www.okapiorbits.space/).
+🌍 🛰️ Currently, I'm planning, developing, and maintaining software for satellite operators at [OKAPI:Orbits](https://www.okapiorbits.space/).
 
-* 📎 Main interests:
-  * Software quality 
-  * Performance analysis and tuning
-  * Understanding and evolving complex legacy code bases
+📚 ☕ Main interests:
 
-* 🛠️ Languages: Java, Ada (and some Python, TypeScript, and Fortran) 
+*  Understanding and evolving complex legacy code bases
+*  Performance analysis and tuning
+*  Mathematics
 
-* 📯 In my spare time, I'm deputy spokesperson of [Ada Germany](https://ada-deutschland.de/).
+🛠️ Languages: Java, Ada, Fortran
 
-* 📚 ☕ My favorite way to spend early mornings is learning mathematics.
-
-I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
+📎 I have some code on [GitHub](https://github.com/cunger/), but most lives in proprietary company repositories.
 
 ## Certificates
 
@@ -36,7 +33,7 @@ I have some code on [GitHub](https://github.com/cunger/), but most lives in prop
 ### Software Developer & Product Owner @ OKAPI:Orbits (since 10/2022)
 
 I spend my day planning, developing, and maintaining space traffic management software for satellite operators. 
-Mostly backend in Java, but often enough working across components and the whole stack, including TypeScript and Python.
+Mostly backend in Java, but often enough working across components and the whole stack.
 I'm also one of our product owners, responsible for technical planning and delivering what we promise.
 
 I already had the pleasure to contribute to several projects:
@@ -93,7 +90,7 @@ I tried to pick it up again recently, studying for a B.A. Mathematics at the Fer
 
 ## Volunteering
 
-Proud to be an active member of [Nuklearia](https://nuklearia.de/).
+I'm active member of [Ada Germany](https://ada-deutschland.de) and [Nuklearia](https://nuklearia.de).
 
 I also deeply care about marine conservation and volunteered with two organizations so far:
 
